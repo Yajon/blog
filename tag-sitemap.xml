@@ -2,29 +2,29 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://guoyanjun.top/blog/tags/iOS/</loc>
-        <lastmod>2017-03-31T05:28:16.000Z</lastmod>
+        <loc>http://guoyanjun.top/blog/tags/hexo/</loc>
+        <lastmod>2017-03-31T05:42:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://guoyanjun.top/blog/tags/github/</loc>
-        <lastmod>2017-03-31T05:28:16.000Z</lastmod>
+        <loc>http://guoyanjun.top/blog/tags/iOS/</loc>
+        <lastmod>2017-03-31T05:42:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://guoyanjun.top/blog/tags/poetry/</loc>
-        <lastmod>2017-03-31T05:28:16.000Z</lastmod>
+        <lastmod>2017-03-31T05:42:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://guoyanjun.top/blog/tags/hexo/</loc>
-        <lastmod>2017-03-31T05:34:28.000Z</lastmod>
+        <loc>http://guoyanjun.top/blog/tags/github/</loc>
+        <lastmod>2017-03-31T05:42:40.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
