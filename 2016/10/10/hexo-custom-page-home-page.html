@@ -16,18 +16,18 @@
 
 
 <meta name="description" content="文/一月筠 -- 转载请注明 --
-本教程的前提已经用hexo将博客搭建在yourname.github.io的repository上，接下来跟随博主开始愉快的旅程吧…">
+如果你想了解：如何在 GitHub Pages 上传自己写的网页作为首页，Hexo 博客作为其子页？即自己写的页面作为http://user.github.io的页面，将hexo博客放在http://user.github.io/blog上，怎么做？那就接着看…">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo自定义页面做首页">
 <meta property="og:url" content="http://guoyanjun.top/2016/10/10/hexo-custom-page-home-page.html">
 <meta property="og:site_name" content="郭艳军的那些事儿">
 <meta property="og:description" content="文/一月筠 -- 转载请注明 --
-本教程的前提已经用hexo将博客搭建在yourname.github.io的repository上，接下来跟随博主开始愉快的旅程吧…">
-<meta property="og:updated_time" content="2017-03-31T09:30:37.000Z">
+如果你想了解：如何在 GitHub Pages 上传自己写的网页作为首页，Hexo 博客作为其子页？即自己写的页面作为http://user.github.io的页面，将hexo博客放在http://user.github.io/blog上，怎么做？那就接着看…">
+<meta property="og:updated_time" content="2017-03-31T10:13:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo自定义页面做首页">
 <meta name="twitter:description" content="文/一月筠 -- 转载请注明 --
-本教程的前提已经用hexo将博客搭建在yourname.github.io的repository上，接下来跟随博主开始愉快的旅程吧…">
+如果你想了解：如何在 GitHub Pages 上传自己写的网页作为首页，Hexo 博客作为其子页？即自己写的页面作为http://user.github.io的页面，将hexo博客放在http://user.github.io/blog上，怎么做？那就接着看…">
 
 <link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
 
@@ -340,11 +340,14 @@
           
         <script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><ul>
 <li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
-<li>本教程的前提已经用hexo将博客搭建在<code>yourname.github.io</code>的repository上，接下来跟随博主开始愉快的旅程吧…<a id="more"></a>
+<li>如果你想了解：如何在 GitHub Pages 上传自己写的网页作为首页，Hexo 博客作为其子页？即自己写的页面作为<code>http://user.github.io</code>的页面，将hexo博客放在<code>http://user.github.io/blog</code>上，怎么做？那就接着看…<a id="more"></a>
 </li>
 </ul>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本教程的前提已经用hexo将博客搭建在<code>yourname.github.io</code>的repository上，接下来跟随博主开始愉快的旅程吧。</p>
-<h2 id="新建一个repository"><a href="#新建一个repository" class="headerlink" title="新建一个repository"></a>新建一个repository</h2><p>名字可以随意，我的是<code>blog</code><br>那么现在你有了一个空的repository然后本地clone下按照提示初始化一个master分支，并且开启<code>github pages</code></p>
+<blockquote>
+<p>说一下我走过的弯路吧，想想真是曲折蜿蜒。音乐music，走起！我看见一座座山，一座座。。。那就是青藏高原。。。好了，言归正传。<br>之前我的想法是通过子域名访问，即主域名(<a href="yoursite.com">yoursite.com</a>)和子域名(<a href="xxx.yoursite.com">blog.yoursite.com</a>)都解析到你的GitHub Pages<a href="yourname.github.io">yourname.github.io</a>。然后再自定义主页，比如<code>index.html</code>。我的博客页面是存放在<code>yourname.github.io</code>的<code>repo</code>中，自定义的主页放在一个叫做<code>Home-Page</code>的<code>repo</code>中。在<code>yourname.github.io</code>和<code>Home-Page</code>这两个仓库中分别在根目录放置了<code>CNAME</code>文件，文件的内容分别为<code>blog.yoursite.com</code>和<code>yoursite.com</code>。其实这样也是可以实现的，只是觉得不太美观，所以就改成额现在的布局。</p>
+</blockquote>
+<h2 id="新建一个repository"><a href="#新建一个repository" class="headerlink" title="新建一个repository"></a>新建一个repository</h2><p>名字可以随意，我的是<code>blog</code><br>那么现在你有了一个空的repository然后本地clone下按照提示初始化一个master分支，并且开启<code>github pages</code>。<br><strong>注意，这里的repo的目录下是不存在<code>CNAME</code>文件的</strong></p>
 <h2 id="修改hexo配置文件-config-yml"><a href="#修改hexo配置文件-config-yml" class="headerlink" title="修改hexo配置文件_config.yml"></a>修改hexo配置文件<code>_config.yml</code></h2><p>找到url下的root 修改成/你起的名字/ (博主这里就是/blog/)url也要改！！！博主一开始没发现。。。</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># URL</span></div><div class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></div><div class="line"><span class="symbol">url:</span> <span class="symbol">https:</span>/<span class="regexp">/yourname.github.io/blog</span></div><div class="line"><span class="symbol">root:</span> /blog/</div><div class="line"><span class="symbol">permalink:</span> <span class="symbol">:year/</span><span class="symbol">:month/</span><span class="symbol">:day/</span><span class="symbol">:title/</span></div><div class="line"><span class="symbol">permalink_defaults:</span></div></pre></td></tr></table></figure>
 <p>然后再找到<code>_config.yml</code>下的<code>deploy</code>，把repository改成你新的repository的clone地址</p>
@@ -355,6 +358,17 @@
 <h2 id="改主题里URL的ROOT"><a href="#改主题里URL的ROOT" class="headerlink" title="改主题里URL的ROOT"></a>改主题里URL的ROOT</h2><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># Subdirectory | 子目录</div><div class="line">## If your site<span class="string">' url is '</span>http:<span class="comment">//yoursite.com/blog', set root_url as '/blog/'</span></div><div class="line">## 网站若存放在子目录，请按上面格式填写</div><div class="line">## https:<span class="comment">//hexo.io/docs/configuration.html#URL</span></div><div class="line">root_url: /blog/</div></pre></td></tr></table></figure>
 <p>像本站用的XXX主题改了以后左边栏会出现问题，这时候需要到<code>left-col.ejs</code>改一下<br>我是这样解决的</p>
 <figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"switch-part switch-part1"</span>&gt;</span></span></div><div class="line">                   <span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"header-menu"</span>&gt;</span></div><div class="line">                       <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">                       <span class="tag">&lt;<span class="name">%</span></span><span class="ruby"> <span class="keyword">for</span> (var i <span class="keyword">in</span> theme.menu)&#123; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line">                       <span class="comment">&lt;!-- 修改这里 --&gt;</span></div><div class="line">                           <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%-</span></span><span class="ruby"> url_for(theme.menu[i]) </span><span class="xml"><span class="tag"><span class="string">%&gt;"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span></span></span><span class="ruby"> i </span><span class="xml"><span class="tag">%&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></div><div class="line">                       <span class="tag">&lt;<span class="name">%</span></span><span class="ruby">&#125;</span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line">                       <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">                   <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></div><div class="line">                   <span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"header-nav"</span>&gt;</span></div><div class="line">                       <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"social"</span>&gt;</span></div><div class="line">                           <span class="tag">&lt;<span class="name">%</span></span><span class="ruby"> <span class="keyword">for</span> (var i <span class="keyword">in</span> theme.subnav)&#123; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line">                               <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"fa &lt;%=</span></span><span class="ruby"> i </span><span class="xml"><span class="tag"><span class="string">%&gt;"</span> <span class="attr">href</span>=<span class="string">"&lt;%-</span></span></span><span class="ruby"> url_for(theme.subnav[i]) </span><span class="xml"><span class="tag"><span class="string">%&gt;"</span> <span class="attr">title</span>=<span class="string">"&lt;%=</span></span></span><span class="ruby"> i </span><span class="xml"><span class="tag"><span class="string">%&gt;"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span> </span></div><div class="line">                           <span class="tag">&lt;<span class="name">%</span></span><span class="ruby">&#125;</span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line">                       <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">                   <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></div><div class="line">               <span class="tag">&lt;/<span class="name">section</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li>这里附上一个不催的主页效果。<br><a href="https://github.com/jacklightChen/jacklightChen.github.io" target="_blank" rel="external">https://github.com/jacklightChen/jacklightChen.github.io</a></li>
+<li>以下附上我觉得不错的参考资料。</li>
+</ul>
+<p><a href="https://link.zhihu.com/?target=http%3A//www.cnblogs.com/yuanzm/p/3945814.html" target="_blank" rel="external">如何将你的github仓库部署到github pages</a>（repo里建gh-pages分支，上传hexo到blog的gh-pages里面）</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//zipperary.com/2013/05/28/hexo-guide-2/" target="_blank" rel="external">hexo系列教程：（二）搭建hexo博客</a></p>
+<p><a href="https://link.zhihu.com/?target=http%3A//blog.netpi.me/%25E5%25AE%259E%25E7%2594%25A8/hexo/" target="_blank" rel="external">hexo + github + 多说 来搭建免费博客 // Netpi 日志</a> （本地打不开解决方法）</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//www.cnblogs.com/lonelybonze/p/4980651.html" target="_blank" rel="external">使用HEXO搭建github个人网站</a> （本地发布、部署失败解决方法）</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//www.jianshu.com/p/05289a4bc8b2" target="_blank" rel="external">如何搭建一个独立博客——简明Github Pages与Hexo教程</a> （ssh key的设置）</p>
+<p><a href="https://link.zhihu.com/?target=http%3A//ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo你的博客Hexo</a></p>
+<p><a href="https://link.zhihu.com/?target=http%3A//lovenight.github.io/2015/11/10/Hexo-3-1-1-%25E9%259D%2599%25E6%2580%2581%25E5%258D%259A%25E5%25AE%25A2%25E6%2590%25AD%25E5%25BB%25BA%25E6%258C%2587%25E5%258D%2597/" target="_blank" rel="external">3.1.1 静态博客搭建指南</a></p>
 
       
     </div>
@@ -366,7 +380,7 @@
         <p><span>本文标题:</span><a href="/blog/2016/10/10/hexo-custom-page-home-page.html">Hexo自定义页面做首页</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">一月筠</a></p>
         <p><span>发布时间:</span>2016-10-10, 18:00:00</p>
-        <p><span>最后更新:</span>2017-03-31, 17:30:37</p>
+        <p><span>最后更新:</span>2017-03-31, 18:13:24</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/blog/2016/10/10/hexo-custom-page-home-page.html" title="Hexo自定义页面做首页">http://guoyanjun.top/blog/2016/10/10/hexo-custom-page-home-page.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://guoyanjun.top/blog/2016/10/10/hexo-custom-page-home-page.html　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -402,7 +416,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新建一个repository"><span class="toc-number">2.</span> <span class="toc-text">新建一个repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改hexo配置文件-config-yml"><span class="toc-number">3.</span> <span class="toc-text">修改hexo配置文件_config.yml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重新部署你的博客"><span class="toc-number">4.</span> <span class="toc-text">重新部署你的博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#清空原来的repository"><span class="toc-number">5.</span> <span class="toc-text">清空原来的repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#改主题里URL的ROOT"><span class="toc-number">6.</span> <span class="toc-text">改主题里URL的ROOT</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新建一个repository"><span class="toc-number">2.</span> <span class="toc-text">新建一个repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改hexo配置文件-config-yml"><span class="toc-number">3.</span> <span class="toc-text">修改hexo配置文件_config.yml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重新部署你的博客"><span class="toc-number">4.</span> <span class="toc-text">重新部署你的博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#清空原来的repository"><span class="toc-number">5.</span> <span class="toc-text">清空原来的repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#改主题里URL的ROOT"><span class="toc-number">6.</span> <span class="toc-text">改主题里URL的ROOT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">7.</span> <span class="toc-text">参考资料</span></a></li></ol>
         
     </div>
     <style>
