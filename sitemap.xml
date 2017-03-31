@@ -2,23 +2,23 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <sitemap>
-        <loc>http://blog.guoyanjun.top/post-sitemap.xml</loc>
-        <lastmod>2017-03-30T10:14:59.000Z</lastmod>
+        <loc>http://guoyanjun.top/blog/post-sitemap.xml</loc>
+        <lastmod>2017-03-31T05:34:28.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://blog.guoyanjun.top/page-sitemap.xml</loc>
+        <loc>http://guoyanjun.top/blog/page-sitemap.xml</loc>
         <lastmod>2017-03-27T03:28:54.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://blog.guoyanjun.top/category-sitemap.xml</loc>
-        <lastmod>2017-03-30T10:14:59.000Z</lastmod>
+        <loc>http://guoyanjun.top/blog/category-sitemap.xml</loc>
+        <lastmod>2017-03-31T05:28:16.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://blog.guoyanjun.top/tag-sitemap.xml</loc>
-        <lastmod>2017-03-30T10:14:59.000Z</lastmod>
+        <loc>http://guoyanjun.top/blog/tag-sitemap.xml</loc>
+        <lastmod>2017-03-31T05:28:16.000Z</lastmod>
     </sitemap>
 
 </sitemapindex>

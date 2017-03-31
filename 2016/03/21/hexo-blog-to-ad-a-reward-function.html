@@ -19,12 +19,12 @@
 当你的博客搭建好之后，你或许想要添加一些更有趣的功能，比如说打赏，虽然说现在是共享经济，但也有付费阅读的需求。况且读者是否打赏全凭个人心情决定…">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客添加打赏功能">
-<meta property="og:url" content="http://blog.guoyanjun.top/2016/03/21/hexo-blog-to-ad-a-reward-function.html">
+<meta property="og:url" content="http://guoyanjun.top/blog/2016/03/21/hexo-blog-to-ad-a-reward-function.html">
 <meta property="og:site_name" content="郭艳军的那些事儿">
 <meta property="og:description" content="文/一月筠 -- 转载请注明 --
 当你的博客搭建好之后，你或许想要添加一些更有趣的功能，比如说打赏，虽然说现在是共享经济，但也有付费阅读的需求。况且读者是否打赏全凭个人心情决定…">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-6f2e24bb73d3eec4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-03-30T10:14:59.000Z">
+<meta property="og:updated_time" content="2017-03-31T05:34:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客添加打赏功能">
 <meta name="twitter:description" content="文/一月筠 -- 转载请注明 --
@@ -205,7 +205,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/">poetry</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/poetry/">poetry</a></li></ul>
                     </div>
                 </section>
                 
@@ -359,6 +359,14 @@
 <p><strong>最后，记得在<code>source\css\style.styl</code>中添加<code>@import &#39;_partial/donate&#39;</code></strong></p>
 <h3 id="step-3：-讲打赏模块整合到文章中"><a href="#step-3：-讲打赏模块整合到文章中" class="headerlink" title="step 3： 讲打赏模块整合到文章中"></a>step 3： 讲打赏模块整合到文章中</h3><p>在<code>layout\_partial\article.ejs</code>中的<code>&lt;article&gt; &lt;/article&gt;</code>标签内添加如下内容：</p>
 <figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="meta">%</span> <span class="keyword">if</span> <span class="comment">(!index &amp;&amp; theme.donate)</span>&#123; <span class="meta">%</span>&gt;</div><div class="line">	&lt;<span class="meta">%</span>- partial<span class="comment">('donate')</span> <span class="meta">%</span>&gt;</div><div class="line">&lt;<span class="meta">%</span> &#125; <span class="meta">%</span>&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>如果你只想在所有post的文章页面添加打赏功能，可以参照以下：</li>
+</ul>
+<figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="comment">&lt;!-- 添加打赏功能 只在文章详情中显示--&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">%</span></span><span class="ruby"> <span class="keyword">if</span> (page.prev <span class="params">||</span> page.<span class="keyword">next</span>)&#123; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">%</span></span><span class="ruby"> <span class="keyword">if</span> (!index &amp;&amp; theme.donate)&#123; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">%-</span></span><span class="ruby"> partial(<span class="string">'donate'</span>) </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">%</span></span><span class="ruby"> &#125; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">%</span></span><span class="ruby"> &#125;</span><span class="xml"><span class="tag">%&gt;</span></span></div></pre></td></tr></table></figure>
+<ul>
+<li>如果你想在指定页面添加打赏功能，需在你的主题文件夹下的<code>layout\_partial\article.ejs</code>路径中，更改<code>article.ejs</code>中的内容。例如：只有页面的属性中添加了<code>donate: true</code>属性后，才显示打赏，则需在你的文章的头部添加上<code>donate: true</code>字段，<code>article.ejs</code>中需改为如下所示：</li>
+</ul>
+<figure class="highlight mojolicious"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="comment">&lt;!-- 添加打赏功能 --&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">%</span></span><span class="perl"> <span class="keyword">if</span> (page.donate)&#123; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">%</span></span><span class="perl"> <span class="keyword">if</span> (!<span class="keyword">index</span> &amp;&amp; theme.donate)&#123; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">%</span></span><span class="perl">- partial(<span class="string">'donate'</span>) </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">%</span></span><span class="perl"> &#125; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">%</span></span><span class="perl"> &#125;</span><span class="xml"><span class="tag">%&gt;</span></span></div></pre></td></tr></table></figure>
 <h3 id="step-4：-编写配置文件"><a href="#step-4：-编写配置文件" class="headerlink" title="step 4： 编写配置文件"></a>step 4： 编写配置文件</h3><p>我们可以在主题的<code>_config.yml</code>文件中关闭和打开打赏功能，还可以自定义设置打赏文案。例如：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#是否开启打赏功能</span></div><div class="line"><span class="attr">donate:</span> <span class="literal">true</span></div><div class="line"><span class="comment">#打赏文案</span></div><div class="line"><span class="attr">donate_message:</span> <span class="string">欣赏此文？求鼓励，求支持！</span></div></pre></td></tr></table></figure>
 <p>大功告成，这样一个简单的打赏功能就实现了！<br>当然，你如果觉得麻烦，但是又想实现打赏功能，那么可以尝试下<em><a href="http://www.dashangcloud.com/" target="_blank" rel="external">云打赏</a></em>，据说一行代码集成打赏功能。</p>
@@ -376,10 +384,10 @@
         <p><span>本文标题:</span><a href="/2016/03/21/hexo-blog-to-ad-a-reward-function.html">Hexo博客添加打赏功能</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">一月筠</a></p>
         <p><span>发布时间:</span>2016-03-21, 18:00:00</p>
-        <p><span>最后更新:</span>2017-03-30, 18:14:59</p>
+        <p><span>最后更新:</span>2017-03-31, 13:34:28</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/03/21/hexo-blog-to-ad-a-reward-function.html" title="Hexo博客添加打赏功能">http://blog.guoyanjun.top/2016/03/21/hexo-blog-to-ad-a-reward-function.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.guoyanjun.top/2016/03/21/hexo-blog-to-ad-a-reward-function.html　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/03/21/hexo-blog-to-ad-a-reward-function.html" title="Hexo博客添加打赏功能">http://guoyanjun.top/blog/2016/03/21/hexo-blog-to-ad-a-reward-function.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://guoyanjun.top/blog/2016/03/21/hexo-blog-to-ad-a-reward-function.html　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -549,7 +557,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/07/the-most-complete-set-of-ios-development-tols.html">最全iOS开发工具集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/06/mac-instalation-nodejs-(graphic-detail-steps)-and-sublimetext-run-javascript-console.html">Mac 安装 nodejs （图文详细步骤）及SublimeText运行JavaScript控制台</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/27/ios-modular-programing-framework-behive.html">iOS 模块化编程框架 BeeHive</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/20/analysis-of-ios-loading-single-image-leading-to-colapse.html">iOS加载单张图片导致崩溃的分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/16/ios-silent-way-to-send-mail-(skpsmtpmesage).html">iOS-静默方式发送邮件(SKPSMTPMessage)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/01/on-the-site-to-use-plug-ins.html">关于本站使用到的插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/21/hexo-blog-to-ad-a-reward-function.html">Hexo博客添加打赏功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/hexo-blog-environment-to-build-for-mac.html">Hexo博客环境搭建for Mac</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/24/hexo-comands-and-some-usage.html">Hexo命令和一些使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/03/tactic.html">诀</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/16/naging.html">碎碎念</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/05/25/s-ink.html">墨筱雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/12/14/met-again.html">又相见</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/15/set-up-gh-pages-branch-on-github.html">在github上建立gh-pages分支</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/07/the-most-complete-set-of-ios-development-tols.html">最全iOS开发工具集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/06/mac-instalation-nodejs-(graphic-detail-steps)-and-sublimetext-run-javascript-console.html">Mac 安装 nodejs （图文详细步骤）及SublimeText运行JavaScript控制台</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/27/ios-modular-programing-framework-behive.html">iOS 模块化编程框架 BeeHive</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/20/analysis-of-ios-loading-single-image-leading-to-colapse.html">iOS加载单张图片导致崩溃的分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/16/ios-silent-way-to-send-mail-(skpsmtpmesage).html">iOS-静默方式发送邮件(SKPSMTPMessage)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/01/on-the-site-to-use-plug-ins.html">关于本站使用到的插件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/21/hexo-blog-to-ad-a-reward-function.html">Hexo博客添加打赏功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/25/hexo-blog-environment-to-build-for-mac.html">Hexo博客环境搭建for Mac</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/24/hexo-comands-and-some-usage.html">Hexo命令和一些使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/03/tactic.html">诀</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/16/naging.html">碎碎念</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/05/25/s-ink.html">墨筱雨</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/12/14/met-again.html">又相见</a></li></ul>
 
 
 
