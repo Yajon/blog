@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="郭艳军的那些事儿">
 <meta property="og:description" content="文/一月筠 -- 转载请注明 --
 如果你想了解：如何在 GitHub Pages 上传自己写的网页作为首页，Hexo 博客作为其子页？即自己写的页面作为http://user.github.io的页面，将hexo博客放在http://user.github.io/blog上，怎么做？那就接着看…">
-<meta property="og:updated_time" content="2017-03-31T10:13:24.000Z">
+<meta property="og:updated_time" content="2017-04-01T10:06:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo自定义页面做首页">
 <meta name="twitter:description" content="文/一月筠 -- 转载请注明 --
@@ -92,6 +92,22 @@
 
 
 
+
+<!--添加百度自动推送代码-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 
 </head>
 <body>
@@ -345,7 +361,7 @@
 </ul>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本教程的前提已经用hexo将博客搭建在<code>yourname.github.io</code>的repository上，接下来跟随博主开始愉快的旅程吧。</p>
 <blockquote>
-<p>说一下我走过的弯路吧，想想真是曲折蜿蜒。音乐music，走起！我看见一座座山，一座座。。。那就是青藏高原。。。好了，言归正传。<br>之前我的想法是通过子域名访问，即主域名(<a href="yoursite.com">yoursite.com</a>)和子域名(<a href="xxx.yoursite.com">blog.yoursite.com</a>)都解析到你的GitHub Pages<a href="yourname.github.io">yourname.github.io</a>。然后再自定义主页，比如<code>index.html</code>。我的博客页面是存放在<code>yourname.github.io</code>的<code>repo</code>中，自定义的主页放在一个叫做<code>Home-Page</code>的<code>repo</code>中。在<code>yourname.github.io</code>和<code>Home-Page</code>这两个仓库中分别在根目录放置了<code>CNAME</code>文件，文件的内容分别为<code>blog.yoursite.com</code>和<code>yoursite.com</code>。其实这样也是可以实现的，只是觉得不太美观，所以就改成额现在的布局。</p>
+<p>说一下我走过的弯路吧，想想真是曲折蜿蜒。音乐music，走起！我看见一座座山，一座座。。。那就是青藏高原。。。好了，言归正传。<br>之前我的想法是通过子域名访问，即主域名(<a href="yoursite.com">yoursite.com</a>)和子域名(<a href="xxx.yoursite.com">blog.yoursite.com</a>)都解析到你的GitHub Pages<a href="yourname.github.io">yourname.github.io</a>。然后再自定义主页，比如<code>index.html</code>。我的博客页面是存放在<code>yourname.github.io</code>的<code>repo</code>中，自定义的主页放在一个叫做<code>Home-Page</code>的<code>repo</code>中。在<code>yourname.github.io</code>和<code>Home-Page</code>这两个仓库中分别在根目录放置了<code>CNAME</code>文件，文件的内容分别为<code>blog.yoursite.com</code>和<code>yoursite.com</code>。其实这样也是可以实现的，只是觉得太繁琐，索性就改成了现在的布局。</p>
 </blockquote>
 <h2 id="新建一个repository"><a href="#新建一个repository" class="headerlink" title="新建一个repository"></a>新建一个repository</h2><p>名字可以随意，我的是<code>blog</code><br>那么现在你有了一个空的repository然后本地clone下按照提示初始化一个master分支，并且开启<code>github pages</code>。<br><strong>注意，这里的repo的目录下是不存在<code>CNAME</code>文件的</strong></p>
 <h2 id="修改hexo配置文件-config-yml"><a href="#修改hexo配置文件-config-yml" class="headerlink" title="修改hexo配置文件_config.yml"></a>修改hexo配置文件<code>_config.yml</code></h2><p>找到url下的root 修改成/你起的名字/ (博主这里就是/blog/)url也要改！！！博主一开始没发现。。。</p>
@@ -359,7 +375,7 @@
 <p>像本站用的XXX主题改了以后左边栏会出现问题，这时候需要到<code>left-col.ejs</code>改一下<br>我是这样解决的</p>
 <figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"switch-part switch-part1"</span>&gt;</span></span></div><div class="line">                   <span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"header-menu"</span>&gt;</span></div><div class="line">                       <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">                       <span class="tag">&lt;<span class="name">%</span></span><span class="ruby"> <span class="keyword">for</span> (var i <span class="keyword">in</span> theme.menu)&#123; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line">                       <span class="comment">&lt;!-- 修改这里 --&gt;</span></div><div class="line">                           <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%-</span></span><span class="ruby"> url_for(theme.menu[i]) </span><span class="xml"><span class="tag"><span class="string">%&gt;"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span></span></span><span class="ruby"> i </span><span class="xml"><span class="tag">%&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></div><div class="line">                       <span class="tag">&lt;<span class="name">%</span></span><span class="ruby">&#125;</span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line">                       <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">                   <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></div><div class="line">                   <span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"header-nav"</span>&gt;</span></div><div class="line">                       <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"social"</span>&gt;</span></div><div class="line">                           <span class="tag">&lt;<span class="name">%</span></span><span class="ruby"> <span class="keyword">for</span> (var i <span class="keyword">in</span> theme.subnav)&#123; </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line">                               <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"fa &lt;%=</span></span><span class="ruby"> i </span><span class="xml"><span class="tag"><span class="string">%&gt;"</span> <span class="attr">href</span>=<span class="string">"&lt;%-</span></span></span><span class="ruby"> url_for(theme.subnav[i]) </span><span class="xml"><span class="tag"><span class="string">%&gt;"</span> <span class="attr">title</span>=<span class="string">"&lt;%=</span></span></span><span class="ruby"> i </span><span class="xml"><span class="tag"><span class="string">%&gt;"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span> </span></div><div class="line">                           <span class="tag">&lt;<span class="name">%</span></span><span class="ruby">&#125;</span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line">                       <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">                   <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></div><div class="line">               <span class="tag">&lt;/<span class="name">section</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
-<li>这里附上一个不催的主页效果。<br><a href="https://github.com/jacklightChen/jacklightChen.github.io" target="_blank" rel="external">https://github.com/jacklightChen/jacklightChen.github.io</a></li>
+<li>这里附上一个不错的主页效果。<br><a href="https://github.com/jacklightChen/jacklightChen.github.io" target="_blank" rel="external">https://github.com/jacklightChen/jacklightChen.github.io</a></li>
 <li>以下附上我觉得不错的参考资料。</li>
 </ul>
 <p><a href="https://link.zhihu.com/?target=http%3A//www.cnblogs.com/yuanzm/p/3945814.html" target="_blank" rel="external">如何将你的github仓库部署到github pages</a>（repo里建gh-pages分支，上传hexo到blog的gh-pages里面）</p>
@@ -380,7 +396,7 @@
         <p><span>本文标题:</span><a href="/blog/2016/10/10/hexo-custom-page-home-page.html">Hexo自定义页面做首页</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">一月筠</a></p>
         <p><span>发布时间:</span>2016-10-10, 18:00:00</p>
-        <p><span>最后更新:</span>2017-03-31, 18:13:24</p>
+        <p><span>最后更新:</span>2017-04-01, 18:06:51</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/blog/2016/10/10/hexo-custom-page-home-page.html" title="Hexo自定义页面做首页">http://guoyanjun.top/blog/2016/10/10/hexo-custom-page-home-page.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://guoyanjun.top/blog/2016/10/10/hexo-custom-page-home-page.html　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -577,18 +593,18 @@
 
 <!--添加百度自动推送代码-->
 <script>
-	(function(){
-	 var bp = document.createElement('script');
-	 var curProtocol = window.location.protocol.split(':')[0];
-	 if (curProtocol === 'https') {
-	     bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-	 }
-	 else {
-	     bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-	 }
-	 var s = document.getElementsByTagName("script")[0];
-	 s.parentNode.insertBefore(bp, s);
-	})();
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
 </script></div>
       <footer id="footer">
     <div class="outer">
@@ -601,9 +617,14 @@
             <!--<div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>-->
+            <!-- 添加底部的Power by Hexo -->
             <div class="footer-right">
                 Powered by <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a> <i class="fa fa-heart animated infinite pulse"></i>
             </div>
+            <!-- 添加QQ推广，可直接聊天 -->
+            <!--<div class="footer-right">
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2773953617&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2773953617:46" alt="点击这里给我发消息" title="点击这里给我发消息" /></a>
+    		  </div>-->
         </div>
         
             <div class="visit">
