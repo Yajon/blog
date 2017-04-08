@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="一月筠" />
+
+
+
+<meta name="description" content="文/一月筠 -- 转载请注明 --
+本文主要分享GitHub上的一些开源项目，包括常用的辅助软件、工具、插件…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitHub上的iOS开源项目及工具插件">
+<meta property="og:url" content="http://guoyanjun.top/2016/01/04/github-on-the-ios-open-source-projects-and-tols-plug-ins.html">
+<meta property="og:site_name" content="郭艳军的那些事儿">
+<meta property="og:description" content="文/一月筠 -- 转载请注明 --
+本文主要分享GitHub上的一些开源项目，包括常用的辅助软件、工具、插件…">
+<meta property="og:updated_time" content="2017-04-08T14:40:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GitHub上的iOS开源项目及工具插件">
+<meta name="twitter:description" content="文/一月筠 -- 转载请注明 --
+本文主要分享GitHub上的一些开源项目，包括常用的辅助软件、工具、插件…">
+
+<link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="郭艳军的那些事儿" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/blog//favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/blog/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>GitHub上的iOS开源项目及工具插件 | 郭艳军的那些事儿</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+<!--添加百度自动推送代码-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = /blog/; </script>
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/blog/" class="profilepic">
+            <img src="/blog//img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/blog/">一月筠</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">๑۩ﺴ ﺴ۩๑ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动...</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/blog/index/">主页</a></li>
+                        
+                            <li><a href="/blog/essay/">随笔</a></li>
+                        
+                            <li><a href="/blog/archives/">所有文章</a></li>
+                        
+                            <li><a href="/blog/tags/">标签云</a></li>
+                        
+                            <li><a href="/blog/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="http://weibo.com/1778140743" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/TinyJay" title="GitHub"></a>
+                            
+                                <a class="fa 简书" href="http://www.jianshu.com/u/b13ee6afc1e0" title="简书"></a>
+                            
+                                <a class="fa RSS" href="/blog/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 网易云音乐" href="http://music.163.com/#/user/home?id=284001567" title="网易云音乐"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/poetry/">poetry</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://github.com">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.cocoachina.com">cocoachina</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.code4app.com">code4app</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.fontawesome.com.cn">fontawesome</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://jsfiddle.net">jsfiddle</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sm.ms">SM.MS</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">☘ 告诉你个秘密，不要告诉别人哟☘(*^__^*)☘这儿不只有博客、诗文、随笔、相册...还有你不知道的关于他的那些事儿...</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">一月筠</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/blog/" class="profilepic">
+                <img src="/blog//img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/blog/" title="回到主页">一月筠</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">๑۩ﺴ ﺴ۩๑ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动...</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/blog/index/">主页</a></li>
+                
+                    <li><a href="/blog/essay/">随笔</a></li>
+                
+                    <li><a href="/blog/archives/">所有文章</a></li>
+                
+                    <li><a href="/blog/tags/">标签云</a></li>
+                
+                    <li><a href="/blog/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1778140743" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/TinyJay" title="GitHub"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/u/b13ee6afc1e0" title="简书"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/blog/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 网易云音乐" target="_blank" href="http://music.163.com/#/user/home?id=284001567" title="网易云音乐"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-github-on-the-ios-open-source-projects-and-tols-plug-ins" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2016/01/04/github-on-the-ios-open-source-projects-and-tols-plug-ins.html" class="article-date">
+      <time datetime="2016-01-04T12:30:00.000Z" itemprop="datePublished">2016-01-04</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      GitHub上的iOS开源项目及工具插件
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/术业专攻/">术业专攻</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/iOS/">iOS</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><ul>
+<li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
+<li>本文主要分享GitHub上的一些开源项目，包括常用的辅助软件、工具、插件…<a id="more"></a>
+</li>
+</ul>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#开源项目">开源项目</a></li>
+<li><a href="#辅助软件">辅助软件</a></li>
+<li><a href="#第三方插件">第三方插件</a></li>
+</ul>
+<h2 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a><a name="开源项目">开源项目</a></h2><p><strong>1. Coding iOS 客户端</strong><br>Coding官方客户端. 笔者强烈推荐的值得学习的完整APP.<br>GitHub - Coding/Coding-iOS: Coding iOS 客户端源代码<br><a href="https://github.com/Coding/Coding-iOS" target="_blank" rel="external">https://github.com/Coding/Coding-iOS</a><br><strong>2. OSCHINA 的 iPhone 客户端</strong><br>开源中国的iPhone客户端源码<br>GitHub - oschina/iphone-app<br><a href="https://git.oschina.net/oschina/iphone-app" target="_blank" rel="external">https://git.oschina.net/oschina/iphone-app</a><br><strong>3. Git@OSC</strong><br>Git@OSC iPhone 客户端，方便用户查看Git@OSC的项目以及简单的操作issue等<br>GitHub - oschina / git-osc-iphone<br><a href="https://github.com/dreamsxin/git-osc-iphone" target="_blank" rel="external">https://github.com/dreamsxin/git-osc-iphone</a><br><strong>4. Firefox for iOS</strong><br>GitHub - mozilla/firefox-ios: Firefox for iOS<br><a href="https://github.com/mozilla/firefox-ios" target="_blank" rel="external">https://github.com/mozilla/firefox-ios</a><br><strong>5. zulip-ios</strong><br>Dropbox收购公司内部社交服务商Zulip,然后全部开源，这是iOS App<br>GitHub - zulip/zulip-ios: Zulip iOS app<br><a href="https://github.com/zulip/zulip-ios" target="_blank" rel="external">https://github.com/zulip/zulip-ios</a><br><strong>6. iOSSF</strong><br>SegmentFault官方App<br>GitHub - gaosboy/iOSSF: SegmentFault官方App<br><a href="https://github.com/gaosboy/iOSSF" target="_blank" rel="external">https://github.com/gaosboy/iOSSF</a><br><strong>7. iReddit</strong><br>Reddit iPhone客户端<br>GitHub - reddit/iReddit: The iReddit iPhone app<br><a href="https://github.com/reddit/iReddit" target="_blank" rel="external">https://github.com/reddit/iReddit</a><br><strong>8. Monkey</strong><br>GitHub第三方iOS客户端<br>GitHub - coderyi/Monkey: Monkey is a GitHub third party client for iOS,to show the rank of coders and repositories.<br><a href="https://github.com/coderyi/Monkey" target="_blank" rel="external">https://github.com/coderyi/Monkey</a><br><strong>9. Watch</strong><br>Dribbble第三方客户端<br>GitHub - tuesda/Watch: A project which demonstrate how to develop a custom client on android for dribbble.com<br><a href="https://github.com/tuesda/Watch" target="_blank" rel="external">https://github.com/tuesda/Watch</a><br><strong>10. Voice2Note</strong><br>懒人笔记iOS客户端<br>GitHub - liaojinxing/Voice2Note: 懒人笔记iOS客户端<br><a href="https://github.com/liaojinxing/Voice2Note" target="_blank" rel="external">https://github.com/liaojinxing/Voice2Note</a><br><strong>11. RSSRead</strong><br>“已阅”（iOS上开源RSS新闻阅读器）<br>GitHub - ming1016/RSSRead: “已阅”（iOS上开源RSS新闻阅读器），有兴趣？那就Pull Requests吧<br><a href="https://github.com/ming1016/RSSRead" target="_blank" rel="external">https://github.com/ming1016/RSSRead</a><br><strong>12. BeeFancy</strong><br>BeeFancy仿Fancy官方APP的WIREFRAME，基于BeeFramework<br>GitHub - BeeFramework/BeeFancy: 仿Fancy官方APP的WIREFRAME，基于BeeFramework<br><a href="https://github.com/BeeFramework/BeeFancy" target="_blank" rel="external">https://github.com/BeeFramework/BeeFancy</a><br><strong>13. SXNews</strong><br>模仿网易新闻做的精仿网易新闻<br>GitHub - dsxNiubility/SXNews: High imitation Neteasy News. (include list,detail,photoset,weather,feedback)<br><a href="https://github.com/dsxNiubility/SXNews" target="_blank" rel="external">https://github.com/dsxNiubility/SXNews</a><br><strong>14. Doppio</strong><br>寻找最近的星巴克<br>GitHub - chroman/Doppio: An open source iOS app to find the nearest Starbucks store using NSURLSession, AFNetworking 2.0, Mantle and Starbucks private API.<br><a href="https://github.com/chroman/Doppio" target="_blank" rel="external">https://github.com/chroman/Doppio</a><br><strong>15. Anypic</strong><br>类似于Instagram的一款App<br>GitHub - ParsePlatform/Anypic: An open source mobile and web app that lets users share photos similar to Instagram<br><a href="https://github.com/ParsePlatform/Anypic" target="_blank" rel="external">https://github.com/ParsePlatform/Anypic</a><br><strong>16. 豆瓣相册</strong><br>Slowslab iOS应用 豆瓣相册 精选集 开源项目<br>GitHub - TonnyTao/DoubanAlbum: Slowslab iOS应用 豆瓣相册 精选集 开源项目，仅供学习参考<br><a href="https://github.com/TonnyTao/DoubanAlbum" target="_blank" rel="external">https://github.com/TonnyTao/DoubanAlbum</a><br><strong>17. ChatSecure-iOS</strong><br>Objective-C写的XMPP聊天应用<br>GitHub - ChatSecure/ChatSecure-iOS: ChatSecure is a free and open source encrypted chat client for iPhone and Android that supports OTR encryption over XMPP.<br><a href="https://github.com/ChatSecure/ChatSecure-iOS" target="_blank" rel="external">https://github.com/ChatSecure/ChatSecure-iOS</a><br><strong>18. NotificationChat</strong><br>Objective-C写的完整的聊天应用<br>GitHub - relatedcode/EncryptedChat: This is a full native iPhone app to create realtime, text based group or private chat with Parse and Firebase.<br><a href="https://github.com/relatedcode/EncryptedChat" target="_blank" rel="external">https://github.com/relatedcode/EncryptedChat</a><br><strong>19. FakeZhihuDaily</strong><br>仿知乎日报iOS客户端<br>GitHub - gnou/FakeZhihuDaily: 仿知乎日报iOS客户端<br><a href="https://github.com/gnou/FakeZhihuDaily" target="_blank" rel="external">https://github.com/gnou/FakeZhihuDaily</a><br><strong>20. ruby-china-for-ios</strong><br>RubyChina官方客户端<br>GitHub - ruby-china/ruby-china-for-ios: Ruby China client for iOS<br><a href="https://github.com/ruby-china/ruby-china-for-ios" target="_blank" rel="external">https://github.com/ruby-china/ruby-china-for-ios</a><br><strong>21. Meizi</strong><br>豆瓣妹子图iOS客户端<br>GitHub - Sunnyyoung/Meizi: 豆瓣妹子图iOS客户端<br><a href="https://github.com/Sunnyyoung/Meizi" target="_blank" rel="external">https://github.com/Sunnyyoung/Meizi</a><br><strong>22. PlainReader</strong><br>一款 iOS(iPhone + iPad) 新闻类客户端，内容抓取自<a href="http://cnbeta.com/" target="_blank" rel="external">http://cnBeta.com</a><br>PlainReader/PlainReader at master · guojiubo/PlainReader · GitHub<br>GitHub - guojiubo/PlainReader：一款 iOS(iPhone + iPad) 新闻类客户端<br><a href="https://github.com/guojiubo/PlainReader" target="_blank" rel="external">https://github.com/guojiubo/PlainReader</a><br><strong>23. iOS-2048</strong><br>用Objective-C实现的2048游戏<br>GitHub - austinzheng/iOS-2048: iOS drop-in library presenting a 2048-style game<br><a href="https://github.com/austinzheng/iOS-2048" target="_blank" rel="external">https://github.com/austinzheng/iOS-2048</a><br><strong>24. ECMobile_iOS</strong><br>基于ECShop的手机商城客户端<br>GitHub - GeekZooStudio/ECMobile_iOS: 基于ECShop的手机商城客户端<br><a href="https://github.com/GeekZooStudio/ECMobile_iOS" target="_blank" rel="external">https://github.com/GeekZooStudio/ECMobile_iOS</a><br><strong>25. wikipedia-ios</strong><br>维基百科官方App, 已上架<br>GitHub - wikimedia/wikipedia-ios: The official Wikipedia iOS app.<br><a href="https://github.com/wikimedia/wikipedia-ios" target="_blank" rel="external">https://github.com/wikimedia/wikipedia-ios</a><br><strong>26. Sol</strong><br>漂亮的扁平风格的天气App<br>GitHub - comyarzaheri/Sol: Sol° beautifully displays weather information so you can plan your day accordingly. Check the weather in your current location or any city around the world. Implemented in Objective-C.<br><a href="https://github.com/comyarzaheri/Sol" target="_blank" rel="external">https://github.com/comyarzaheri/Sol</a><br><strong>27. v2ex</strong><br>v2ex第三方iOS客户端<br>GitHub - v2ex/v2ex-iOS at master · singro/v2ex · GitHub<br><a href="https://github.com/v2ex/v2ex-iOS" target="_blank" rel="external">https://github.com/v2ex/v2ex-iOS</a><br><strong>28. MyOne-iOS</strong><br>用OC写的《一个》 iOS 客户端<br>GitHub - meilbn/MyOne-iOS: 我的《一个》 iOS 客户端（OC）<br><a href="https://github.com/meilbn/MyOne-iOS" target="_blank" rel="external">https://github.com/meilbn/MyOne-iOS</a><br><strong>29. WNXHuntForCity</strong><br>高仿城觅2.0 by-objective-c<br>GitHub - ZhongTaoTian/WNXHuntForCity: 高仿城觅by-objective-c<br><a href="https://github.com/ZhongTaoTian/WNXHuntForCity" target="_blank" rel="external">https://github.com/ZhongTaoTian/WNXHuntForCity</a><br><strong>30. viewfinder</strong><br>移动支付公司 Square 将去年收购的照片应用 Viewfinder 开源了，包含服务端、iOS 和 Android 应用代码<br>GitHub - viewfinderco/viewfinder: Viewfinder client and server code<br><a href="https://github.com/viewfinderco/viewfinder" target="_blank" rel="external">https://github.com/viewfinderco/viewfinder</a><br><strong>31. breadwallet</strong><br>breadwallet iOS bitcoin wallet<br>GitHub - voisine/breadwallet: breadwallet<br><a href="https://github.com/voisine/breadwallet" target="_blank" rel="external">https://github.com/voisine/breadwallet</a><br><strong>32. novel-design</strong><br>品趣iOS客户端<br>GitHub - ltebean/novel-design: PinQu ios client<br><a href="https://github.com/ltebean/novel-design" target="_blank" rel="external">https://github.com/ltebean/novel-design</a><br><strong>33. WWDC-2014</strong><br>WWDC客户端<br>GitHub - indragiek/WWDC-2014: Scholarship submission for WWDC 2014<br><a href="https://github.com/indragiek/WWDC-2014" target="_blank" rel="external">https://github.com/indragiek/WWDC-2014</a><br><strong>34. GreatReader</strong><br>GreatReader PDF阅读客户端<br>GitHub - semweb/GreatReader: A “great” PDF reader for iOS. Available on the App Store.<br><a href="https://github.com/semweb/GreatReader" target="_blank" rel="external">https://github.com/semweb/GreatReader</a><br><strong>35. Tropos</strong><br>天气客户端<br>GitHub - thoughtbot/Tropos: Weather and Forecasts for Humans<br><a href="https://github.com/thoughtbot/Tropos" target="_blank" rel="external">https://github.com/thoughtbot/Tropos</a><br><strong>36. manong-reading</strong><br>《猿已阅》码农周刊iOS客户端<br>GitHub - icepy/manong-reading: 《猿已阅》码农周刊iOS客户端<br><a href="https://github.com/icepy/manong-reading" target="_blank" rel="external">https://github.com/icepy/manong-reading</a><br><strong>37. YoCelsius</strong><br>一款天气预报的应用<br>GitHub - YouXianMing/YoCelsius: 一款天气预报的应用（已在AppStore上线）<br><a href="https://github.com/YouXianMing/YoCelsius" target="_blank" rel="external">https://github.com/YouXianMing/YoCelsius</a><br><strong>38. 密记iOS版</strong><br>本应用主要功能是简单笔记<br>GitHub - iHTCboy/SecurityNote: 密记iOS版，第一个开发的完整iOS应用，本应用主要功能是简单笔记。The application of the main function is a simple notes.<br><a href="https://github.com/iHTCboy/SecurityNote" target="_blank" rel="external">https://github.com/iHTCboy/SecurityNote</a><br><strong>39. phphub-ios</strong><br>PHPHub for iOS is the universal iPhone and iPad application for PHPHub PHPHub - PHP &amp; Laravel的中文社区<br>GitHub - Aufree/phphub-ios: PHPHub for iOS is the universal iPhone and iPad application for PHPHub<br><a href="https://github.com/Aufree/phphub-ios" target="_blank" rel="external">https://github.com/Aufree/phphub-ios</a><br><strong>40. Brushes</strong><br>绘图应用. Painting app for the iPhone and iPad.<br>GitHub - sprang/Brushes: Painting app for the iPhone and iPad.<br><a href="https://github.com/sprang/Brushes" target="_blank" rel="external">https://github.com/sprang/Brushes</a><br><strong>41. Inkpad</strong><br>绘图应用. Inkpad is a vector illustration app designed from scratch for the iPad.<br>GitHub - sprang/Inkpad: Vector illustration app for the iPad.<br><a href="https://github.com/sprang/Inkpad" target="_blank" rel="external">https://github.com/sprang/Inkpad</a><br><strong>42. wh-app-ios</strong><br>美国白宫（WhiteHouse）的官方app.<br>GitHub - WhiteHouse/wh-app-ios<br><a href="https://github.com/WhiteHouse/wh-app-ios" target="_blank" rel="external">https://github.com/WhiteHouse/wh-app-ios</a><br><strong>43. cheddar-ios</strong><br>一款日程管理软件.<br>GitHub - nothingmagical/cheddar-ios: Cheddar for iOS<br><a href="https://github.com/nothingmagical/cheddar-ios" target="_blank" rel="external">https://github.com/nothingmagical/cheddar-ios</a><br><strong>44. newsyc</strong><br>Hacker News的iPhone客户端<br>GitHub - Xuzz/newsyc: An iPhone Hacker News client.<br><a href="https://github.com/Xuzz/newsyc" target="_blank" rel="external">https://github.com/Xuzz/newsyc</a><br><strong>45. WordPress for iOS</strong><br>WordPress iOS官方客户端. 笔者强烈推荐的开源项目.<br>GitHub - wordpress-mobile/WordPress-iOS: WordPress for iOS<br><a href="https://github.com/wordpress-mobile/WordPress-iOS" target="_blank" rel="external">https://github.com/wordpress-mobile/WordPress-iOS</a><br><strong>46. WikiHow</strong><br>Wikihow–WikiHow的官方app.<br>GitHub - tderouin/wikiHow-iPhone-Application: The code for the wikihow’s iphone app<br><a href="https://github.com/tderouin/wikiHow-iPhone-Application" target="_blank" rel="external">https://github.com/tderouin/wikiHow-iPhone-Application</a><br><strong>47. Dollar Bets</strong><br>记录你和朋友打赌的内容.<br>GitHub - Rich86man/Dollar-Bets: An iPhone app to keep track of your Dollar Bets<br><a href="https://github.com/Rich86man/Dollar-Bets" target="_blank" rel="external">https://github.com/Rich86man/Dollar-Bets</a><br><strong>48. Dozuki</strong><br>iFixit网站的互动修理手册<br>GitHub - iFixit/iFixit-iOS: iFixit’s iOS app for iPad, iPhone, and iPod touch<br><a href="https://github.com/iFixit/iFixit-iOS" target="_blank" rel="external">https://github.com/iFixit/iFixit-iOS</a><br><strong>49. Last.fm</strong><br>Last.fm 的客户端，国外很火的私人电台.<br>GitHub - lastfm/lastfm-iphone: The official Last.fm iPhone application<br><a href="https://github.com/lastfm/lastfm-iphone" target="_blank" rel="external">https://github.com/lastfm/lastfm-iphone</a><br><strong>50. ioctocat</strong><br>GitHub第三方客户端.<br>GitHub - dennisreimann/ioctocat: iOctocat v1<br><a href="https://github.com/dennisreimann/ioctocat" target="_blank" rel="external">https://github.com/dennisreimann/ioctocat</a><br><strong>51. iTunesPicker</strong><br>类似AppStore的一个应用<br>GitHub - appcornerit/iTunesPicker: Discover, search and compare world rankings for apps, ibooks, movies, music videos and music from iTunes (and<br>AppStore) in any available country.<br><a href="https://github.com/appcornerit/iTunesPicker" target="_blank" rel="external">https://github.com/appcornerit/iTunesPicker</a><br><strong>52. TeamTalk</strong><br>蘑菇街TeamTalk. 开源IM. 笔者强烈推荐.<br>GitHub - mogujie/TeamTalk: TeamTalk is a solution for enterprise IM<br><a href="https://github.com/mogujie/TeamTalk" target="_blank" rel="external">https://github.com/mogujie/TeamTalk</a><br><strong>53. shadowsocks-iOS</strong><br>翻墙工具Shadowsocks. Github目前代码已经被移除, 不过2.6.3的还是保留着.<br>GitHub - shadowsocks/shadowsocks-iOS at 2.6.3: Removed according to regulations.<br><strong>54. MessageDisplayKit</strong><br>一个类似微信App的IM应用，拥有发送文字、图片、语音、视频、地理位置消息，管理本地通信录、分享朋友 圈、漂流交友、摇一摇和更多有趣的功能。笔者推荐的学习IM的好东西.<br>GitHub - xhzengAIB/MessageDisplayKit: An IM App like WeChat App has to send text, pictures, audio, video, location messaging, managing local address book, share a circle of friends, drifting friends, shake a fun and more interesting features.<br><a href="https://github.com/xhzengAIB/MessageDisplayKit" target="_blank" rel="external">https://github.com/xhzengAIB/MessageDisplayKit</a><br><strong>55. NewsBlur</strong><br>个人新闻阅读器.<br>NewsBlur/clients/ios at master · samuelclay/NewsBlur · GitHub<br><a href="https://github.com/samuelclay/NewsBlur" target="_blank" rel="external">https://github.com/samuelclay/NewsBlur</a><br><strong>56. VLC for iOS</strong><br>VLC媒体播放器. 官方页面提供源代码下载.<br><a href="http://www.videolan.org/vlc/download-ios.html" target="_blank" rel="external">http://www.videolan.org/vlc/download-ios.html</a><br><strong>57. MobileProject</strong><br>一个基于MVC的项目框架，并集成一些常用的功能(不断更新中)<br><a href="https://github.com/wujunyang/MobileProject" target="_blank" rel="external">https://github.com/wujunyang/MobileProject</a><br><strong>58. meituan</strong><br>高仿美团iOS版，版本号5.7<br><a href="https://github.com/lookingstars/meituan" target="_blank" rel="external">https://github.com/lookingstars/meituan</a><br><strong>59. SXNews</strong><br>模仿网易新闻做的新闻软件<br><a href="https://github.com/dsxNiubility/SXNews" target="_blank" rel="external">https://github.com/dsxNiubility/SXNews</a><br><strong>60. GSD_WeiXin</strong><br>一个star数超过2000的高仿版微信<br><a href="https://github.com/gsdios/GSD_WeiXin" target="_blank" rel="external">https://github.com/gsdios/GSD_WeiXin</a><br><strong>61. chuanke</strong><br>高仿百度传课iOS版，版本号2.4.1.2。<br>地址：<a href="https://github.com/lookingstars/chuanke" target="_blank" rel="external">https://github.com/lookingstars/chuanke</a><br><strong>62. YiYuanYunGou</strong><br>高仿一元云购IOS应用（高仿自一元云购安卓客户端）<br><a href="https://github.com/JxbSir/YiYuanYunGou" target="_blank" rel="external">https://github.com/JxbSir/YiYuanYunGou</a><br><strong>63. WordPress-iOS</strong><br>WordPress for iOS - Official repository<br>wordpress源代码<br><a href="https://github.com/wordpress-mobile/WordPress-iOS" target="_blank" rel="external">https://github.com/wordpress-mobile/WordPress-iOS</a><br><strong>64. v2ex</strong><br>An iOS client for v2ex.com<br>v2ex源代码（文章类型，若报SVProgressHUD错，则把Podfile中的SVProgressHUD移除）<br><a href="https://github.com/singro/v2ex" target="_blank" rel="external">https://github.com/singro/v2ex</a><br><strong>65. phphub-ios</strong><br>PHPHub for iOS is the universal iPhone and iPad application for PHPHub<br>PHPHub客户端(IOS8.0以上)<br><a href="https://github.com/Aufree/phphub-ios" target="_blank" rel="external">https://github.com/Aufree/phphub-ios</a><br><strong>66. Coding-iOS</strong><br>Coding.net客户端<br><a href="https://coding.net/u/coding/p/Coding-iOS/git" target="_blank" rel="external">https://coding.net/u/coding/p/Coding-iOS/git</a><br><strong>67. LazyLoad</strong><br>一个优化UITableView中Cell加载图片的实例<br><a href="https://github.com/allenhsu/UIScrollView-Samples/tree/master/LazyLoad" target="_blank" rel="external">https://github.com/allenhsu/UIScrollView-Samples/tree/master/LazyLoad</a><br><strong>68. open-source-ios-apps</strong><br>开源的IOS代码集合<br><a href="https://github.com/dkhamsing/open-source-ios-apps" target="_blank" rel="external">https://github.com/dkhamsing/open-source-ios-apps</a></p>
+<h2 id="辅助软件"><a href="#辅助软件" class="headerlink" title="辅助软件"></a><a name="辅助软件">辅助软件</a></h2><p>1、XCODE文档注解插件VVDocumenter<br>地址：<a href="https://github.com/onevcat/VVDocumenter-Xcode" target="_blank" rel="external">https://github.com/onevcat/VVDocumenter-Xcode</a><br>2、将JSON格式化输出为模型的属性<br>地址：<a href="https://github.com/EnjoySR/ESJsonFormat-Xcode" target="_blank" rel="external">https://github.com/EnjoySR/ESJsonFormat-Xcode</a><br>3、图片提示插件<br>地址：<a href="https://github.com/ksuther/KSImageNamed-Xcode" target="_blank" rel="external">https://github.com/ksuther/KSImageNamed-Xcode</a><br>4、图片转换插件<br>地址：<a href="https://github.com/rickytan/RTImageAssets" target="_blank" rel="external">https://github.com/rickytan/RTImageAssets</a><br>5、测试模拟苹果通知<br>地址：<a href="https://github.com/KnuffApp/Knuff" target="_blank" rel="external">https://github.com/KnuffApp/Knuff</a><br>6、HOStringSense可以在弹出框写NSString，所见及所得<br>地址：<a href="https://github.com/holtwick/HOStringSense-for-Xcode" target="_blank" rel="external">https://github.com/holtwick/HOStringSense-for-Xcode</a><br>7、cocoapods-xcode-plugin  pod相关的操作可以在xcode菜单进行<br>地址：<a href="https://github.com/kattrali/cocoapods-xcode-plugin" target="_blank" rel="external">https://github.com/kattrali/cocoapods-xcode-plugin</a><br>8、switch枚举的时候会自动生成代码<br>地址：<a href="https://github.com/stefanceriu/SCXcodeSwitchExpander" target="_blank" rel="external">https://github.com/stefanceriu/SCXcodeSwitchExpander</a><br>9、git中关于各个语言的gitignore<br>地址：<a href="https://github.com/github/gitignore" target="_blank" rel="external">https://github.com/github/gitignore</a><br>10、FLEX（Flipboard Explorer）是Flipboard官方发布的一组专门用于iOS开发的应用内调试工具<br>地址：<a href="https://github.com/Flipboard/FLEX" target="_blank" rel="external">https://github.com/Flipboard/FLEX</a><br>11、ponyDebugger是一个远程调试工具包，通过使用Chrome开发者工具来调试iOS应用的网络流量和数据存储<br>地址：<a href="https://github.com/square/PonyDebugger" target="_blank" rel="external">https://github.com/square/PonyDebugger</a><br>12、OC编码风格规范<br>地址：<a href="https://github.com/NYTimes/objective-c-style-guide" target="_blank" rel="external">https://github.com/NYTimes/objective-c-style-guide</a><br>13、FBMemoryProfiler：Facebook出品的一个实时监测内存使用的库。相比于Xcode自带的Instruments<br>地址：<a href="https://github.com/facebook/FBMemoryProfiler" target="_blank" rel="external">https://github.com/facebook/FBMemoryProfiler</a><br>14、app卡顿问题检测–KMCGeigerCounter(实例可以网上搜索)<br>地址：<a href="https://github.com/kconner/KMCGeigerCounter/" target="_blank" rel="external">https://github.com/kconner/KMCGeigerCounter/</a><br>15、生成类的关系图KSHObjcUML<br>地址：<a href="https://github.com/kimsungwhee/KSHObjcUML" target="_blank" rel="external">https://github.com/kimsungwhee/KSHObjcUML</a><br>16、realm-cocoa实体映射数据库，有自个的数据库（可以替换SQLITE，速度比较快）<br>地址：<a href="https://github.com/realm/realm-cocoa" target="_blank" rel="external">https://github.com/realm/realm-cocoa</a><br>17、创建文档API，可以快速让APP先调用，并行开发<br>地址：<a href="https://apiary.io/" target="_blank" rel="external">https://apiary.io/</a><br>18、直接查看虚拟器上的沙盒路径simpholders<br>地址：<a href="http://www.maczapp.com/simpholders" target="_blank" rel="external">http://www.maczapp.com/simpholders</a><br>19、FastStub实现了类似的功能，能自动解析出某个类头文件，父类，所有protocol里面还没有被实现的方法(ctrl+cmd+k)<br>地址：<a href="https://github.com/music4kid/FastStub-Xcode" target="_blank" rel="external">https://github.com/music4kid/FastStub-Xcode</a></p>
+<h2 id="第三方插件"><a href="#第三方插件" class="headerlink" title="第三方插件"></a><a name="第三方插件">第三方插件</a></h2><p>1、基于响应式编程思想的oc<br>地址：<a href="https://github.com/ReactiveCocoa/ReactiveCocoa" target="_blank" rel="external">https://github.com/ReactiveCocoa/ReactiveCocoa</a><br>2、hud提示框<br>地址：<a href="https://github.com/jdg/MBProgressHUD" target="_blank" rel="external">https://github.com/jdg/MBProgressHUD</a><br>3、XML/HTML解析<br>地址：<a href="https://github.com/topfunky/hpple" target="_blank" rel="external">https://github.com/topfunky/hpple</a><br>4、有文字输入时，能根据键盘是否弹出来调整自身显示内容的位置<br>地址：<a href="https://github.com/michaeltyson/TPKeyboardAvoiding" target="_blank" rel="external">https://github.com/michaeltyson/TPKeyboardAvoiding</a><br>5、状态栏提示框<br>地址：<a href="https://github.com/jaydee3/JDStatusBarNotification" target="_blank" rel="external">https://github.com/jaydee3/JDStatusBarNotification</a><br>6、block工具包。将很多需要用delegate实现的方法整合成了block的形式<br>地址：<a href="https://github.com/zwaldowski/BlocksKit" target="_blank" rel="external">https://github.com/zwaldowski/BlocksKit</a><br>7、图片加载<br>地址：<a href="https://github.com/rs/SDWebImage" target="_blank" rel="external">https://github.com/rs/SDWebImage</a><br>8、正则表达式<br>地址：<a href="https://github.com/wezm/RegexKitLite" target="_blank" rel="external">https://github.com/wezm/RegexKitLite</a><br>9、Masonry代码布局<br>地址：<a href="https://github.com/SnapKit/Masonry" target="_blank" rel="external">https://github.com/SnapKit/Masonry</a><br>10、弹出窗<br>地址：<a href="https://github.com/sberrevoets/SDCAlertView" target="_blank" rel="external">https://github.com/sberrevoets/SDCAlertView</a><br>11、Button的样式<br>地址：<a href="https://github.com/mattlawer/BButton" target="_blank" rel="external">https://github.com/mattlawer/BButton</a><br>12、验证网络连接状态<br>地址：<a href="https://github.com/tonymillion/Reachability" target="_blank" rel="external">https://github.com/tonymillion/Reachability</a><br>13、自动计算表格行高<br>地址：<a href="https://github.com/forkingdog/UITableView-FDTemplateLayoutCell" target="_blank" rel="external">https://github.com/forkingdog/UITableView-FDTemplateLayoutCell</a><br>14、关键帧基础动画框架,如动画效果的启动页<br>地址：<a href="https://github.com/IFTTT/JazzHands" target="_blank" rel="external">https://github.com/IFTTT/JazzHands</a><br>15、iOS快速简单集成国内三大平台分享<br>地址：<a href="https://github.com/xumeng/XMShareModule" target="_blank" rel="external">https://github.com/xumeng/XMShareModule</a><br>16、五项能力值展示的五边形<br>地址：<a href="https://github.com/dsxNiubility/SXFiveScoreShow" target="_blank" rel="external">https://github.com/dsxNiubility/SXFiveScoreShow</a><br>17、自动识别网址号码邮箱和表情的label<br>地址：<a href="https://github.com/molon/MLEmojiLabel" target="_blank" rel="external">https://github.com/molon/MLEmojiLabel</a><br>18、IM对话功能的封装<br>地址：<a href="https://github.com/ZhipingYang/UUChatTableView" target="_blank" rel="external">https://github.com/ZhipingYang/UUChatTableView</a><br>19、字典转模型框架<br>地址：<a href="https://github.com/CoderMJLee/MJExtension" target="_blank" rel="external">https://github.com/CoderMJLee/MJExtension</a><br>20、下拉上拉刷数据<br>地址：<a href="https://github.com/CoderMJLee/MJRefresh" target="_blank" rel="external">https://github.com/CoderMJLee/MJRefresh</a><br>21、表格行左右划动菜单<br>地址：<a href="https://github.com/MortimerGoro/MGSwipeTableCell" target="_blank" rel="external">https://github.com/MortimerGoro/MGSwipeTableCell</a><br>22、图文混搭<br>地址:<a href="https://github.com/zhouande/TLAttributedLabel" target="_blank" rel="external">https://github.com/zhouande/TLAttributedLabel</a><br>23、可以简单展示在UINavigationBar下方，类似Music app的播放列表视图，弹出菜单视图<br>地址：<a href="https://github.com/DrummerB/BFNavigationBarDrawer" target="_blank" rel="external">https://github.com/DrummerB/BFNavigationBarDrawer</a><br>24、比如筛选、模糊、优化、蒙版、调整大小、旋转以及保存等等。同时还提供了一个UIImageView子类从URL异步加载图片，并在下载完毕时展示图片。<br>地址：<a href="https://github.com/Nyx0uf/NYXImagesKit" target="_blank" rel="external">https://github.com/Nyx0uf/NYXImagesKit</a><br>25、底部TabBar<br>地址：<a href="https://github.com/robbdimitrov/RDVTabBarController" target="_blank" rel="external">https://github.com/robbdimitrov/RDVTabBarController</a><br>26、表情面版<br>地址：<a href="https://github.com/ayushgoel/AGEmojiKeyboard" target="_blank" rel="external">https://github.com/ayushgoel/AGEmojiKeyboard</a><br>27、记录框架<br>地址：<a href="https://github.com/CocoaLumberjack/CocoaLumberjack" target="_blank" rel="external">https://github.com/CocoaLumberjack/CocoaLumberjack</a><br>28、IOS与javascript交互<br>地址：<a href="https://github.com/marcuswestin/WebViewJavascriptBridge" target="_blank" rel="external">https://github.com/marcuswestin/WebViewJavascriptBridge</a><br>29、图表统计展示<br>地址：<a href="https://github.com/kevinzhow/PNChart（或https://github.com/danielgindi/ios-charts）" target="_blank" rel="external">https://github.com/kevinzhow/PNChart（或https://github.com/danielgindi/ios-charts）</a><br>30、appStore评分<br>地址：<a href="https://github.com/arashpayan/appirater" target="_blank" rel="external">https://github.com/arashpayan/appirater</a><br>31、iOS-Categories扩展类大全<br>地址：<a href="https://github.com/shaojiankui/IOS-Categories" target="_blank" rel="external">https://github.com/shaojiankui/IOS-Categories</a><br>32、扫描二维码，仿微信效果，带有扫描条<br>地址：<a href="https://github.com/JxbSir/JxbScanQR" target="_blank" rel="external">https://github.com/JxbSir/JxbScanQR</a><br>33、动效弹出视图(弹出窗里面为文字，可以定义弹出的方向，及显示的时间)–AMPopTip<br>地址：<a href="https://github.com/andreamazz/AMPopTip" target="_blank" rel="external">https://github.com/andreamazz/AMPopTip</a><br>34、基于Masonry自动计算行高扩展<br>地址：<a href="https://github.com/632840804/HYBMasonryAutoCellHeight" target="_blank" rel="external">https://github.com/632840804/HYBMasonryAutoCellHeight</a><br>35、模仿新浪微博弹出菜单<br>地址：<a href="https://github.com/wwdc14/HyPopMenuView" target="_blank" rel="external">https://github.com/wwdc14/HyPopMenuView</a><br>36、搜索历史标签<br>地址：<a href="https://github.com/zhiwupei/SearchHistory" target="_blank" rel="external">https://github.com/zhiwupei/SearchHistory</a><br>37、快速集成新手引导的类库<br>地址：<a href="https://github.com/StrongX/XSportLight" target="_blank" rel="external">https://github.com/StrongX/XSportLight</a><br>38、设置页面的封装<br>地址：<a href="https://github.com/renzifeng/ZFSetting" target="_blank" rel="external">https://github.com/renzifeng/ZFSetting</a><br>39、带箭头的弹出视图插件<br>地址：<a href="https://github.com/xiekw2010/DXPopover" target="_blank" rel="external">https://github.com/xiekw2010/DXPopover</a><br>40、下拉菜单插件<br>地址：<a href="https://github.com/dopcn/DOPDropDownMenu/" target="_blank" rel="external">https://github.com/dopcn/DOPDropDownMenu/</a><br>41、表格空白提示插件<br>地址：<a href="https://github.com/dzenbot/DZNEmptyDataSet" target="_blank" rel="external">https://github.com/dzenbot/DZNEmptyDataSet</a><br>42、给任意UIView视图四条边框加上阴影，可以自定义阴影的颜色、粗细程度、透明程度以及位置（上下左右边框）<br>地址：<a href="https://github.com/Seitk/UIView-Shadow-Maker" target="_blank" rel="external">https://github.com/Seitk/UIView-Shadow-Maker</a><br>43、不错的日期时间插件<br>地址：<a href="https://github.com/CoderXL/UUDatePicker" target="_blank" rel="external">https://github.com/CoderXL/UUDatePicker</a><br>44、底部弹出选择<br>地址：<a href="https://github.com/skywinder/ActionSheetPicker-3.0" target="_blank" rel="external">https://github.com/skywinder/ActionSheetPicker-3.0</a><br>45、比较不错的引导页面插件<br>地址：<a href="https://github.com/ealeksandrov/EAIntroView" target="_blank" rel="external">https://github.com/ealeksandrov/EAIntroView</a><br>46、两个APP跳转的插件<br>地址：<a href="https://github.com/usebutton/DeepLinkKit" target="_blank" rel="external">https://github.com/usebutton/DeepLinkKit</a><br>47、本地存取NSUserDefaults插件<br>地址：<a href="https://github.com/gangverk/GVUserDefaults" target="_blank" rel="external">https://github.com/gangverk/GVUserDefaults</a><br>48、NSArray和NSDictionary关于LINQ的操作方式，封装一些常用的操作<br>地址：<a href="https://github.com/ColinEberhardt/LinqToObjectiveC" target="_blank" rel="external">https://github.com/ColinEberhardt/LinqToObjectiveC</a><br>49、可以监控网络请求的内容<br>地址：<a href="https://github.com/coderyi/NetworkEye" target="_blank" rel="external">https://github.com/coderyi/NetworkEye</a><br>50、时间帮助插件，可以快速获取时间，比较，增加等操作<br>地址：<a href="https://github.com/MatthewYork/DateTools" target="_blank" rel="external">https://github.com/MatthewYork/DateTools</a><br>51、不错的链式动作<br>地址：<a href="https://github.com/jhurray/JHChainableAnimations" target="_blank" rel="external">https://github.com/jhurray/JHChainableAnimations</a><br>52、弹出层视图，背景效果（可以自定义视图的内容）<br>地址：<a href="https://github.com/HJaycee/JCAlertView" target="_blank" rel="external">https://github.com/HJaycee/JCAlertView</a><br>53、圆形进度条的显示，中间可显示值<br>地址：<a href="https://github.com/mdinacci/MDRadialProgress" target="_blank" rel="external">https://github.com/mdinacci/MDRadialProgress</a><br>54、很帅的数据加载动画（可以用于数据列表加载的展现）<br>地址：<a href="https://github.com/NghiaTranUIT/FeSpinner" target="_blank" rel="external">https://github.com/NghiaTranUIT/FeSpinner</a><br>55、一个开源的AFnetworking上层的封装（猿题库等运用）<br>地址：<a href="https://github.com/yuantiku/YTKNetwork" target="_blank" rel="external">https://github.com/yuantiku/YTKNetwork</a><br>56、CBStoreHouseRefreshControl：一个效果很酷炫的下拉刷新控件<br>地址：<a href="https://github.com/coolbeet/CBStoreHouseRefreshControl" target="_blank" rel="external">https://github.com/coolbeet/CBStoreHouseRefreshControl</a><br>57、AFNetworking-RACExtensions:针对ReactiveCocoa的AF封装<br>地址：<a href="https://github.com/CodaFi/AFNetworking-RACExtensions" target="_blank" rel="external">https://github.com/CodaFi/AFNetworking-RACExtensions</a><br>58、模糊效果（毛玻璃）<br>地址：<a href="https://github.com/nicklockwood/FXBlurView" target="_blank" rel="external">https://github.com/nicklockwood/FXBlurView</a><br>59、UITableView展开效果的插件<br>地址：<a href="https://github.com/sakkaras/SKSTableView" target="_blank" rel="external">https://github.com/sakkaras/SKSTableView</a><br>60、ZIP压缩及解压插件ZipArchive<br>地址：<a href="https://github.com/ZipArchive/ZipArchive" target="_blank" rel="external">https://github.com/ZipArchive/ZipArchive</a><br>61、自定义UIAlertView<br>地址：<a href="https://github.com/lmcd/LMAlertView" target="_blank" rel="external">https://github.com/lmcd/LMAlertView</a><br>62、Facebook开源的动画库Pop<br>地址：<a href="https://github.com/facebook/pop" target="_blank" rel="external">https://github.com/facebook/pop</a><br>63、关于使用facebook动画库的实例集合<br>地址：<a href="https://github.com/schneiderandre/popping" target="_blank" rel="external">https://github.com/schneiderandre/popping</a><br>64、iOS应用视图上添加简单闪烁效果Shimmer<br>地址：<a href="https://github.com/facebook/Shimmer" target="_blank" rel="external">https://github.com/facebook/Shimmer</a><br>65、ios数据持久化插件，使得Core Data使用起来更加的便捷容易<br>地址：<a href="https://github.com/magicalpanda/MagicalRecord" target="_blank" rel="external">https://github.com/magicalpanda/MagicalRecord</a><br>66、创建缩合的iOS应用程序标题栏<br>地址：<a href="https://github.com/bryankeller/BLKFlexibleHeightBar" target="_blank" rel="external">https://github.com/bryankeller/BLKFlexibleHeightBar</a><br>67、PDF阅读器核心库<br>地址：<a href="https://github.com/vfr/Reader" target="_blank" rel="external">https://github.com/vfr/Reader</a><br>68、STPopup使弹出框也有UINavigationController的效果<br>地址：<a href="https://github.com/kevin0571/STPopup" target="_blank" rel="external">https://github.com/kevin0571/STPopup</a><br>69、基于核心音频,有助于进行实时，低延迟音频处理和可视化的iOS和OSX音频可视化框架<br>地址：<a href="https://github.com/syedhali/EZAudio" target="_blank" rel="external">https://github.com/syedhali/EZAudio</a><br>70、一个不错的弹出Sheet,可以前进跟后退，适合多个页面<br>地址：<a href="https://github.com/m1entus/MZFormSheetController" target="_blank" rel="external">https://github.com/m1entus/MZFormSheetController</a><br>71、Aspect库是对面向切面编程的实现，里面封装了Runtime的方法<br>地址：<a href="https://github.com/steipete/Aspects" target="_blank" rel="external">https://github.com/steipete/Aspects</a><br>72、一个不错在无输入源的输入框，如UITableViewCell等<br>地址：<a href="https://github.com/slackhq/SlackTextViewController" target="_blank" rel="external">https://github.com/slackhq/SlackTextViewController</a><br>73、小红点插件，用于提示未读效果<br>地址：<a href="https://github.com/weng1250/WZLBadge" target="_blank" rel="external">https://github.com/weng1250/WZLBadge</a><br>74、不错的照片选择器，视频选择器，支持单多选<br>地址：<a href="https://github.com/mwaterfall/MWPhotoBrowser" target="_blank" rel="external">https://github.com/mwaterfall/MWPhotoBrowser</a><br>75、含10多种的转场动画效果<br>地址：<a href="https://github.com/ColinEberhardt/VCTransitionsLibrary" target="_blank" rel="external">https://github.com/ColinEberhardt/VCTransitionsLibrary</a><br>76、左右菜单显示（类似QQ导航）<br>地址：<a href="https://github.com/romaonthego/RESideMenu" target="_blank" rel="external">https://github.com/romaonthego/RESideMenu</a><br>77、很赞的等待指示动画（比系统自带的帅）<br>地址：<a href="https://github.com/ninjaprox/DGActivityIndicatorView" target="_blank" rel="external">https://github.com/ninjaprox/DGActivityIndicatorView</a><br>78、KVOController一个简单安全的KVO(Key-value Observing,键-值观察)工具,提供简单方便、线程安全的API, Facebook的开源项目之一<br>地址：<a href="https://github.com/facebook/KVOController" target="_blank" rel="external">https://github.com/facebook/KVOController</a><br>79、FormatterKit收集了很多构思优秀的NSFormatter子类<br>地址：<a href="https://github.com/mattt/FormatterKit" target="_blank" rel="external">https://github.com/mattt/FormatterKit</a><br>80、自定义的UIPageControl(可以设置每个的样式)<br>地址：<a href="https://github.com/Spaceman-Labs/SMPageControl" target="_blank" rel="external">https://github.com/Spaceman-Labs/SMPageControl</a><br>81、使用NJKWebViewProgress做webview进度条（解决先前无法获得进度的问题）<br>地址：<a href="https://github.com/ninjinkun/NJKWebViewProgress" target="_blank" rel="external">https://github.com/ninjinkun/NJKWebViewProgress</a><br>82、修改NavigationBar的显示效果<br>地址：<a href="https://github.com/ltebean/LTNavigationBar/" target="_blank" rel="external">https://github.com/ltebean/LTNavigationBar/</a><br>83、FCUUID获得设备号的替代方式<br>地址：<a href="https://github.com/fabiocaccamo/FCUUID" target="_blank" rel="external">https://github.com/fabiocaccamo/FCUUID</a><br>84、多主题色或者白天黑夜模式的运用<br>地址：<a href="https://github.com/Draveness/DKNightVersion" target="_blank" rel="external">https://github.com/Draveness/DKNightVersion</a><br>85、GPUImage是一个基于GPU图像和视频处理的开源框架,提供各种各样的图像处理滤镜<br>地址：<a href="https://github.com/BradLarson/GPUImage" target="_blank" rel="external">https://github.com/BradLarson/GPUImage</a><br>86、YY图片加载插件，可以支持动态，网络本地，渐进式图片加载等<br>地址：<a href="https://github.com/ibireme/YYWebImage" target="_blank" rel="external">https://github.com/ibireme/YYWebImage</a><br>87、封装后的蓝牙帮助库<br>地址：<a href="https://github.com/coolnameismy/BabyBluetooth" target="_blank" rel="external">https://github.com/coolnameismy/BabyBluetooth</a><br>88、一个很通用的需求就是引导教程<br>地址：<a href="https://github.com/bubudrc/MPCoachMarks" target="_blank" rel="external">https://github.com/bubudrc/MPCoachMarks</a><br>89、基于MPMoviePlayerController播放器KRVideoPlayer<br>地址：<a href="https://github.com/36Kr-Mobile/KRVideoPlayer" target="_blank" rel="external">https://github.com/36Kr-Mobile/KRVideoPlayer</a><br>90、UICollection左对齐跟右对齐<br>地址：<a href="https://github.com/mokagio/UICollectionViewLeftAlignedLayout" target="_blank" rel="external">https://github.com/mokagio/UICollectionViewLeftAlignedLayout</a><br>地址：<a href="https://github.com/mokagio/UICollectionViewRightAlignedLayout" target="_blank" rel="external">https://github.com/mokagio/UICollectionViewRightAlignedLayout</a><br>91、自定义弹出对话窗，类似系统又可以自定义视图DQAlertView或MMPopupView<br>地址：<a href="https://github.com/dinhquan/DQAlertView" target="_blank" rel="external">https://github.com/dinhquan/DQAlertView</a><br>地址：<a href="https://github.com/adad184/MMPopupView" target="_blank" rel="external">https://github.com/adad184/MMPopupView</a><br>92、输入框在焦点获得时会有一个小标题JVFloatLabeledTextField<br>地址：<a href="https://github.com/jverdi/JVFloatLabeledTextField" target="_blank" rel="external">https://github.com/jverdi/JVFloatLabeledTextField</a><br>93:针对一些UI进行显示优化，可以设置一些不同的背景色等<br>地址：<a href="https://github.com/Grouper/FlatUIKit" target="_blank" rel="external">https://github.com/Grouper/FlatUIKit</a><br>94、色彩插件，如果没有设计师又想一些漂亮的色彩就可以运用Chameleon<br>地址：<a href="https://github.com/ViccAlexander/Chameleon" target="_blank" rel="external">https://github.com/ViccAlexander/Chameleon</a><br>95、两个不错的侧边栏显示插件ECSlidingViewController，SWRevealViewController<br>地址：<a href="https://github.com/ECSlidingViewController/" target="_blank" rel="external">https://github.com/ECSlidingViewController/</a><br>ECSlidingViewController<br>地址：<a href="https://github.com/John-Lluch/SWRevealViewController" target="_blank" rel="external">https://github.com/John-Lluch/SWRevealViewController</a><br>96、各式各样的进度条，可以放在不同地方NAV或者图片或者扇形M13ProgressSuite<br>地址：<a href="https://github.com/Marxon13/M13ProgressSuite" target="_blank" rel="external">https://github.com/Marxon13/M13ProgressSuite</a><br>97、拉动UITableView时CELL有一摇动的效果AMWaveTransition<br>地址：<a href="https://github.com/andreamazz/AMWaveTransition" target="_blank" rel="external">https://github.com/andreamazz/AMWaveTransition</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/blog/2016/01/04/github-on-the-ios-open-source-projects-and-tols-plug-ins.html">GitHub上的iOS开源项目及工具插件</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">一月筠</a></p>
+        <p><span>发布时间:</span>2016-01-04, 20:30:00</p>
+        <p><span>最后更新:</span>2017-04-08, 22:40:31</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/blog/2016/01/04/github-on-the-ios-open-source-projects-and-tols-plug-ins.html" title="GitHub上的iOS开源项目及工具插件">http://guoyanjun.top/blog/2016/01/04/github-on-the-ios-open-source-projects-and-tols-plug-ins.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://guoyanjun.top/blog/2016/01/04/github-on-the-ios-open-source-projects-and-tols-plug-ins.html　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/blog/2016/01/05/hexo-baidu-active-submision-link.html">
+                    Hexo百度主动提交链接
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/blog/2015/12/25/hexo-blog-environment-to-build-for-mac.html">
+                    Hexo博客环境搭建for Mac
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#目录"><span class="toc-number">1.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开源项目"><span class="toc-number">2.</span> <span class="toc-text">开源项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#辅助软件"><span class="toc-number">3.</span> <span class="toc-text">辅助软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三方插件"><span class="toc-number">4.</span> <span class="toc-text">第三方插件</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-6 i,
+        .toc-level-6 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+<!-- 添加打赏功能 只在所有post文件下的文章中显示-->
+
+
+	<! -- 添加捐赠图标 -->
+<div class ="post-donate">
+    <div id="donate_board" class="donate_bar center">
+        <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"></a>
+        <span class="donate_txt">
+           ↑<br>
+           欣赏此文？求鼓励，求支持！
+        </span>
+        <br>
+      </div>  
+    <div id="donate_guide" class="donate_bar center hidden" >
+        <!-- 方式一： 
+            <img src="/img/Alipay.jpg" alt="支付宝打赏">
+            <img src="/img/WeChatpay.jpg" alt="微信打赏">
+        -->
+        <!-- 方式二；
+            step1：在_config.yml中添加配置
+                Alipay: /img/Alipay.jpg
+                WeChatpay: /img/WeChatpay.jpg
+            step2：此处两张图片的路径分别设置为如下
+                <img src="/blog/undefined"
+                <img src="/blog/undefined"
+        -->
+        <!-- 支付宝打赏图案 -->
+        <img src="/blog//img/Alipay.jpg" alt="支付宝打赏">
+        <!-- 微信打赏图案 -->
+        <img src="/blog//img/WeChatpay.jpg" alt="微信打赏">
+    </div>
+    <script type="text/javascript">
+        document.getElementById('btn_donate').onclick = function(){
+            $('#donate_board').addClass('hidden');
+            $('#donate_guide').removeClass('hidden');
+        }
+    </script>
+</div>
+<! -- 添加捐赠图标 -->
+
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"GitHub上的iOS开源项目及工具插件　| 郭艳军的那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2129366';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/blog/2016/01/05/hexo-baidu-active-submision-link.html" title="上一篇: Hexo百度主动提交链接">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/blog/2015/12/25/hexo-blog-environment-to-build-for-mac.html" title="下一篇: Hexo博客环境搭建for Mac">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2017/04/04/qingming-rain.html">忆清明雨上</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/15/set-up-gh-pages-branch-on-github.html">在github上建立gh-pages分支</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/07/the-most-complete-set-of-ios-development-tols.html">最全iOS开发工具集合</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/06/mac-instalation-nodejs-(graphic-detail-steps)-and-sublimetext-run-javascript-console.html">Mac 安装 nodejs （图文详细步骤）及SublimeText运行JavaScript控制台</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/02/27/ios-modular-programing-framework-behive.html">iOS 模块化编程框架 BeeHive</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/02/16/ios-silent-way-to-send-mail-(skpsmtpmesage).html">iOS-静默方式发送邮件(SKPSMTPMessage)</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/10/01/on-the-site-to-use-plug-ins.html">关于本站使用到的插件</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/03/28/hexo-custom-page-home-page.html">Hexo自定义页面做首页</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/01/08/hexo-blog-to-ad-a-reward-function.html">Hexo博客添加打赏功能</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/01/05/hexo-baidu-active-submision-link.html">Hexo百度主动提交链接</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/01/04/github-on-the-ios-open-source-projects-and-tols-plug-ins.html">GitHub上的iOS开源项目及工具插件</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/25/hexo-blog-environment-to-build-for-mac.html">Hexo博客环境搭建for Mac</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/24/hexo-comands-and-some-usage.html">Hexo命令和一些使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/05/analysis-of-ios-loading-single-image-leading-to-colapse.html">iOS加载单张图片导致崩溃的分析</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/01/c-language-sorting-algorithm-and-detailed.html">C语言实现排序算法及详解</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/07/03/tactic.html">诀</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/04/16/naging.html">碎碎念</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2013/05/25/s-ink.html">墨筱雨</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2012/12/14/met-again.html">又相见</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+
+<!--添加百度自动推送代码-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script></div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+<!--                2015-2017 一月筠-->
+                    2015-2017 <a href="http://guoyanjun.top" target="_blank">一月筠</a>
+            </div>
+            <!--<div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>-->
+            <!-- 添加底部的Power by Hexo -->
+            <!--<div class="footer-right">
+                Powered by <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a> <i class="fa fa-heart animated infinite pulse"></i>
+            </div>-->
+            <!-- 添加底部的Power by Hexo -->
+            <div class="footer-right">
+    		  
+    		  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261663353'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261663353%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+      		  
+      		  </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+    <script src="/blog/js/GithubRepoWidget.js"></script>
+
+<script data-main="/blog/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/blog//background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+             github: ".github-widget a", 
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
