@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="一月筠" />
+
+
+
+<meta name="description" content="文/一月筠 -- 转载请注明 --
+File -&amp;gt; New Project -&amp;gt; 选择Project SDK为1.8 -&amp;gt; Next…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac版 IntelliJ IDEA 创建Web项目并部署servlet">
+<meta property="og:url" content="http://guoyanjun.top/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html">
+<meta property="og:site_name" content="郭艳军的那些事儿">
+<meta property="og:description" content="文/一月筠 -- 转载请注明 --
+File -&amp;gt; New Project -&amp;gt; 选择Project SDK为1.8 -&amp;gt; Next…">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-5274850b1513c8a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-f8ff43a8cbb9cc98.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-e88871d34e3c7046.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-338f1225f9801b14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-7f12138b09ea8e60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-732481307724f8d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-be6ee8f55c204e18.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-52802b615412f1a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-beb36e8aac8e2690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-ae47a36406b9d2e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-fd89e1e15e0aae79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-24a1d47cada5534d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-9676fbe48eeeafcd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-d3498baa95a070b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-48d27bf5cbdee9ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-33f649454b3a1842.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-9aaac2ed0e1b710b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-f56f2719e1b374ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-3e84da088f2f06f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-ac467778b919d85a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-4e5fd3f1cd5dce0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-19dab062dec1dbcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-2f7d1daccfc1e9c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-06-07T07:36:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac版 IntelliJ IDEA 创建Web项目并部署servlet">
+<meta name="twitter:description" content="文/一月筠 -- 转载请注明 --
+File -&amp;gt; New Project -&amp;gt; 选择Project SDK为1.8 -&amp;gt; Next…">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1819713-5274850b1513c8a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+<link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="郭艳军的那些事儿" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/blog//favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/blog/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Mac版 IntelliJ IDEA 创建Web项目并部署servlet | 郭艳军的那些事儿</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+<!--添加百度自动推送代码-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+<!--添加百度统计代码-->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?a0de0062ecc8e145d335478668581635";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = /blog/; </script>
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/blog/" class="profilepic">
+            <img src="/blog//img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/blog/">一月筠</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">๑۩ﺴ ﺴ۩๑ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动...</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/blog/index/">主页</a></li>
+                        
+                            <li><a href="/blog/essay/">随笔</a></li>
+                        
+                            <li><a href="/blog/archives/">所有文章</a></li>
+                        
+                            <li><a href="/blog/tags/">标签云</a></li>
+                        
+                            <li><a href="/blog/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="http://weibo.com/1778140743" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/TinyJay" title="GitHub"></a>
+                            
+                                <a class="fa 简书" href="http://www.jianshu.com/u/b13ee6afc1e0" title="简书"></a>
+                            
+                                <a class="fa RSS" href="/blog/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 网易云音乐" href="http://music.163.com/#/user/home?id=284001567" title="网易云音乐"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Server/">Server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/essay/">essay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/poetry/">poetry</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://github.com">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.cocoachina.com">cocoachina</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.code4app.com">code4app</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.fontawesome.com.cn">fontawesome</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://jsfiddle.net">jsfiddle</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://sm.ms">SM.MS</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://www.awesomes.cn/rank">awesomes rank</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">☘ 告诉你个秘密，不要告诉别人哟☘(*^__^*)☘这儿不只有博客、诗文、随笔、相册...还有你不知道的关于他的那些事儿...</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">一月筠</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/blog/" class="profilepic">
+                <img src="/blog//img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/blog/" title="回到主页">一月筠</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">๑۩ﺴ ﺴ۩๑ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动...</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/blog/index/">主页</a></li>
+                
+                    <li><a href="/blog/essay/">随笔</a></li>
+                
+                    <li><a href="/blog/archives/">所有文章</a></li>
+                
+                    <li><a href="/blog/tags/">标签云</a></li>
+                
+                    <li><a href="/blog/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1778140743" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/TinyJay" title="GitHub"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/u/b13ee6afc1e0" title="简书"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/blog/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 网易云音乐" target="_blank" href="http://music.163.com/#/user/home?id=284001567" title="网易云音乐"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html" class="article-date">
+      <time datetime="2017-05-21T04:30:30.000Z" itemprop="datePublished">2017-05-21</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Mac版 IntelliJ IDEA 创建Web项目并部署servlet
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/术业专攻/">术业专攻</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Server/">Server</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><ul>
+<li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
+<li><code>File</code> -&gt; <code>New Project</code> -&gt; 选择<code>Project SDK</code>为1.8 -&gt; <code>Next</code>…<a id="more"></a>
+</li>
+</ul>
+<h2 id="创建一个web项目"><a href="#创建一个web项目" class="headerlink" title="创建一个web项目"></a>创建一个web项目</h2><ul>
+<li><code>File</code> -&gt; <code>New Project</code> -&gt; 选择<code>Project SDK</code>为1.8 -&gt; <code>Next</code></li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-5274850b1513c8a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="新建一个web项目"></p>
+<ul>
+<li>在<code>Project name</code>中输入项目名称“Demos” ，<code>Project location</code>选择项目要存放的位置，可以默认  -&gt;<code>Finish</code></li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-f8ff43a8cbb9cc98.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输入项目名称"></p>
+<h2 id="创建一个Module"><a href="#创建一个Module" class="headerlink" title="创建一个Module"></a>创建一个Module</h2><ul>
+<li>鼠标点中项目名称<code>demos</code> -&gt; 右键选择<code>New</code>，选择<code>Module</code> </li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-e88871d34e3c7046.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="新建一个Module"></p>
+<ul>
+<li>勾选<code>Web Application</code>-&gt; 确认已勾选<code>Create web.xml</code></li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-338f1225f9801b14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="勾选Web Application"></p>
+<ul>
+<li>输入Module名称<code>firstweb</code>-&gt; 点击<code>Finish</code></li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-7f12138b09ea8e60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输入Module名称"></p>
+<h2 id="新建完成的web项目"><a href="#新建完成的web项目" class="headerlink" title="新建完成的web项目"></a>新建完成的web项目</h2><p><img src="http://upload-images.jianshu.io/upload_images/1819713-732481307724f8d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="新建完web项目后的提示"></p>
+<p>新建完成后的目录结构</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-be6ee8f55c204e18.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="新建完成后的web项目"></p>
+<h2 id="在web-WEB-INF下创建两个文件夹：classes和lib"><a href="#在web-WEB-INF下创建两个文件夹：classes和lib" class="headerlink" title="在web/WEB-INF下创建两个文件夹：classes和lib"></a>在<code>web/WEB-INF</code>下创建两个文件夹：<code>classes</code>和<code>lib</code></h2><blockquote>
+<p><code>classes</code>用来存放编译后输出的class文件，<code>lib</code>用于存放第三方jar包。 </p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-52802b615412f1a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="在web:WEB-INF下创建两个文件夹"></p>
+<h2 id="配置文件夹路径"><a href="#配置文件夹路径" class="headerlink" title="配置文件夹路径"></a>配置文件夹路径</h2><ul>
+<li><code>File</code> -&gt; <code>Project Structure</code>(快捷键：cmd + ;) -&gt; 选择<code>Module</code> ：<br>选择<code>Paths</code> -&gt; 选择<code>Use module compile output path</code> -&gt; 将<code>Output path</code>和<code>Test output path</code>都选择刚刚创建的<code>classes</code>文件夹。</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-beb36e8aac8e2690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择刚刚创建的classes文件夹"></p>
+<ul>
+<li>接着选择<code>Dependencies</code> -&gt; 将<code>Module SDK</code>选择为1.8 -&gt; 点击下面的“+”号 -&gt; 选择1 <code>Jars or Directories</code> </li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-ae47a36406b9d2e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择Jars or Directories"></p>
+<ul>
+<li>选择刚刚创建的<code>lib</code>文件夹 </li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-fd89e1e15e0aae79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择刚刚创建的lib文件夹"></p>
+<ul>
+<li>选择<code>jar directory</code> -&gt; 接着返回一路OK就行了~~ </li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-24a1d47cada5534d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择jar directory"></p>
+<h2 id="配置Tomcat容器"><a href="#配置Tomcat容器" class="headerlink" title="配置Tomcat容器"></a>配置Tomcat容器</h2><ul>
+<li>打开菜单<code>Run</code> -&gt; 选择<code>Edit Configuration</code></li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-9676fbe48eeeafcd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="配置Tomcat容器"></p>
+<ul>
+<li>点击“+”号 -&gt; 选择<code>Tomcat Server</code> -&gt; 选择<code>Local</code></li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-d3498baa95a070b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择Local"></p>
+<ul>
+<li>点击<code>Application server</code>后面的<code>Configure…</code>，弹出<code>Tomcat Server</code>窗口，选择本地安装的Tomcat目录 -&gt; OK </li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-48d27bf5cbdee9ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="弹出Tomcat Server窗口.png"></p>
+<ul>
+<li>在<code>Run/Debug Configurations</code>窗口的<code>Server</code>选项板中，取消勾选<code>After launch</code>，设置<code>HTTP port</code>和<code>JMX port</code>（默认值即可），点击 <code>Apply</code> -&gt; <code>OK</code>， 至此Tomcat配置完成。 </li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-33f649454b3a1842.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="至此Tomcat配置完成"></p>
+<h2 id="在Tomcat中部署并运行项目"><a href="#在Tomcat中部署并运行项目" class="headerlink" title="在Tomcat中部署并运行项目"></a>在Tomcat中部署并运行项目</h2><ul>
+<li><code>Run</code> -&gt;<code>Edit Configurations</code>，进入<code>Run/Debug Configurations</code>窗口 -&gt; 选择刚刚建立的Tomcat容器 -&gt; 选择<code>Deployment</code> -&gt; 点击下面的“+”号 -&gt; 选择Artifact </li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-9aaac2ed0e1b710b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择Artifact"></p>
+<ul>
+<li>选择web项目 -&gt;<code>Application context</code>可以填<code>/hello</code>(其实也可以不填的~~) -&gt; <code>OK</code> </li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-f56f2719e1b374ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Application context填hello"></p>
+<h2 id="编辑index-jsp文件"><a href="#编辑index-jsp文件" class="headerlink" title="编辑index.jsp文件"></a>编辑index.jsp文件</h2><figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">%-</span></span></span><span class="ruby">-</span></div><div class="line">  Created by IntelliJ IDEA.</div><div class="line">  <span class="symbol">User:</span> guoyanjun</div><div class="line">  <span class="symbol">Date:</span> <span class="number">2017</span>/<span class="number">5</span>/<span class="number">26</span></div><div class="line">  <span class="symbol">Time:</span> 下午<span class="number">2</span><span class="symbol">:</span><span class="number">59</span></div><div class="line">  To change this template use File <span class="params">| Settings |</span> File Templates.</div><div class="line">-<span class="xml"><span class="tag"><span class="attr">-</span>%&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">%</span></span><span class="ruby">@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> </span><span class="xml"><span class="tag">%&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>这是第一个web项目<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>第一个项目运行成功啦！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-3e84da088f2f06f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="编辑index.jsp文件"></p>
+<h2 id="运行Tomcat-在浏览器中查看运行结果"><a href="#运行Tomcat-在浏览器中查看运行结果" class="headerlink" title="运行Tomcat,在浏览器中查看运行结果"></a>运行Tomcat,在浏览器中查看运行结果</h2><p><img src="http://upload-images.jianshu.io/upload_images/1819713-ac467778b919d85a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="运行Tomcat"></p>
+<h2 id="Servlet简单实现"><a href="#Servlet简单实现" class="headerlink" title="Servlet简单实现"></a>Servlet简单实现</h2><ul>
+<li>编写servlet源文件</li>
+<li>在src目录下新建HelloWorld.<a href="http://lib.csdn.net/base/javase" target="_blank" rel="external">Java</a>，并编写一下代码并进行编译：</li>
+</ul>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by guoyanjun on 2017/5/26.</div><div class="line"> */</div><div class="line"><span class="keyword">import</span> javax.servlet.<span class="type">ServletException</span>;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.<span class="type">HttpServlet</span>;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.<span class="type">HttpServletRequest</span>;</div><div class="line"><span class="keyword">import</span> javax.servlet.http.<span class="type">HttpServletResponse</span>;</div><div class="line"><span class="keyword">import</span> java.io.<span class="type">IOException</span>;</div><div class="line"><span class="keyword">import</span> java.io.<span class="type">PrintWriter</span>;</div><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="type">String</span> message;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    public void init()<span class="keyword">throws</span> <span class="type">ServletException</span> &#123;</div><div class="line">        message = <span class="string">"Hello World, This message is from Servlet!"</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="keyword">protected</span> void doGet(<span class="type">HttpServletRequest</span> req, <span class="type">HttpServletResponse</span> resp) <span class="keyword">throws</span> <span class="type">ServletException</span>, <span class="type">IOException</span> &#123;</div><div class="line">        <span class="comment">//设置响应内容类型</span></div><div class="line">        resp.setContentType(<span class="string">"text/html"</span>);</div><div class="line">        <span class="comment">//设置逻辑实现</span></div><div class="line">        <span class="type">PrintWriter</span> out = resp.getWriter();</div><div class="line">        out.println(<span class="string">"&lt;h3&gt;"</span> + message + <span class="string">"&lt;/h3&gt;"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    public void destroy() &#123;</div><div class="line">        <span class="keyword">super</span>.destroy();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>编译后会发现在classes目录下生成了HelloWorld.class文件 </li>
+</ul>
+<blockquote>
+<p>IDEA创建servlet时找不到<code>import javax.servlet...</code>相关类包的问题</p>
+</blockquote>
+<p>在IDEA中，创建Servlet时候，当写入如下语句时：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">import</span> <span class="selector-tag">javax</span><span class="selector-class">.servlet</span><span class="selector-class">.ServletException</span>;</div><div class="line"><span class="selector-tag">import</span> <span class="selector-tag">javax</span><span class="selector-class">.servlet</span><span class="selector-class">.http</span><span class="selector-class">.HttpServlet</span>;</div><div class="line"><span class="selector-tag">import</span> <span class="selector-tag">javax</span><span class="selector-class">.servlet</span><span class="selector-class">.http</span><span class="selector-class">.HttpServletRequest</span>;</div><div class="line"><span class="selector-tag">import</span> <span class="selector-tag">javax</span><span class="selector-class">.servlet</span><span class="selector-class">.http</span><span class="selector-class">.HttpServletResponse</span>;</div><div class="line"><span class="selector-tag">import</span> <span class="selector-tag">javax</span><span class="selector-class">.servlet</span><span class="selector-class">.http</span><span class="selector-class">.HttpSession</span>;</div></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>会提示你，程序包<code>javax.servlet</code>和程序包<code>javax.servlet.http</code>不存在的错误</strong><br>原因在于<a href="http://lib.csdn.net/base/javase" target="_blank" rel="external">Java</a>编译器没有找到软件包<code>javax.servelt</code></li>
+<li><strong>解决的方法</strong>：把<code>tomcat</code>安装包里的<code>lib</code>目录下的<code>servlet-api.jar</code>拷贝一份到工程文件夹下的web目录下的<code>WEB-INF</code>目录下<code>lib子</code>文件下的,即 <code>web—&gt;WEB-INF–lib</code></li>
+</ul>
+<p><a href="http://blog.csdn.net/wodedipang_/article/details/72758708#" target="_blank" rel="external"></a><a href="http://blog.csdn.net/wodedipang_/article/details/72758708#" target="_blank" rel="external"></a><a href="http://blog.csdn.net/wodedipang_/article/details/72758708#" target="_blank" rel="external"></a><a href="http://blog.csdn.net/wodedipang_/article/details/72758708#" target="_blank" rel="external"></a><a href="http://blog.csdn.net/wodedipang_/article/details/72758708#" target="_blank" rel="external"></a><a href="http://blog.csdn.net/wodedipang_/article/details/72758708#" target="_blank" rel="external"></a></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-4e5fd3f1cd5dce0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="HelloWorld.class文件"></p>
+<h2 id="部署servlet"><a href="#部署servlet" class="headerlink" title="部署servlet"></a>部署servlet</h2><blockquote>
+<p>方法一：在WEB-INF目录下web.xml文件的标签中添加如下内容：</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee"</span></span></div><div class="line">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"</span></div><div class="line">         <span class="attr">version</span>=<span class="string">"3.1"</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>HelloWorld<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>HelloWorld<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>HelloWorld<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/HelloWorld<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>方法二：在HelloWorld文件的类前面加上：@WebServlet(“/HelloWorld”)</p>
+</blockquote>
+<ul>
+<li>运行servlet</li>
+</ul>
+<p>点击运行按钮<br><img src="http://upload-images.jianshu.io/upload_images/1819713-19dab062dec1dbcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="运行成功"></p>
+<ul>
+<li>控制台出现successfully则tomcat服务启动成功！<br>打开浏览器输入：<a href="localhost:8080/hello/HelloWorld" target="_blank" rel="external">localhost:8080/hello/HelloWorld</a>即可查看servlet运行状态了。</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-2f7d1daccfc1e9c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="servlet运行状态"></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html">Mac版 IntelliJ IDEA 创建Web项目并部署servlet</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">一月筠</a></p>
+        <p><span>发布时间:</span>2017-05-21, 12:30:30</p>
+        <p><span>最后更新:</span>2017-06-07, 15:36:33</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html" title="Mac版 IntelliJ IDEA 创建Web项目并部署servlet">http://guoyanjun.top/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://guoyanjun.top/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html">
+                    iOS蓝牙开发（一）蓝牙相关基础知识
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/blog/2017/04/14/the-only-rhyme.html">
+                    独韵
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个web项目"><span class="toc-number">1.</span> <span class="toc-text">创建一个web项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建一个Module"><span class="toc-number">2.</span> <span class="toc-text">创建一个Module</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新建完成的web项目"><span class="toc-number">3.</span> <span class="toc-text">新建完成的web项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在web-WEB-INF下创建两个文件夹：classes和lib"><span class="toc-number">4.</span> <span class="toc-text">在web/WEB-INF下创建两个文件夹：classes和lib</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置文件夹路径"><span class="toc-number">5.</span> <span class="toc-text">配置文件夹路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置Tomcat容器"><span class="toc-number">6.</span> <span class="toc-text">配置Tomcat容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在Tomcat中部署并运行项目"><span class="toc-number">7.</span> <span class="toc-text">在Tomcat中部署并运行项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编辑index-jsp文件"><span class="toc-number">8.</span> <span class="toc-text">编辑index.jsp文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行Tomcat-在浏览器中查看运行结果"><span class="toc-number">9.</span> <span class="toc-text">运行Tomcat,在浏览器中查看运行结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Servlet简单实现"><span class="toc-number">10.</span> <span class="toc-text">Servlet简单实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署servlet"><span class="toc-number">11.</span> <span class="toc-text">部署servlet</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-6 i,
+        .toc-level-6 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+<!-- 添加打赏功能 只在所有post文件下的文章中显示-->
+
+
+	<! -- 添加捐赠图标 -->
+<div class ="post-donate">
+    <div id="donate_board" class="donate_bar center">
+        <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"></a>
+        <span class="donate_txt">
+           ↑<br>
+           欣赏此文？求鼓励，求支持！
+        </span>
+        <br>
+      </div>  
+    <div id="donate_guide" class="donate_bar center hidden" >
+        <!-- 方式一： 
+            <img src="/img/Alipay.jpg" alt="支付宝打赏">
+            <img src="/img/WeChatpay.jpg" alt="微信打赏">
+        -->
+        <!-- 方式二；
+            step1：在_config.yml中添加配置
+                Alipay: /img/Alipay.jpg
+                WeChatpay: /img/WeChatpay.jpg
+            step2：此处两张图片的路径分别设置为如下
+                <img src="/blog/undefined"
+                <img src="/blog/undefined"
+        -->
+        <!-- 支付宝打赏图案 -->
+        <img src="/blog//img/Alipay.jpg" alt="支付宝打赏">
+        <!-- 微信打赏图案 -->
+        <img src="/blog//img/WeChatpay.jpg" alt="微信打赏">
+    </div>
+    <script type="text/javascript">
+        document.getElementById('btn_donate').onclick = function(){
+            $('#donate_board').addClass('hidden');
+            $('#donate_guide').removeClass('hidden');
+        }
+    </script>
+</div>
+<! -- 添加捐赠图标 -->
+
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Mac版 IntelliJ IDEA 创建Web项目并部署servlet　| 郭艳军的那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2129366';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html" title="上一篇: iOS蓝牙开发（一）蓝牙相关基础知识">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/blog/2017/04/14/the-only-rhyme.html" title="下一篇: 独韵">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html">iOS蓝牙开发（一）蓝牙相关基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html">Mac版 IntelliJ IDEA 创建Web项目并部署servlet</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/04/14/the-only-rhyme.html">独韵</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/04/04/remember-the-qingming-rain.html">忆清明雨上</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/15/building-gh-pages-branches-on-github.html">在github上建立gh-pages分支</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html">最全iOS开发工具集合</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/06/mac-instals-nodejs-(detailed-steps)-and-sublimetext-runs-the-javascript-console.html">Mac 安装 nodejs （图文详细步骤）及SublimeText运行JavaScript控制台</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/02/27/ios-modular-programing-framework-behive.html">iOS 模块化编程框架 BeeHive</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html">iOS-静默方式发送邮件(SKPSMTPMessage)</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/10/01/about-the-plug-in-used-by-this-site.html">关于本站使用到的插件</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/03/28/hexo-custom-page-for-home-page.html">Hexo自定义页面做首页</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/01/08/hexo-blog-ad-reward-function.html">Hexo博客添加打赏功能</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/01/05/hexo-baidu-actively-submit-links.html">Hexo百度主动提交链接</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/01/04/ios-open-source-project-and-tol-plug-in-on-github.html">GitHub上的iOS开源项目及工具插件</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/25/hexo-blog-environment-set-up-for-mac.html">Hexo博客环境搭建for Mac</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/24/the-hexo-comand-and-some-usage.html">Hexo命令和一些使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/05/ios-loading-single-shet-pictures-leading-to-crash-analysis.html">iOS加载单张图片导致崩溃的分析</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/01/c-language-sorting-algorithm-and-detailed.html">C语言实现排序算法及详解</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/07/03/tactic.html">诀</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/04/16/naging.html">碎碎念</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2013/05/25/s-ink.html">墨筱雨</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2012/12/14/met-again.html">又相见</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+
+<!--添加百度自动推送代码-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script></div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+<!--                2015-2017 一月筠-->
+                    2015-2017 <a href="http://guoyanjun.top" target="_blank">一月筠</a>
+            </div>
+            <!--<div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>-->
+            <!-- 添加底部的Power by Hexo -->
+            <!--<div class="footer-right">
+                Powered by <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a> <i class="fa fa-heart animated infinite pulse"></i>
+            </div>-->
+            <!-- 添加底部的Power by Hexo -->
+            <div class="footer-right">
+    		  
+    		  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261663353'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261663353%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+      		  
+      		  </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+    <script src="/blog/js/GithubRepoWidget.js"></script>
+
+<script data-main="/blog/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/blog//background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+             github: ".github-widget a", 
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

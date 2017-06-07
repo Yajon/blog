@@ -16,20 +16,20 @@
 
 
 <meta name="description" content="文/一月筠 -- 转载请注明 --
-丝雨抚蕊，缠绵似醉…">
+在iOS开发中，有时候我们需要使用到发送邮件的功能，比如说接收用户的反馈信息、APP的崩溃情况的通知等等…">
 <meta property="og:type" content="article">
-<meta property="og:title" content="墨筱雨">
-<meta property="og:url" content="http://guoyanjun.top/2013/05/25/s-ink.html">
+<meta property="og:title" content="iOS-静默方式发送邮件(SKPSMTPMessage)">
+<meta property="og:url" content="http://guoyanjun.top/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html">
 <meta property="og:site_name" content="郭艳军的那些事儿">
 <meta property="og:description" content="文/一月筠 -- 转载请注明 --
-丝雨抚蕊，缠绵似醉…">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-f2a0379545299e6a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-06-07T07:36:37.000Z">
+在iOS开发中，有时候我们需要使用到发送邮件的功能，比如说接收用户的反馈信息、APP的崩溃情况的通知等等…">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-fa6a499835a9584b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-06-07T07:36:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="墨筱雨">
+<meta name="twitter:title" content="iOS-静默方式发送邮件(SKPSMTPMessage)">
 <meta name="twitter:description" content="文/一月筠 -- 转载请注明 --
-丝雨抚蕊，缠绵似醉…">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1819713-f2a0379545299e6a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+在iOS开发中，有时候我们需要使用到发送邮件的功能，比如说接收用户的反馈信息、APP的崩溃情况的通知等等…">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1819713-fa6a499835a9584b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 <link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
 
@@ -61,7 +61,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>墨筱雨 | 郭艳军的那些事儿</title>
+<title>iOS-静默方式发送邮件(SKPSMTPMessage) | 郭艳军的那些事儿</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -320,11 +320,11 @@ var _hmt = _hmt || [];
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-s-ink" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ios-sends-mesages-silently-(skpsmtpmesage)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/blog/2013/05/25/s-ink.html" class="article-date">
-      <time datetime="2013-05-25T11:41:00.000Z" itemprop="datePublished">2013-05-25</time>
+      <a href="/blog/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html" class="article-date">
+      <time datetime="2017-02-16T09:00:00.000Z" itemprop="datePublished">2017-02-16</time>
 </a>
 
 
@@ -339,7 +339,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      墨筱雨
+      iOS-静默方式发送邮件(SKPSMTPMessage)
     </h1>
   
 
@@ -348,13 +348,13 @@ var _hmt = _hmt || [];
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/诗文/">诗文</a>
+    <a class="article-category-link" href="/blog/categories/术业专攻/">术业专攻</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/poetry/">poetry</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/iOS/">iOS</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -366,12 +366,25 @@ var _hmt = _hmt || [];
           
         <script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><ul>
 <li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
-<li>丝雨抚蕊，缠绵似醉…<a id="more"></a>
+<li>在iOS开发中，有时候我们需要使用到发送邮件的功能，比如说接收用户的反馈信息、APP的崩溃情况的通知等等…<a id="more"></a>
 </li>
 </ul>
-<h2 id="墨筱雨"><a href="#墨筱雨" class="headerlink" title="墨筱雨"></a>墨筱雨</h2><p><img src="http://upload-images.jianshu.io/upload_images/1819713-f2a0379545299e6a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="墨筱雨 / 图片源于网络"></p>
-<p>丝雨抚蕊，缠绵似醉。<br>勾勒画珠帘，留存霁缱绻。<br>唱和于花间，弥散兮心田。<br>恰伊人红尘踏歌，引几多眷恋。<br>若梦回古韵江南，当别样容颜。</p>
-
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在iOS开发中，有时候我们需要使用到发送邮件的功能，比如说接收用户的反馈信息、APP的崩溃情况的通知等等。</p>
+<p><strong>iOS系统提供了两种原生方式已供开发者发送邮件(email)：</strong><br>1）openURL（原生）</p>
+<p>——用户体验较差，程序会进入后台，跳转至邮件发送界面。</p>
+<p>2）MFMailComposeViewController（原生）</p>
+<p>——不会进入后台，使用模态弹出邮件发送视图。</p>
+<h2 id="这里主要介绍第三种，采用静默方式发送的email："><a href="#这里主要介绍第三种，采用静默方式发送的email：" class="headerlink" title="这里主要介绍第三种，采用静默方式发送的email："></a><strong>这里主要介绍第三种，采用静默方式发送的email：</strong></h2><p><code>使用到的库：</code><a href="https://github.com/jetseven/skpsmtpmessage" target="_blank" rel="external">SKPSMTPMessage</a><br><code>下载地址：</code><a href="https://github.com/jetseven/skpsmtpmessage" target="_blank" rel="external">https://github.com/jetseven/skpsmtpmessage</a></p>
+<blockquote>
+<p><strong>——你可以不需要告知用户将要进行邮件发送的事情，我在想这个是不是不符合苹果的理论。当然你也可以在发送之前弄个弹出框告知用户，并让用户选择是否发送。</strong></p>
+</blockquote>
+<p><code>小主在Xcode 8.1，真机（iOS 10.2.1）环境下亲测通过，这里就如何使用该库做一下说明，希望对其他有需要的同学有帮助。</code></p>
+<h3 id="1、工程配置"><a href="#1、工程配置" class="headerlink" title="1、工程配置"></a>1、工程配置</h3><p>我是手动导进工程里，因为该库是使用MRC开发的，所以就要设置进行相应的设置。<br><code>在项目的build phrases-&gt;compile source-&gt;找到SKPSMTPMessage.m,NSStream+SKPSMTPExtensions.m这两个文件，双击后再弹框中添加-fno-objc-arc</code>。<br>可见图例：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-fa6a499835a9584b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="工程配置.png"></p>
+<h3 id="2、引入头文件"><a href="#2、引入头文件" class="headerlink" title="2、引入头文件"></a>2、引入头文件</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"SKPSMTPMessage.h"</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">"NSData+Base64Additions.h"</span></span></div></pre></td></tr></table></figure>
+<h3 id="3、遵循协议"><a href="#3、遵循协议" class="headerlink" title="3、遵循协议"></a>3、遵循协议</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">SKPSMTPMessageDelegate</span></div></pre></td></tr></table></figure>
+<h3 id="4、协议的实现"><a href="#4、协议的实现" class="headerlink" title="4、协议的实现"></a>4、协议的实现</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark - SKPSMTPMessageDelegate</span></div><div class="line">- (<span class="keyword">void</span>)messageSent:(<span class="built_in">SKPSMTPMessage</span> *)message</div><div class="line">&#123;</div><div class="line">	[<span class="keyword">self</span>.view makeToast:<span class="string">@"发送邮件成功"</span> duration:<span class="number">1</span> position:<span class="string">@"center"</span>];</div><div class="line">&#125;</div><div class="line">- (<span class="keyword">void</span>)messageFailed:(<span class="built_in">SKPSMTPMessage</span> *)message error:(<span class="built_in">NSError</span> *)error</div><div class="line">&#123;</div><div class="line">	[<span class="keyword">self</span>.view makeToast:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"发送邮件失败nerror - %@"</span>,error] duration:<span class="number">1</span> position:<span class="string">@"center"</span>];</div><div class="line">	<span class="built_in">NSLog</span>(<span class="string">@"message - %@\nerror - %@"</span>, message, error);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="5、方法的实现"><a href="#5、方法的实现" class="headerlink" title="5、方法的实现"></a>5、方法的实现</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)sendEmail</div><div class="line">&#123;</div><div class="line">    <span class="built_in">SKPSMTPMessage</span> *myMessage = [[<span class="built_in">SKPSMTPMessage</span> alloc] init];</div><div class="line">    <span class="comment">//此处发件箱已163为例：</span></div><div class="line">    myMessage.fromEmail = <span class="string">@"******@163.com"</span>;<span class="comment">//发送者邮箱</span></div><div class="line">    myMessage.toEmail = <span class="string">@"******@qq.com"</span>;<span class="comment">//收件邮箱</span></div><div class="line">    <span class="comment">//myMessage.bccEmail = @"******@qq.com";//抄送</span></div><div class="line">    </div><div class="line">    <span class="comment">//myMessage.relayHost = @"smtp.exmail.qq.com";//发送地址host 腾讯企业邮箱:smtp.exmail.qq.com</span></div><div class="line">    myMessage.relayHost = <span class="string">@"smtp.163.com"</span>;</div><div class="line">    myMessage.requiresAuth = <span class="literal">YES</span>;</div><div class="line">    <span class="keyword">if</span> (myMessage.requiresAuth) &#123;</div><div class="line">        myMessage.login = <span class="string">@"******@163.com"</span>;<span class="comment">//发送者邮箱的用户名</span></div><div class="line">        myMessage.pass = <span class="string">@"******"</span>;<span class="comment">//发送者邮箱的密码</span></div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    myMessage.wantsSecure = <span class="literal">YES</span>;<span class="comment">//为gmail邮箱设置 smtp.gmail.com</span></div><div class="line">    myMessage.subject = <span class="string">@"iOS静默方式发送的email"</span>;<span class="comment">//邮件主题</span></div><div class="line">    myMessage.delegate = <span class="keyword">self</span>;</div><div class="line">    </div><div class="line">    <span class="comment">/* &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; *   设置邮件内容   * &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; */</span></div><div class="line">    <span class="comment">//1.文字信息</span></div><div class="line">    <span class="built_in">NSDictionary</span> *plainPart = [<span class="built_in">NSDictionary</span> dictionaryWithObjectsAndKeys:<span class="string">@"text/plain; charset=UTF-8"</span>,kSKPSMTPPartContentTypeKey, <span class="string">@"是不是很简单呀，这样一封email就发送成功了呢！"</span>,kSKPSMTPPartMessageKey,<span class="string">@"8bit"</span>,kSKPSMTPPartContentTransferEncodingKey,<span class="literal">nil</span>];</div><div class="line">    </div><div class="line">    <span class="comment">/* &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; *   添加附件   * &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; */</span></div><div class="line">    <span class="comment">/*</span></div><div class="line">     //2.联系人信息附件</div><div class="line">     NSDictionary *vcfPart = [NSDictionary dictionaryWithObjectsAndKeys:@"text/directory;\r\n\tx-unix-mode=0644;\r\n\tname=\"test.vcf\"",kSKPSMTPPartContentTypeKey,</div><div class="line">     @"attachment;\r\n\tfilename=\"test.vcf\"",kSKPSMTPPartContentDispositionKey,[vcfData encodeBase64ForData],kSKPSMTPPartMessageKey,@"base64",kSKPSMTPPartContentTransferEncodingKey,nil];</div><div class="line">     */</div><div class="line">    </div><div class="line">    <span class="comment">//3.图片和视频附件</span></div><div class="line">    <span class="comment">/*</span></div><div class="line">     //3.1视频附件</div><div class="line">     NSDictionary *videoPart = [NSDictionary dictionaryWithObjectsAndKeys:@"video/quicktime;\r\n\tx-unix-mode=0644;\r\n\tname=\"video.mov\"",kSKPSMTPPartContentTypeKey,</div><div class="line">     @"attachment;\r\n\tfilename=\"video.mov\"",kSKPSMTPPartContentDispositionKey,[videoData encodeBase64ForData],kSKPSMTPPartMessageKey,@"base64",kSKPSMTPPartContentTransferEncodingKey,nil];</div><div class="line">     */</div><div class="line">    </div><div class="line">    <span class="comment">//获取当前屏幕截图</span></div><div class="line">    <span class="built_in">UIGraphicsBeginImageContextWithOptions</span>(<span class="built_in">CGSizeMake</span>(kIPHONE_WIDTH, kIPHONE_HEIGHT), <span class="literal">NO</span>, [[<span class="built_in">UIScreen</span> mainScreen] scale]);</div><div class="line">    [<span class="keyword">self</span>.view drawViewHierarchyInRect:<span class="keyword">self</span>.view.bounds afterScreenUpdates:<span class="literal">NO</span>];</div><div class="line">    <span class="built_in">UIImage</span> *snapshot = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</div><div class="line">    <span class="built_in">UIGraphicsEndImageContext</span>();</div><div class="line">    <span class="built_in">NSData</span> *imageData = <span class="built_in">UIImageJPEGRepresentation</span>(snapshot, <span class="number">1.0</span>);</div><div class="line">    </div><div class="line">    <span class="comment">//3.2图片附件</span></div><div class="line">    <span class="built_in">NSDictionary</span> *imagePart = [<span class="built_in">NSDictionary</span> dictionaryWithObjectsAndKeys:<span class="string">@"image/jpg;\r\n\tx-unix-mode=0644;\r\n\tname=\"snapshot.jpg\""</span>,kSKPSMTPPartContentTypeKey,</div><div class="line">                               <span class="string">@"attachment;\r\n\tfilename=\"snapshot.jpg\""</span>,kSKPSMTPPartContentDispositionKey,[imageData encodeBase64ForData],kSKPSMTPPartMessageKey,<span class="string">@"base64"</span>,kSKPSMTPPartContentTransferEncodingKey,<span class="literal">nil</span>];</div><div class="line">    </div><div class="line">    myMessage.parts = [<span class="built_in">NSArray</span> arrayWithObjects:plainPart,imagePart,<span class="literal">nil</span>];</div><div class="line">    <span class="built_in">dispatch_async</span>(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</div><div class="line">        [myMessage send];</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -379,13 +392,13 @@ var _hmt = _hmt || [];
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/blog/2013/05/25/s-ink.html">墨筱雨</a></p>
+        <p><span>本文标题:</span><a href="/blog/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html">iOS-静默方式发送邮件(SKPSMTPMessage)</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">一月筠</a></p>
-        <p><span>发布时间:</span>2013-05-25, 19:41:00</p>
-        <p><span>最后更新:</span>2017-06-07, 15:36:37</p>
+        <p><span>发布时间:</span>2017-02-16, 17:00:00</p>
+        <p><span>最后更新:</span>2017-06-07, 15:36:33</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/blog/2013/05/25/s-ink.html" title="墨筱雨">http://guoyanjun.top/blog/2013/05/25/s-ink.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://guoyanjun.top/blog/2013/05/25/s-ink.html　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/blog/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html" title="iOS-静默方式发送邮件(SKPSMTPMessage)">http://guoyanjun.top/blog/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://guoyanjun.top/blog/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -398,15 +411,15 @@ var _hmt = _hmt || [];
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/blog/2015/04/16/naging.html">
-                    碎碎念
+                <a href="/blog/2017/02/27/ios-modular-programing-framework-behive.html">
+                    iOS 模块化编程框架 BeeHive
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/blog/2012/12/14/met-again.html">
-                    又相见
+                <a href="/blog/2016/10/01/about-the-plug-in-used-by-this-site.html">
+                    关于本站使用到的插件
                 </a>
             </div>
         
@@ -414,6 +427,29 @@ var _hmt = _hmt || [];
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#这里主要介绍第三种，采用静默方式发送的email："><span class="toc-number">2.</span> <span class="toc-text">这里主要介绍第三种，采用静默方式发送的email：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、工程配置"><span class="toc-number">2.1.</span> <span class="toc-text">1、工程配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、引入头文件"><span class="toc-number">2.2.</span> <span class="toc-text">2、引入头文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、遵循协议"><span class="toc-number">2.3.</span> <span class="toc-text">3、遵循协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、协议的实现"><span class="toc-number">2.4.</span> <span class="toc-text">4、协议的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、方法的实现"><span class="toc-number">2.5.</span> <span class="toc-text">5、方法的实现</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-6 i,
+        .toc-level-6 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
 <!-- 添加打赏功能 只在所有post文件下的文章中显示-->
@@ -473,7 +509,7 @@ var _hmt = _hmt || [];
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"墨筱雨　| 郭艳军的那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"iOS-静默方式发送邮件(SKPSMTPMessage)　| 郭艳军的那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -530,7 +566,7 @@ var _hmt = _hmt || [];
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/blog/2015/04/16/naging.html" title="上一篇: 碎碎念">
+            <a href="/blog/2017/02/27/ios-modular-programing-framework-behive.html" title="上一篇: iOS 模块化编程框架 BeeHive">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -538,7 +574,7 @@ var _hmt = _hmt || [];
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/blog/2012/12/14/met-again.html" title="下一篇: 又相见">
+            <a href="/blog/2016/10/01/about-the-plug-in-used-by-this-site.html" title="下一篇: 关于本站使用到的插件">
                 <i class="fa fa-angle-right"></i>
             </a>
         
