@@ -59,6 +59,7 @@ define([], function(){
         document.getElementById("viewer").className = "";
         setTimeout(function(){
             basicwrap.className = "anm-swipe";
+            basicwrap.style.height = "100%";
         },0);
         _isShow = true;
         document.ontouchstart=function(e){

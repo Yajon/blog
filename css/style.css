@@ -848,6 +848,12 @@ a {
   -moz-background-size: 82%;
   background-size: 82%;
 }
+#header .header-nav .social .GitHub {
+  background: url("/blog//img/GitHub.png") center no-repeat #fff;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
+}
 #header .header-nav .social .简书 {
   background: url("/blog//img/简书.png") center no-repeat #e99888;
   -webkit-background-size: 82%;
@@ -925,13 +931,6 @@ a {
   -webkit-background-size: 103%;
   -moz-background-size: 103%;
   background-size: 103%;
-}
-#header .header-nav .social .GitHub {
-  background: url("//cdn.bootcss.com/logos/0.2.0/github-octocat.svg") no-repeat #fff;
-  -webkit-background-size: 90%;
-  -moz-background-size: 90%;
-  background-size: 90%;
-  background-position: 50% 100%;
 }
 #header .header-nav .social .CodePen {
   background: url("//cdn.bootcss.com/logos/0.2.0/codepen-icon.svg") no-repeat #000;
@@ -1596,7 +1595,7 @@ body .ui-tooltip {
   margin: 0.5em auto;
   color: #438aac;
   background: rgba(243,248,253,0.6);
-  border: 1px solid #d2e8fa;
+  border: 1px solid #d2e8fa t;
   padding: 0.2em 0.6em;
   -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.15);
   box-shadow: 1px 1px 1px rgba(0,0,0,0.15);

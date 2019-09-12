@@ -23,14 +23,14 @@ CoreBluetooth框架的核心其实是两个东西，peripheral和central, 可以
 <meta property="og:site_name" content="郭艳军的那些事儿">
 <meta property="og:description" content="文/一月筠 -- 转载请注明 --
 CoreBluetooth框架的核心其实是两个东西，peripheral和central, 可以理解成外设和中心。对应他们分别有一组相关的API和类…">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-e61619a0ccf8df53.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-8d7a032f36ab3602.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-06-07T07:36:37.000Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1819713-e61619a0ccf8df53.jpeg?imageMogr2/auto-orient/strip|imageView2/2/w/768/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1819713-8d7a032f36ab3602.png?imageMogr2/auto-orient/strip|imageView2/2/w/552/format/webp">
+<meta property="og:updated_time" content="2019-09-12T08:05:49.946Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS蓝牙开发（一）蓝牙相关基础知识">
 <meta name="twitter:description" content="文/一月筠 -- 转载请注明 --
 CoreBluetooth框架的核心其实是两个东西，peripheral和central, 可以理解成外设和中心。对应他们分别有一组相关的API和类…">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1819713-e61619a0ccf8df53.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1819713-e61619a0ccf8df53.jpeg?imageMogr2/auto-orient/strip|imageView2/2/w/768/format/webp">
 
 <link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
 
@@ -131,7 +131,7 @@ var _hmt = _hmt || [];
         </hgroup>
 
         
-        <p class="header-subtitle">๑۩ﺴ ﺴ۩๑ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动...</p>
+        <p class="header-subtitle">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</p>
         
 
         
@@ -200,7 +200,7 @@ var _hmt = _hmt || [];
                         
                             <li><a href="/blog/tags/">标签云</a></li>
                         
-                            <li><a href="/blog/about/">关于我</a></li>
+                            <li><a href="/blog/about/">关于</a></li>
                         
                         </ul>
                     </nav>
@@ -282,7 +282,7 @@ var _hmt = _hmt || [];
               <h1 class="header-author"><a href="/blog/" title="回到主页">一月筠</a></h1>
             </hgroup>
             
-            <p class="header-subtitle">๑۩ﺴ ﺴ۩๑ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动...</p>
+            <p class="header-subtitle">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</p>
             
             <nav class="header-menu">
                 <ul>
@@ -295,7 +295,7 @@ var _hmt = _hmt || [];
                 
                     <li><a href="/blog/tags/">标签云</a></li>
                 
-                    <li><a href="/blog/about/">关于我</a></li>
+                    <li><a href="/blog/about/">关于</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -365,7 +365,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><ul>
+        <script src="/assets/js/APlayer.min.js"> </script><script src="/assets/js/DPlayer.min.js"> </script><ul>
 <li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
 <li>CoreBluetooth框架的核心其实是两个东西，peripheral和central, 可以理解成外设和中心。对应他们分别有一组相关的API和类…<a id="more"></a>
 </li>
@@ -382,13 +382,13 @@ var _hmt = _hmt || [];
 <h2 id="蓝牙基础知识"><a href="#蓝牙基础知识" class="headerlink" title="蓝牙基础知识"></a>蓝牙基础知识</h2><blockquote>
 <p>CoreBluetooth框架的核心其实是两个东西，peripheral和central, 可以理解成外设和中心。对应他们分别有一组相关的API和类</p>
 </blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1819713-e61619a0ccf8df53.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="截图1"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1819713-e61619a0ccf8df53.jpeg?imageMogr2/auto-orient/strip|imageView2/2/w/768/format/webp" alt="截图1"></p>
 <ul>
 <li>这两组api分别对应不同的业务场景，左侧叫做中心模式，就是以你的app作为中心，连接其他的外设的场景，而右侧称为外设模式，使用手机作为外设别其他中心设备操作的场景。</li>
 <li>服务和特征，特征的属性(service and characteristic):<br>每个设备都会有一些服务，每个服务里面都会有一些特征，特征就是具体键值对，提供数据的地方。每个特征属性分为这么几种：读，写，通知这么几种方式。</li>
 </ul>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//objcetive c特征的定义枚举</span></div><div class="line">  <span class="keyword">typedef</span> <span class="built_in">NS_OPTIONS</span>(<span class="built_in">NSUInteger</span>, CBCharacteristicProperties) &#123;</div><div class="line">      CBCharacteristicPropertyBroadcast												= <span class="number">0x01</span>,</div><div class="line">      CBCharacteristicPropertyRead													= <span class="number">0x02</span>,</div><div class="line">      CBCharacteristicPropertyWriteWithoutResponse									= <span class="number">0x04</span>,</div><div class="line">      CBCharacteristicPropertyWrite													= <span class="number">0x08</span>,</div><div class="line">      CBCharacteristicPropertyNotify													= <span class="number">0x10</span>,</div><div class="line">      CBCharacteristicPropertyIndicate												= <span class="number">0x20</span>,</div><div class="line">      CBCharacteristicPropertyAuthenticatedSignedWrites								= <span class="number">0x40</span>,</div><div class="line">      CBCharacteristicPropertyExtendedProperties										= <span class="number">0x80</span>,</div><div class="line">      CBCharacteristicPropertyNotifyEncryptionRequired <span class="built_in">NS_ENUM_AVAILABLE</span>(NA, <span class="number">6</span>_0)		= <span class="number">0x100</span>,</div><div class="line">      CBCharacteristicPropertyIndicateEncryptionRequired <span class="built_in">NS_ENUM_AVAILABLE</span>(NA, <span class="number">6</span>_0)	= <span class="number">0x200</span></div><div class="line">  &#125;;</div></pre></td></tr></table></figure>
-<p>外设、服务、特征间的关系<br><img src="http://upload-images.jianshu.io/upload_images/1819713-8d7a032f36ab3602.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>外设、服务、特征间的关系<br><img src="https://upload-images.jianshu.io/upload_images/1819713-8d7a032f36ab3602.png?imageMogr2/auto-orient/strip|imageView2/2/w/552/format/webp" alt=""></p>
 <h2 id="蓝牙中心模式流程"><a href="#蓝牙中心模式流程" class="headerlink" title="蓝牙中心模式流程"></a>蓝牙中心模式流程</h2><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span> 建立中心角色</div><div class="line"><span class="number">2.</span> 扫描外设（discover）</div><div class="line"><span class="number">3.</span> 连接外设(connect)</div><div class="line"><span class="number">4.</span> 扫描外设中的服务和特征(discover)</div><div class="line">    - <span class="number">4.1</span> 获取外设的services</div><div class="line">    - <span class="number">4.2</span> 获取外设的Characteristics,获取Characteristics的值，获取Characteristics的Descriptor和Descriptor的值</div><div class="line"><span class="number">5.</span> 与外设做数据交互(explore and interact)</div><div class="line"><span class="number">6.</span> 订阅Characteristic的通知</div><div class="line"><span class="number">7.</span> 断开连接(disconnect)</div></pre></td></tr></table></figure>
 <h2 id="蓝牙外设模式流程"><a href="#蓝牙外设模式流程" class="headerlink" title="蓝牙外设模式流程"></a>蓝牙外设模式流程</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">1. </span>启动一个Peripheral管理对象</div><div class="line"><span class="bullet">2. </span>本地Peripheral设置服务,特性,描述，权限等等</div><div class="line"><span class="bullet">3. </span>Peripheral发送广告</div><div class="line"><span class="bullet">4. </span>设置处理订阅、取消订阅、读characteristic、写characteristic的委托方法</div></pre></td></tr></table></figure>
 <h2 id="蓝牙设备状态"><a href="#蓝牙设备状态" class="headerlink" title="蓝牙设备状态"></a>蓝牙设备状态</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">1. </span>待机状态（standby）：设备没有传输和发送数据，并且没有连接到任何设</div><div class="line"><span class="bullet">2. </span>广播状态（Advertiser）：周期性广播状态</div><div class="line"><span class="bullet">3. </span>扫描状态（Scanner）：主动寻找正在广播的设备</div><div class="line"><span class="bullet">4. </span>发起链接状态（Initiator）：主动向扫描设备发起连接。</div><div class="line"><span class="bullet">5. </span>主设备（Master）：作为主设备连接到其他设备。</div><div class="line"><span class="bullet">6. </span>从设备（Slave）：作为从设备连接到其他设备。</div></pre></td></tr></table></figure>
@@ -422,7 +422,7 @@ var _hmt = _hmt || [];
         <p><span>本文标题:</span><a href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html">iOS蓝牙开发（一）蓝牙相关基础知识</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">一月筠</a></p>
         <p><span>发布时间:</span>2017-05-26, 12:55:30</p>
-        <p><span>最后更新:</span>2017-06-07, 15:36:37</p>
+        <p><span>最后更新:</span>2019-09-12, 16:05:49</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html" title="iOS蓝牙开发（一）蓝牙相关基础知识">http://guoyanjun.top/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://guoyanjun.top/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -477,39 +477,16 @@ var _hmt = _hmt || [];
 
 
 	<! -- 添加捐赠图标 -->
-<div class ="post-donate">
+<div class="post-donate" style="margin-top:0px;">
     <div id="donate_board" class="donate_bar center">
-        <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"></a>
+    <iframe src="https://rawcdn.githack.com/TinyJay/donate-page/51aaf216f048b8e6d5ce01443a32be930b91869d/simple/index.html" style="overflow-x:hidden;overflow-y:hidden; border:0px none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe>
         <span class="donate_txt">
-           ↑<br>
-           欣赏此文？求鼓励，求支持！
+            ↑
+            <br>
+            求鼓励&lt;(*^__^*)&gt;求支持
         </span>
         <br>
-      </div>  
-    <div id="donate_guide" class="donate_bar center hidden" >
-        <!-- 方式一： 
-            <img src="/img/Alipay.jpg" alt="支付宝打赏">
-            <img src="/img/WeChatpay.jpg" alt="微信打赏">
-        -->
-        <!-- 方式二；
-            step1：在_config.yml中添加配置
-                Alipay: /img/Alipay.jpg
-                WeChatpay: /img/WeChatpay.jpg
-            step2：此处两张图片的路径分别设置为如下
-                <img src="/blog/undefined"
-                <img src="/blog/undefined"
-        -->
-        <!-- 支付宝打赏图案 -->
-        <img src="/blog//img/Alipay.jpg" alt="支付宝打赏">
-        <!-- 微信打赏图案 -->
-        <img src="/blog//img/WeChatpay.jpg" alt="微信打赏">
     </div>
-    <script type="text/javascript">
-        document.getElementById('btn_donate').onclick = function(){
-            $('#donate_board').addClass('hidden');
-            $('#donate_guide').removeClass('hidden');
-        }
-    </script>
 </div>
 <! -- 添加捐赠图标 -->
 
@@ -544,45 +521,29 @@ var _hmt = _hmt || [];
 
 
     
-        <section class="youyan" id="comments">
-    <script>
-        var loadComment = function(){
-            var d = document, s = d.createElement('script');
-            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2129366';
-            (d.head || d.body).appendChild(s);
-        }
-    </script>
-    
-    <aside class="comment-bar">
-        <a href="javascript:void(0);">
-            <i class="fa fa-commenting-o animated infinite pulse"></i>
-            <i class="fa fa-spinner fa-pulse"></i>
-            <span class="count-comment"></span>
-        </a>
-    </aside>
-    <script>
-        var $commentBar = $("#comments aside.comment-bar");
-        var load$hide = function(){
-            $commentBar.find("a > i").toggle();
-            loadComment();
-            $commentBar.fadeOut(800);
-        }
-        $commentBar.click(function(){
-            load$hide();
-        })
-        $commentBar.children("a").hover(function(){
-            load$hide();
-        })
-        if (window.location.hash === "#comments") {
-            load$hide();
-        }
-    </script>
-
-    <div id="uyan_frame"></div>
-</section>
+        <section id="comments" style="margin:10px;padding:10px;background:#fff;">
+          <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'true' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "R9cQjqaD9AXPKY7AQiU6U6yl",
+            app_key: "YHUU5n9sbvpRQCdiIU8aRsmH",
+            placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+            avatar:"mm"
+        });
+    }
+</script>
+      </section>
     
 
-
+  
 
 
     <div class="scroll" id="post-nav-button">
@@ -629,8 +590,8 @@ var _hmt = _hmt || [];
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-<!--                2015-2017 一月筠-->
-                    2015-2017 <a href="http://guoyanjun.top" target="_blank">一月筠</a>
+<!--                2015-2019 一月筠-->
+                    2015-2019 <a href="http://guoyanjun.top" target="_blank">一月筠</a>
             </div>
             <!--<div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
@@ -741,7 +702,7 @@ MathJax.Hub.Queue(function() {
     
 </script>
 
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+<script async src="http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
   </div>
 </body>
