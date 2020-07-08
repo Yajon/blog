@@ -84,10 +84,11 @@
 <!--添加百度自动推送代码-->
 <script>
 (function(){
-    var bp = document.createElement('script');
-    bp.src = '//push.zhanzhang.baidu.com/push.js';
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
+    //var bp = document.createElement('script');
+    //bp.src = '//push.zhanzhang.baidu.com/push.js';
+    //var s = document.getElementsByTagName("script")[0];
+    //s.parentNode.insertBefore(bp, s);
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
 })();
 </script>
 
@@ -364,7 +365,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.min.js"> </script><ul>
+        <script src="/blog/assets/js/APlayer.min.js"> </script><ul>
 <li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
 <li>丝雨抚蕊，缠绵似醉…<a id="more"></a>
 </li>
@@ -446,8 +447,8 @@ var _hmt = _hmt || [];
             <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
         <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"墨筱雨　| 郭艳军的那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+            //window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"墨筱雨　| 郭艳军的那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+            window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"墨筱雨　| 郭艳军的那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//static.ddhigh.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -518,10 +519,10 @@ var _hmt = _hmt || [];
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
     if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        bp.src = '//zz.bdstatic.com/linksubmit/push.js';
     }
     else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        bp.src = '//push.zhanzhang.baidu.com/push.js';
     }
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
@@ -644,7 +645,7 @@ MathJax.Hub.Queue(function() {
     
 </script>
 
-<script async src="http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
   </div>
 </body>

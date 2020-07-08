@@ -78,10 +78,11 @@
 <!--添加百度自动推送代码-->
 <script>
 (function(){
-    var bp = document.createElement('script');
-    bp.src = '//push.zhanzhang.baidu.com/push.js';
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
+    //var bp = document.createElement('script');
+    //bp.src = '//push.zhanzhang.baidu.com/push.js';
+    //var s = document.getElementsByTagName("script")[0];
+    //s.parentNode.insertBefore(bp, s);
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
 })();
 </script>
 
@@ -539,7 +540,7 @@ MathJax.Hub.Queue(function() {
     
 </script>
 
-<script async src="http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
   </div>
 </body>

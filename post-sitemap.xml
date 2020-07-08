@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://guoyanjun.top</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html</loc>
+        <lastmod>2020-07-07T08:37:42.128Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2015/12/25/hexo-blog-environment-set-up-for-mac.html</loc>
+        <lastmod>2020-07-07T03:27:33.793Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2017/04/14/the-only-rhyme.html</loc>
+        <lastmod>2020-07-07T02:26:03.245Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2016/10/01/about-the-plug-in-used-by-this-site.html</loc>
+        <lastmod>2020-07-06T10:47:50.344Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2015/07/03/tactic.html</loc>
+        <lastmod>2020-07-06T10:37:25.863Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2013/05/25/s-ink.html</loc>
+        <lastmod>2020-07-06T10:35:07.672Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2015/04/16/naging.html</loc>
+        <lastmod>2020-07-06T10:33:37.253Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2017/04/04/remember-the-qingming-rain.html</loc>
+        <lastmod>2020-07-06T10:31:41.091Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2016/01/05/hexo-baidu-actively-submit-links.html</loc>
+        <lastmod>2020-07-06T10:22:55.503Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2016/01/08/hexo-blog-ad-reward-function.html</loc>
+        <lastmod>2020-07-06T08:51:17.109Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2016/03/28/hexo-custom-page-for-home-page.html</loc>
+        <lastmod>2020-07-06T08:45:26.947Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html</loc>
+        <lastmod>2020-07-06T08:37:10.417Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2017/02/27/ios-modular-programing-framework-behive.html</loc>
+        <lastmod>2020-07-06T08:31:42.877Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2017/03/06/mac-instals-nodejs-(detailed-steps)-and-sublimetext-runs-the-javascript-console.html</loc>
+        <lastmod>2020-07-06T08:17:38.393Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html</loc>
+        <lastmod>2020-07-06T07:57:19.198Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html</loc>
+        <lastmod>2020-07-06T02:01:25.669Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2012/12/14/met-again.html</loc>
+        <lastmod>2020-07-02T09:27:01.633Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2015/12/05/ios-loading-single-shet-pictures-leading-to-crash-analysis.html</loc>
+        <lastmod>2017-06-07T07:36:57.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2016/01/04/ios-open-source-project-and-tol-plug-in-on-github.html</loc>
+        <lastmod>2017-06-07T07:36:57.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2015/12/24/the-hexo-comand-and-some-usage.html</loc>
+        <lastmod>2017-06-07T07:36:55.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2017/03/15/building-gh-pages-branches-on-github.html</loc>
+        <lastmod>2017-06-07T07:36:55.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://guoyanjun.top/2015/12/01/c-language-sorting-algorithm-and-detailed.html</loc>
+        <lastmod>2017-06-07T07:36:55.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+</urlset>
+<!-- XML Sitemap generated by Hexo SEO Friendly Sitemap Generator -->
