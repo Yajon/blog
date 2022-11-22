@@ -1,1371 +1,503 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
-<head>
-
-    <!--[if lt IE 9]>
-        <style>body {display: none; background: none !important} </style>
-        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
-    <![endif]-->
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="format-detection" content="telephone=no" />
-<meta name="author" content="一月筠" />
-
-
-     
-        <meta name="baidu-site-verification" content="6jyxwofmoa" />
-    
-    
-
-
-<meta name="description" content="TinyJay,一月筠,郭艳军的那些事儿,guoyanjun">
-<meta property="og:type" content="website">
-<meta property="og:title" content="郭艳军的那些事儿">
-<meta property="og:url" content="http://guoyanjun.top/index.html">
-<meta property="og:site_name" content="郭艳军的那些事儿">
-<meta property="og:description" content="TinyJay,一月筠,郭艳军的那些事儿,guoyanjun">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="郭艳军的那些事儿">
-<meta name="twitter:description" content="TinyJay,一月筠,郭艳军的那些事儿,guoyanjun">
-
-<link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
-
-
-    <link rel="alternate" href="/atom.xml" title="郭艳军的那些事儿" type="application/atom+xml">
-
-
-
-    <link rel="shortcut icon" href="/blog//favicon.png">
-
-
-
-    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
-
-
-
-    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
-
-
-
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
-
-
-<link rel="stylesheet" href="/blog/css/style.css">
-
-
-    <style> .article { opacity: 0;} </style>
-
-
-<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-
-
-<title>郭艳军的那些事儿</title>
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-<script>
-    var yiliaConfig = {
-        fancybox: true,
-        animate: true,
-        isHome: true,
-        isPost: false,
-        isArchive: false,
-        isTag: false,
-        isCategory: false,
-        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
-        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: true
-    }
-</script>
-
-<!--添加百度自动推送代码-->
-<script>
-(function(){
-    //var bp = document.createElement('script');
-    //bp.src = '//push.zhanzhang.baidu.com/push.js';
-    //var s = document.getElementsByTagName("script")[0];
-    //s.parentNode.insertBefore(bp, s);
-    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
-})();
-</script>
-
-<!--添加百度统计代码-->
-<script>
-var _hmt = _hmt || [];
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>一月筠 - ๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</title><meta name="keywords" content="一月筠,郭艳军,Yojoy,Yajon,GuoYanjun,产品,设计,开发,ChatGPT,Flutter开发,iOS开发,鸿蒙开发,HarmonyOS开发,小程序开发"><meta name="author" content="GuoYanjun"><meta name="copyright" content="GuoYanjun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="一月筠"><meta name="application-name" content="一月筠"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="website"><meta property="og:title" content="一月筠"><meta property="og:url" content="https://yojoy.top/blog/index.html"><meta property="og:site_name" content="一月筠"><meta property="og:description" content="一月筠,郭艳军,Yojoy,Yajon,GuoYanjun,产品,设计,开发,ChatGPT,Flutter开发,iOS开发,鸿蒙开发,HarmonyOS开发,小程序开发"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://avatars.githubusercontent.com/u/13490798?s=320"><meta property="article:author" content="GuoYanjun"><meta property="article:tag" content="一月筠,郭艳军,Yojoy,Yajon,GuoYanjun,产品,设计,开发,ChatGPT,Flutter开发,iOS开发,鸿蒙开发,HarmonyOS开发,小程序开发"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://avatars.githubusercontent.com/u/13490798?s=320"><meta name="description" content="一月筠,郭艳军,Yojoy,Yajon,GuoYanjun,产品,设计,开发,ChatGPT,Flutter开发,iOS开发,鸿蒙开发,HarmonyOS开发,小程序开发"><link rel="shortcut icon" href="/blog/favicon.ico"><link rel="canonical" href="https://yojoy.top/blog/"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="O3qTII6QvZXszxEg"/><meta name="msvalidate.01" content="xxx"/><link rel="manifest" href="/blog/other/json/manifest.json"/><meta name="msapplication-TileColor" content="var(--anzhiyu-main)"/><link rel="mask-icon" href="/blog/blog/img/siteicon/apple-icon-180.png" color="#5bbad5"/><link rel="apple-touch-icon" sizes="180x180" href="/blog/img/siteicon/apple-icon-180.png"/><link rel="apple-touch-icon-precomposed" sizes="180x180" href="/blog/img/siteicon/apple-icon-180.png"/><link rel="icon" type="image/png" sizes="32x32" href="/blog/blog/img/siteicon/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/blog/blog/img/siteicon/16.png"/><link rel="bookmark" href="/blog/blog/img/siteicon/apple-icon-180.png"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1290-2796.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2796-1290.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1179-2556.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2556-1179.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  //hm.src = "https://hm.baidu.com/hm.js?a0de0062ecc8e145d335478668581635";
-  hm.src = "https://hm.baidu.com/hm.js?71fefd6fdbcc6386d6d806016594606a";
+  hm.src = "https://hm.baidu.com/hm.js?3f3c772306077fa1190d5aeea5ceb780";
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
-</script>
-
-
-    <script>
-        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
-    </script>
-
-
-
-    <script> yiliaConfig.rootUrl = /blog/; </script>
-
-
-
-
-
-</head>
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="/blog/" class="profilepic">
-            <img src="/blog//img/avatar.png" class="animated zoomIn">
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/blog/">一月筠</a></h1>
-        </hgroup>
-
-        
-        <p class="header-subtitle">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</p>
-        
-
-        
-            <form id="search-form">
-            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
-            <i class="fa fa-times" onclick="resetSearch()"></i>
-            </form>
-            <div id="local-search-result"></div>
-            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
-        
-
-
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="/blog/index/">主页</a></li>
-                        
-                            <li><a href="/blog/essay/">随笔</a></li>
-                        
-                            <li><a href="/blog/archives/">所有文章</a></li>
-                        
-                            <li><a href="/blog/tags/">标签云</a></li>
-                        
-                            <li><a href="/blog/about/">关于</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
-                            
-                                <a class="fa 新浪微博" href="http://weibo.com/1778140743" title="新浪微博"></a>
-                            
-                                <a class="fa GitHub" href="https://github.com/TinyJay" title="GitHub"></a>
-                            
-                                <a class="fa 简书" href="http://www.jianshu.com/u/b13ee6afc1e0" title="简书"></a>
-                            
-                                <a class="fa RSS" href="/blog/atom.xml" title="RSS"></a>
-                            
-                                <a class="fa 网易云音乐" href="http://music.163.com/#/user/home?id=284001567" title="网易云音乐"></a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Server/">Server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/essay/">essay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/poetry/">poetry</a></li></ul>
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://github.com">GitHub</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://www.cocoachina.com">cocoachina</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://www.code4app.com">code4app</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://www.fontawesome.com.cn">fontawesome</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://www.jsdelivr.com/">jsdelivr</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://sm.ms">SM.MS</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://www.awesomes.cn/rank">awesomes rank</a>
-                    
-                    </div>
-                </section>
-                
-
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">你要记得那些大雨中为你撑伞的人，帮你挡住外来之物的人，黑暗中默默抱紧你的人，逗你笑的人，陪你彻夜聊天的人，坐车来看望你的人，陪你哭过的人，在医院陪你的人，总是以你为重的人，带着你四处游荡的人，说想念你的人...</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>                
-</div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">一月筠</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/blog/" class="profilepic">
-                <img src="/blog//img/avatar.png" class="animated zoomIn">
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/blog/" title="回到主页">一月筠</a></h1>
-            </hgroup>
-            
-            <p class="header-subtitle">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</p>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/blog/index/">主页</a></li>
-                
-                    <li><a href="/blog/essay/">随笔</a></li>
-                
-                    <li><a href="/blog/archives/">所有文章</a></li>
-                
-                    <li><a href="/blog/tags/">标签云</a></li>
-                
-                    <li><a href="/blog/about/">关于</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" target="_blank" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
-                            
-                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1778140743" title="新浪微博"></a>
-                            
-                                <a class="fa GitHub" target="_blank" href="https://github.com/TinyJay" title="GitHub"></a>
-                            
-                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/u/b13ee6afc1e0" title="简书"></a>
-                            
-                                <a class="fa RSS" target="_blank" href="/blog/atom.xml" title="RSS"></a>
-                            
-                                <a class="fa 网易云音乐" target="_blank" href="http://music.163.com/#/user/home?id=284001567" title="网易云音乐"></a>
-                            
-                        </ul>
-            </nav>
-        </header>                
-    </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
-</nav>
-      <div class="body-wrap">
-  
-    <article id="post-ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html" class="article-date">
-      <time datetime="2017-05-26T04:55:30.000Z" itemprop="datePublished">2017-05-26</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html">iOS蓝牙开发（一）蓝牙相关基础知识</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <ul>
-<li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
-<li>CoreBluetooth框架的核心其实是两个东西，peripheral和central, 可以理解成外设和中心。对应他们分别有一组相关的API和类…
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/iOS/">iOS</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-<!-- 添加打赏功能 只在所有post文件下的文章中显示-->
-
-
-
-
-
-
-
-  
-
-
-
-
-<!--添加百度自动推送代码-->
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = '//zz.bdstatic.com/linksubmit/push.js';
+</script><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://cdn.jsdelivr.net/gh/lxhei1831/blog_img@main/%E9%9A%8F%E4%BE%BF%E9%80%9B%E9%80%9B.png"},
+  postHeadAiDescription: undefined,
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎回来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  url: 'https://yojoy.top/blog',
+  root: '/blog/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: {"mode":"cdn","api":"https://img2color-go.vercel.app/api?img=","cover_change":true},
+  authorStatus: {"skills":null},
+  algolia: undefined,
+  localSearch: {"path":"/blog/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: GuoYanjun","link":"链接: ","source":"来源: 一月筠","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#2F7DCD","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
     }
-    else {
-        bp.src = '//push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-  
-    <article id="post-the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html" class="article-date">
-      <time datetime="2017-05-21T04:30:30.000Z" itemprop="datePublished">2017-05-21</time>
-</a>
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '一月筠',
+  title: '一月筠',
+  postAI: '',
+  pageFillDescription: '一月筠郭艳军产品设计开发开发开发鸿蒙开发开发小程序开发',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-07-23 14:25:47',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-
-    </div>
-  
-  <div class="article-inner">
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html">Mac版 IntelliJ IDEA 创建Web项目并部署servlet</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <ul>
-<li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
-<li><code>File</code> -&gt; <code>New Project</code> -&gt; 选择<code>Project SDK</code>为1.8 -&gt; <code>Next</code>…
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Server/">Server</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-<!-- 添加打赏功能 只在所有post文件下的文章中显示-->
-
-
-
-
-
-
-
-  
-
-
-
-
-<!--添加百度自动推送代码-->
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = '//zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = '//push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-  
-    <article id="post-the-only-rhyme" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2017/04/14/the-only-rhyme.html" class="article-date">
-      <time datetime="2017-04-14T04:55:00.000Z" itemprop="datePublished">2017-04-14</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/04/14/the-only-rhyme.html">独韵</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <ul>
-<li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
-<li>菁菁书院，氤氲着杨柳竹韵的婆娑，簇拥着懵懂羞涩的青春韶华，也滋养着奋翅高飞的梦想…
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/诗文/">诗文</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/essay/">essay</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/blog/2017/04/14/the-only-rhyme.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-<!-- 添加打赏功能 只在所有post文件下的文章中显示-->
-
-
-
-
-
-
-
-  
-
-
-
-
-<!--添加百度自动推送代码-->
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = '//zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = '//push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-  
-    <article id="post-remember-the-qingming-rain" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2017/04/04/remember-the-qingming-rain.html" class="article-date">
-      <time datetime="2017-04-04T00:30:00.000Z" itemprop="datePublished">2017-04-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/04/04/remember-the-qingming-rain.html">忆清明雨上</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <ul>
-<li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
-<li>微蒙雨细氲苍穹…
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/诗文/">诗文</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/poetry/">poetry</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/blog/2017/04/04/remember-the-qingming-rain.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-<!-- 添加打赏功能 只在所有post文件下的文章中显示-->
-
-
-
-
-
-
-
-  
-
-
-
-
-<!--添加百度自动推送代码-->
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = '//zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = '//push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-  
-    <article id="post-building-gh-pages-branches-on-github" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2017/03/15/building-gh-pages-branches-on-github.html" class="article-date">
-      <time datetime="2017-03-15T04:30:00.000Z" itemprop="datePublished">2017-03-15</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/03/15/building-gh-pages-branches-on-github.html">在github上建立gh-pages分支</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <ul>
-<li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
-<li><a href="https://github.com/hexojs/hexo">hexo</a>是一款基于Node.js的静态博客框架，这篇文章针对Mac用户，熟悉hexo的同学可以绕道哈。初步搭建只需要简单的几步，动动你的手指头，在终端试一下吧…
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/github/">github</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/blog/2017/03/15/building-gh-pages-branches-on-github.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-<!-- 添加打赏功能 只在所有post文件下的文章中显示-->
-
-
-
-
-
-
-
-  
-
-
-
-
-<!--添加百度自动推送代码-->
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = '//zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = '//push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-  
-    <article id="post-the-most-comprehensive-colection-of-ios-development-tols" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html" class="article-date">
-      <time datetime="2017-03-07T09:46:00.000Z" itemprop="datePublished">2017-03-07</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html">最全iOS开发工具集合</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <ul>
-<li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
-<li>目录…
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/iOS/">iOS</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-<!-- 添加打赏功能 只在所有post文件下的文章中显示-->
-
-
-
-
-
-
-
-  
-
-
-
-
-<!--添加百度自动推送代码-->
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = '//zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = '//push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-  
-    <article id="post-mac-instals-nodejs-(detailed-steps)-and-sublimetext-runs-the-javascript-console" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2017/03/06/mac-instals-nodejs-(detailed-steps)-and-sublimetext-runs-the-javascript-console.html" class="article-date">
-      <time datetime="2017-03-06T10:00:00.000Z" itemprop="datePublished">2017-03-06</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/03/06/mac-instals-nodejs-(detailed-steps)-and-sublimetext-runs-the-javascript-console.html">Mac 安装 nodejs （图文详细步骤）及SublimeText运行JavaScript控制台</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <ul>
-<li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
-<li>由于自己的拓展需求，要临时使用到node.js，所以此次本君就在此mark下 Mac 下node.js的安装和简单的检验示例，给各位小主留个标记，提高下以后的效率。本章对于一些小白而言还是具有普及意义的…
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/iOS/">iOS</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/blog/2017/03/06/mac-instals-nodejs-(detailed-steps)-and-sublimetext-runs-the-javascript-console.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-<!-- 添加打赏功能 只在所有post文件下的文章中显示-->
-
-
-
-
-
-
-
-  
-
-
-
-
-<!--添加百度自动推送代码-->
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = '//zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = '//push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-  
-    <article id="post-ios-modular-programing-framework-behive" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2017/02/27/ios-modular-programing-framework-behive.html" class="article-date">
-      <time datetime="2017-02-27T10:13:00.000Z" itemprop="datePublished">2017-02-27</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/02/27/ios-modular-programing-framework-behive.html">iOS 模块化编程框架 BeeHive</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <ul>
-<li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
-<li>BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring框架service的理念来实现模块间的API耦合。基本原理如下…
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/iOS/">iOS</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/blog/2017/02/27/ios-modular-programing-framework-behive.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-<!-- 添加打赏功能 只在所有post文件下的文章中显示-->
-
-
-
-
-
-
-
-  
-
-
-
-
-<!--添加百度自动推送代码-->
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = '//zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = '//push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-  
-    <article id="post-ios-sends-mesages-silently-(skpsmtpmesage)" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html" class="article-date">
-      <time datetime="2017-02-16T09:00:00.000Z" itemprop="datePublished">2017-02-16</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html">iOS-静默方式发送邮件(SKPSMTPMessage)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <ul>
-<li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
-<li>在iOS开发中，有时候我们需要使用到发送邮件的功能，比如说接收用户的反馈信息、APP的崩溃情况的通知等等…
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/iOS/">iOS</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/blog/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-<!-- 添加打赏功能 只在所有post文件下的文章中显示-->
-
-
-
-
-
-
-
-  
-
-
-
-
-<!--添加百度自动推送代码-->
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = '//zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = '//push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-  
-    <article id="post-about-the-plug-in-used-by-this-site" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2016/10/01/about-the-plug-in-used-by-this-site.html" class="article-date">
-      <time datetime="2016-09-30T16:00:00.000Z" itemprop="datePublished">2016-10-01</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/10/01/about-the-plug-in-used-by-this-site.html">关于本站使用到的插件</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <ul>
-<li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
-<li>非常高兴您能阅读本篇文章，麻烦输入密码验证一下哦~…
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hexo/">hexo</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/blog/2016/10/01/about-the-plug-in-used-by-this-site.html#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-<!-- 添加打赏功能 只在所有post文件下的文章中显示-->
-
-
-
-
-
-
-
-  
-
-
-
-
-<!--添加百度自动推送代码-->
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = '//zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = '//push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><a class="extend next" rel="next" href="/blog/page/2/">Next &raquo;</a>
-    </nav>
-  
-</div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                <i class="fa fa-copyright"></i> 
-<!--                2015-2020 一月筠-->
-                    2015-2020 <a href="http://guoyanjun.top" target="_blank">一月筠</a>
-            </div>
-            <!--<div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
-            </div>-->
-            <!-- 添加底部的Power by Hexo -->
-            <!--<div class="footer-right">
-                Powered by <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a> <i class="fa fa-heart animated infinite pulse"></i>
-            </div>-->
-            <!-- 添加底部的Power by Hexo -->
-            <div class="footer-right">
-    		  
-      		  <!-- 添加QQ推广，可直接聊天 -->
-					<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2773953617&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2773953617:46" alt="点击这里给我发消息" title="点击这里给我发消息" /></a>
-					<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261663353'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261663353%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
-      		  
-      		  </div>
-        </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>| </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
-    </div>
-</footer>
-    </div>
-    
-    <script src="/blog/js/GithubRepoWidget.js"></script>
-
-<script data-main="/blog/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-            }
-            else {
-                var backgroundnum = 5;
-                var backgroundimg = "url(/blog//background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-            }
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
         })
-    </script>
 
-
+        document.head.appendChild(script)
+      })
     
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
 
-     
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/blog/atom.xml" title="一月筠" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://avatars.githubusercontent.com/u/13490798?s=320"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://yojoy.top/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://imgbb.com" title="imgbb图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="imgbb图床"/><span class="back-menu-item-text">imgbb图床</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://bu.dusays.com" title="bu图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="bu图床"/><span class="back-menu-item-text">bu图床</span></a></div></div></div></div><a id="site-name" href="/blog/" accesskey="h"><div class="title">一月筠</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 工具箱</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/custom/toolBox/toolBox.html"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 工具箱</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 探索</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/music/?id=2236521145&amp;server=netease"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://gh-proxy.com/raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://gh-proxy.com/raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://gh-proxy.com/raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://gh-proxy.com/raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/blog/tags/GitHub/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># GitHub<sup>2</sup></a><a href="/blog/tags/Server/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># Server<sup>2</sup></a><a href="/blog/tags/Swift/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># Swift<sup>7</sup></a><a href="/blog/tags/essay/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># essay<sup>1</sup></a><a href="/blog/tags/hexo/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># hexo<sup>3</sup></a><a href="/blog/tags/iOS/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># iOS<sup>15</sup></a><a href="/blog/tags/poetry/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># poetry<sup>5</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/blog/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2021/07/"><span class="card-archive-list-date">七月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2021/02/"><span class="card-archive-list-date">二月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav></header><main id="blog-container"><div class="bbTimeList container" id="bbTimeList"><i class="anzhiyufont anzhiyu-icon-jike bber-logo fontbold" onclick="pjax.loadUrl(&quot;/essay/&quot;);" title="即刻短文" href="javascript:void(0);" aria-hidden="true"></i><div class="swiper-container swiper-no-swiping essay_bar_swiper_container" id="bbtalk" tabindex="-1"><div class="swiper-wrapper" id="bber-talk" onclick="pjax.loadUrl(&quot;/essay/&quot;);"><a class="li-style swiper-slide" href="javascript:void(0);">💥 guoyanjun.top 迁移至新域名 yojoy.top 💥</a><a class="li-style swiper-slide" href="javascript:void(0);">推荐影片-肖申克的救赎 [视频]</a><a class="li-style swiper-slide" href="javascript:void(0);">支持了Accesskey快捷键，可以直接按下shift + ?组合键以查看快捷键选项。 [视频]</a><a class="li-style swiper-slide" href="javascript:void(0);">音乐支持了参数设置自定义歌单</a><a class="li-style swiper-slide" href="javascript:void(0);">搜索🔍支持缩略图显示啦（默认获取文章内容的第一张图片）</a><a class="li-style swiper-slide" href="javascript:void(0);">歌曲推荐</a><a class="li-style swiper-slide" href="javascript:void(0);">网易云歌单 [图片]</a></div></div><a class="bber-gotobb anzhiyufont anzhiyu-icon-circle-arrow-right" onclick="pjax.loadUrl(&quot;/essay/&quot;);" href="javascript:void(0);" title="查看全文"></a></div><script src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.js"></script><div id="home_top"><div class="swiper_container_card" style="height: auto;width: 100%"><div id="bannerGroup"><div id="random-banner"><canvas id="peoplecanvas"></canvas><a id="random-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-paper-plane"></i><div class="bannerText">随便逛逛<i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div></a></div><div class="categoryGroup"><div class="categoryItem" style="box-shadow:var(--anzhiyu-shadow-blue)"><a class="categoryButton blue" href="/blog/categories/%E6%94%BB%E5%9F%8E%E7%8B%AE/"><span class="categoryButtonText">开发</span><i class="anzhiyufont anzhiyu-icon-dove"></i></a></div><div class="categoryItem" style="box-shadow:var(--anzhiyu-shadow-red)"><a class="categoryButton red" target="_blank" rel="noopener" href="https://www.imooc.com/"><span class="categoryButtonText">学海无涯</span><i class="anzhiyufont anzhiyu-icon-fire"></i></a></div><div class="categoryItem" style="box-shadow:var(--anzhiyu-shadow-green)"><a class="categoryButton green" href="/blog/categories/%E7%94%9F%E6%B4%BB/"><span class="categoryButtonText">生活</span><i class="anzhiyufont anzhiyu-icon-book"></i></a></div></div></div><div class="topGroup"><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/blog/2022/02/22/a-brief-analysis-and-practice-of-xcframework.html&quot;)"><div class="post_cover left_radius"><a href="/2022/02/22/a-brief-analysis-and-practice-of-xcframework.html" title="XCFramework浅析和实践"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://tva1.sinaimg.cn/large/eb90989fly1i3nrotsrrgj21d40rk4qp.jpg"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/02/22/a-brief-analysis-and-practice-of-xcframework.html" title="XCFramework浅析和实践">XCFramework浅析和实践</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/blog/2022/02/22/swift-protocol-and-associated-types.html&quot;)"><div class="post_cover left_radius"><a href="/2022/02/22/swift-protocol-and-associated-types.html" title="Swift协议与关联类型"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://tva1.sinaimg.cn/large/eb90989fly1i3ns3jyx00j20p80gwtiw.jpg"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/02/22/swift-protocol-and-associated-types.html" title="Swift协议与关联类型">Swift协议与关联类型</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/blog/2020/12/08/in-depth-exploration-of-schdulers-in-combine.html&quot;)"><div class="post_cover left_radius"><a href="/2020/12/08/in-depth-exploration-of-schdulers-in-combine.html" title="Combine中Schdulers深度探索"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/15/63233d423333c.webp"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/08/in-depth-exploration-of-schdulers-in-combine.html" title="Combine中Schdulers深度探索">Combine中Schdulers深度探索</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/blog/2021/07/01/swift-asynchronous-and-concurrency.html&quot;)"><div class="post_cover left_radius"><a href="/2021/07/01/swift-asynchronous-and-concurrency.html" title="Swift 异步和并发"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://p.zhheo.com/HT89zx22490381710727584074.png!cover"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/07/01/swift-asynchronous-and-concurrency.html" title="Swift 异步和并发">Swift 异步和并发</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/blog/2020/09/18/uicollection-compositional-layout-guide.html&quot;)"><div class="post_cover left_radius"><a href="/2020/09/18/uicollection-compositional-layout-guide.html" title="UICollection Compositional Layout全详解"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/11/05/636681a9a7d55.webp!cover"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/18/uicollection-compositional-layout-guide.html" title="UICollection Compositional Layout全详解">UICollection Compositional Layout全详解</a></div></div><div class="recent-post-item" onclick="pjax.loadUrl(&quot;/blog/2022/10/15/swift-package-manager-engineering-practice.html&quot;)"><div class="post_cover left_radius"><a href="/2022/10/15/swift-package-manager-engineering-practice.html" title="Swift Package Manager工程实践"><span class="recent-post-top-text">荐</span><img class="post_bg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/html-base/banner.jpg"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/15/swift-package-manager-engineering-practice.html" title="Swift Package Manager工程实践">Swift Package Manager工程实践</a></div></div><a class="todayCard" id="todayCard" href="https://yojoy.top" style="z-index: 1;"><div class="todayCard-info"><div class="todayCard-tips">世界这么大</div><div class="todayCard-title">我想去看看</div></div><img class="todayCard-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/cover_1024x502.png" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="封面"><div class="banner-button-group"><div class="banner-button" onclick="event.stopPropagation();event.preventDefault();anzhiyu.hideTodayCard();"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i><span class="banner-button-text">更多推荐</span></div></div></a></div><link rel="stylesheet"></div></div><div class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div id="categoryBar"><div class="category-bar" id="category-bar"><div id="catalog-bar"><div id="catalog-list"><div class="catalog-list-item" id="首页"><a href="/">首页</a></div>
+    <div class="catalog-list-item" id="/blog/categories/攻城狮/">
+      <a href="/blog/categories/攻城狮/">
+        攻城狮
+      </a>
+    </div>
+    
+    <div class="catalog-list-item" id="/blog/categories/生活/">
+      <a href="/blog/categories/生活/">
+        生活
+      </a>
+    </div>
+    </div><div class="category-bar-next" id="category-bar-next" onclick="anzhiyu.scrollCategoryBarToRight()"><i class="anzhiyufont anzhiyu-icon-angle-double-right"></i></div><a class="catalog-more" href="./categories/">更多</a></div></div></div><div class="recent-post-item lastestpost-item" onclick="pjax.loadUrl('/blog/2020/10/05/about-this-site-theme-tag-tag-plugins.html')"><div class="post_cover left"><a href="/blog/2020/10/05/about-this-site-theme-tag-tag-plugins.html" title="个人博客主题标签Tag Plugins" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e146a8bbd.webp" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="个人博客主题标签Tag Plugins" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><span class="article-meta sticky-warp"><i class="anzhiyufont anzhiyu-icon-thumbtack sticky"></i><span class="sticky">置顶</span></span><div class="article-categories-original">攻城狮</div><a class="unvisited-post" href="/blog/2020/10/05/about-this-site-theme-tag-tag-plugins.html" title="个人博客主题标签Tag Plugins">未读</a></div><a class="article-title" href="/blog/2020/10/05/about-this-site-theme-tag-tag-plugins.html" title="个人博客主题标签Tag Plugins">个人博客主题标签Tag Plugins</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-05T04:00:00.000Z" title="发表于 2020-10-05 12:00:00" time="2020-10-05 12:00:00">2020-10-05</time><time class="time_hidden" datetime="2020-10-05T04:00:00.000Z" title="更新于 2020-10-05 12:00:00" time="2020-10-05 12:00:00">2020-10-05</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/blog/tags/hexo/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>hexo</span></a></span></div><div class="content">
+文&#x2F;一月筠 -- 转载请注明 --
+
+本站主题中大部分标签移植于店长的hexo-butterfly-tag-plugins-plus
 
 
+title标签语法配置参数样式预览示例源码This is Tab 1.This is Tab 2.This is Tab 3.This is Tab 4.
+
+段落文本 p标签语法配置参数样式预览示例源码1&#123;% p 样式参数(参数以空格划分), 文本内容 %&#125;
+字体: logo, code
+颜色: red,yellow,green,cyan,blue,gray
+大小: small, h4, h3, h2, h1, large, huge, ultra
+对齐方向: left, center, right
+
+彩色文字在一段话中方便插入各种颜色的标签，包括：红色、黄色、绿色、青色、蓝色、灰色。
+超大号文字文档「开始」页面中的标题部分就是超大号文字。Volantis
+A Wonderful Theme for Hexo
+123456- 彩色文字  在一段话中方便插入各种颜色的标签，包括：&#123;% p red, 红色 %&# ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/blog/2022/11/26/swift-static-code-detection-engineering-practice.html')"><div class="post_cover left"><a href="/blog/2022/11/26/swift-static-code-detection-engineering-practice.html" title="Swift静态代码检测工程实践" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://tva1.sinaimg.cn/large/eb90989fly1i3nt648p0uj20pc0g249o.jpg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="Swift静态代码检测工程实践" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">攻城狮</div><span class="newPost">最新</span><a class="unvisited-post" href="/blog/2022/11/26/swift-static-code-detection-engineering-practice.html" title="Swift静态代码检测工程实践">未读</a></div><a class="article-title" href="/blog/2022/11/26/swift-static-code-detection-engineering-practice.html" title="Swift静态代码检测工程实践">Swift静态代码检测工程实践</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-26T03:15:00.000Z" title="发表于 2022-11-26 11:15:00" time="2022-11-26 11:15:00">2022-11-26</time><time class="time_hidden" datetime="2022-11-26T03:15:00.000Z" title="更新于 2022-11-26 11:15:00" time="2022-11-26 11:15:00">2022-11-26</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/blog/tags/iOS/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>iOS</span></a><a class="article-meta__tags" href="/blog/tags/Swift/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Swift</span></a></span></div><div class="content">
+文&#x2F;一月筠 -- 转载请注明 --
+目录…
+
+随着App功能不断增加，工程代码量也随之快速增加，依靠人工CodeReview来保证项目的质量，越来越不现实，这时就有必要借助于自动化的代码审查工具，进行程序静态代码分析；提升自动化水平，提高团队研发效率。
+
+程序静态代码分析（Program Static Analysis）是指在不运行代码的方式下，通过词法分析、语法分析、控制流、数据流分析等技术对程序代码进行扫描，验证代码是否满足规范性、安全性、可靠性、可维护性等指标的一种代码分析技术。—— 来自百度百科。
+
+由于我们项目中Swift代码占比较高，并且持续使用Swift替换旧的Objc代码，所以技术选型时，仅考虑Swift语言，选用业界主流的静态代码分析工具SwiftLint。
+本篇文章将介绍SwiftLint的工作原理，配置文件的参数含义，同时还介绍了SwiftLint内置规则的分类、如何读懂规则说明、如何禁用规则；另外从工程实践角度出发，给出了一些切实可行的建议，并详解了如何添加自定义规则；最后在大项目改进耗时方面给出了解决方案。
+SwiftLint简介SwiftLint ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/blog/2022/11/15/swift-regular-quick-reference.html')"><div class="post_cover left"><a href="/blog/2022/11/15/swift-regular-quick-reference.html" title="Swift 正则速查手册" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://p.zhheo.com/postimg_7.png!cover" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="Swift 正则速查手册" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">攻城狮</div><a class="unvisited-post" href="/blog/2022/11/15/swift-regular-quick-reference.html" title="Swift 正则速查手册">未读</a></div><a class="article-title" href="/blog/2022/11/15/swift-regular-quick-reference.html" title="Swift 正则速查手册">Swift 正则速查手册</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-15T15:00:00.000Z" title="发表于 2022-11-15 23:00:00" time="2022-11-15 23:00:00">2022-11-15</time><time class="time_hidden" datetime="2022-11-15T15:00:00.000Z" title="更新于 2022-11-15 23:00:00" time="2022-11-15 23:00:00">2022-11-15</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/blog/tags/iOS/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>iOS</span></a><a class="article-meta__tags" href="/blog/tags/Swift/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Swift</span></a></span></div><div class="content">本文为转载文章，仅作为备份使用，原文地址：Swift 正则速查手册-OneV’s Den
+
+文章主要介绍了Swift语言中正则表达式的使用方法，包括基本语法、常用功能以及一些高级技巧
+
+Swift 5.7 中引入了正则表达式的语法支持，整理一下相关的一些话题、方法和示例，以备今后自己能够速查。
+总览Swift 正则由标准库中的 Regex 类型驱动，需要 iOS 16.0 或 macOS 13.0，早期的 deploy 版本无法使用。
+构建一个正则表达式的方式，分为传统的正则字面量构建，以及通过 Regex Builder DSL 的更加易读的方式。后者可以内嵌使用前者，以及其他一些已有的 parser，在可读性和功能上要强力很多。实践中，推荐结合使用字面量和 Builder API 在简洁和易读之间获取平衡。
+常见字面量和其他各语言正则表达式的字面量没有显著不同。
+直接将字面量包裹在 /.../ 中使用，Swift 将把类似的声明转换为 Regex 类型的实例：
+1let bitcoinAddress_v1 = /([13][a-km-zA-HJ-NP-Z0-9]&#123;26,3 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/blog/2022/10/15/swift-package-manager-engineering-practice.html')"><div class="post_cover left"><a href="/blog/2022/10/15/swift-package-manager-engineering-practice.html" title="Swift Package Manager工程实践" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/html-base/banner.jpg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="Swift Package Manager工程实践" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">攻城狮</div><a class="unvisited-post" href="/blog/2022/10/15/swift-package-manager-engineering-practice.html" title="Swift Package Manager工程实践">未读</a></div><a class="article-title" href="/blog/2022/10/15/swift-package-manager-engineering-practice.html" title="Swift Package Manager工程实践">Swift Package Manager工程实践</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-15T04:30:00.000Z" title="发表于 2022-10-15 12:30:00" time="2022-10-15 12:30:00">2022-10-15</time><time class="time_hidden" datetime="2022-10-15T04:30:00.000Z" title="更新于 2022-10-15 12:30:00" time="2022-10-15 12:30:00">2022-10-15</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/blog/tags/iOS/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>iOS</span></a><a class="article-meta__tags" href="/blog/tags/Swift/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Swift</span></a></span></div><div class="content">
+文&#x2F;一月筠 -- 转载请注明 --
+目录…
+
+Swift Package Manager（下文简称 SwiftPM ）是苹果官方提供的一个用于管理源代码分发的工具，它与Swift构建系统集成在一起，可以自动执行依赖项的下载，编译和链接过程。该工具可以帮助我们编译和链接 Swift packages（包），管理依赖关系、版本控制，以及支持灵活分发和协作（公开、私有、团队共享）等。支持Swift、Objective-C、Objective-C ++、C或C ++。 SwiftPM包管理器支持 macOS 和 Linux，与CocoaPods和Carthage功能类似，不过比这两个更简洁，代码的侵入性更小，也不需要额外安装工具。
+本文将详细介绍团队在引入SwiftPM进行工程实践中，探索和累积的相关知识和实践经验，我们将从结构设计、资源处理、链接方式的选择、编译与链接参数设置、异常处理，这五个方面展开详细介绍，每个小部分结尾都提供了最佳实践的总结；希望能够帮助其他想要尝试SwiftPM的开发者顺利过渡；
+本文面向了解SwiftPM基本知识，但是没有深度使用的开发者；如果你还不了解 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/blog/2022/02/22/swift-protocol-and-associated-types.html')"><div class="post_cover left"><a href="/blog/2022/02/22/swift-protocol-and-associated-types.html" title="Swift协议与关联类型" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://tva1.sinaimg.cn/large/eb90989fly1i3ns3jyx00j20p80gwtiw.jpg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="Swift协议与关联类型" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">攻城狮</div><a class="unvisited-post" href="/blog/2022/02/22/swift-protocol-and-associated-types.html" title="Swift协议与关联类型">未读</a></div><a class="article-title" href="/blog/2022/02/22/swift-protocol-and-associated-types.html" title="Swift协议与关联类型">Swift协议与关联类型</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2022-02-22T03:15:00.000Z" title="发表于 2022-02-22 11:15:00" time="2022-02-22 11:15:00">2022-02-22</time><time class="time_hidden" datetime="2022-02-22T03:15:00.000Z" title="更新于 2022-02-22 11:15:00" time="2022-02-22 11:15:00">2022-02-22</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/blog/tags/iOS/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>iOS</span></a><a class="article-meta__tags" href="/blog/tags/Swift/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Swift</span></a></span></div><div class="content">
+文&#x2F;一月筠 -- 转载请注明 --
+本文将讨论Swift协议Protocol中特殊的关联类型Associated Types
+
+在Swift语言当中，泛型（Generic）和协议（Protocol）都是非常重要的语言特性。使用泛型让你能根据自定义的需求，编写出适用于任意类型的、灵活可复用的函数及类型。你可以避免编写重复的代码，而是用一种清晰抽象的方式来表达代码的意图；使用协议能够让你设计一个蓝图，遵循协议的具体类型,帮助你实现某一特定的任务或者功能的方法、属性，特别是协议可以作为类型使用，使其具有了动态派发的能力；本文将讨论Swift协议（Protocol）中特殊的关联类型（Associated Types），它与泛型（Generic）有相似性和又有区别。为了简化文字描述，后续将带有关联类型的协议（Protocol With Associated Types），简称为关联协议；而把普通的不包含任何关联类型的协议（Plain Protocol）简称为普通协议。
+[toc]
+问题我们将首先讨论一个业务开发中的具体问题，定制UITabbar和UITabBarController。 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/blog/2021/07/01/swift-asynchronous-and-concurrency.html')"><div class="post_cover left"><a href="/blog/2021/07/01/swift-asynchronous-and-concurrency.html" title="Swift 异步和并发" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://p.zhheo.com/HT89zx22490381710727584074.png!cover" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="Swift 异步和并发" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">攻城狮</div><a class="unvisited-post" href="/blog/2021/07/01/swift-asynchronous-and-concurrency.html" title="Swift 异步和并发">未读</a></div><a class="article-title" href="/blog/2021/07/01/swift-asynchronous-and-concurrency.html" title="Swift 异步和并发">Swift 异步和并发</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2021-07-01T12:00:00.000Z" title="发表于 2021-07-01 20:00:00" time="2021-07-01 20:00:00">2021-07-01</time><time class="time_hidden" datetime="2021-07-01T12:00:00.000Z" title="更新于 2021-07-01 20:00:00" time="2021-07-01 20:00:00">2021-07-01</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/blog/tags/iOS/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>iOS</span></a><a class="article-meta__tags" href="/blog/tags/Swift/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Swift</span></a></span></div><div class="content">本文为转载文章，仅作为备份使用，原文地址：Swift 并发初步-OneV’s Den
+
+文章是关于Swift并发编程的介绍和教程，重点在于Swift 5.5中的新特性，如异步函数、结构化并发和actor模型。异步函数简化了编写和处理异步代码的方式；结构化并发使得任务管理和维护变得简单、清晰；而actor模型为数据安全提供了全新思路。文章详细讨论了同步与异步、串行与并行等概念，并通过实例展示如何使用新工具改善并发程序设计，提高性能和数据安全。
 
 
-    <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+本文是我的新书《Swift 异步和并发》中第一章内容，主要从概览的方向上介绍了 Swift 5.5 中引入的 Swift 并发特性的使用方法。如果你对学习 Swift 并发有兴趣，也许可以作为参考读物。
+
+
+你可以在这里找到本文中的参考代码。在本文写作的 Xcode 13 beta 2 环境下，你需要额外安装最新的 Swift 5.5 toolchain 来运行这些代码。
+
+虽然可能你已经跃跃欲试，想要创建第一个 Swift 的并发程序，但是“名不正则言不顺”。在实际进入代码之前，作为全书开头，我还是想先对几个重要的相关概念进行说明。这样在今后 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/blog/2022/02/22/a-brief-analysis-and-practice-of-xcframework.html')"><div class="post_cover left"><a href="/blog/2022/02/22/a-brief-analysis-and-practice-of-xcframework.html" title="XCFramework浅析和实践" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://tva1.sinaimg.cn/large/eb90989fly1i3nrotsrrgj21d40rk4qp.jpg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="XCFramework浅析和实践" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">攻城狮</div><a class="unvisited-post" href="/blog/2022/02/22/a-brief-analysis-and-practice-of-xcframework.html" title="XCFramework浅析和实践">未读</a></div><a class="article-title" href="/blog/2022/02/22/a-brief-analysis-and-practice-of-xcframework.html" title="XCFramework浅析和实践">XCFramework浅析和实践</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2021-02-06T03:15:00.000Z" title="发表于 2021-02-06 11:15:00" time="2021-02-06 11:15:00">2021-02-06</time><time class="time_hidden" datetime="2021-02-06T03:15:00.000Z" title="更新于 2021-02-06 11:15:00" time="2021-02-06 11:15:00">2021-02-06</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/blog/tags/iOS/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>iOS</span></a><a class="article-meta__tags" href="/blog/tags/Swift/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Swift</span></a></span></div><div class="content">
+文&#x2F;一月筠 -- 转载请注明 --
+
+在这篇文章中，我们将深入探讨XCFramework的核心特点、集成方法、层级结构、创建过程以及最佳实践。无论您是经验丰富的开发者，还是刚刚踏入苹果开发世界的新手，这篇文章都将为您提供宝贵的指导和洞见。让我们一起揭开XCFramework的神秘面纱，探索它如何改变我们的开发方式，以及如何利用这一强大的工具来构建更加健壮和高效的应用程序。
+简介XCFramework是苹果推出的新的Framework格式，它实际上是另一种类型的Bundle，与原有的Framework很相似，但是可以包含多种体系机构和平台，这意味着你可以为苹果旗下所有操作系统（iOS，macOS，iPadOS等），不同体系结构（arm64，armv7 ，i386）包含模拟器，甚至UIKit和AppKit App 提供统一的分发方式。它在Xcode 11及更高版本中引入，旨在解决多平台、多架构环境下库文件分发和管理的挑战。在传统的.framework文件中，所有架构的文件都被打包在一起，开发者在使用时需要通过脚本或其他工具来剥离不需要的架构体系。而XCFramework则允许开 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/blog/2020/12/08/in-depth-exploration-of-schdulers-in-combine.html')"><div class="post_cover left"><a href="/blog/2020/12/08/in-depth-exploration-of-schdulers-in-combine.html" title="Combine中Schdulers深度探索" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/15/63233d423333c.webp" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="Combine中Schdulers深度探索" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">攻城狮</div><a class="unvisited-post" href="/blog/2020/12/08/in-depth-exploration-of-schdulers-in-combine.html" title="Combine中Schdulers深度探索">未读</a></div><a class="article-title" href="/blog/2020/12/08/in-depth-exploration-of-schdulers-in-combine.html" title="Combine中Schdulers深度探索">Combine中Schdulers深度探索</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2020-12-08T03:46:00.000Z" title="发表于 2020-12-08 11:46:00" time="2020-12-08 11:46:00">2020-12-08</time><time class="time_hidden" datetime="2020-12-08T03:46:00.000Z" title="更新于 2020-12-08 11:46:00" time="2020-12-08 11:46:00">2020-12-08</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/blog/tags/iOS/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>iOS</span></a><a class="article-meta__tags" href="/blog/tags/Swift/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Swift</span></a></span></div><div class="content">
+文&#x2F;一月筠 -- 转载请注明 --
+目录…
+
+本文主要探讨如何利用Combine中Schedulers对任务执行进行管理。假定读者已经了解Combine的基本原理，想要进一步对Combine中任务调度进行详细了解。由于Schedulers与GCD（Grand Dispatch Queue），线程（thread），RunLoop都有关联，所以也需要读者有这方面的基础了解才能更好的读懂下文。
+本文将会介绍以下几方面内容：
+
+什么是Schedulers？
+Combine的默认调度机制
+切换Schedulers的操作符
+通过实例深入理解Schedulers的调度
+Combine中Schedulers的类型和使用
+
+什么是SchedulersScheduler是一个协议（protocol），定义了什么时候（when）和在什么地方（where）执行一个闭包，其中什么地方（where）意味着 runloop，dispatch queue，operator queue，三选一使用哪个；什么时候（when）意味着Combine事件流的虚拟时间，也就是Combine中Publisher，Ope ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/blog/2020/09/18/uicollection-compositional-layout-guide.html')"><div class="post_cover left"><a href="/blog/2020/09/18/uicollection-compositional-layout-guide.html" title="UICollection Compositional Layout全详解" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/11/05/636681a9a7d55.webp!cover" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="UICollection Compositional Layout全详解" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">攻城狮</div><a class="unvisited-post" href="/blog/2020/09/18/uicollection-compositional-layout-guide.html" title="UICollection Compositional Layout全详解">未读</a></div><a class="article-title" href="/blog/2020/09/18/uicollection-compositional-layout-guide.html" title="UICollection Compositional Layout全详解">UICollection Compositional Layout全详解</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2020-09-18T00:30:00.000Z" title="发表于 2020-09-18 08:30:00" time="2020-09-18 08:30:00">2020-09-18</time><time class="time_hidden" datetime="2020-09-18T00:30:00.000Z" title="更新于 2020-09-18 08:30:00" time="2020-09-18 08:30:00">2020-09-18</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/blog/tags/iOS/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>iOS</span></a></span></div><div class="content">
+文&#x2F;一月筠 -- 转载请注明 --
+目录…
+
+UICollectionView在iOS中是构建复杂布局的强大工具。iOS13中引入的UICollectionView Compositional Layout为创建自定义布局提供了全新的可能性。本文将深入探讨Compositional Layout的工作原理,以及如何利用它创建复杂的分组、嵌套布局和增强视图。无论您是刚开始学习Compositional Layout,还是想掌握它的高级用法,本文都将是您的完美指南。让我们开始这个令人兴奋的布局之旅吧!
+
+CollectionView Layout由三个布局部分组成
+Item
+它是层次结构中的最小单元，代表您想要在屏幕上显示的单个数据块
+Item展示在Cell内部
+
+Group
+Item位于Group内
+Group可以将其Item按水平行、垂直列或自定义排列。
+Group是布局的基本单位，Group指定数据布局的方向并且可以组合在一起创建更复杂的布局
+
+Section
+Section只是一组数据，对应于数据在数据源中的组织方式
+Collection View可以有多个Sectio ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/blog/2020/03/15/github-one-click-deployment.html')"><div class="post_cover left"><a href="/blog/2020/03/15/github-one-click-deployment.html" title="GitHub一键部署" style="display: flex;height: 100%;"><img class="post_bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/akilar-candyassets/image/20190921061245825.png" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="GitHub一键部署" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">攻城狮</div><a class="unvisited-post" href="/blog/2020/03/15/github-one-click-deployment.html" title="GitHub一键部署">未读</a></div><a class="article-title" href="/blog/2020/03/15/github-one-click-deployment.html" title="GitHub一键部署">GitHub一键部署</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2020-03-15T04:00:00.000Z" title="发表于 2020-03-15 12:00:00" time="2020-03-15 12:00:00">2020-03-15</time><time class="time_hidden" datetime="2020-03-15T04:00:00.000Z" title="更新于 2020-03-15 12:00:00" time="2020-03-15 12:00:00">2020-03-15</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/blog/tags/GitHub/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>GitHub</span></a></span></div><div class="content">
+文&#x2F;一月筠 -- 转载请注明 --
+
+此教程参考 🧊Akilar の糖果屋 🍭，转载需注明出处。
+Github Action 简介Github Action 是 GitHub 于 2018 年 10 月推出的一个 CI\CD 服务。
+ cyan CI / CD 说明 
+              
+              CI&#x2F;CD 其实说的是三件事情：「持续集成（Continuous Integration）」、「持续交付（Continuous Delivery）」、「持续部署（Continuous Deployment）」。因为「持续交付」和「持续部署」的英文缩写是一样的，所以这三件事情缩写成了 CI&#x2F;CD 。
+              
+            
+
+每次部署 Hexo 都需要运行指令三件套，随着文章越来越多，编译的时间也随之越来越长，通过 Github Action，我们只需要在每次完成博客的编写或修改以后，将改动直接 push 到远程仓库，之后的编译部署的工作统统交给 CI 来完成即可，如果是看过 Coding 部署教程 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/blog/page/2/#content-inner">2</a><a class="page-number" href="/blog/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/blog/page/2/#content-inner"><div class="pagination_tips_next">下页</div><i style="font-weight: inherit; font-size: 1rem;" class="anzhiyufont anzhiyu-icon-chevron-right fa-fw"></i></a><div class="toPageGroup"><input id="toPageText" oninput="value=value.replace(/[^0-9]/g,'')" maxlength="3" onkeyup="this.value=this.value.replace(/[^u4e00-u9fa5w]/g,'')" aria-label="toPage"><a id="toPageButton" onclick="anzhiyu.toPage()"><i class="anzhiyufont anzhiyu-icon-angles-right" style="font-weight: inherit; font-size: 1rem;"></i></a></div></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/13490798?s=320" onerror="this.onerror=null;this.src='/blog/blog/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://twikoo-magic.oss-cn-hangzhou.aliyuncs.com/Arcaea/184064200.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，还有<b style="color:#fff">金融知识</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">希望你可以在这里找到有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/blog/"><h1 class="author-info__name">GuoYanjun</h1><div class="author-info__desc">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/Yajon" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://music.163.com/#/user/home?id=284001567" target="_blank" title="网易云音乐"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(/blog/img/wechat_63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(/blog/img/wechat_645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget"><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud kira-rainbow"><a href="/blog/tags/GitHub/" style="font-size: 0.89rem;border-radius: 0.89rem;padding: 0 0.445rem;margin-bottom: 5px; color: rgb(84, 108, 31);"># GitHub<sup>2</sup></a><a href="/blog/tags/Server/" style="font-size: 0.89rem;border-radius: 0.89rem;padding: 0 0.445rem;margin-bottom: 5px; color: rgb(156, 88, 86);"># Server<sup>2</sup></a><a href="/blog/tags/Swift/" style="font-size: 1.01rem;border-radius: 1.01rem;padding: 0 0.505rem;margin-bottom: 5px; color: rgb(140, 123, 32);"># Swift<sup>7</sup></a><a href="/blog/tags/essay/" style="font-size: 0.85rem;border-radius: 0.85rem;padding: 0 0.425rem;margin-bottom: 5px; color: rgb(126, 22, 148);"># essay<sup>1</sup></a><a href="/blog/tags/hexo/" style="font-size: 0.93rem;border-radius: 0.93rem;padding: 0 0.465rem;margin-bottom: 5px; color: rgb(17, 68, 33);"># hexo<sup>3</sup></a><a href="/blog/tags/iOS/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px; color: rgb(187, 17, 50);"># iOS<sup>15</sup></a><a href="/blog/tags/poetry/" style="font-size: 0.97rem;border-radius: 0.97rem;padding: 0 0.485rem;margin-bottom: 5px; color: rgb(12, 86, 61);"># poetry<sup>5</sup></a></div></div><hr/><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/blog/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2021/07/"><span class="card-archive-list-date">七月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2021/02/"><span class="card-archive-list-date">二月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/><div class="card-webinfo"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-file-lines"></i><div class="item-name">文章总数 :</div></div><div class="item-count">28</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-stopwatch"></i><div class="item-name">建站天数 :</div></div><div class="item-count" id="runtimeshow" data-publishDate="2015-12-27T16:00:00.000Z"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-font"></i><div class="item-name">全站字数 :</div></div><div class="item-count">78.1k</div></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:2773953617@qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2773953617&amp;site=qq&amp;menu=yes" title="QQ"><i class="anzhiyufont anzhiyu-icon-qq"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://weibo.com/u/3952122015" title="微博"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.jianshu.com/u/b13ee6afc1e0/" title="简书"><i class="anzhiyufont anzhiyu-icon-paper-plane"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2023/05/09/645a3ff0dc540.gif" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/Yajon" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="http://www.yojoy.top" title="主页"><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><a class="deal_link" href="/blog/atom.xml" title="RSS"><i class="anzhiyufont anzhiyu-icon-rss"></i></a><a class="deal_link" href="/blog/copyright.html" title="CC"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i></a></div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2015 - 2025 By <a class="footer-bar-link" href="/blog/" title="GuoYanjun" target="_blank">GuoYanjun</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = ["自强不息&#44; 厚德载物&#44; 上善若水&#44; 虚怀若谷.","๑۩ﺴ 透过指尖&#44; 目视锦瑟流年，&#44; 邂逅一场繁华的悸动 ﺴ۩๑"]
+        sub.unshift(data.hitokoto, from)
+        window.typed = new Typed('#footer-type-tips', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('footer-type-tips').innerHTML = data.hitokoto
+      }
+    })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://imgse.com/" title="imgur">imgur</a><a class="footer-bar-link cc" href="/blog/copyright" title="cc协议"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-by-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nc-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nd-line"></i></a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/" title="archive"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/blog/tags/" title="tag"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/blog/categories/" title="category"><div class="headline">分类</div><div class="length-num">2</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://yojoy.top/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://imgbb.com" title="imgbb图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="imgbb图床"/><span class="back-menu-item-text">imgbb图床</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://bu.dusays.com" title="bu图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="bu图床"/><span class="back-menu-item-text">bu图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 工具箱</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/custom/toolBox/toolBox.html"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 工具箱</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 探索</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/music/?id=2236521145&amp;server=netease"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/blog/tags/GitHub/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(54, 52, 185);"># GitHub<sup>2</sup></a><a href="/blog/tags/Server/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(162, 65, 19);"># Server<sup>2</sup></a><a href="/blog/tags/Swift/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(20, 127, 20);"># Swift<sup>7</sup></a><a href="/blog/tags/essay/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(36, 72, 188);"># essay<sup>1</sup></a><a href="/blog/tags/hexo/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(146, 131, 154);"># hexo<sup>3</sup></a><a href="/blog/tags/iOS/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(56, 91, 110);"># iOS<sup>15</sup></a><a href="/blog/tags/poetry/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(117, 71, 15);"># poetry<sup>5</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/blog/js/utils.js"></script><script src="/blog/js/main.js"></script><script src="/blog/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("12/28/2015 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎访问一月筠的主页!`,
+    `生活明朗, 未来可期`,
+    `
+        
+   ██████╗ ██╗   ██╗ ██████╗ ██╗   ██╗ █████╗ ███╗   ██╗     ██╗██╗   ██╗███╗   ██╗
+  ██╔════╝ ██║   ██║██╔═══██╗╚██╗ ██╔╝██╔══██╗████╗  ██║     ██║██║   ██║████╗  ██║
+  ██║  ███╗██║   ██║██║   ██║ ╚████╔╝ ███████║██╔██╗ ██║     ██║██║   ██║██╔██╗ ██║
+  ██║   ██║██║   ██║██║   ██║  ╚██╔╝  ██╔══██║██║╚██╗██║██   ██║██║   ██║██║╚██╗██║
+  ╚██████╔╝╚██████╔╝╚██████╔╝   ██║   ██║  ██║██║ ╚████║╚█████╔╝╚██████╔╝██║ ╚████║
+   ╚═════╝  ╚═════╝  ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚════╝  ╚═════╝ ╚═╝  ╚═══╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2015 By 一月筠 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好!", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 一月筠 %c 你正在访问 GuoYanjun 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/blog/js/random.js"></script><script src="/blog/js/search/local-search.js"></script><div class="js-pjax"><script>if (typeof gsap === "object") {
+  getScript("/blog/js/anzhiyu/people.js", {defer:true})
+} else {
+  getScript("https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/gsap/gsap.min.js").then(()=>{
+    getScript("/blog/js/anzhiyu/people.js", {defer:true})
+  });
+}</script><input type="hidden" name="page-type" id="page-type" value="anzhiyu"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
     }
-});
+  }
 
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
+  typeof typed === 'object' && typed.destroy()
 
-<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
 
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
 
-<div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
-</div>
-<script>
-    // Open in New Window
-    
-        var oOpenInNew = {
-             github: ".github-widget a", 
-            
-            
-            
-            
-            
-             archives: ".archive-article-title", 
-             miniArchives: "a.post-list-link", 
-            
-             friends: "#js-friends a", 
-             socail: ".social a" 
-        }
-        for (var x in oOpenInNew) {
-            $(oOpenInNew[x]).attr("target", "_blank");
-        }
-    
-</script>
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
 
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-  </div>
-</body>
-</html>
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/blog/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script><div id="greetingBox"></div></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+  <meta name="format-detection" content="telephone=no">
+  <meta content="email=no" name="format-detection">
+  <link href="https://yojoy.top/favicon.ico" rel="Shortcut Icon" type="image/x-icon">
+  <title>AI工具箱-网址导航</title>
+  <meta name="keywords" content="AI工具箱-网址导航">
+  <meta name="description" content="AI工具箱-网址导航">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/mCustomScrollbar.css">
+  <script src="./js/jquery-1.12.3.min.js"></script>
+  <script type="text/javascript" src="./js/common.js"></script>
+  <script src="./js/jquery.mCustomScrollbar.concat.min.js"></script>
+</head>
+
+<body>
+  <script type="text/javascript" src="./js/jquery.Nav.min.js"></script>
+  <script>
+    (function ($) {
+        $(window).on("load", function () {
+            $.ajax({
+                url: './other/config.json?t='+new Date().getTime(),
+                success: function (response) {
+                  // 置顶配置
+                  var fixedTopData = response["fixedTopData"];
+                  var fixedTopHtml = '';
+                  for (var i = 0; i < fixedTopData.length; i++) {
+                    var tmpItem = fixedTopData[i];
+                    fixedTopHtml += '<li><a href="'+tmpItem["webUrl"]+'" target="_blank"><img src="'+tmpItem["imgUrl"]+'"></a></li>';
+                  }
+                  $("#fixedTopData").html(fixedTopHtml);
+
+                  // 侧边栏配置
+                  var sidebarData = response["sidebarData"];
+                  var sidebarHtml = '';
+                  for (var i = 0; i < sidebarData.length; i++) {
+                    var tmpItem = sidebarData[i];
+                    if (i == 0) {
+                      sidebarHtml += '<li class="current"><a href="javascript:;">'+tmpItem["title"]+'</a></li>';
+                    } else {
+                      sidebarHtml += '<li class=""><a href="javascript:;">'+tmpItem["title"]+'</a></li>';
+                    }
+                  }
+                  $("#sidebarData").html(sidebarHtml);
+
+                  // 主功能区配置
+                  var contentData = response["contentData"];
+                  var contentHtml = '';
+                  for (var i = 0; i < contentData.length; i++) {
+                    var superItem = contentData[i];
+                    var superType = superItem["superType"];
+                    var listData = superItem["listData"];
+                    var subHtml = '';
+                    for (var j = 0; j < listData.length; j++) {
+                      var subItem = listData[j];
+                      var webUrl = subItem["webUrl"];
+                      var imgUrl = subItem["imgUrl"];
+                      var title = subItem["title"];
+                      var subTitle = subItem["subTitle"];
+                      subHtml +=  '<li><a href="'+webUrl+'" target="_blank"><i><img src="'+imgUrl+'"></i><h3><span>'+title+'</span><p></p><p>'+subTitle+'</p></h3></a></li>';
+                      if (j == listData.length - 1) {
+                        contentHtml += '<div class="design_box auto" id="nav'+i+'"><div class="top or"><h2><i></i>'+superType+'</h2></div><div class="con"><ul class="kira-rainbow">'+subHtml+'</ul></div><div class="cl"></div></div>';
+                      }
+                    }
+                  }
+                  $("#contentData").html(contentHtml);
+                }
+            })
+        });
+    })(jQuery);
+</script>
+  <div class="header add">
+    <div class="logo" style="font-size: 18px;font-weight: bold;line-height: 24px;height: 24px;text-align: center;margin: 15px 0 0 15px;"><a href="https://yojoy.top/">AI工具箱</a></div>
+    <ul>
+      <li class="active"><a href="https://yojoy.top/#">导航栏</a></li>
+      <li><a href="https://yojoy.top/blog/about/" target="_blank">关于我们</a></li>
+    </ul><a href="javascript:void(0);" class="btn">推荐网址</a>
+  </div><!--header--><a href="javascript:;" class="menu_bt"><span>Menu</span></a>
+  <div class="menu">
+    <div class="con content mCustomScrollbar _mCS_1">
+      <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;"
+        tabindex="0">
+        <div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
+          <div class="bottomLine" style="top: 0px; left: 0px;"></div>
+          <ul id="sidebarData">
+            <li class="current"><a href="javascript:;">AI工具库</a></li>
+          </ul>
+        </div>
+        <div id="mCSB_1_scrollbar_vertical"
+          class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: block;">
+          <div class="mCSB_draggerContainer">
+            <div id="mCSB_1_dragger_vertical" class="mCSB_dragger"
+              style="position: absolute; min-height: 30px; display: block; height: 363px; max-height: 555px; top: 0px;">
+              <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+            </div>
+            <div class="mCSB_draggerRail"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function ($) {
+      $(window).on("load", function () {
+        $(".content").mCustomScrollbar();
+      });
+    })(jQuery);
+  </script>
+  <div class="mainbox">
+    <div class="index_clip auto">
+
+    </div>
+    <div class="index_small_pic auto">
+      <ul id="fixedTopData">
+        <li><a href="https://yojoy.top/" target="_blank"><img src="https://pic1.afdiancdn.com/user/78ad8d60c15b11eba01552540025c377/common/19371de199e6c2826e258109f888b4e4_w2791_h1129_s3801.png?imageView2/1/w/634/h/320"></a></li>
+      </ul>
+      <div class="cl"></div>
+    </div><!--index_small_pic-->
+    <div class="ybox" id="contentData">
+
+      <div class="design_box auto" id="nav0">
+        <div class="top or">
+          <h2><i></i>AI工具库</h2>
+        </div>
+        <div class="con">
+          <ul>
+            <li><a href="https://www.yjpoo.com/" target="_blank">
+              <i><img src="https://www.yjpoo.com/uploads/allimg/20230928/1-23092R13533118.png"></i>
+                <h3><span>映技派</span>
+                  <p></p>
+                  <p>自媒体工具的导航网站</p>
+                </h3>
+              </a></li>
+          </ul>
+        </div>
+        <div class="cl"></div>
+      </div>
+
+    </div>
+  </div><!--mainbox-->
+  <div class="fixedbox">
+    <div>
+      <!--     <div class="relative phone"><img draggable="false" src="/public/images/icon_phone.png" class="icon" alt=""><div class="callcontent"><div><p>电话咨询</p ><h3><a href="tel:+18618415260">18618415260</a></h3></div></div></div> -->
+      <div class="relative wechat"><img draggable="false" src="./img/icon_WeChat.png" class="icon" alt="">
+        <div class="callcontent">
+          <div><img draggable="false" src="./img/qr_github_yajon_logo.png" alt="">
+            <p>添加微信推荐网址</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="totop" style="display: flex;">
+      <div class="relative"><img draggable="false" src="./img/icon_totop.png" class="icon" alt=""></div>
+    </div>
+  </div>
+  <style>
+    .fixedbox {
+      position: fixed;
+      /* top: 65%; */
+      bottom: 150px;
+      right: 16px;
+      z-index: 9;
+    }
+
+    .fixedbox>div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: #FFFFFF;
+      box-shadow: 0px 1px 0.6rem 0px rgba(0, 0, 0, 0.12);
+      border-radius: 0.3rem;
+      margin: 0.4rem 0;
+    }
+
+    .fixedbox>div .icon {
+      width: 24px;
+      display: block;
+      margin: 10px;
+    }
+
+    .fixedbox>div .relative {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .fixedbox>div .relative:hover .icon {
+      opacity: 0.7;
+    }
+
+    .fixedbox>div .callcontent {
+      display: none;
+      position: absolute;
+      right: calc(100%);
+      top: 50%;
+      transform: translateY(-50%);
+      padding-right: 0.5rem;
+    }
+
+    .fixedbox>div .phone .callcontent>div {
+      padding-right: 2.4rem;
+    }
+
+    .fixedbox>div .callcontent>div {
+      border-radius: 0.3rem;
+      padding: 1.7rem 1.7rem 0.88rem;
+      background: #FFFFFF;
+      box-shadow: 0px 0.15rem 0.8rem 0px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+
+    .fixedbox>div .phone .callcontent>div {
+      padding-top: 0.6rem;
+    }
+
+    .fixedbox>div .relative:hover .callcontent>div::after {
+      content: '';
+      width: 0.4rem;
+      height: 0.4rem;
+      background: #fff;
+      transform: rotate(45deg);
+      box-shadow: 0px 0.15rem 0.8rem 0px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      right: -0.2rem;
+      z-index: -1;
+      top: calc(50% - 0.2rem);
+    }
+
+    .fixedbox>div .relative:hover .callcontent {
+      display: block;
+    }
+
+    @media screen and (max-width:750px) {
+
+      .fixedbox>div .relative:hover .icon {
+        opacity: 1;
+      }
+
+      .fixedbox>div .relative:hover .callcontent {
+        display: none;
+      }
+
+    }
+
+    .fixedbox>div .callcontent p {
+      font-size: 0.9rem;
+      color: #6A6E73;
+      line-height: 1.3rem;
+      margin-top: 0.5rem;
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    .fixedbox>div .callcontent h3 {
+      font-size: 0.9rem;
+      font-family: Barlow-SemiBold, Barlow;
+      font-weight: 600;
+      color: #313336;
+      line-height: 1.1rem;
+    }
+
+    .fixedbox>div .callcontent img {
+      width: 8rem;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .fixedbox .totop {
+      display: none;
+      position: absolute;
+      bottom: -3rem;
+      right: 0;
+    }
+  </style>
+  <script>
+    $(window).scroll(function (e) {
+      let width = $(window).width()
+      let height = $(window).height()
+      if ($(this).scrollTop() > 100) {
+        $('.totop').css('display', 'flex')
+      } else {
+        $('.totop').hide()
+      }
+
+    })
+    $('.totop').click(function () {
+      $('html,body').animate({
+        scrollTop: 0
+      }, 1000)
+    })
+    $('.wechat').click(function () {
+      if ($(window).width() <= 750) {
+        $('.theme-mask').show();
+        $('.theme-mask').height($(document).height());
+        $('.popover').slideDown(200);
+      }
+    })
+  </script>
+  <div class="theme-mask"></div>
+  <div class="popover"><img src="./img/Close_32@2x.png" class="close">
+    <dl>
+      <dd>
+        <div id="qrcode"><img src="./img/qr_github_yajon_logo.png"></div>
+      </dd>
+      <dt class="last">添加微信推荐网址</dt>
+    </dl>
+  </div><!--eject-->
+  <script type="text/javascript">
+    $(document).ready(function ($) {
+
+      $('.guanyu,.header .btn').click(function () {
+        $('.theme-mask').show();
+        $('.theme-mask').height($(document).height());
+        $('.popover').slideDown(200);
+      })
+      $('.close,.theme-mask').click(function () {
+        $('.theme-mask').hide();
+        $('.popover').slideUp(200);
+      })
+    })  
+  </script>
+  <style>
+    .close {
+      width: 32px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    .popover {
+      border-radius: 10px;
+      padding: 48px 48px 30px;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      margin: 0;
+
+    }
+
+    .popover dl #qrcode img {
+      width: 184px;
+    }
+
+    .last {
+      margin-top: 14px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #313336;
+      line-height: 25px;
+    }
+
+    .popover dl {
+      margin-top: 0px;
+    }
+  </style>
+</body>
+
+</html>

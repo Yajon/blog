@@ -1,0 +1,890 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>Swift 正则速查手册 | 一月筠</title><meta name="keywords" content="iOS,Swift"><meta name="author" content="GuoYanjun"><meta name="copyright" content="GuoYanjun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="Swift 正则速查手册"><meta name="application-name" content="Swift 正则速查手册"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="Swift 正则速查手册"><meta property="og:url" content="https://yojoy.top/blog/2022/11/15/swift-regular-quick-reference.html"><meta property="og:site_name" content="一月筠"><meta property="og:description" content="Swift 正则速查手册"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://p.zhheo.com/postimg_7.png!cover"><meta property="article:author" content="GuoYanjun"><meta property="article:tag" content="一月筠,郭艳军,Yojoy,Yajon,GuoYanjun,产品,设计,开发,ChatGPT,Flutter开发,iOS开发,鸿蒙开发,HarmonyOS开发,小程序开发"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://p.zhheo.com/postimg_7.png!cover"><meta name="description" content="Swift 正则速查手册"><link rel="shortcut icon" href="/blog/favicon.ico"><link rel="canonical" href="https://yojoy.top/blog/2022/11/15/swift-regular-quick-reference"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="O3qTII6QvZXszxEg"/><meta name="msvalidate.01" content="xxx"/><link rel="manifest" href="/blog/other/json/manifest.json"/><meta name="msapplication-TileColor" content="var(--anzhiyu-main)"/><link rel="mask-icon" href="/blog/blog/img/siteicon/apple-icon-180.png" color="#5bbad5"/><link rel="apple-touch-icon" sizes="180x180" href="/blog/img/siteicon/apple-icon-180.png"/><link rel="apple-touch-icon-precomposed" sizes="180x180" href="/blog/img/siteicon/apple-icon-180.png"/><link rel="icon" type="image/png" sizes="32x32" href="/blog/blog/img/siteicon/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/blog/blog/img/siteicon/16.png"/><link rel="bookmark" href="/blog/blog/img/siteicon/apple-icon-180.png"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1290-2796.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2796-1290.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1179-2556.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2556-1179.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3f3c772306077fa1190d5aeea5ceb780";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://cdn.jsdelivr.net/gh/lxhei1831/blog_img@main/%E9%9A%8F%E4%BE%BF%E9%80%9B%E9%80%9B.png"},
+  postHeadAiDescription: undefined,
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎回来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  url: 'https://yojoy.top/blog',
+  root: '/blog/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: {"mode":"cdn","api":"https://img2color-go.vercel.app/api?img=","cover_change":true},
+  authorStatus: {"skills":null},
+  algolia: undefined,
+  localSearch: {"path":"/blog/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: GuoYanjun","link":"链接: ","source":"来源: 一月筠","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#2F7DCD","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '一月筠',
+  title: 'Swift 正则速查手册',
+  postAI: '',
+  pageFillDescription: '总览, 常见字面量, 字符集, 数量, 锚点, 捕获组, Lookahead, Builder DSL, 字符集, 数量, 锚点, 捕获, Lookahead, 常用 Parser, 自定义 Parser 和 CustomConsumingRegexComponent, 匹配方式, 常见的匹配方法, 基于 Regex 的字符串算法x2F操作, Regex 变换x2FFlags, 小结, 参考, WWDC 22, Swift Evolution, 其他资源本文为转载文章仅作为备份使用原文地址正则速查手册文章主要介绍了语言中正则表达式的使用方法包括基本语法常用功能以及一些高级技巧中引入了正则表达式的语法支持整理一下相关的一些话题方法和示例以备今后自己能够速查总览正则由标准库中的类型驱动需要或早期的版本无法使用构建一个正则表达式的方式分为传统的正则字面量构建以及通过的更加易读的方式后者可以内嵌使用前者以及其他一些已有的在可读性和功能上要强力很多实践中推荐结合使用字面量和在简洁和易读之间获取平衡常见字面量和其他各语言正则表达式的字面量没有显著不同直接将字面量包裹在中使用将把类似的声明转换为类型的实例一些常用的字面量表达以及示例更多非常用的例子可以参考这里的字符集表达式说明示例匹配指定字符集排除字符集匹配字符范围除换行符以外的任意字符等效于匹配空格字符包括和换行匹配非空格字符匹配空格和非空格也即任意字符等效于匹配字母数字下划线等低位等效于等效于匹配数字等效于非数字等效于数量表达式说明示例结果匹配一个或多个匹配零个或多个匹配若干个匹配零个或一个数量使前置数量进行惰性匹配尽可能少逻辑或择一匹配锚点表达式说明示例结果匹配字符串开头匹配字符串结尾匹配和非的边缘位置匹配非边缘位置捕获组表达式说明示例捕获括号内的匹配使其成组并出现在匹配结果中命名捕获匹配在结果中可使用名字对匹配结果进行引用成组但不进行捕获允许使用数量但不关心和捕获结果表达式说明示例预先检查符合时再进行主体匹配预先检查不符合时进行主体匹配字面量表达式虽然简洁但是对应复杂情境会难以理解也不便于修改使用框架提供的来描述正则表达式是更具有表达性的方法比如等效于接受一个形式的闭包你可以往闭包中塞入多个来构建完整的正则表达式注意类型本身也满足协议所以你也可以直接把字面量传递给初始化方法字面量所提供的特性在中都有对应除此之外框架还提供了更易读的强类型描述一些常见的对应如下字符集字符集相关的基本被定义在中字面量表达式等效的为了可读性可以考虑加上量词数量字面量表达式例等效的数量锚点字面量表达式例等效的此外对于多行匹配模式的情况如带有的此时和等效为等对于支持常用的还有等捕获字面量表达式等效的支持在的过程中同时进行把结果转换为其他形式的字符串甚至是其他类型的强类型值得到一个强类型值如果转换可能会失败并返回使用失败时跳过匹配如果转换一定会成功使用普通的字面量表达式等效的常用相对于字面量使用的最大优势在于可以嵌套使用已经存在的进行匹配凡是满足的值都可以放到表达式中中部分满足并提供相应方法来创建中可用的中默认可用有所属类型方法签名可解析示例关于中的相关内容可以参看肘子兄的这篇博客以及中相关的视频自定义和对于自己实现的或是第三方提供的可以通过满足来让它进而满足并用在构造中返回匹配停止时的上界以及比配得到的结果本身即可对于这一点的给了一个非常好的例子在很多情况下我们可能会进一步地使用中泛型上下文静态查找的特性为添加类型成员以便在中直接使用中的各种基本都遵循了类似的实现方式匹配方式常见的匹配方法匹配所有可能项并将全部结果返回匹配时返回第一个结果整个字符串能完整匹配时才返回结果字符串的开始部分匹配的话返回结果如果只需要判断是否匹配使用匹配后得到的结果中返回匹配到的整个字符串从开始是捕获的组实现了可以使用直接获取命名的捕获基于的字符串算法操作等原来在中可以针对字符串的操作可以找到对应的版本变换在创建后可以使用其上的实例方法来对进行部分修改最常用的大概有匹配是否忽略大小写等效于中的和是否也匹配每行等效于中的字面量是否应该匹配包括换行符在内的任意字符等效于小结是符合美学的正则写法可以在标准库层面替代掉平台上原有的被诟病已久的随着时代车轮的前行肯定将被逐渐扫进垃圾堆当前已经相对很完善了它的优点非常明确使用的方式构建易于理解和维护的正则可以与结合使用提供高质量的匹配当然在本文写作时也还存在一些不足文档不足实际用例和社区支持也相对匮乏需求的系统版本较高近几年内可能难以完全迁移不论字面量还是暂时还不支持等条件控制的数量和种类不多不过这些毒点相对都是容易改善的个人还是十分看好的前景特别是用来做一些简单的文本处理和本地工具的话会非常方便和一样从设计初期就考虑了安全不过本文暂时没有涉及的处理日后如果用到再继续补充参考其他资源',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-15 23:00:00',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/blog/atom.xml" title="一月筠" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://avatars.githubusercontent.com/u/13490798?s=320"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://yojoy.top/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://imgbb.com" title="imgbb图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="imgbb图床"/><span class="back-menu-item-text">imgbb图床</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://bu.dusays.com" title="bu图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="bu图床"/><span class="back-menu-item-text">bu图床</span></a></div></div></div></div><a id="site-name" href="/blog/" accesskey="h"><div class="title">一月筠</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 工具箱</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/custom/toolBox/toolBox.html"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 工具箱</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 探索</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/music/?id=2236521145&amp;server=netease"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://gh-proxy.com/raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://gh-proxy.com/raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://gh-proxy.com/raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://gh-proxy.com/raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/blog/tags/GitHub/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># GitHub<sup>2</sup></a><a href="/blog/tags/Server/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># Server<sup>2</sup></a><a href="/blog/tags/Swift/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># Swift<sup>7</sup></a><a href="/blog/tags/essay/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># essay<sup>1</sup></a><a href="/blog/tags/hexo/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># hexo<sup>3</sup></a><a href="/blog/tags/iOS/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># iOS<sup>15</sup></a><a href="/blog/tags/poetry/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># poetry<sup>5</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/blog/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2021/07/"><span class="card-archive-list-date">七月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2021/02/"><span class="card-archive-list-date">二月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/%E6%94%BB%E5%9F%8E%E7%8B%AE/" itemprop="url">攻城狮</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/blog/tags/iOS/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>iOS</span></a><a class="article-meta__tags" href="/blog/tags/Swift/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Swift</span></a></span></div></div><h1 class="post-title" itemprop="name headline">Swift 正则速查手册</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2022-11-15T15:00:00.000Z" title="发表于 2022-11-15 23:00:00">2022-11-15</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2022-11-15T15:00:00.000Z" title="更新于 2022-11-15 23:00:00">2022-11-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">2.9k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>11分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="Swift 正则速查手册"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为北京"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>北京</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://p.zhheo.com/postimg_7.png!cover"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://yojoy.top/blog/2022/11/15/swift-regular-quick-reference.html"><header><a class="post-meta-categories" href="/blog/categories/%E6%94%BB%E5%9F%8E%E7%8B%AE/" itemprop="url">攻城狮</a><a href="/blog/tags/iOS/" tabindex="-1" itemprop="url">iOS</a><a href="/blog/tags/Swift/" tabindex="-1" itemprop="url">Swift</a><h1 id="CrawlerTitle" itemprop="name headline">Swift 正则速查手册</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">GuoYanjun</span><time itemprop="dateCreated datePublished" datetime="2022-11-15T15:00:00.000Z" title="发表于 2022-11-15 23:00:00">2022-11-15</time><time itemprop="dateCreated datePublished" datetime="2022-11-15T15:00:00.000Z" title="更新于 2022-11-15 23:00:00">2022-11-15</time></header><p><strong>本文为转载文章，仅作为备份使用，原文地址：</strong><br><a target="_blank" rel="noopener" href="https://onevcat.com/2022/11/swift-regex/">Swift 正则速查手册-OneV’s Den</a></p>
+<ul>
+<li>文章主要介绍了Swift语言中正则表达式的使用方法，包括基本语法、常用功能以及一些高级技巧<span id="more"></span></li>
+</ul>
+<p>Swift 5.7 中引入了正则表达式的语法支持，整理一下相关的一些话题、方法和示例，以备今后自己能够速查。</p>
+<h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><p>Swift 正则由标准库中的 <code>Regex</code> 类型驱动，需要 iOS 16.0 或 macOS 13.0，早期的 deploy 版本无法使用。</p>
+<p>构建一个正则表达式的方式，分为传统的正则字面量构建，以及通过 Regex Builder DSL 的更加易读的方式。后者可以内嵌使用前者，以及其他一些已有的 parser，在可读性和功能上要强力很多。实践中，推荐<strong>结合使用字面量和 Builder API 在简洁和易读之间获取平衡</strong>。</p>
+<h2 id="常见字面量"><a href="#常见字面量" class="headerlink" title="常见字面量"></a>常见字面量</h2><p>和其他各语言正则表达式的字面量没有显著不同。</p>
+<p>直接将字面量包裹在 <code>/.../</code> 中使用，Swift 将把类似的声明转换为 <code>Regex</code> 类型的实例：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> bitcoinAddress_v1 <span class="operator">=</span> <span class="regexp">/([13][a-km-zA-HJ-NP-Z0-9]&#123;26,33&#125;)/</span></span><br></pre></td></tr></table></figure>
+
+<p>一些常用的字面量表达以及示例。更多非常用的例子，可以参考<a target="_blank" rel="noopener" href="https://github.com/niklongstone/regular-expression-cheat-sheet">这里的 Cheat Sheet</a>。</p>
+<h3 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h3><table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[aeiou]</code></td>
+<td>匹配指定字符集</td>
+<td>On<strong>e</strong>V’s␣D<strong>e</strong>n␣<strong>i</strong>s␣<strong>a</strong>␣bl<strong>o</strong>g.</td>
+</tr>
+<tr>
+<td><code>[^aeiou]</code></td>
+<td>排除字符集</td>
+<td><strong>On</strong>e<strong>V’s␣D</strong>e<strong>n␣</strong>i<strong>s␣</strong>a<strong>␣bl</strong>o<strong>g.</strong></td>
+</tr>
+<tr>
+<td><code>[A-Z]</code></td>
+<td>匹配字符范围</td>
+<td><strong>O</strong>ne<strong>V</strong>‘s␣<strong>D</strong>en␣is␣a␣blog.</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>除换行符以外的任意字符。等效于 <code>[^\n\r]</code></td>
+<td><strong>OneV’s␣Den␣is␣a␣blog.</strong></td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>匹配空格字符 (包括 tab 和换行)</td>
+<td>OneV’s<strong>␣</strong>Den<strong>␣</strong>is<strong>␣</strong>a<strong>␣</strong>blog.</td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td>匹配非空格字符</td>
+<td><strong>OneV’s</strong>␣<strong>Den</strong>␣<strong>is</strong>␣<strong>a</strong>␣<strong>blog.</strong></td>
+</tr>
+<tr>
+<td><code>[\s\S]</code></td>
+<td>匹配空格和非空格，也即任意字符。等效于 <code>[^]</code></td>
+<td><strong>OneV’s␣Den␣is␣a␣blog.</strong></td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>匹配字母数字下划线等低位 ASCII。等效于 <code>[A-Za-z0-9_]</code></td>
+<td><strong>OneV</strong>‘<strong>s</strong>␣<strong>Den</strong>␣<strong>is</strong>␣<strong>a</strong>␣<strong>blog</strong>.</td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td>等效于 <code>[^A-Za-z0-9_]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>\d</code></td>
+<td>匹配数字，等效于 <code>[0-9]</code></td>
+<td>+(<strong>81</strong>)<strong>021</strong>-<strong>1234</strong>-<strong>5678</strong></td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td>非数字，等效于 <code>[^0-9]</code></td>
+<td>**+(<strong>81</strong>)<strong>021</strong>-<strong>1234</strong>-**5678</td>
+</tr>
+</tbody></table>
+<h3 id="数量"><a href="#数量" class="headerlink" title="数量"></a>数量</h3><table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>说明</th>
+<th>示例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>+</code></td>
+<td>匹配一个或多个</td>
+<td><code>b\w+</code></td>
+<td>b <strong>be</strong> <strong>bee</strong> <strong>beer</strong> <strong>beers</strong></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>匹配零个或多个</td>
+<td><code>b\w*</code></td>
+<td><strong>b</strong> <strong>be</strong> <strong>bee</strong> <strong>beer</strong> <strong>beers</strong></td>
+</tr>
+<tr>
+<td><code>&#123;2,3&#125;</code></td>
+<td>匹配若干个</td>
+<td><code>b\w&#123;2,3&#125;</code></td>
+<td>b be <strong>bee</strong> <strong>beer</strong> <strong>beer</strong>s</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>匹配零个或一个</td>
+<td><code>colou?r</code></td>
+<td><strong>color</strong> <strong>colour</strong></td>
+</tr>
+<tr>
+<td>数量 + <code>?</code></td>
+<td>使前置数量进行惰性匹配 (尽可能少)</td>
+<td><code>b\w+?</code></td>
+<td>b <strong>be</strong> <strong>be</strong>e <strong>be</strong>er <strong>be</strong>ers</td>
+</tr>
+<tr>
+<td>&#96;</td>
+<td>&#96;</td>
+<td>逻辑或，择一匹配</td>
+<td>&#96;b(a</td>
+</tr>
+</tbody></table>
+<h3 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h3><table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>说明</th>
+<th>示例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>^</code></td>
+<td>匹配字符串开头</td>
+<td><code>^\w+</code></td>
+<td><strong>she</strong> sells seashells</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>匹配字符串结尾</td>
+<td><code>\w+$</code></td>
+<td>she sells <strong>seashells</strong></td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>匹配 <code>\w</code> 和非 <code>\w</code> 的边缘位置</td>
+<td><code>s\b</code></td>
+<td>she sell<strong>s</strong> seashell<strong>s</strong></td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td>匹配非边缘位置</td>
+<td><code>s\B</code></td>
+<td><strong>s</strong>he <strong>s</strong>ells <strong>s</strong>ea<strong>s</strong>hells</td>
+</tr>
+</tbody></table>
+<h3 id="捕获组"><a href="#捕获组" class="headerlink" title="捕获组"></a>捕获组</h3><table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(OneV)+</code></td>
+<td>捕获括号内的匹配，使其成组并出现在匹配结果中</td>
+<td><strong>OneV</strong>‘s Den is a blog.</td>
+</tr>
+<tr>
+<td><code>(?&lt;name&gt;OneV)+</code></td>
+<td>命名捕获匹配，在结果中可使用名字对匹配结果进行引用</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(?:OneV)+</code></td>
+<td>成组但不进行捕获，允许使用数量但不关心和捕获结果</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Lookahead"><a href="#Lookahead" class="headerlink" title="Lookahead"></a>Lookahead</h3><table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>\d(?=px)</code></td>
+<td><code>?=</code> - Positive lookahead。预先检查，符合时再进行主体匹配</td>
+<td>1pt <strong>2</strong>px 3em <strong>4</strong>px</td>
+</tr>
+<tr>
+<td><code>\d(?!px)</code></td>
+<td><code>?!</code> - Negative lookahead。预先检查，不符合时进行主体匹配</td>
+<td><strong>1</strong>pt 2px <strong>3</strong>em 4px</td>
+</tr>
+</tbody></table>
+<h2 id="Builder-DSL"><a href="#Builder-DSL" class="headerlink" title="Builder DSL"></a>Builder DSL</h2><p>字面量表达式虽然简洁，但是对应复杂情境会难以理解，也不便于修改。使用 <a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/regexbuilder"><code>RegexBuilder</code> 框架</a>提供的 DSL 来描述正则表达式是更具有表达性的方法。</p>
+<p>比如，</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> bitcoinAddress_v1 <span class="operator">=</span> <span class="regexp">/([13][a-km-zA-HJ-NP-Z0-9]&#123;26,33&#125;)/</span></span><br></pre></td></tr></table></figure>
+
+<p>等效于：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> RegexBuilder</span><br><span class="line"><span class="keyword">let</span> bitcoinAddress_v1 <span class="operator">=</span> <span class="type">Regex</span> &#123;</span><br><span class="line">  <span class="type">Capture</span> &#123;</span><br><span class="line">    <span class="type">One</span>(.anyOf(<span class="string">&quot;13&quot;</span>))</span><br><span class="line">    <span class="type">Repeat</span>(<span class="number">26</span><span class="operator">...</span><span class="number">33</span>) &#123;</span><br><span class="line">      <span class="type">CharacterClass</span>(</span><br><span class="line">        (<span class="string">&quot;a&quot;</span><span class="operator">...</span><span class="string">&quot;k&quot;</span>),</span><br><span class="line">        (<span class="string">&quot;m&quot;</span><span class="operator">...</span><span class="string">&quot;z&quot;</span>),</span><br><span class="line">        (<span class="string">&quot;A&quot;</span><span class="operator">...</span><span class="string">&quot;H&quot;</span>),</span><br><span class="line">        (<span class="string">&quot;J&quot;</span><span class="operator">...</span><span class="string">&quot;N&quot;</span>),</span><br><span class="line">        (<span class="string">&quot;P&quot;</span><span class="operator">...</span><span class="string">&quot;Z&quot;</span>),</span><br><span class="line">        (<span class="string">&quot;0&quot;</span><span class="operator">...</span><span class="string">&quot;9&quot;</span>)</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>Regex.init(_:)</code> 接受一个 result builder 形式的闭包，你可以往闭包中塞入多个 <code>RegexComponent</code> 来构建完整的正则表达式。注意 <code>Regex</code> 类型本身也满足 <code>RegexComponent</code> 协议，所以你也可以直接把字面量传递给 <code>Regex</code> 初始化方法。</p>
+<p>字面量所提供的特性，在 Regex Builder 中都有对应。除此之外，Swift Regex Builder 框架还提供了更易读的强类型描述。一些常见的对应 <code>RegexComponent</code> 如下：</p>
+<h3 id="字符集-1"><a href="#字符集-1" class="headerlink" title="字符集"></a>字符集</h3><p>字符集相关的 <code>RegexComponent</code> 基本被定义在 <a target="_blank" rel="noopener" href="https://developer.apple.com/documentation/regexbuilder/characterclass"><code>CharacterClass</code></a> 中。</p>
+<table>
+<thead>
+<tr>
+<th>字面量表达式</th>
+<th>等效的 <code>RegexComponent</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[aeiou]</code></td>
+<td><code>.anyOf(&quot;aeiou&quot;)</code>。为了可读性，可以考虑加上量词 <code>One(.anyOf(&quot;aeiou&quot;))</code></td>
+</tr>
+<tr>
+<td><code>[^aeiou]</code></td>
+<td><code>CharacterClass.anyOf(&quot;aeiou&quot;).inverted</code></td>
+</tr>
+<tr>
+<td><code>[A-Z]</code></td>
+<td><code>(&quot;A&quot;...&quot;Z&quot;)</code></td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td><code>.any</code></td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td><code>.whitespace</code></td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td><code>.whitespace.inverted</code></td>
+</tr>
+<tr>
+<td><code>[\s\S]</code></td>
+<td><code>CharacterClass(.whitespace, .whitespace.inverted)</code></td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td><code>.word</code></td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td><code>.word.inverted</code></td>
+</tr>
+<tr>
+<td><code>\d</code></td>
+<td><code>.digit</code></td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td><code>.digit.inverted</code></td>
+</tr>
+</tbody></table>
+<h3 id="数量-1"><a href="#数量-1" class="headerlink" title="数量"></a>数量</h3><table>
+<thead>
+<tr>
+<th>字面量表达式 (例)</th>
+<th>等效的 <code>RegexComponent</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>+</code> (<code>b\w+</code>)</td>
+<td><code>OneOrMore(.word)</code></td>
+</tr>
+<tr>
+<td><code>*</code> (<code>b\w*</code>)</td>
+<td><code>ZeroOrMore(.word)</code></td>
+</tr>
+<tr>
+<td><code>&#123;2,3&#125;</code> (<code>b\w&#123;2,3&#125;</code>)</td>
+<td><code>Repeat(2...3) &#123; .word &#125;</code></td>
+</tr>
+<tr>
+<td><code>?</code> (<code>colou?r</code>)</td>
+<td><code>Optionally &#123; &quot;u&quot; &#125;</code></td>
+</tr>
+<tr>
+<td>数量 + <code>?</code> (<code>b\w+?</code>)</td>
+<td><code>OneOrMore(.word, .reluctant)</code></td>
+</tr>
+<tr>
+<td>&#96;</td>
+<td><code> (</code>b(a</td>
+</tr>
+</tbody></table>
+<h3 id="锚点-1"><a href="#锚点-1" class="headerlink" title="锚点"></a>锚点</h3><table>
+<thead>
+<tr>
+<th>字面量表达式 (例)</th>
+<th>等效的 <code>RegexComponent</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>^</code> (<code>^\w+</code>)</td>
+<td><code>Regex &#123; Anchor.startOfSubject ↵ OneOrMore(.word) &#125;</code></td>
+</tr>
+<tr>
+<td><code>$</code> (<code>\w+$</code>)</td>
+<td><code>Regex &#123; OneOrMore(.word) ↵ Anchor.endOfSubject &#125;</code></td>
+</tr>
+<tr>
+<td><code>\b</code> (<code>s\b</code>)</td>
+<td><code>Regex &#123; &quot;s&quot; ↵ Anchor.wordBoundary &#125;</code></td>
+</tr>
+<tr>
+<td><code>\B</code> (<code>s\B</code>)</td>
+<td><code>Regex &#123; &quot;s&quot; ↵ Anchor.wordBoundary.inverted &#125;</code></td>
+</tr>
+</tbody></table>
+<p>此外：</p>
+<ul>
+<li>对于多行匹配模式的情况 (如带有 <code>m</code> 的 <code>/^abc/m</code>)，此时 <code>^</code> 和 <code>$</code> 等效为 <code>.startOfLine</code>，<code>.endOfLine</code> 等。</li>
+<li>对于 Unicode 支持，常用的还有 <code>.textSegmentBoundary (\y)</code> 等。</li>
+</ul>
+<h3 id="捕获"><a href="#捕获" class="headerlink" title="捕获"></a>捕获</h3><table>
+<thead>
+<tr>
+<th>字面量表达式</th>
+<th>等效的 <code>RegexComponent</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(OneV)+</code></td>
+<td><code>OneOrMore &#123; Capture &#123; &quot;OneV&quot; &#125; &#125;</code></td>
+</tr>
+<tr>
+<td><code>(?&lt;name&gt;OneV)+</code></td>
+<td><code>let name = Reference(Substring.self)</code><br /><code>OneOrMore &#123; Capture(as: name) &#123; &quot;OneV&quot; &#125; &#125;</code></td>
+</tr>
+<tr>
+<td><code>(?:OneV)+</code></td>
+<td><code>OneOrMore &#123; &quot;OneV&quot; &#125;</code></td>
+</tr>
+</tbody></table>
+<p>Regex Builder 支持在 <code>Capture</code> 的过程中同时进行 mapping，把结果转换为其他形式的字符串甚至是其他类型的强类型值：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Regex</span> &#123;</span><br><span class="line">  <span class="type">TryCapture</span>(as: kind) &#123;</span><br><span class="line">    <span class="type">OneOrMore</span>(.word)</span><br><span class="line">  &#125; transform: &#123;</span><br><span class="line">    <span class="type">Transaction</span>.<span class="type">Kind</span>(<span class="variable">$0</span>)</span><br><span class="line">  &#125; <span class="comment">// 得到一个强类型 `Kind` 值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果转换可能会失败并返回 <code>nil</code>，使用 <code>TryCapture</code>：失败时跳过匹配；如果转换一定会成功，使用普通的 <code>Capture</code>。</p>
+<h3 id="Lookahead-1"><a href="#Lookahead-1" class="headerlink" title="Lookahead"></a>Lookahead</h3><table>
+<thead>
+<tr>
+<th>字面量表达式</th>
+<th>等效的 <code>RegexComponent</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>\d(?=px)</code></td>
+<td><code>Regex &#123; .digit ↵ Lookahead &#123; &quot;px&quot; &#125; &#125;</code></td>
+</tr>
+<tr>
+<td><code>\d(?!px)</code></td>
+<td><code>Regex &#123; .digit ↵ NegativeLookahead &#123; &quot;px&quot; &#125; &#125;</code></td>
+</tr>
+</tbody></table>
+<h2 id="常用-Parser"><a href="#常用-Parser" class="headerlink" title="常用 Parser"></a>常用 Parser</h2><p>相对于字面量，使用 Regex Builder 的最大优势，在于可以嵌套使用已经存在的 Parser 进行匹配。凡是满足 <code>RegexComponent</code> 的值，都可以放到 <code>Regex</code> 表达式中。Foundation 中，部分 <code>ParseStrategy</code> 满足 <code>RegexComponent</code> 并提供相应方法来创建 <code>Regex</code> 中可用的 parser。iOS 16 中，默认可用 Parser 有：</p>
+<table>
+<thead>
+<tr>
+<th>所属 Parser 类型</th>
+<th>方法签名</th>
+<th>可解析示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Date.ParseStrategy</code></td>
+<td><code>date(_:locale:timeZone:calendar:)</code></td>
+<td>Oct 21, 2015, 10&#x2F;21&#x2F;2015, etc</td>
+</tr>
+<tr>
+<td><code>Date.ParseStrategy</code></td>
+<td><code>date(format:locale:timeZone:calendar:twoDigitStartDate:)</code></td>
+<td>05_04_22</td>
+</tr>
+<tr>
+<td><code>Date.ParseStrategy</code></td>
+<td><code>dateTime(date:time:locale:timeZone:calendar:)</code></td>
+<td>10&#x2F;17&#x2F;2020, 9:54:29 PM</td>
+</tr>
+<tr>
+<td><code>Date.ISO8601FormatStyle</code></td>
+<td><code>iso8601(timeZone:...)</code></td>
+<td>2021-06-21T211015</td>
+</tr>
+<tr>
+<td><code>Date.ISO8601FormatStyle</code></td>
+<td><code>iso8601Date(timeZone:dateSeparator:)</code></td>
+<td>2015-11-14</td>
+</tr>
+<tr>
+<td><code>Date.ISO8601FormatStyle</code></td>
+<td><code>iso8601WithTimeZone(...)</code></td>
+<td>2021-06-21T21:10:15+0800</td>
+</tr>
+<tr>
+<td><code>Decimal.FormatStyle.Currency</code></td>
+<td><code>localizedCurrency(code:locale:)</code></td>
+<td>$52,249.98 -&gt; <code>Decimal</code></td>
+</tr>
+<tr>
+<td><code>Decimal.FormatStyle</code></td>
+<td><code>localizedDecimal(locale:)</code></td>
+<td>1.234, 1E5 -&gt; <code>Decimal</code></td>
+</tr>
+<tr>
+<td><code>FloatingPointFormatStyle&lt;Double&gt;</code></td>
+<td><code>localizedDouble(locale:)</code></td>
+<td>1.234,  1E5 -&gt;  -&gt; <code>Double</code></td>
+</tr>
+<tr>
+<td><code>FlatingPointFormatStyle&lt;Double&gt;.Percent</code></td>
+<td><code>localizedDoublePercentage(locale:)</code></td>
+<td>15.4%, <code>-200%</code> -&gt; <code>Double</code></td>
+</tr>
+<tr>
+<td><code>IntegerFormatStyle&lt;Int&gt;</code></td>
+<td><code>localizedInteger(locale:)</code></td>
+<td>199, 1.234 -&gt; <code>Int</code></td>
+</tr>
+<tr>
+<td><code>IntegerFormatStyle&lt;Int&gt;.Currency</code></td>
+<td><code>localizedIntegerCurrency(code:locale:)</code></td>
+<td>$52,249.98 -&gt; <code>Int</code></td>
+</tr>
+<tr>
+<td><code>IntegerFormatStyle&lt;Int&gt;.Percent</code></td>
+<td><code>localizedIntegerPercentage(locale:)</code></td>
+<td>15.4%, -200% -&gt; <code>Int</code></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>关于 Foundation 中 <code>ParseStrategy</code> 的相关内容，可以参看肘子兄的<a target="_blank" rel="noopener" href="https://www.fatbobman.com/posts/newFormatter/">这篇博客</a>，以及 WWDC 21 中<a target="_blank" rel="noopener" href="https://developer.apple.com/videos/play/wwdc2021/10109/">相关的视频</a>。</p>
+</blockquote>
+<h3 id="自定义-Parser-和-CustomConsumingRegexComponent"><a href="#自定义-Parser-和-CustomConsumingRegexComponent" class="headerlink" title="自定义 Parser 和 CustomConsumingRegexComponent"></a>自定义 Parser 和 <code>CustomConsumingRegexComponent</code></h3><p>对于自己实现的或是第三方提供的 Parser，可以通过满足 <code>CustomConsumingRegexComponent</code> 来让它进而满足 <code>RegexComponent</code> 并用在 Regex 构造中。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">func</span> <span class="title function_">consuming</span>(</span><br><span class="line">    <span class="keyword">_</span> <span class="params">input</span>: <span class="type">String</span>,</span><br><span class="line">    <span class="params">startingAt</span> <span class="params">index</span>: <span class="type">String</span>.<span class="type">Index</span>,</span><br><span class="line">    <span class="params">in</span> <span class="params">bounds</span>: <span class="type">Range</span>&lt;<span class="type">String</span>.<span class="type">Index</span>&gt;</span><br><span class="line">) <span class="keyword">throws</span> -&gt; (upperBound: <span class="type">String</span>.<span class="type">Index</span>, output: <span class="keyword">Self</span>.<span class="type">RegexOutput</span>)<span class="operator">?</span></span><br></pre></td></tr></table></figure>
+
+<p>返回匹配停止时的上界，以及比配得到的结果本身即可。对于这一点，WWDC 22 的 <a target="_blank" rel="noopener" href="https://developer.apple.com/videos/play/wwdc2022/110358">Swift Regex: Beyond the basics</a> 给了一个非常好的例子：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Darwin</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">CDoubleParser</span>: <span class="title class_">CustomConsumingRegexComponent</span> &#123;</span><br><span class="line">    <span class="keyword">typealias</span> <span class="type">RegexOutput</span> <span class="operator">=</span> <span class="type">Double</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">func</span> <span class="title function_">consuming</span>(</span><br><span class="line">        <span class="keyword">_</span> <span class="params">input</span>: <span class="type">String</span>, <span class="params">startingAt</span> <span class="params">index</span>: <span class="type">String</span>.<span class="type">Index</span>, <span class="params">in</span> <span class="params">bounds</span>: <span class="type">Range</span>&lt;<span class="type">String</span>.<span class="type">Index</span>&gt;</span><br><span class="line">    ) <span class="keyword">throws</span> -&gt; (upperBound: <span class="type">String</span>.<span class="type">Index</span>, output: <span class="type">Double</span>)<span class="operator">?</span> &#123;</span><br><span class="line">        input[index<span class="operator">...</span>].withCString &#123; startAddress <span class="keyword">in</span></span><br><span class="line">            <span class="keyword">var</span> endAddress: <span class="type">UnsafeMutablePointer</span>&lt;<span class="type">CChar</span>&gt;!</span><br><span class="line">            <span class="keyword">let</span> output <span class="operator">=</span> strtod(startAddress, <span class="operator">&amp;</span>endAddress)</span><br><span class="line">            <span class="keyword">guard</span> endAddress <span class="operator">&gt;</span> startAddress <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</span><br><span class="line">            <span class="keyword">let</span> parsedLength <span class="operator">=</span> startAddress.distance(to: endAddress)</span><br><span class="line">            <span class="keyword">let</span> upperBound <span class="operator">=</span> input.utf8.index(index, offsetBy: parsedLength)</span><br><span class="line">            <span class="keyword">return</span> (upperBound, output)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在很多情况下，我们可能会进一步地使用 <a target="_blank" rel="noopener" href="https://github.com/apple/swift-evolution/blob/main/proposals/0299-extend-generic-static-member-lookup.md">protocol 中泛型上下文静态查找</a>的特性，为 <code>RegexComponent</code> 添加类型成员，以便在 <code>Regex</code> 中直接使用：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extension</span> <span class="title class_">RegexComponent</span> <span class="title class_">where</span> <span class="title class_">Self</span> == <span class="title class_">CDoubleParser</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">var</span> cDouble: <span class="keyword">Self</span> &#123; <span class="type">CDoubleParser</span>() &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Foundation 中的各种 parser 基本都遵循了类似的实现方式。</p>
+<h2 id="匹配方式"><a href="#匹配方式" class="headerlink" title="匹配方式"></a>匹配方式</h2><h3 id="常见的匹配方法"><a href="#常见的匹配方法" class="headerlink" title="常见的匹配方法"></a>常见的匹配方法</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匹配所有可能项，并将全部结果返回</span></span><br><span class="line">input.matches(of: regex) <span class="comment">// [Regex&lt;Output&gt;.Match]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配时返回第一个结果</span></span><br><span class="line">input.firstMatch(of: regex) <span class="comment">// Regex&lt;Output&gt;.Match?</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 整个字符串能完整匹配时才返回结果</span></span><br><span class="line">input.wholeMatch(of: regex) <span class="comment">// Regex&lt;Output&gt;.Match?</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 字符串的开始部分匹配的话返回结果</span></span><br><span class="line"><span class="comment">// 如果只需要判断是否匹配，使用 `start(with:)`</span></span><br><span class="line">input.prefixMatch(of: regex) <span class="comment">// Regex&lt;Output&gt;.Match?</span></span><br></pre></td></tr></table></figure>
+
+<p>匹配后得到的结果中，<code>.0</code> 返回匹配到的整个字符串，从 <code>.1</code> 开始是捕获的组：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> regex <span class="operator">=</span> <span class="regexp">/Welcome to (.+?), a person blog from (\d+)/</span></span><br><span class="line"><span class="keyword">let</span> text <span class="operator">=</span> <span class="string">&quot;Welcome to OneV&#x27;s Den, a person blog from 2011&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> result <span class="operator">=</span> text.wholeMatch(of: regex) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Title: <span class="subst">\(result.<span class="number">1</span>)</span>&quot;</span>) <span class="comment">// OneV&#x27;s Den</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Year: <span class="subst">\(result.<span class="number">2</span>)</span>&quot;</span>)  <span class="comment">// 2011</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>Regex.Match</code> 实现了 dynamic lookup，可以使用 <code>Reference</code> 直接获取命名的捕获：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> regex <span class="operator">=</span> <span class="regexp">/Welcome to (?&lt;name&gt;.+?), a person blog from (?&lt;year&gt;\d+)/</span></span><br><span class="line"><span class="keyword">let</span> text <span class="operator">=</span> <span class="string">&quot;Welcome to OneV&#x27;s Den, a person blog from 2011&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">let</span> result <span class="operator">=</span> text.wholeMatch(of: regex) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Title: <span class="subst">\(result.name)</span>&quot;</span>) <span class="comment">// OneV&#x27;s Den</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Year: <span class="subst">\(result.year)</span>&quot;</span>)  <span class="comment">// 2011</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="基于-Regex-的字符串算法-操作"><a href="#基于-Regex-的字符串算法-操作" class="headerlink" title="基于 Regex 的字符串算法&#x2F;操作"></a>基于 Regex 的字符串算法&#x2F;操作</h3><ul>
+<li><code>input.ranges(of: regex)</code></li>
+<li><code>input.replacing(regex, with: &quot;string&quot;)</code></li>
+<li><code>input.trimmingPrefix(regex)</code></li>
+</ul>
+<p>等..原来在 <code>Collection</code> 中可以针对字符串的操作，可以找到对应的 <code>Regex</code> 版本。</p>
+<h3 id="Regex-变换-Flags"><a href="#Regex-变换-Flags" class="headerlink" title="Regex 变换&#x2F;Flags"></a>Regex 变换&#x2F;Flags</h3><p>在创建 <code>Regex</code> 后，可以使用其上的实例方法来对 <code>Regex</code> 进行部分修改。最常用的大概有：</p>
+<ul>
+<li><code>ignoresCase(_:)</code> - 匹配是否忽略大小写。等效于 <code>/[aeiou]/i</code> 中的 <code>i</code> flag。</li>
+<li><code>anchorsMatchLineEndings(_:)</code> - <code>^</code> 和 <code>$</code> 是否也匹配每行。等效于 <code>/^[aeiou]$/m</code> 中的 <code>m</code> flag。</li>
+<li><code>dotMatchesNewlines(_:)</code> - 字面量 <code>.</code> 是否应该匹配包括换行符在内的任意字符。等效于 <code>s</code> flag。</li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Swift Regex 是符合 Swift 美学的正则写法，可以在标准库层面替代掉 Apple 平台上原有的被诟病已久的 <code>NSRegularExpression</code>。随着时代车轮的前行，<code>NSRegularExpression</code> 肯定将被逐渐扫进垃圾堆。</p>
+<p>当前 Swift Regex 已经相对很完善了，它的优点非常明确：</p>
+<ul>
+<li>使用 DSL 的方式构建易于理解和维护的正则</li>
+<li>可以与 Parser 结合使用，提供高质量的匹配</li>
+</ul>
+<p>当然，在本文写作时也还存在一些不足。</p>
+<ul>
+<li>文档不足，实际用例和社区支持也相对匮乏</li>
+<li>需求的系统版本较高，近几年内可能难以完全迁移</li>
+<li>不论字面量还是 DSL，暂时还不支持 <code>if</code> 等条件控制</li>
+<li>Foundation 的 Parser 数量和种类不多</li>
+</ul>
+<p>不过这些毒点相对都是容易改善的，个人还是十分看好 Swift Regex 的前景。特别是用来做一些简单的文本处理和本地工具的话，会非常方便。</p>
+<p>和 Swift <code>String</code> 一样，<code>Regex</code> 从设计初期就考虑了 Unicode 安全。不过本文暂时没有涉及 Unicode 的处理，日后如果用到再继续补充。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><h4 id="WWDC-22"><a href="#WWDC-22" class="headerlink" title="WWDC 22"></a>WWDC 22</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.apple.com/videos/play/wwdc2022/110357/">Meet Swift Regex</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.apple.com/videos/play/wwdc2022/110358/">Swift Regex: Beyond the basics</a></li>
+</ul>
+<h4 id="Swift-Evolution"><a href="#Swift-Evolution" class="headerlink" title="Swift Evolution"></a>Swift Evolution</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/apple/swift-evolution/blob/main/proposals/0350-regex-type-overview.md">SE-0350: Regex type and overview</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/apple/swift-evolution/blob/main/proposals/0351-regex-builder.md">SE-0351: Regex builder DSL</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/apple/swift-evolution/blob/main/proposals/0354-regex-literals.md">SE-0354: Regex literals</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/apple/swift-evolution/blob/main/proposals/0355-regex-syntax-run-time-construction.md">SE-0355: Regex syntax</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/apple/swift-evolution/blob/main/proposals/0357-regex-string-processing-algorithms.md">SE-0357: Regex-powered algorithms</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/apple/swift-evolution/blob/main/proposals/0363-unicode-for-string-processing.md">SE-0363: Unicode for String Processing</a></li>
+</ul>
+<h4 id="其他资源"><a href="#其他资源" class="headerlink" title="其他资源"></a>其他资源</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://regexr.com/">Regex Playground</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/niklongstone/regular-expression-cheat-sheet">Cheat Sheet</a></li>
+</ul>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/blog/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/13490798?s=320" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/13490798?s=320" title="头像" alt="头像"></a><div class="post-copyright__author_name">GuoYanjun</div><div class="post-copyright__author_desc">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://yojoy.top/blog/2022/11/15/swift-regular-quick-reference.html">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://yojoy.top/blog/2022/11/15/swift-regular-quick-reference.html')">Swift 正则速查手册</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://gh-proxy.com/raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://gh-proxy.com/raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://gh-proxy.com/raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://gh-proxy.com/raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/blog/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://yojoy.top/blog/2022/11/15/swift-regular-quick-reference.html"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=Swift 正则速查手册&amp;url=https://yojoy.top/blog/2022/11/15/swift-regular-quick-reference.html&amp;pic=https://p.zhheo.com/postimg_7.png!cover" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yojoy.top/blog" target="_blank">一月筠</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/blog/tags/iOS/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>iOS<span class="tagsPageCount">15</span></a><a class="post-meta__box__tags" href="/blog/tags/Swift/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>Swift<span class="tagsPageCount">7</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://tva1.sinaimg.cn/large/eb90989fly1i3nt648p0uj20pc0g249o.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/2022/10/15/swift-package-manager-engineering-practice.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/html-base/banner.jpg" onerror="onerror=null;src='/blog/blog/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Swift Package Manager工程实践</div></div></a></div><div class="next-post pull-right"><a href="/blog/2022/11/26/swift-static-code-detection-engineering-practice.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://tva1.sinaimg.cn/large/eb90989fly1i3nt648p0uj20pc0g249o.jpg" onerror="onerror=null;src='/blog/blog/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Swift静态代码检测工程实践</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/blog/2022/02/22/a-brief-analysis-and-practice-of-xcframework.html" title="XCFramework浅析和实践"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://tva1.sinaimg.cn/large/eb90989fly1i3nrotsrrgj21d40rk4qp.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2021-02-06</div><div class="title">XCFramework浅析和实践</div></div></a></div><div><a href="/blog/2022/02/22/swift-protocol-and-associated-types.html" title="Swift协议与关联类型"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://tva1.sinaimg.cn/large/eb90989fly1i3ns3jyx00j20p80gwtiw.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-02-22</div><div class="title">Swift协议与关联类型</div></div></a></div><div><a href="/blog/2020/12/08/in-depth-exploration-of-schdulers-in-combine.html" title="Combine中Schdulers深度探索"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/15/63233d423333c.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2020-12-08</div><div class="title">Combine中Schdulers深度探索</div></div></a></div><div><a href="/blog/2021/07/01/swift-asynchronous-and-concurrency.html" title="Swift 异步和并发"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://p.zhheo.com/HT89zx22490381710727584074.png!cover" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2021-07-01</div><div class="title">Swift 异步和并发</div></div></a></div><div><a href="/blog/2022/10/15/swift-package-manager-engineering-practice.html" title="Swift Package Manager工程实践"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/html-base/banner.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-10-15</div><div class="title">Swift Package Manager工程实践</div></div></a></div><div><a href="/blog/2022/11/26/swift-static-code-detection-engineering-practice.html" title="Swift静态代码检测工程实践"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://tva1.sinaimg.cn/large/eb90989fly1i3nt648p0uj20pc0g249o.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2022-11-26</div><div class="title">Swift静态代码检测工程实践</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/13490798?s=320" onerror="this.onerror=null;this.src='/blog/blog/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://twikoo-magic.oss-cn-hangzhou.aliyuncs.com/Arcaea/184064200.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，还有<b style="color:#fff">金融知识</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">希望你可以在这里找到有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/blog/"><h1 class="author-info__name">GuoYanjun</h1><div class="author-info__desc">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/Yajon" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://music.163.com/#/user/home?id=284001567" target="_blank" title="网易云音乐"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(/blog/img/wechat_63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(/blog/img/wechat_645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E8%A7%88"><span class="toc-number">1.</span> <span class="toc-text">总览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text">常见字面量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="toc-number">2.1.</span> <span class="toc-text">字符集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E9%87%8F"><span class="toc-number">2.2.</span> <span class="toc-text">数量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%9A%E7%82%B9"><span class="toc-number">2.3.</span> <span class="toc-text">锚点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8D%95%E8%8E%B7%E7%BB%84"><span class="toc-number">2.4.</span> <span class="toc-text">捕获组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lookahead"><span class="toc-number">2.5.</span> <span class="toc-text">Lookahead</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Builder-DSL"><span class="toc-number">3.</span> <span class="toc-text">Builder DSL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E9%9B%86-1"><span class="toc-number">3.1.</span> <span class="toc-text">字符集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E9%87%8F-1"><span class="toc-number">3.2.</span> <span class="toc-text">数量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%9A%E7%82%B9-1"><span class="toc-number">3.3.</span> <span class="toc-text">锚点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8D%95%E8%8E%B7"><span class="toc-number">3.4.</span> <span class="toc-text">捕获</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lookahead-1"><span class="toc-number">3.5.</span> <span class="toc-text">Lookahead</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8-Parser"><span class="toc-number">4.</span> <span class="toc-text">常用 Parser</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89-Parser-%E5%92%8C-CustomConsumingRegexComponent"><span class="toc-number">4.1.</span> <span class="toc-text">自定义 Parser 和 CustomConsumingRegexComponent</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%B9%E9%85%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text">匹配方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8C%B9%E9%85%8D%E6%96%B9%E6%B3%95"><span class="toc-number">5.1.</span> <span class="toc-text">常见的匹配方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E-Regex-%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95-%E6%93%8D%E4%BD%9C"><span class="toc-number">5.2.</span> <span class="toc-text">基于 Regex 的字符串算法&#x2F;操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Regex-%E5%8F%98%E6%8D%A2-Flags"><span class="toc-number">5.3.</span> <span class="toc-text">Regex 变换&#x2F;Flags</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">小结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">6.1.</span> <span class="toc-text">参考</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#WWDC-22"><span class="toc-number">6.1.1.</span> <span class="toc-text">WWDC 22</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Swift-Evolution"><span class="toc-number">6.1.2.</span> <span class="toc-text">Swift Evolution</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E8%B5%84%E6%BA%90"><span class="toc-number">6.1.3.</span> <span class="toc-text">其他资源</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/11/26/swift-static-code-detection-engineering-practice.html" title="Swift静态代码检测工程实践"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://tva1.sinaimg.cn/large/eb90989fly1i3nt648p0uj20pc0g249o.jpg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="Swift静态代码检测工程实践"/></a><div class="content"><a class="title" href="/blog/2022/11/26/swift-static-code-detection-engineering-practice.html" title="Swift静态代码检测工程实践">Swift静态代码检测工程实践</a><time datetime="2022-11-26T03:15:00.000Z" title="发表于 2022-11-26 11:15:00">2022-11-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/11/15/swift-regular-quick-reference.html" title="Swift 正则速查手册"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://p.zhheo.com/postimg_7.png!cover" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="Swift 正则速查手册"/></a><div class="content"><a class="title" href="/blog/2022/11/15/swift-regular-quick-reference.html" title="Swift 正则速查手册">Swift 正则速查手册</a><time datetime="2022-11-15T15:00:00.000Z" title="发表于 2022-11-15 23:00:00">2022-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/10/15/swift-package-manager-engineering-practice.html" title="Swift Package Manager工程实践"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/html-base/banner.jpg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="Swift Package Manager工程实践"/></a><div class="content"><a class="title" href="/blog/2022/10/15/swift-package-manager-engineering-practice.html" title="Swift Package Manager工程实践">Swift Package Manager工程实践</a><time datetime="2022-10-15T04:30:00.000Z" title="发表于 2022-10-15 12:30:00">2022-10-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2022/02/22/swift-protocol-and-associated-types.html" title="Swift协议与关联类型"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://tva1.sinaimg.cn/large/eb90989fly1i3ns3jyx00j20p80gwtiw.jpg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="Swift协议与关联类型"/></a><div class="content"><a class="title" href="/blog/2022/02/22/swift-protocol-and-associated-types.html" title="Swift协议与关联类型">Swift协议与关联类型</a><time datetime="2022-02-22T03:15:00.000Z" title="发表于 2022-02-22 11:15:00">2022-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2021/07/01/swift-asynchronous-and-concurrency.html" title="Swift 异步和并发"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://p.zhheo.com/HT89zx22490381710727584074.png!cover" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="Swift 异步和并发"/></a><div class="content"><a class="title" href="/blog/2021/07/01/swift-asynchronous-and-concurrency.html" title="Swift 异步和并发">Swift 异步和并发</a><time datetime="2021-07-01T12:00:00.000Z" title="发表于 2021-07-01 20:00:00">2021-07-01</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:2773953617@qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2773953617&amp;site=qq&amp;menu=yes" title="QQ"><i class="anzhiyufont anzhiyu-icon-qq"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://weibo.com/u/3952122015" title="微博"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.jianshu.com/u/b13ee6afc1e0/" title="简书"><i class="anzhiyufont anzhiyu-icon-paper-plane"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2023/05/09/645a3ff0dc540.gif" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/Yajon" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="http://www.yojoy.top" title="主页"><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><a class="deal_link" href="/blog/atom.xml" title="RSS"><i class="anzhiyufont anzhiyu-icon-rss"></i></a><a class="deal_link" href="/blog/copyright.html" title="CC"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i></a></div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2015 - 2025 By <a class="footer-bar-link" href="/blog/" title="GuoYanjun" target="_blank">GuoYanjun</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = ["自强不息&#44; 厚德载物&#44; 上善若水&#44; 虚怀若谷.","๑۩ﺴ 透过指尖&#44; 目视锦瑟流年，&#44; 邂逅一场繁华的悸动 ﺴ۩๑"]
+        sub.unshift(data.hitokoto, from)
+        window.typed = new Typed('#footer-type-tips', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('footer-type-tips').innerHTML = data.hitokoto
+      }
+    })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://imgse.com/" title="imgur">imgur</a><a class="footer-bar-link cc" href="/blog/copyright" title="cc协议"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-by-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nc-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nd-line"></i></a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/" title="archive"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/blog/tags/" title="tag"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/blog/categories/" title="category"><div class="headline">分类</div><div class="length-num">2</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://yojoy.top/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://imgbb.com" title="imgbb图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="imgbb图床"/><span class="back-menu-item-text">imgbb图床</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://bu.dusays.com" title="bu图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="bu图床"/><span class="back-menu-item-text">bu图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 工具箱</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/custom/toolBox/toolBox.html"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 工具箱</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 探索</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/music/?id=2236521145&amp;server=netease"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/blog/tags/GitHub/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(54, 52, 185);"># GitHub<sup>2</sup></a><a href="/blog/tags/Server/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(162, 65, 19);"># Server<sup>2</sup></a><a href="/blog/tags/Swift/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(20, 127, 20);"># Swift<sup>7</sup></a><a href="/blog/tags/essay/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(36, 72, 188);"># essay<sup>1</sup></a><a href="/blog/tags/hexo/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(146, 131, 154);"># hexo<sup>3</sup></a><a href="/blog/tags/iOS/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(56, 91, 110);"># iOS<sup>15</sup></a><a href="/blog/tags/poetry/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(117, 71, 15);"># poetry<sup>5</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/blog/js/utils.js"></script><script src="/blog/js/main.js"></script><script src="/blog/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("12/28/2015 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎访问一月筠的主页!`,
+    `生活明朗, 未来可期`,
+    `
+        
+   ██████╗ ██╗   ██╗ ██████╗ ██╗   ██╗ █████╗ ███╗   ██╗     ██╗██╗   ██╗███╗   ██╗
+  ██╔════╝ ██║   ██║██╔═══██╗╚██╗ ██╔╝██╔══██╗████╗  ██║     ██║██║   ██║████╗  ██║
+  ██║  ███╗██║   ██║██║   ██║ ╚████╔╝ ███████║██╔██╗ ██║     ██║██║   ██║██╔██╗ ██║
+  ██║   ██║██║   ██║██║   ██║  ╚██╔╝  ██╔══██║██║╚██╗██║██   ██║██║   ██║██║╚██╗██║
+  ╚██████╔╝╚██████╔╝╚██████╔╝   ██║   ██║  ██║██║ ╚████║╚█████╔╝╚██████╔╝██║ ╚████║
+   ╚═════╝  ╚═════╝  ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚════╝  ╚═════╝ ╚═╝  ╚═══╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2015 By 一月筠 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好!", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 一月筠 %c 你正在访问 GuoYanjun 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/blog/js/random.js"></script><script src="/blog/js/search/local-search.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/blog/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
