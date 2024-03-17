@@ -1,684 +1,575 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
-<head>
-
-    <!--[if lt IE 9]>
-        <style>body {display: none; background: none !important} </style>
-        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
-    <![endif]-->
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="format-detection" content="telephone=no" />
-<meta name="author" content="一月筠" />
-
-
-
-<meta name="description" content="文/一月筠 -- 转载请注明 --
-非常高兴您能阅读本篇文章，麻烦输入密码验证一下哦~…">
-<meta property="og:type" content="article">
-<meta property="og:title" content="关于本站使用到的插件">
-<meta property="og:url" content="http://guoyanjun.top/2016/10/01/about-the-plug-in-used-by-this-site.html">
-<meta property="og:site_name" content="郭艳军的那些事儿">
-<meta property="og:description" content="文/一月筠 -- 转载请注明 --
-非常高兴您能阅读本篇文章，麻烦输入密码验证一下哦~…">
-<meta property="og:updated_time" content="2020-07-06T10:47:50.344Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于本站使用到的插件">
-<meta name="twitter:description" content="文/一月筠 -- 转载请注明 --
-非常高兴您能阅读本篇文章，麻烦输入密码验证一下哦~…">
-
-<link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
-
-
-    <link rel="alternate" href="/atom.xml" title="郭艳军的那些事儿" type="application/atom+xml">
-
-
-
-    <link rel="shortcut icon" href="/blog//favicon.png">
-
-
-
-    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
-
-
-
-    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
-
-
-
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
-
-
-<link rel="stylesheet" href="/blog/css/style.css">
-
-
-
-<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-
-
-<title>关于本站使用到的插件 | 郭艳军的那些事儿</title>
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-<script>
-    var yiliaConfig = {
-        fancybox: true,
-        animate: true,
-        isHome: false,
-        isPost: true,
-        isArchive: false,
-        isTag: false,
-        isCategory: false,
-        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
-        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: true
-    }
-</script>
-
-<!--添加百度自动推送代码-->
-<script>
-(function(){
-    //var bp = document.createElement('script');
-    //bp.src = '//push.zhanzhang.baidu.com/push.js';
-    //var s = document.getElementsByTagName("script")[0];
-    //s.parentNode.insertBefore(bp, s);
-    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
-})();
-</script>
-
-<!--添加百度统计代码-->
-<script>
-var _hmt = _hmt || [];
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>关于本站使用到的插件 | 一月筠</title><meta name="keywords" content="hexo"><meta name="author" content="GuoYanjun"><meta name="copyright" content="GuoYanjun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="关于本站使用到的插件"><meta name="application-name" content="关于本站使用到的插件"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="关于本站使用到的插件"><meta property="og:url" content="https://yojoy.top/blog/2016/10/01/about-the-plug-in-used-by-this-site.html"><meta property="og:site_name" content="一月筠"><meta property="og:description" content="文&amp;#x2F;一月筠 -- 转载请注明 -- 非常高兴您能阅读本篇文章，麻烦输入密码验证一下哦~…  目录  本站hexo主题 Yelee_GitHub仓库展示小挂件 Yelee_文章目录 Yelee_文末版权信息 未添加的参考功能 Hexo主题中添加日历云功能 音乐视频播放器插件 动态tag云标"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e13024e34.webp!cover"><meta property="article:author" content="GuoYanjun"><meta property="article:tag" content="一月筠,郭艳军,Yojoy,Yajon,GuoYanjun,产品,设计,开发,ChatGPT,Flutter开发,iOS开发,鸿蒙开发,HarmonyOS开发,小程序开发"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e13024e34.webp!cover"><meta name="description" content="文&amp;#x2F;一月筠 -- 转载请注明 -- 非常高兴您能阅读本篇文章，麻烦输入密码验证一下哦~…  目录  本站hexo主题 Yelee_GitHub仓库展示小挂件 Yelee_文章目录 Yelee_文末版权信息 未添加的参考功能 Hexo主题中添加日历云功能 音乐视频播放器插件 动态tag云标"><link rel="shortcut icon" href="/blog/favicon.ico"><link rel="canonical" href="https://yojoy.top/blog/2016/10/01/about-the-plug-in-used-by-this-site"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="O3qTII6QvZXszxEg"/><meta name="msvalidate.01" content="xxx"/><link rel="manifest" href="/blog/other/json/manifest.json"/><meta name="msapplication-TileColor" content="var(--anzhiyu-main)"/><link rel="mask-icon" href="/blog/blog/img/siteicon/apple-icon-180.png" color="#5bbad5"/><link rel="apple-touch-icon" sizes="180x180" href="/blog/img/siteicon/apple-icon-180.png"/><link rel="apple-touch-icon-precomposed" sizes="180x180" href="/blog/img/siteicon/apple-icon-180.png"/><link rel="icon" type="image/png" sizes="32x32" href="/blog/blog/img/siteicon/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/blog/blog/img/siteicon/16.png"/><link rel="bookmark" href="/blog/blog/img/siteicon/apple-icon-180.png"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1290-2796.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2796-1290.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1179-2556.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2556-1179.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  //hm.src = "https://hm.baidu.com/hm.js?a0de0062ecc8e145d335478668581635";
-  hm.src = "https://hm.baidu.com/hm.js?71fefd6fdbcc6386d6d806016594606a";
+  hm.src = "https://hm.baidu.com/hm.js?3f3c772306077fa1190d5aeea5ceb780";
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
-</script>
+</script><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: undefined,
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  url: 'https://yojoy.top/blog',
+  root: '/blog/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: {"mode":"cdn","api":"https://img2color-go.vercel.app/api?img=","cover_change":true},
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: {"path":"/blog/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: GuoYanjun","link":"链接: ","source":"来源: 一月筠","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#2F7DCD","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '一月筠',
+  title: '关于本站使用到的插件',
+  postAI: '',
+  pageFillDescription: '目录, 其他资源, , , 使用描述, , 使用描述, , 使用描述, , , , , , , , 安装时间, 介绍, 使用描述, , 安装时间, 介绍, 使用描述, , 安装时间, 介绍, 使用描述, , 安装时间, 介绍, 使用描述, , 安装时间, 介绍, 使用描述, , 安装时间, 介绍, 使用描述, , 安装时间, 介绍, 使用描述, , 安装时间, 介绍, , 安装时间, 介绍, 使用描述文一月筠转载请注明非常高兴您能阅读本篇文章麻烦输入密码验证一下哦目录本站主题仓库展示小挂件文章目录文末版权信息未添加的参考功能主题中添加日历云功能音乐视频播放器插件动态云标签游戏插件阅读器插件订阅插件加密插件音乐插件捐赠按钮将文章标题转成英文的插件其他资源图床说明不太清楚图片上传到哪里去了关于我的一些网络图片欢迎来到郭艳军的那些事儿郭艳军代码高亮插件本站主题主题地址主题使用说明最全的前端资源汇总仓库包括前端学习开发资源求职面试等仓库展示小挂件使用描述用户名仓库名文章目录使用描述指定文章中关闭目录指定文章中隐藏目录序号文末版权信息使用描述指定文章中关闭目录未添加的参考功能主题中添加日历云功能参考地址动态云标签参考地址游戏地址在线演示嵌入或者不一定成功插件阅读器插件地址安装时间介绍通过嵌入一个的链接使你的博客不需要借助第三方便能够在本页在线预览文档使用描述示例订阅插件地址安装时间介绍订阅所需插件使用描述已在中集成并使用不需要额外配置地址安装时间介绍站点优化是网站被百度等录入的插件使用描述已在中集成并使用不需要额外配置地址安装时间介绍站点优化是网站被百度等录入的插件使用描述已在中集成并使用不需要额外配置加密插件地址安装时间介绍尝试着想一下你写了一篇博客但是出于某种原因不太希望每一个人都可以看到他所以你常常会为这种文章设置一个密码其他人需要输入密码才可以访问这篇博客对于或者来说这很容易但是对于来说之前并没有一个类似的功能所以因为这个需求而诞生了线上你可以查看密码是使用描述在你的文章的头部添加上对应的字段如音乐插件地址安装时间介绍在博客中插入音乐插件基于编写的播放器引用网页查看博客中插入音乐视频本页查看效果喜欢你邓紫棋使用描述关于歌词除了选项您可以使用具有结束标签的来显示歌词示例喜欢你邓紫棋视频插件地址安装时间介绍在博客中插入视频插件基于编写的播放器引用网页查看博客中插入音乐视频本页查看效果参数自动播放视频不受移动浏览器支持循环播放音乐默认值用于中文用于英语导航器语言启用屏幕截图功能默认值注意如果设置为视频和视频海报必须启用跨源绑定热键包括左边和空格默认值加载音乐的方式可以是默认必需视频网址视频封面图片的最大数量最大宽度的的最大高度你可以使用像素示例若能绽放光芒若能绽放光芒若能绽放光芒若能绽放光芒使用描述捐赠按钮地址安装时间介绍使用在博客中插入捐赠按钮一款捐赠按钮样式包含支付宝微信可使用直接嵌入方便简洁引用网页查看博客中插入捐赠按钮本页查看效果将文章标题转成英文的插件地址安装时间介绍使用翻译百度翻译和有道翻译将中的汉字标题转成英文标题有道翻译按照官网提供的调用时候出现如下报错故目前可认为不可用等待查明原因后修改使用描述配置项目下的注意判断是否需要配置本地代理因为我在本地是开启时才能访问翻译的如果没有被墙请将下的改为如果设置为请设置本地代理地址',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2016-10-01 18:00:00',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-
-    <script>
-        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
-    </script>
-
-
-
-    <script> yiliaConfig.rootUrl = /blog/; </script>
-
-
-
-
-
-</head>
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="/blog/" class="profilepic">
-            <img src="/blog//img/avatar.png" class="animated zoomIn">
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/blog/">一月筠</a></h1>
-        </hgroup>
-
-        
-        <p class="header-subtitle">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</p>
-        
-
-        
-            <form id="search-form">
-            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
-            <i class="fa fa-times" onclick="resetSearch()"></i>
-            </form>
-            <div id="local-search-result"></div>
-            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
-        
-
-
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="/blog/index/">主页</a></li>
-                        
-                            <li><a href="/blog/essay/">随笔</a></li>
-                        
-                            <li><a href="/blog/archives/">所有文章</a></li>
-                        
-                            <li><a href="/blog/tags/">标签云</a></li>
-                        
-                            <li><a href="/blog/about/">关于</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
-                            
-                                <a class="fa 新浪微博" href="http://weibo.com/1778140743" title="新浪微博"></a>
-                            
-                                <a class="fa GitHub" href="https://github.com/TinyJay" title="GitHub"></a>
-                            
-                                <a class="fa 简书" href="http://www.jianshu.com/u/b13ee6afc1e0" title="简书"></a>
-                            
-                                <a class="fa RSS" href="/blog/atom.xml" title="RSS"></a>
-                            
-                                <a class="fa 网易云音乐" href="http://music.163.com/#/user/home?id=284001567" title="网易云音乐"></a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Server/">Server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/essay/">essay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/poetry/">poetry</a></li></ul>
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://github.com">GitHub</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://www.cocoachina.com">cocoachina</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://www.code4app.com">code4app</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://www.fontawesome.com.cn">fontawesome</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://www.jsdelivr.com/">jsdelivr</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://sm.ms">SM.MS</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://www.awesomes.cn/rank">awesomes rank</a>
-                    
-                    </div>
-                </section>
-                
-
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">你要记得那些大雨中为你撑伞的人，帮你挡住外来之物的人，黑暗中默默抱紧你的人，逗你笑的人，陪你彻夜聊天的人，坐车来看望你的人，陪你哭过的人，在医院陪你的人，总是以你为重的人，带着你四处游荡的人，说想念你的人...</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>                
-</div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">一月筠</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/blog/" class="profilepic">
-                <img src="/blog//img/avatar.png" class="animated zoomIn">
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/blog/" title="回到主页">一月筠</a></h1>
-            </hgroup>
-            
-            <p class="header-subtitle">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</p>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/blog/index/">主页</a></li>
-                
-                    <li><a href="/blog/essay/">随笔</a></li>
-                
-                    <li><a href="/blog/archives/">所有文章</a></li>
-                
-                    <li><a href="/blog/tags/">标签云</a></li>
-                
-                    <li><a href="/blog/about/">关于</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" target="_blank" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
-                            
-                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1778140743" title="新浪微博"></a>
-                            
-                                <a class="fa GitHub" target="_blank" href="https://github.com/TinyJay" title="GitHub"></a>
-                            
-                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/u/b13ee6afc1e0" title="简书"></a>
-                            
-                                <a class="fa RSS" target="_blank" href="/blog/atom.xml" title="RSS"></a>
-                            
-                                <a class="fa 网易云音乐" target="_blank" href="http://music.163.com/#/user/home?id=284001567" title="网易云音乐"></a>
-                            
-                        </ul>
-            </nav>
-        </header>                
-    </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
-</nav>
-      <div class="body-wrap"><article id="post-about-the-plug-in-used-by-this-site" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2016/10/01/about-the-plug-in-used-by-this-site.html" class="article-date">
-      <time datetime="2016-09-30T16:00:00.000Z" itemprop="datePublished">2016-10-01</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      关于本站使用到的插件
-    </h1>
-  
-
-      </header>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
       
-      <div class="article-info article-info-post">
-        
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/hexo/">hexo</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
+        get: key => {
+          const itemStr = localStorage.getItem(key)
       
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <script src=/blog/js/crypto-js.js></script><script>
-function doDecrypt(pwd, onError) {
-	console.log("in doDecrypt");
-	var txt = document.getElementById("enc_content").innerHTML;
-	var plantext;
-	try {
-	  	var bytes = CryptoJS.AES.decrypt(txt, pwd);
-		plaintext = bytes.toString(CryptoJS.enc.Utf8);
-	} catch(err) {
-		if(onError) {onError(err);}
-		return;
-	}
-	document.getElementById("enc_content").innerHTML = plaintext;
-	document.getElementById("enc_content").style.display = "block";
-   document.getElementById("enc_passwd").style.display = "none";
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/blog/atom.xml" title="一月筠" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://avatars.githubusercontent.com/u/13490798?s=320"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
 }
-</script>
-<div id="enc_content" style="display:none">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</div><div id="enc_passwd"> <input type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {	$("#enc_error")[0].innerHTML = "password error!"};function decrypt() {var passwd = $("#enc_passwd input")[0].value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>
-      
-    </div>
-    
-  </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/blog/2016/10/01/about-the-plug-in-used-by-this-site.html">关于本站使用到的插件</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">一月筠</a></p>
-        <p><span>发布时间:</span>2016-10-01, 00:00:00</p>
-        <p><span>最后更新:</span>2020-07-06, 18:47:50</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/blog/2016/10/01/about-the-plug-in-used-by-this-site.html" title="关于本站使用到的插件">http://guoyanjun.top/blog/2016/10/01/about-the-plug-in-used-by-this-site.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://guoyanjun.top/blog/2016/10/01/about-the-plug-in-used-by-this-site.html　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
 
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://yojoy.top/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://imgbb.com" title="imgbb图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="imgbb图床"/><span class="back-menu-item-text">imgbb图床</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://bu.dusays.com" title="bu图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="bu图床"/><span class="back-menu-item-text">bu图床</span></a></div></div></div></div><a id="site-name" href="/blog/" accesskey="h"><div class="title">一月筠</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 工具箱</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/custom/toolBox/toolBox.html"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 工具箱</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 探索</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/music/?id=2236521145&amp;server=netease"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/blog/tags/GitHub/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># GitHub<sup>1</sup></a><a href="/blog/tags/Server/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># Server<sup>2</sup></a><a href="/blog/tags/essay/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># essay<sup>1</sup></a><a href="/blog/tags/github/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># github<sup>1</sup></a><a href="/blog/tags/hexo/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># hexo<sup>7</sup></a><a href="/blog/tags/iOS/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># iOS<sup>7</sup></a><a href="/blog/tags/poetry/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># poetry<sup>5</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/blog/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2020/03/"><span class="card-archive-list-date">三月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2017/05/"><span class="card-archive-list-date">五月 2017</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2017/04/"><span class="card-archive-list-date">四月 2017</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2017/03/"><span class="card-archive-list-date">三月 2017</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2017/02/"><span class="card-archive-list-date">二月 2017</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2016/10/"><span class="card-archive-list-date">十月 2016</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2016/03/"><span class="card-archive-list-date">三月 2016</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/%E6%94%BB%E5%9F%8E%E7%8B%AE/" itemprop="url">攻城狮</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/blog/tags/hexo/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>hexo</span></a></span></div></div><h1 class="post-title" itemprop="name headline">关于本站使用到的插件</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2016-10-01T10:00:00.000Z" title="发表于 2016-10-01 18:00:00">2016-10-01</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2016-10-01T10:00:00.000Z" title="更新于 2016-10-01 18:00:00">2016-10-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">2.2k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="关于本站使用到的插件"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为北京"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>北京</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e13024e34.webp!cover"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://yojoy.top/blog/2016/10/01/about-the-plug-in-used-by-this-site.html"><header><a class="post-meta-categories" href="/blog/categories/%E6%94%BB%E5%9F%8E%E7%8B%AE/" itemprop="url">攻城狮</a><a href="/blog/tags/hexo/" tabindex="-1" itemprop="url">hexo</a><h1 id="CrawlerTitle" itemprop="name headline">关于本站使用到的插件</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">GuoYanjun</span><time itemprop="dateCreated datePublished" datetime="2016-10-01T10:00:00.000Z" title="发表于 2016-10-01 18:00:00">2016-10-01</time><time itemprop="dateCreated datePublished" datetime="2016-10-01T10:00:00.000Z" title="更新于 2016-10-01 18:00:00">2016-10-01</time></header><ul>
+<li><strong>文&#x2F;一月筠</strong> <code>-- 转载请注明 --</code></li>
+<li>非常高兴您能阅读本篇文章，麻烦输入密码验证一下哦~…<span id="more"></span></li>
+</ul>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><!--+ [Xcode](#Xcode)
+## <a name='Xcode'>Xcode</a>-->
+<ul>
+<li><strong><a href="#%E6%9C%AC%E7%AB%99hexo%E4%B8%BB%E9%A2%98">本站hexo主题</a></strong></li>
+<li><a href="#Yelee_GitHub%E4%BB%93%E5%BA%93%E5%B1%95%E7%A4%BA%E5%B0%8F%E6%8C%82%E4%BB%B6">Yelee_GitHub仓库展示小挂件</a></li>
+<li><a href="#Yelee_%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">Yelee_文章目录</a></li>
+<li><a href="#Yelee_%E6%96%87%E6%9C%AB%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF">Yelee_文末版权信息</a></li>
+<li><strong><a href="#%E6%9C%AA%E6%B7%BB%E5%8A%A0%E7%9A%84%E5%8F%82%E8%80%83%E5%8A%9F%E8%83%BD">未添加的参考功能</a></strong></li>
+<li><a href="#Hexo%E4%B8%BB%E9%A2%98%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%97%A5%E5%8E%86%E4%BA%91%E5%8A%9F%E8%83%BD">Hexo主题中添加日历云功能</a></li>
+<li><a href="#hexo-tag-aplayer">音乐视频播放器插件</a></li>
+<li><a href="#hexo-tag-cloud">动态tag云标签</a></li>
+<li><strong><a href="#html%E6%B8%B8%E6%88%8F">html游戏</a></strong></li>
+<li><a href="#2048">2048</a></li>
+<li><strong><a href="#hexo%E6%8F%92%E4%BB%B6">hexo插件</a></strong></li>
+<li><a href="#hexo-pdf">PDF阅读器插件hexo-pdf</a></li>
+<li><a href="#hexo-generator-feed">RSS订阅插件hexo-generator-feed</a></li>
+<li><a href="#hexo-generator-sitemap">hexo-generator-sitemap</a></li>
+<li><a href="#hexo-generator-seo-friendly-sitemap">hexo-generator-seo-friendly-sitemap</a></li>
+<li><a href="#hexo-encrypt">加密插件hexo-encrypt</a></li>
+<li><a href="#hexo-tag-aplayer">音乐插件hexo-tag-aplayer</a></li>
+<li><a href="#Yajon/donate-page">捐赠按钮Yajon&#x2F;donate-page</a></li>
+<li><a href="#hexo-translate-title">将文章标题转成英文的插件hexo-translate-title</a></li>
+</ul>
+<h2 id="其他资源"><a href="#其他资源" class="headerlink" title="其他资源"></a>其他资源</h2><ul>
+<li>图床<br><a target="_blank" rel="noopener" href="https://sm.ms/">https://sm.ms/</a><br>说明：不太清楚图片上传到哪里去了</li>
+<li>关于我的一些网络图片<br><strong>欢迎来到郭艳军的那些事儿GIF</strong><br><a target="_blank" rel="noopener" href="https://ooo.0o0.ooo/2017/04/01/58df476f47c87.gif">https://ooo.0o0.ooo/2017/04/01/58df476f47c87.gif</a><br><strong>郭艳军GIF</strong><br><a target="_blank" rel="noopener" href="https://ooo.0o0.ooo/2017/04/01/58df487d4ded8.gif">https://ooo.0o0.ooo/2017/04/01/58df487d4ded8.gif</a></li>
+<li>代码高亮<br>插件：<a target="_blank" rel="noopener" href="https://jmblog.github.io/color-themes-for-google-code-prettify/">https://jmblog.github.io/color-themes-for-google-code-prettify/</a></li>
+</ul>
+<h2 id="本站hexo主题"><a href="#本站hexo主题" class="headerlink" title="本站hexo主题"></a><a name='本站hexo主题'>本站hexo主题</a></h2><p><strong><a target="_blank" rel="noopener" href="https://github.com/MOxFIVE/hexo-theme-yelee">Yelee主题GitHub地址</a></strong></p>
+<p><strong><a target="_blank" rel="noopener" href="http://moxfive.coding.me/yelee/2.Basic-Usage/menu.html">Yelee主题使用说明</a></strong></p>
+<p><strong><a target="_blank" rel="noopener" href="https://github.com/keRee/Awsome-Front-End-learning-resource">GitHub最全的前端资源汇总仓库（包括前端学习、开发资源、求职面试等）</a></strong></p>
+<h3 id="Yelee-GitHub仓库展示小挂件"><a href="#Yelee-GitHub仓库展示小挂件" class="headerlink" title="Yelee_GitHub仓库展示小挂件"></a><a name='Yelee_GitHub仓库展示小挂件'>Yelee_GitHub仓库展示小挂件</a></h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="http://moxfive.coding.me/yelee/src/github-repo.png" alt="示例图片"></p>
+<h4 id="使用描述"><a href="#使用描述" class="headerlink" title="使用描述"></a>使用描述</h4><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">&quot;github-widget&quot;</span> data-repo=<span class="string">&quot;&lt;GitHub 用户名&gt;/&lt;仓库名&gt;.js&quot;</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
 
+<div class="github-widget" data-repo="MOxFIVE/hexo-theme-yelee"></div>
 
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/blog/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html">
-                    iOS-静默方式发送邮件(SKPSMTPMessage)
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/blog/2016/03/28/hexo-custom-page-for-home-page.html">
-                    Hexo自定义页面做首页
-                </a>
-            </div>
-        
-    </nav>
+<h3 id="Yelee-文章目录"><a href="#Yelee-文章目录" class="headerlink" title="Yelee_文章目录"></a><a name='Yelee_文章目录'>Yelee_文章目录</a></h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="http://moxfive.coding.me/yelee/src/feat.toc.gif" alt="示例图片"></p>
+<h4 id="使用描述-1"><a href="#使用描述-1" class="headerlink" title="使用描述"></a>使用描述</h4><ul>
+<li>指定文章中关闭目录 toc: false</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Hello</span> <span class="string">World</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2015-08-19 00:00:00</span></span><br><span class="line"><span class="attr">toc:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
 
-  
-</article>
+<ul>
+<li>指定文章中隐藏目录序号 toc_list_number: false</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Hello</span> <span class="string">World</span></span><br><span class="line"><span class="attr">toc_list_number:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
 
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-6 i,
-        .toc-level-6 ol {
-            display: none !important;
-        }
-    </style>
+<h3 id="Yelee-文末版权信息"><a href="#Yelee-文末版权信息" class="headerlink" title="Yelee_文末版权信息"></a><a name='Yelee_文末版权信息'>Yelee_文末版权信息</a></h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="http://moxfive.coding.me/yelee/src/copyright.info.png" alt="示例图片"></p>
+<h4 id="使用描述-2"><a href="#使用描述-2" class="headerlink" title="使用描述"></a>使用描述</h4><ul>
+<li>指定文章中关闭目录 original: false</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Hello</span> <span class="string">World</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2015-08-19 00:00:00</span></span><br><span class="line"><span class="attr">original:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
 
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<h2 id="未添加的参考功能"><a href="#未添加的参考功能" class="headerlink" title="未添加的参考功能"></a><a name='未添加的参考功能'>未添加的参考功能</a></h2><h3 id="Hexo主题中添加日历云功能"><a href="#Hexo主题中添加日历云功能" class="headerlink" title="Hexo主题中添加日历云功能"></a><a name='Hexo主题中添加日历云功能'>Hexo主题中添加日历云功能</a></h3><ul>
+<li>参考地址：<a target="_blank" rel="noopener" href="http://www.tuicool.com/articles/NZJ3qeY">http://www.tuicool.com/articles/NZJ3qeY</a></li>
+</ul>
+<h3 id="动态tag云标签"><a href="#动态tag云标签" class="headerlink" title="动态tag云标签"></a><a name='hexo-tag-cloud'>动态tag云标签</a></h3><ul>
+<li>参考地址：<a target="_blank" rel="noopener" href="https://github.com/MikeCoder/hexo-tag-cloud">https://github.com/MikeCoder/hexo-tag-cloud</a></li>
+</ul>
+<h2 id="html游戏"><a href="#html游戏" class="headerlink" title="html游戏"></a><a name='html游戏'>html游戏</a></h2><h3 id="2048"><a href="#2048" class="headerlink" title="2048"></a><a name='2048'>2048</a></h3><p><code>github地址：</code><a target="_blank" rel="noopener" href="https://github.com/keRee/2048">https://github.com/keRee/2048</a></p>
+<p><code>在线演示</code><a target="_blank" rel="noopener" href="https://keree.github.io/">https://keree.github.io/</a></p>
+<ul>
+<li>iframe嵌入</li>
+</ul>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe <span class="attribute">src</span>=<span class="string">&quot;https://keree.github.io/#/2048&quot;</span> <span class="attribute">style</span>=<span class="string">&quot;overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:580px;min-width:430px;&quot;</span> <span class="attribute">frameborder</span>=<span class="string">&quot;0&quot;</span> <span class="attribute">allowtransparency</span>=<span class="string">&quot;true&quot;</span>&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
+<p>或者，不一定成功</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe <span class="attribute">src</span>=<span class="string">&quot;https://cdn.rawgit.com/keRee/2048/b43d5e0a/index.html&quot;</span> <span class="attribute">style</span>=<span class="string">&quot;overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:580px;min-width:430px;&quot;</span> <span class="attribute">frameborder</span>=<span class="string">&quot;0&quot;</span> <span class="attribute">allowtransparency</span>=<span class="string">&quot;true&quot;</span>&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
 
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
+<h2 id="hexo插件"><a href="#hexo插件" class="headerlink" title="hexo插件"></a><a name='hexo插件'>hexo插件</a></h2><h3 id="PDF阅读器插件hexo-pdf"><a href="#PDF阅读器插件hexo-pdf" class="headerlink" title="PDF阅读器插件hexo-pdf"></a><a name='hexo-pdf'>PDF阅读器插件hexo-pdf</a></h3><p><code>github地址：</code><a target="_blank" rel="noopener" href="https://github.com/superalsrk/hexo-pdf/">hexo-pdf</a></p>
+<h4 id="安装时间"><a href="#安装时间" class="headerlink" title="安装时间"></a>安装时间</h4><p>2017.03.14</p>
+<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>通过嵌入一个PDF的链接，使你的博客不需要借助第三方便能够在本页在线预览PDF文档。</p>
+<h4 id="使用描述-3"><a href="#使用描述-3" class="headerlink" title="使用描述"></a>使用描述</h4><p>Normal PDF</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% pdf https:<span class="regexp">//</span>www.szse.cn<span class="regexp">/lawrules/</span>csrcrules<span class="regexp">/notice/</span>P020230406509524241312.pdf %&#125;</span><br></pre></td></tr></table></figure>
 
+<p>or</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name">pdf</span> ./bash_freshman.pdf %&#125;</span></span><br></pre></td></tr></table></figure>
 
-<!-- 添加打赏功能 只在所有post文件下的文章中显示-->
+<blockquote>
+<p>示例</p>
+</blockquote>
+<iframe width='738' height='523' class='preview-iframe' scrolling='no' frameborder='0' src='https://www.szse.cn/lawrules/csrcrules/notice/P020230406509524241312.pdf' ></iframe>
 
+<h3 id="RSS订阅插件hexo-generator-feed"><a href="#RSS订阅插件hexo-generator-feed" class="headerlink" title="RSS订阅插件hexo-generator-feed"></a><a name='hexo-generator-feed'>RSS订阅插件hexo-generator-feed</a></h3><p><code>github地址：</code><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a></p>
+<h4 id="安装时间-1"><a href="#安装时间-1" class="headerlink" title="安装时间"></a>安装时间</h4><p>2017.03.14</p>
+<h4 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h4><p>RSS订阅所需插件</p>
+<h4 id="使用描述-4"><a href="#使用描述-4" class="headerlink" title="使用描述"></a>使用描述</h4><p>已在<code>_config.yml</code>中集成并使用，不需要额外配置。</p>
+<h3 id="hexo-generator-sitemap"><a href="#hexo-generator-sitemap" class="headerlink" title="hexo-generator-sitemap"></a><a name='hexo-generator-sitemap'>hexo-generator-sitemap</a></h3><p><code>github地址：</code><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-generator-sitemap">hexo-generator-sitemap</a></p>
+<h4 id="安装时间-2"><a href="#安装时间-2" class="headerlink" title="安装时间"></a>安装时间</h4><p>2017.03.14</p>
+<h4 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h4><p>站点SEO优化，是网站被百度等录入的插件。</p>
+<h4 id="使用描述-5"><a href="#使用描述-5" class="headerlink" title="使用描述"></a>使用描述</h4><p>已在<code>_config.yml</code>中集成并使用，不需要额外配置。</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">    path: sitemap.<span class="keyword">xml</span></span><br><span class="line">    <span class="title">template</span>: ./sitemap_template.xml</span><br></pre></td></tr></table></figure>
 
-	<! -- 添加捐赠图标 -->
-<div class="post-donate" style="margin-top:0px;">
-    <div id="donate_board" class="donate_bar center">
-        <span class="donate_txt">
-            您的喜欢是作者创作最大的动力！❤️
-        </span>
-        <iframe src="https://gitcdn.link/cdn/TinyJay/donate-page/faa9d69210d334af644f254296e1a8b3e24da3be/simple/index.html" style="overflow-x:hidden;overflow-y:hidden; border:0px none #fff; height:215px; width:100%;"  frameborder="0" scrolling="no"></iframe>
-    </div>
-</div>
-<! -- 添加捐赠图标 -->
+<h3 id="hexo-generator-seo-friendly-sitemap"><a href="#hexo-generator-seo-friendly-sitemap" class="headerlink" title="hexo-generator-seo-friendly-sitemap"></a><a name='hexo-generator-seo-friendly-sitemap'>hexo-generator-seo-friendly-sitemap</a></h3><p><code>github地址：</code><a target="_blank" rel="noopener" href="https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap">hexo-generator-seo-friendly-sitemap</a></p>
+<h4 id="安装时间-3"><a href="#安装时间-3" class="headerlink" title="安装时间"></a>安装时间</h4><p>2017.03.14</p>
+<h4 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h4><p>站点SEO优化，是网站被百度等录入的插件。</p>
+<h4 id="使用描述-6"><a href="#使用描述-6" class="headerlink" title="使用描述"></a>使用描述</h4><p>已在<code>_config.yml</code>中集成并使用，不需要额外配置。</p>
+<h3 id="加密插件hexo-encrypt"><a href="#加密插件hexo-encrypt" class="headerlink" title="加密插件hexo-encrypt"></a><a name='hexo-encrypt'>加密插件hexo-encrypt</a></h3><p><code>github地址：</code><a target="_blank" rel="noopener" href="https://github.com/edolphin-ydf/hexo-encrypt">https://github.com/edolphin-ydf/hexo-encrypt</a></p>
+<h4 id="安装时间-4"><a href="#安装时间-4" class="headerlink" title="安装时间"></a>安装时间</h4><p>2017.03.21</p>
+<h4 id="介绍-4"><a href="#介绍-4" class="headerlink" title="介绍"></a>介绍</h4><p>尝试着想一下，你写了一篇博客，但是，出于某种原因，不太希望每一个人都可以看到他。所以你常常会为这种文章设置一个密码，其他人需要输入密码才可以访问这篇博客。对于 emlog 或者 wordpress 来说，这很容易，但是对于 hexo 来说，之前并没有一个类似的功能。</p>
+<p>所以，hexo-encrypt因为这个需求而诞生了。</p>
+<p><code>线上 Demo 你可以查看</code> <a target="_blank" rel="noopener" href="http://edolphin.site/2016/05/31/encrypt-test/">http://edolphin.site/2016/05/31/encrypt-test/</a></p>
+<p>密码是 “123456”</p>
+<h4 id="使用描述-7"><a href="#使用描述-7" class="headerlink" title="使用描述"></a>使用描述</h4><ul>
+<li>在你的文章的头部添加上对应的字段，如 password, abstract, message</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">hello</span> <span class="string">world</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2016-03-30 21:18:02</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">iOS</span></span><br><span class="line"><span class="attr">encrypt:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">enc_replace_url:</span> <span class="literal">true</span> <span class="comment"># this indicate wether the plugin should replace the img url in this post, this option has a higher priority than `replace_all_url` in _config.yml</span></span><br><span class="line"><span class="attr">enc_pwd:</span> <span class="number">123456</span> <span class="comment"># this is the way to set encrypt password for this post</span></span><br><span class="line"><span class="attr">enc_img_type:</span> <span class="string">qiniu</span> <span class="comment"># or base64</span></span><br><span class="line"><span class="attr">enc_template:</span> <span class="string">&#x27;user defined decrpyt ui template&#x27;</span> <span class="comment"># same as template in _config.yml but has a higher priority</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<h3 id="音乐插件hexo-tag-aplayer"><a href="#音乐插件hexo-tag-aplayer" class="headerlink" title="音乐插件hexo-tag-aplayer"></a><a name='hexo-tag-aplayer'>音乐插件hexo-tag-aplayer</a></h3><p><code>github地址：</code><a target="_blank" rel="noopener" href="https://github.com/grzhan/hexo-tag-aplayer">https://github.com/grzhan/hexo-tag-aplayer</a></p>
+<h4 id="安装时间-5"><a href="#安装时间-5" class="headerlink" title="安装时间"></a>安装时间</h4><p>2017.03.21</p>
+<h4 id="介绍-5"><a href="#介绍-5" class="headerlink" title="介绍"></a>介绍</h4><p>在博客中插入音乐。<br>插件基于 DIYgod 编写的 html5 播放器 APlayer。</p>
+<p><code>引用网页查看</code> <a target="_blank" rel="noopener" href="http://login926.github.io/2016/07/20/HexoMedia/">Hexo博客中插入音乐&#x2F;视频</a></p>
+<p>本页查看效果：</p>
 
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        <div id="aplayer-AdcfmFRs" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
-            //window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"关于本站使用到的插件　| 郭艳军的那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-            window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"关于本站使用到的插件　| 郭艳军的那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//static.ddhigh.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-AdcfmFRs"),
+            narrow: false,
+            autoplay: false,
+            showlrc: 3,
+            music: {
+              title: "喜欢你",
+              author: "邓紫棋",
+              url: "https://music.163.com/song/media/outer/url?id=28949444",
+              pic: "https://api.i-meto.com/meting/api?server=netease&type=pic&id=8896148580676276&auth=435419eb5c22febe50a3251373ae8aa8c085f2d1",
+              lrc: "https://api.i-meto.com/meting/api?server=netease&type=lrc&id=28949444&auth=bff6064dd8d16ad21fd8dffb217686dd992360c5"
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
         </script>
-    
 
-    
-</div>
+<h4 id="使用描述-8"><a href="#使用描述-8" class="headerlink" title="使用描述"></a>使用描述</h4><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name">aplayer</span> title author url [picture_url, narrow, autoplay, width:xxx, lrc:xxx] %&#125;</span></span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>关于歌词</li>
+</ul>
+<p>除了’lrc’选项，您可以使用具有结束标签的aplayerlrc来显示歌词。</p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayerlrc <span class="string">&quot;title&quot;</span> <span class="string">&quot;author&quot;</span> <span class="string">&quot;url&quot;</span> <span class="string">&quot;autoplay&quot;</span> %&#125;</span><br><span class="line">[<span class="number">00</span>:<span class="number">00.00</span>]lrc here</span><br><span class="line">&#123;% endaplayerlrc %&#125;</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>示例</li>
+</ul>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% aplayer <span class="string">&quot;喜欢你&quot;</span> <span class="string">&quot;邓紫棋&quot;</span> <span class="comment">&quot;</span></span><br><span class="line">https://music.<span class="number">163</span>.<span class="keyword">com</span>/song/media/outer/url?id=<span class="number">28949444</span><span class="string">&quot; &quot;</span>https://api.i-meto.<span class="keyword">com</span>/meting/api?server=netease&amp;<span class="built_in">type</span>=pic&amp;id=<span class="number">8896148580676276</span>&amp;auth=<span class="number">435419</span>eb5c22febe50a3251373ae8aa8c085f2d1<span class="string">&quot; &quot;</span>lrc:https://api.i-meto.<span class="keyword">com</span>/meting/api?server=netease&amp;<span class="built_in">type</span>=lrc&amp;id=<span class="number">28949444</span>&amp;auth=bff6064dd8d16ad21fd8dffb217686dd992360c5<span class="comment">&quot; %&#125;</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="视频插件hexo-tag-dplayer"><a href="#视频插件hexo-tag-dplayer" class="headerlink" title="视频插件hexo-tag-dplayer"></a><a name='hexo-tag-dplayer'>视频插件hexo-tag-dplayer</a></h3><p><code>github地址：</code><a target="_blank" rel="noopener" href="https://github.com/NextMoe/hexo-tag-dplayer">https://github.com/NextMoe/hexo-tag-dplayer</a></p>
+<h4 id="安装时间-6"><a href="#安装时间-6" class="headerlink" title="安装时间"></a>安装时间</h4><p>2017.03.21</p>
+<h4 id="介绍-6"><a href="#介绍-6" class="headerlink" title="介绍"></a>介绍</h4><p>在博客中插入视频。<br>插件基于 DIYgod 编写的 html5 播放器 DPlayer。</p>
+<p><code>引用网页查看</code> <a target="_blank" rel="noopener" href="http://login926.github.io/2016/07/20/HexoMedia/">Hexo博客中插入音乐&#x2F;视频</a></p>
+<p>本页查看效果：</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="meta">%</span> dplayer <span class="string">&quot;url=https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&amp;userId=17&amp;ext=.mp4&quot;</span>  <span class="string">&quot;pic=http://home.ustc.edu.cn/~mmmwhy/GEM.jpg&quot;</span> <span class="string">&quot;loop=yes&quot;</span> <span class="string">&quot;theme=#FADFA3&quot;</span> <span class="string">&quot;autoplay=false&quot;</span> <span class="string">&quot;token=tokendemo&quot;</span> <span class="string">&quot;subtitle.url=https://s-sh-17-dplayercdn.oss.dogecdn.com/hikarunara.vtt&quot;</span> <span class="meta">%</span>&#125;</span><br></pre></td></tr></table></figure>
 
+<video id="player" playsinline controls data-poster="/path/to/poster.jpg">
+  <source src="https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4" type="video/mp4" />
+  <track kind="captions" label="English captions" src="https://s-sh-17-dplayercdn.oss.dogecdn.com/hikarunara.vtt" srclang="en" default />
+</video>
 
+<ul>
+<li>参数</li>
+</ul>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">“autoplay”：自动播放视频，不受移动浏览器支持</span><br><span class="line"><span class="string">&#x27;theme&#x27;</span>：theme <span class="type">color</span>，<span class="keyword">default</span>：＃b7daff</span><br><span class="line"><span class="string">&#x27;loop&#x27;</span>：循环播放音乐，默认值：<span class="literal">true</span></span><br><span class="line"><span class="string">&#x27;lang&#x27;</span>：language，`zh<span class="string">&#x27;用于中文，`en&#x27;</span>用于英语，<span class="keyword">default</span>：导航器语言</span><br><span class="line"><span class="string">&#x27;screenshot&#x27;</span>：启用屏幕截图功能，默认值：<span class="literal">false</span>，注意：如果设置为<span class="literal">true</span>，视频和视频海报必须启用跨源</span><br><span class="line"><span class="string">&#x27;hotkey&#x27;</span>：绑定热键，包括左边和空格，默认值：<span class="literal">true</span></span><br><span class="line"><span class="string">&#x27;preload&#x27;</span>：<span class="string">&#x27;auto&#x27;</span>，加载音乐的方式，可以是<span class="string">&#x27;none&#x27;</span><span class="string">&#x27;metadata&#x27;</span><span class="string">&#x27;auto&#x27;</span>，默认：<span class="string">&#x27;auto&#x27;</span></span><br><span class="line"><span class="string">&#x27;url&#x27;</span>：必需，视频网址</span><br><span class="line"><span class="string">&#x27;pic&#x27;</span>：视频封面图片</span><br><span class="line"><span class="string">&#x27;api&#x27;</span>：DPlayer danmaku backend url</span><br><span class="line"><span class="string">&#x27;add&#x27;</span>：dplayer danmuku <span class="keyword">for</span> bilibili</span><br><span class="line"><span class="string">&#x27;id&#x27;</span>：see https:<span class="comment">//github.com/DIYgod/DPlayer</span></span><br><span class="line"><span class="string">&#x27;token&#x27;</span>：see https:<span class="comment">//github.com/DIYgod/DPlayer</span></span><br><span class="line"><span class="string">&#x27;maximum&#x27;</span>：danmaku的最大数量</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;width&#x27;</span>：最大宽度的dplayer wraper</span><br><span class="line"><span class="string">&#x27;height&#x27;</span>：dplayer wraper的最大高度，你可以使用像素“<span class="built_in">height</span> = <span class="number">233</span>px”</span><br></pre></td></tr></table></figure>
 
+<p>示例：</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="meta">%</span> dplayer <span class="string">&quot;url=http://devtest.qiniudn.com/若能绽放光芒.mp4&quot;</span> <span class="string">&quot;addition=https://dplayer.daoapp.io/bilibili?aid=4157142&quot;</span> <span class="string">&quot;api=http://dplayer.daoapp.io&quot;</span> <span class="string">&quot;pic=http://devtest.qiniudn.com/若能绽放光芒.png&quot;</span> <span class="string">&quot;id=9E2E3368B56CDBB4&quot;</span> <span class="string">&quot;loop=yes&quot;</span> <span class="string">&quot;theme=#FADFA3&quot;</span> <span class="string">&quot;autoplay=false&quot;</span> <span class="string">&quot;token=tokendemo&quot;</span> <span class="meta">%</span>&#125;</span><br><span class="line">&#123;<span class="meta">%</span> dplayer <span class="string">&quot;url=http://devtest.qiniudn.com/若能绽放光芒.mp4&quot;</span> <span class="string">&quot;addition=https://dplayer.daoapp.io/bilibili?aid=4157142&quot;</span> <span class="string">&quot;api=http://dplayer.donot.help/dplayerpy&quot;</span> <span class="string">&quot;pic=http://devtest.qiniudn.com/若能绽放光芒.png&quot;</span> <span class="string">&quot;id=2622668&quot;</span> <span class="string">&quot;loop=yes&quot;</span> <span class="string">&quot;theme=#FADFA3&quot;</span> <span class="string">&quot;autoplay=false&quot;</span> <span class="string">&quot;width=233px&quot;</span> <span class="meta">%</span>&#125;</span><br></pre></td></tr></table></figure>
 
-    
-        <section id="comments" style="margin:10px;padding:10px;background:#fff;">
-          <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'true' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '#vcomment',
-            notify: notify,
-            verify: verify,
-            app_id: "R9cQjqaD9AXPKY7AQiU6U6yl",
-            app_key: "YHUU5n9sbvpRQCdiIU8aRsmH",
-            placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
-            avatar:"mm"
-        });
-    }
-</script>
-      </section>
-    
+<h4 id="使用描述-9"><a href="#使用描述-9" class="headerlink" title="使用描述"></a>使用描述</h4><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name">dplayer</span> key=value ... %&#125;</span></span><br></pre></td></tr></table></figure>
 
-  
+<h3 id="捐赠按钮Yajon-donate-page"><a href="#捐赠按钮Yajon-donate-page" class="headerlink" title="捐赠按钮Yajon&#x2F;donate-page"></a><a name='Yajon/donate-page'>捐赠按钮Yajon&#x2F;donate-page</a></h3><p><code>github地址：</code><a target="_blank" rel="noopener" href="https://github.com/Yajon/donate-page">https://github.com/Yajon/donate-page</a></p>
+<h4 id="安装时间-7"><a href="#安装时间-7" class="headerlink" title="安装时间"></a>安装时间</h4><p>2017.03.21</p>
+<h4 id="介绍-7"><a href="#介绍-7" class="headerlink" title="介绍"></a>介绍</h4><p>使用在博客中插入捐赠按钮。<br>一款捐赠按钮样式，包含PayPal、支付宝、微信，可使用iframe直接嵌入，方便简洁。</p>
+<p><code>引用网页查看</code> <a href="https://yojoy.top/donate-page/sample1/index.html">Hexo博客中插入捐赠按钮</a></p>
+<p>本页查看效果：</p>
+<iframe src="https://yojoy.top/donate-page/sample1/index.html" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe>
 
+<h3 id="将文章标题转成英文的插件hexo-translate-title"><a href="#将文章标题转成英文的插件hexo-translate-title" class="headerlink" title="将文章标题转成英文的插件hexo-translate-title"></a><a name='hexo-translate-title'>将文章标题转成英文的插件hexo-translate-title</a></h3><p><code>github地址：</code><a target="_blank" rel="noopener" href="https://github.com/cometlj/hexo-translate-title">https://github.com/cometlj/hexo-translate-title</a></p>
+<h4 id="安装时间-8"><a href="#安装时间-8" class="headerlink" title="安装时间"></a>安装时间</h4><p>2017.03.24</p>
+<h4 id="介绍-8"><a href="#介绍-8" class="headerlink" title="介绍"></a>介绍</h4><p>使用Google翻译，百度翻译和有道翻译将Hexo中的汉字标题转成英文标题。<br>有道翻译按照官网提供的API，调用时候出现如下报错，故目前可认为不可用，等待查明原因后修改。</p>
+<h4 id="使用描述-10"><a href="#使用描述-10" class="headerlink" title="使用描述"></a>使用描述</h4><p>配置hexo项目下的<code>_config.yml</code></p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">translate_title:</span></span><br><span class="line"><span class="symbol">  translate_way:</span> google    <span class="meta">#google | baidu | youdao</span></span><br><span class="line"><span class="symbol">  youdao_api_key:</span> XXX</span><br><span class="line"><span class="symbol">  youdao_keyfrom:</span> XXX</span><br><span class="line"><span class="symbol">  is_need_proxy:</span> true     <span class="meta">#true | false</span></span><br><span class="line"><span class="symbol">  proxy_url:</span> http:<span class="comment">//localhost:8123</span></span><br></pre></td></tr></table></figure>
 
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/blog/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html" title="上一篇: iOS-静默方式发送邮件(SKPSMTPMessage)">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/blog/2016/03/28/hexo-custom-page-for-home-page.html" title="下一篇: Hexo自定义页面做首页">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html">iOS蓝牙开发（一）蓝牙相关基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html">Mac版 IntelliJ IDEA 创建Web项目并部署servlet</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/04/14/the-only-rhyme.html">独韵</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/04/04/remember-the-qingming-rain.html">忆清明雨上</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/15/building-gh-pages-branches-on-github.html">在github上建立gh-pages分支</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html">最全iOS开发工具集合</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/06/mac-instals-nodejs-(detailed-steps)-and-sublimetext-runs-the-javascript-console.html">Mac 安装 nodejs （图文详细步骤）及SublimeText运行JavaScript控制台</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/02/27/ios-modular-programing-framework-behive.html">iOS 模块化编程框架 BeeHive</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html">iOS-静默方式发送邮件(SKPSMTPMessage)</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/10/01/about-the-plug-in-used-by-this-site.html">关于本站使用到的插件</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/03/28/hexo-custom-page-for-home-page.html">Hexo自定义页面做首页</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/01/08/hexo-blog-ad-reward-function.html">Hexo博客添加打赏功能</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/01/05/hexo-baidu-actively-submit-links.html">Hexo百度主动提交链接</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/01/04/ios-open-source-project-and-tol-plug-in-on-github.html">GitHub上的iOS开源项目及工具插件</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/25/hexo-blog-environment-set-up-for-mac.html">Hexo博客环境搭建for Mac</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/24/the-hexo-comand-and-some-usage.html">Hexo命令和一些使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/05/ios-loading-single-shet-pictures-leading-to-crash-analysis.html">iOS加载单张图片导致崩溃的分析</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/01/c-language-sorting-algorithm-and-detailed.html">C语言实现排序算法及详解</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/07/03/tactic.html">诀</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/04/16/naging.html">碎碎念</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2013/05/25/s-ink.html">墨筱雨</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2012/12/14/met-again.html">又相见</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
-
-
-<!--添加百度自动推送代码-->
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = '//zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = '//push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script></div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                <i class="fa fa-copyright"></i> 
-<!--                2015-2020 一月筠-->
-                    2015-2020 <a href="http://guoyanjun.top" target="_blank">一月筠</a>
-            </div>
-            <!--<div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
-            </div>-->
-            <!-- 添加底部的Power by Hexo -->
-            <!--<div class="footer-right">
-                Powered by <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a> <i class="fa fa-heart animated infinite pulse"></i>
-            </div>-->
-            <!-- 添加底部的Power by Hexo -->
-            <div class="footer-right">
-    		  
-    		  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261663353'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261663353%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
-      		  
-      		  </div>
-        </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>| </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
-    </div>
-</footer>
-    </div>
-    
-    <script src="/blog/js/GithubRepoWidget.js"></script>
-
-<script data-main="/blog/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-            }
-            else {
-                var backgroundnum = 5;
-                var backgroundimg = "url(/blog//background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-            }
+<p>注意：判断是否需要配置google本地代理，因为我在本地是开启时才能访问google翻译的，如果没有被墙，请将_config.yml 下的is_need_proxy: true改为false。如果设置为true,请设置本地代理地址</p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/blog/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/13490798?s=320" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/13490798?s=320" title="头像" alt="头像"></a><div class="post-copyright__author_name">GuoYanjun</div><div class="post-copyright__author_desc">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://yojoy.top/blog/2016/10/01/about-the-plug-in-used-by-this-site.html">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://yojoy.top/blog/2016/10/01/about-the-plug-in-used-by-this-site.html')">关于本站使用到的插件</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/blog/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://yojoy.top/blog/2016/10/01/about-the-plug-in-used-by-this-site.html"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=关于本站使用到的插件&amp;url=https://yojoy.top/blog/2016/10/01/about-the-plug-in-used-by-this-site.html&amp;pic=https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e13024e34.webp!cover" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yojoy.top/blog" target="_blank">一月筠</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/blog/tags/hexo/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>hexo<span class="tagsPageCount">7</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e146a8bbd.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/2016/03/28/hexo-custom-page-for-home-page.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e149d6d23.webp!cover" onerror="onerror=null;src='/blog/blog/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Hexo自定义页面做首页</div></div></a></div><div class="next-post pull-right"><a href="/blog/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/15/63233d423333c.webp" onerror="onerror=null;src='/blog/blog/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">iOS-静默方式发送邮件(SKPSMTPMessage)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/blog/2015/12/24/the-hexo-comand-and-some-usage.html" title="Hexo命令和一些使用方法"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e14612142.webp!cover" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2015-12-24</div><div class="title">Hexo命令和一些使用方法</div></div></a></div><div><a href="/blog/2016/01/08/hexo-blog-ad-reward-function.html" title="Hexo博客添加打赏功能"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e13024e34.webp!cover" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2016-01-08</div><div class="title">Hexo博客添加打赏功能</div></div></a></div><div><a href="/blog/2016/01/05/hexo-baidu-actively-submit-links.html" title="Hexo百度主动提交链接"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e146a8bbd.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2016-01-05</div><div class="title">Hexo百度主动提交链接</div></div></a></div><div><a href="/blog/2015/12/25/hexo-blog-environment-set-up-for-mac.html" title="Hexo博客环境搭建for Mac"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e13381c0e.webp!cover" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2015-12-25</div><div class="title">Hexo博客环境搭建for Mac</div></div></a></div><div><a href="/blog/2016/03/28/hexo-custom-page-for-home-page.html" title="Hexo自定义页面做首页"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e149d6d23.webp!cover" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2016-03-28</div><div class="title">Hexo自定义页面做首页</div></div></a></div><div><a href="/blog/2020/10/05/about-this-site-theme-tag-tag-plugins.html" title="关于本站主题标签Tag Plugins"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e146a8bbd.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2020-10-05</div><div class="title">关于本站主题标签Tag Plugins</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/13490798?s=320" onerror="this.onerror=null;this.src='/blog/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，还有<b style="color:#fff">金融知识</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">希望你可以在这里找到有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/blog/"><h1 class="author-info__name">GuoYanjun</h1><div class="author-info__desc">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/Yajon" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://music.163.com/#/user/home?id=284001567" target="_blank" title="网易云音乐"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(/blog/img/wechat_63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(/blog/img/wechat_645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content toc-div-class" style="display:none"></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/2020/10/05/about-this-site-theme-tag-tag-plugins.html" title="关于本站主题标签Tag Plugins"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e146a8bbd.webp" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="关于本站主题标签Tag Plugins"/></a><div class="content"><a class="title" href="/blog/2020/10/05/about-this-site-theme-tag-tag-plugins.html" title="关于本站主题标签Tag Plugins">关于本站主题标签Tag Plugins</a><time datetime="2020-10-05T04:00:00.000Z" title="发表于 2020-10-05 12:00:00">2020-10-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2020/03/15/github-one-click-deployment.html" title="GitHub一键部署"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/akilar-candyassets/image/20190921061245825.png" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="GitHub一键部署"/></a><div class="content"><a class="title" href="/blog/2020/03/15/github-one-click-deployment.html" title="GitHub一键部署">GitHub一键部署</a><time datetime="2020-03-15T04:00:00.000Z" title="发表于 2020-03-15 12:00:00">2020-03-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html" title="iOS蓝牙开发（一）蓝牙相关基础知识"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/interview-vue01/banner.jpg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="iOS蓝牙开发（一）蓝牙相关基础知识"/></a><div class="content"><a class="title" href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html" title="iOS蓝牙开发（一）蓝牙相关基础知识">iOS蓝牙开发（一）蓝牙相关基础知识</a><time datetime="2017-05-26T04:55:30.000Z" title="发表于 2017-05-26 12:55:30">2017-05-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html" title="Mac版 IntelliJ IDEA 创建Web项目并部署servlet"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/interview-client01/banner.jpg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="Mac版 IntelliJ IDEA 创建Web项目并部署servlet"/></a><div class="content"><a class="title" href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html" title="Mac版 IntelliJ IDEA 创建Web项目并部署servlet">Mac版 IntelliJ IDEA 创建Web项目并部署servlet</a><time datetime="2017-05-21T04:30:30.000Z" title="发表于 2017-05-21 12:30:30">2017-05-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2017/04/14/the-only-rhyme.html" title="独韵"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/Yojoon/ImgHosting/images-blog/2015-07-03/39195b0707436a7ecb92565bf3411ab1/1819713-34f594af86f190bc.jpeg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="独韵"/></a><div class="content"><a class="title" href="/blog/2017/04/14/the-only-rhyme.html" title="独韵">独韵</a><time datetime="2017-04-14T04:55:00.000Z" title="发表于 2017-04-14 12:55:00">2017-04-14</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:2773953617@qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2773953617&amp;site=qq&amp;menu=yes" title="QQ"><i class="anzhiyufont anzhiyu-icon-qq"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://weibo.com/u/3952122015" title="微博"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.jianshu.com/u/b13ee6afc1e0/" title="简书"><i class="anzhiyufont anzhiyu-icon-paper-plane"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2023/05/09/645a3ff0dc540.gif" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/Yajon" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="http://www.yojoy.top" title="主页"><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><a class="deal_link" href="/blog/atom.xml" title="RSS"><i class="anzhiyufont anzhiyu-icon-rss"></i></a><a class="deal_link" href="/blog/copyright.html" title="CC"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i></a></div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2015 - 2024 By <a class="footer-bar-link" href="/blog/" title="GuoYanjun" target="_blank">GuoYanjun</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = ["自强不息&#44; 厚德载物&#44; 上善若水&#44; 虚怀若谷.","๑۩ﺴ 透过指尖&#44; 目视锦瑟流年，&#44; 邂逅一场繁华的悸动 ﺴ۩๑"]
+        sub.unshift(data.hitokoto, from)
+        window.typed = new Typed('#footer-type-tips', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
         })
-    </script>
+      } else {
+        document.getElementById('footer-type-tips').innerHTML = data.hitokoto
+      }
+    })
+}
 
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://imgse.com/" title="imgur">imgur</a><a class="footer-bar-link cc" href="/blog/copyright" title="cc协议"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-by-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nc-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nd-line"></i></a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/" title="archive"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/blog/tags/" title="tag"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/blog/categories/" title="category"><div class="headline">分类</div><div class="length-num">2</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://yojoy.top/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://imgbb.com" title="imgbb图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="imgbb图床"/><span class="back-menu-item-text">imgbb图床</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://bu.dusays.com" title="bu图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="bu图床"/><span class="back-menu-item-text">bu图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 工具箱</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/custom/toolBox/toolBox.html"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 工具箱</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 探索</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/music/?id=2236521145&amp;server=netease"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/blog/tags/GitHub/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(147, 63, 181);"># GitHub<sup>1</sup></a><a href="/blog/tags/Server/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(135, 91, 184);"># Server<sup>2</sup></a><a href="/blog/tags/essay/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(72, 43, 34);"># essay<sup>1</sup></a><a href="/blog/tags/github/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(118, 25, 138);"># github<sup>1</sup></a><a href="/blog/tags/hexo/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(176, 4, 116);"># hexo<sup>7</sup></a><a href="/blog/tags/iOS/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(105, 20, 73);"># iOS<sup>7</sup></a><a href="/blog/tags/poetry/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(40, 98, 1);"># poetry<sup>5</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/blog/js/utils.js"></script><script src="/blog/js/main.js"></script><script src="/blog/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("12/28/2015 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎访问一月筠的主页!`,
+    `生活明朗, 未来可期`,
+    `
+        
+   ██████╗ ██╗   ██╗ ██████╗ ██╗   ██╗ █████╗ ███╗   ██╗     ██╗██╗   ██╗███╗   ██╗
+  ██╔════╝ ██║   ██║██╔═══██╗╚██╗ ██╔╝██╔══██╗████╗  ██║     ██║██║   ██║████╗  ██║
+  ██║  ███╗██║   ██║██║   ██║ ╚████╔╝ ███████║██╔██╗ ██║     ██║██║   ██║██╔██╗ ██║
+  ██║   ██║██║   ██║██║   ██║  ╚██╔╝  ██╔══██║██║╚██╗██║██   ██║██║   ██║██║╚██╗██║
+  ╚██████╔╝╚██████╔╝╚██████╔╝   ██║   ██║  ██║██║ ╚████║╚█████╔╝╚██████╔╝██║ ╚████║
+   ╚═════╝  ╚═════╝  ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚════╝  ╚═════╝ ╚═╝  ╚═══╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2015 By 一月筠 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
 
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
 
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好!", "color:white; background-color:#4f90d9", ""));
 
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 一月筠 %c 你正在访问 GuoYanjun 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
 
-    <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/blog/js/random.js"></script><script src="/blog/js/search/local-search.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
     }
-});
+  }
 
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
+  typeof typed === 'object' && typed.destroy()
 
-<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
 
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
 
-<div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
-</div>
-<script>
-    // Open in New Window
-    
-        var oOpenInNew = {
-             github: ".github-widget a", 
-            
-            
-            
-            
-            
-             archives: ".archive-article-title", 
-             miniArchives: "a.post-list-link", 
-            
-             friends: "#js-friends a", 
-             socail: ".social a" 
-        }
-        for (var x in oOpenInNew) {
-            $(oOpenInNew[x]).attr("target", "_blank");
-        }
-    
-</script>
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
 
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-  </div>
-</body>
-</html>
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/blog/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

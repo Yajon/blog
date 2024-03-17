@@ -1,1242 +1,855 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
-<head>
-
-    <!--[if lt IE 9]>
-        <style>body {display: none; background: none !important} </style>
-        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
-    <![endif]-->
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="format-detection" content="telephone=no" />
-<meta name="author" content="一月筠" />
-
-
-
-<meta name="description" content="文/一月筠 -- 转载请注明 --
-目录…">
-<meta property="og:type" content="article">
-<meta property="og:title" content="最全iOS开发工具集合">
-<meta property="og:url" content="http://guoyanjun.top/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html">
-<meta property="og:site_name" content="郭艳军的那些事儿">
-<meta property="og:description" content="文/一月筠 -- 转载请注明 --
-目录…">
-<meta property="og:updated_time" content="2020-07-06T02:01:25.669Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最全iOS开发工具集合">
-<meta name="twitter:description" content="文/一月筠 -- 转载请注明 --
-目录…">
-
-<link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
-
-
-    <link rel="alternate" href="/atom.xml" title="郭艳军的那些事儿" type="application/atom+xml">
-
-
-
-    <link rel="shortcut icon" href="/blog//favicon.png">
-
-
-
-    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
-
-
-
-    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
-
-
-
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
-
-
-<link rel="stylesheet" href="/blog/css/style.css">
-
-
-
-<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-
-
-<title>最全iOS开发工具集合 | 郭艳军的那些事儿</title>
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-<script>
-    var yiliaConfig = {
-        fancybox: true,
-        animate: true,
-        isHome: false,
-        isPost: true,
-        isArchive: false,
-        isTag: false,
-        isCategory: false,
-        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
-        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: true
-    }
-</script>
-
-<!--添加百度自动推送代码-->
-<script>
-(function(){
-    //var bp = document.createElement('script');
-    //bp.src = '//push.zhanzhang.baidu.com/push.js';
-    //var s = document.getElementsByTagName("script")[0];
-    //s.parentNode.insertBefore(bp, s);
-    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
-})();
-</script>
-
-<!--添加百度统计代码-->
-<script>
-var _hmt = _hmt || [];
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>最全iOS开发工具集合 | 一月筠</title><meta name="keywords" content="iOS"><meta name="author" content="GuoYanjun"><meta name="copyright" content="GuoYanjun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="最全iOS开发工具集合"><meta name="application-name" content="最全iOS开发工具集合"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="最全iOS开发工具集合"><meta property="og:url" content="https://yojoy.top/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html"><meta property="og:site_name" content="一月筠"><meta property="og:description" content="文&amp;#x2F;一月筠 -- 转载请注明 -- 目录…  目录 Xcode [Simulators 模拟器下载](#Simulators 模拟器下载) [Developer Disk Image下载](#Developer Disk Image下载) Documentation webStorm ["><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e13c5a002.webp"><meta property="article:author" content="GuoYanjun"><meta property="article:tag" content="一月筠,郭艳军,Yojoy,Yajon,GuoYanjun,产品,设计,开发,ChatGPT,Flutter开发,iOS开发,鸿蒙开发,HarmonyOS开发,小程序开发"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e13c5a002.webp"><meta name="description" content="文&amp;#x2F;一月筠 -- 转载请注明 -- 目录…  目录 Xcode [Simulators 模拟器下载](#Simulators 模拟器下载) [Developer Disk Image下载](#Developer Disk Image下载) Documentation webStorm ["><link rel="shortcut icon" href="/blog/favicon.ico"><link rel="canonical" href="https://yojoy.top/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="O3qTII6QvZXszxEg"/><meta name="msvalidate.01" content="xxx"/><link rel="manifest" href="/blog/other/json/manifest.json"/><meta name="msapplication-TileColor" content="var(--anzhiyu-main)"/><link rel="mask-icon" href="/blog/blog/img/siteicon/apple-icon-180.png" color="#5bbad5"/><link rel="apple-touch-icon" sizes="180x180" href="/blog/img/siteicon/apple-icon-180.png"/><link rel="apple-touch-icon-precomposed" sizes="180x180" href="/blog/img/siteicon/apple-icon-180.png"/><link rel="icon" type="image/png" sizes="32x32" href="/blog/blog/img/siteicon/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/blog/blog/img/siteicon/16.png"/><link rel="bookmark" href="/blog/blog/img/siteicon/apple-icon-180.png"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1290-2796.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2796-1290.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1179-2556.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2556-1179.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  //hm.src = "https://hm.baidu.com/hm.js?a0de0062ecc8e145d335478668581635";
-  hm.src = "https://hm.baidu.com/hm.js?71fefd6fdbcc6386d6d806016594606a";
+  hm.src = "https://hm.baidu.com/hm.js?3f3c772306077fa1190d5aeea5ceb780";
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
-</script>
+</script><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: undefined,
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  url: 'https://yojoy.top/blog',
+  root: '/blog/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: {"mode":"cdn","api":"https://img2color-go.vercel.app/api?img=","cover_change":true},
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: {"path":"/blog/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: GuoYanjun","link":"链接: ","source":"来源: 一月筠","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#2F7DCD","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '一月筠',
+  title: '最全iOS开发工具集合',
+  postAI: '',
+  pageFillDescription: '目录, , , , , , , , , , , , , , , , , , , , , , , , 文一月筠转载请注明目录目录模拟器下载模拟器下载下载下载编辑器插件测试其他测试测试版本发布测试版本发布部署工具版本控制工具插件矢量图设计工具切图工具图标处理工具在线库取色工具图片录制工具版本平台下载地址大小官网地址官网地址官网地址官网地址百度网盘密码百度网盘密码百度网盘密码百度网盘密码百度网盘密码百度网盘密码百度网盘密码模拟器下载名称下载地址大小苹果官网地址苹果官网地址下载名称下载地址大小下载地址下载地址下载地址苹果官网的是开发者最喜欢用的知识仓库但是在中下载速度实在是太慢我想用迅雷离线下载怎么办那就需要知道它的下载地址了名称下载地址大小下载链接下载链接下载链接下载链接下载链接下载后挂载了看到运行解压之后找到复制到中以后更新不必重复下载此文档开发类库总结猛戳网页链接版本平台下载地址大小下载链接版本平台下载地址大小下载链接名称下载地址下载链接下载链接编辑器对于熟悉的人来说是一款不错的文本编辑器平台相比同类型产品在功能性和易用性上都有众多特色在其简单的界面之后不仅拥有自定义样式增量搜索中文字体漂移优化还支持终端命令行启动内容发布竖版文字布局甚至还可以作为任务列表使用其双栏布局的实时预览和同步滚动功能更是被众多应用借鉴和采用可惜的是已不再支持已上的系统所以在这里推荐其他几款支持语法的软件编辑器下载地址下载链接官网地址官网地址在线编辑器插件提供了除前缀匹配之外的其他更加灵活的自动补全功能支持为添加了代码地图功能可以直接打开上当前正在编辑的行对应的页面这个插件让在导航栏显示所有的内容当你开始编辑的时候帮你隐藏调试器栏的插件是一个可以帮你展开语句的插件还会自动帮你插入语句方便的编写标准注释的插件一个代码自动对齐插件它可以使用自定义的模式来对齐任何东西依赖管理工具的插件提供了图片名称自动补全功能的插件可视化的颜色选择插件高亮当前编辑的行通过十六进制字符串创建颜色的便利方法只需一次点击就可以在多个设备上构建运行将和你的项目自动合为一体的插件生成模型的插件使用快捷键调整字体大小这个插件提供了的自动补全插件用于本地化的插件的快速代码导航一个用于创建漂亮的曲线的插件便捷地导航到多个地方将与仓库中不同的代码高亮用于控制台内容筛选的插件一个显示项目中和列表的对话框使复制描述更简单自动生成所需的全部图标的插件使用或格式化代码的插件这个插件将的切换带到中使用有序的书签为你的代码做导航直接上传代码片段到和的插件使用引用项目中的任何文件提供代码提示快速编码以及代码格式化插件提升你的编码速度的扁平化颜色框架高亮被选中的符号对应的所有实例用一个快捷键就可以跳转到仓库的类似的头文件排序和重复消除插件让你的头文件看起来更加有序帮助你实现轻量的的插件测试平台的测试工具是一个开源自动化测试框架用于测试原生或者混合是一个用于的测试框架框架一个的函数式测试框架一个保守的集成测试框架一个使用脚本在连接着的设备上测试你的用户界面元素的库使用测试任何原生混合或者移动应用可视化的测试框架在内部控制你的来做端到端的测试其他测试一个危险字符串的大列表当用户输入这些字符串使有很大的可能会造成这是一个用于在你的设备上测试你的键盘使用开发者工具对你的进行远程网络和数据调试使用屏幕快照的单元测试测试版本发布一个崩溃报告和测试服务支持的测试服务在你可以发布你的测试版本收集实时的崩溃报告获取用户反馈分析测试覆盖率部署将所有部署工具整合到一个工作流中部署截屏元数据和更新这一切只需要一个命令就可以搞定自动地创建全部语言和全部设备的屏幕截图这个网站可以同时跟踪上和两个版本的浏览次数使用了利用和开发者的众包数据一些导致被苹果拒绝的重要常见问题在关键字和竞争者的角度上让你可视化地追踪你的数据工具用于将文件夹转换成一个类型安全枚举的脚本在项目中强类型的自动补全资源名称的工具包括图片单元格和的工具一个生成代码工具的集合生成资源的枚举本地化字符串和实现在应用中切换语言的功能帮助你的实现友好的本地化和国际化为和应用生成图片目录全局图片和其他相关的东西一个超级简单的图片转换器一个查看器插件用于预览文件自动翻译并且使文件和默认语言同步版本控制工具版本号下载链接下载链接下载链接下载链接下载链接下载链接下载链接设计工具插件名称简介下载地址切图神器下载链接切图神器下载链接最好用的切图工具下载链接下载链接路径圆角编辑工具下载链接下载链接辅助线工具下载链接下载链接下载链接下载链接长投影效果生成插件下载链接下载链接一些方便设计的插件下载链接用于从图层中导出资源的插件下载链接矢量图设计工具名称下载地址下载链接下载链接下载链接切图工具名称下载地址下载链接图标处理工具名称下载地址下载链接在线库名称下载地址下载链接下载链接取色工具名称下载地址下载链接图片录制工具名称下载地址下载链接下载链接下载链接一个帮助你练习里钢笔工具的小游戏',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2017-03-07 17:46:00',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-
-    <script>
-        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
-    </script>
-
-
-
-    <script> yiliaConfig.rootUrl = /blog/; </script>
-
-
-
-
-
-</head>
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="/blog/" class="profilepic">
-            <img src="/blog//img/avatar.png" class="animated zoomIn">
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/blog/">一月筠</a></h1>
-        </hgroup>
-
-        
-        <p class="header-subtitle">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</p>
-        
-
-        
-            <form id="search-form">
-            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
-            <i class="fa fa-times" onclick="resetSearch()"></i>
-            </form>
-            <div id="local-search-result"></div>
-            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
-        
-
-
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="/blog/index/">主页</a></li>
-                        
-                            <li><a href="/blog/essay/">随笔</a></li>
-                        
-                            <li><a href="/blog/archives/">所有文章</a></li>
-                        
-                            <li><a href="/blog/tags/">标签云</a></li>
-                        
-                            <li><a href="/blog/about/">关于</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
-                            
-                                <a class="fa 新浪微博" href="http://weibo.com/1778140743" title="新浪微博"></a>
-                            
-                                <a class="fa GitHub" href="https://github.com/TinyJay" title="GitHub"></a>
-                            
-                                <a class="fa 简书" href="http://www.jianshu.com/u/b13ee6afc1e0" title="简书"></a>
-                            
-                                <a class="fa RSS" href="/blog/atom.xml" title="RSS"></a>
-                            
-                                <a class="fa 网易云音乐" href="http://music.163.com/#/user/home?id=284001567" title="网易云音乐"></a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Server/">Server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/essay/">essay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/poetry/">poetry</a></li></ul>
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://github.com">GitHub</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://www.cocoachina.com">cocoachina</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://www.code4app.com">code4app</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://www.fontawesome.com.cn">fontawesome</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://www.jsdelivr.com/">jsdelivr</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://sm.ms">SM.MS</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://www.awesomes.cn/rank">awesomes rank</a>
-                    
-                    </div>
-                </section>
-                
-
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">你要记得那些大雨中为你撑伞的人，帮你挡住外来之物的人，黑暗中默默抱紧你的人，逗你笑的人，陪你彻夜聊天的人，坐车来看望你的人，陪你哭过的人，在医院陪你的人，总是以你为重的人，带着你四处游荡的人，说想念你的人...</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>                
-</div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">一月筠</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/blog/" class="profilepic">
-                <img src="/blog//img/avatar.png" class="animated zoomIn">
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/blog/" title="回到主页">一月筠</a></h1>
-            </hgroup>
-            
-            <p class="header-subtitle">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</p>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/blog/index/">主页</a></li>
-                
-                    <li><a href="/blog/essay/">随笔</a></li>
-                
-                    <li><a href="/blog/archives/">所有文章</a></li>
-                
-                    <li><a href="/blog/tags/">标签云</a></li>
-                
-                    <li><a href="/blog/about/">关于</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" target="_blank" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
-                            
-                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1778140743" title="新浪微博"></a>
-                            
-                                <a class="fa GitHub" target="_blank" href="https://github.com/TinyJay" title="GitHub"></a>
-                            
-                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/u/b13ee6afc1e0" title="简书"></a>
-                            
-                                <a class="fa RSS" target="_blank" href="/blog/atom.xml" title="RSS"></a>
-                            
-                                <a class="fa 网易云音乐" target="_blank" href="http://music.163.com/#/user/home?id=284001567" title="网易云音乐"></a>
-                            
-                        </ul>
-            </nav>
-        </header>                
-    </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
-</nav>
-      <div class="body-wrap"><article id="post-the-most-comprehensive-colection-of-ios-development-tols" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html" class="article-date">
-      <time datetime="2017-03-07T09:46:00.000Z" itemprop="datePublished">2017-03-07</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      最全iOS开发工具集合
-    </h1>
-  
-
-      </header>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
       
-      <div class="article-info article-info-post">
-        
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/iOS/">iOS</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
+        get: key => {
+          const itemStr = localStorage.getItem(key)
       
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <ul>
-<li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
-<li>目录…<a id="more"></a>
-</li>
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/blog/atom.xml" title="一月筠" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://avatars.githubusercontent.com/u/13490798?s=320"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://yojoy.top/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://imgbb.com" title="imgbb图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="imgbb图床"/><span class="back-menu-item-text">imgbb图床</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://bu.dusays.com" title="bu图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="bu图床"/><span class="back-menu-item-text">bu图床</span></a></div></div></div></div><a id="site-name" href="/blog/" accesskey="h"><div class="title">一月筠</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 工具箱</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/custom/toolBox/toolBox.html"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 工具箱</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 探索</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/music/?id=2236521145&amp;server=netease"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/blog/tags/GitHub/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># GitHub<sup>1</sup></a><a href="/blog/tags/Server/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># Server<sup>2</sup></a><a href="/blog/tags/essay/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># essay<sup>1</sup></a><a href="/blog/tags/github/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># github<sup>1</sup></a><a href="/blog/tags/hexo/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># hexo<sup>7</sup></a><a href="/blog/tags/iOS/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># iOS<sup>7</sup></a><a href="/blog/tags/poetry/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># poetry<sup>5</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/blog/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2020/03/"><span class="card-archive-list-date">三月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2017/05/"><span class="card-archive-list-date">五月 2017</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2017/04/"><span class="card-archive-list-date">四月 2017</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2017/03/"><span class="card-archive-list-date">三月 2017</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2017/02/"><span class="card-archive-list-date">二月 2017</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2016/10/"><span class="card-archive-list-date">十月 2016</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2016/03/"><span class="card-archive-list-date">三月 2016</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/%E6%94%BB%E5%9F%8E%E7%8B%AE/" itemprop="url">攻城狮</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/blog/tags/iOS/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>iOS</span></a></span></div></div><h1 class="post-title" itemprop="name headline">最全iOS开发工具集合</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2017-03-07T09:46:00.000Z" title="发表于 2017-03-07 17:46:00">2017-03-07</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2017-03-07T09:46:00.000Z" title="更新于 2017-03-07 17:46:00">2017-03-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">2.5k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="最全iOS开发工具集合"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为北京"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>北京</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e13c5a002.webp"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://yojoy.top/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html"><header><a class="post-meta-categories" href="/blog/categories/%E6%94%BB%E5%9F%8E%E7%8B%AE/" itemprop="url">攻城狮</a><a href="/blog/tags/iOS/" tabindex="-1" itemprop="url">iOS</a><h1 id="CrawlerTitle" itemprop="name headline">最全iOS开发工具集合</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">GuoYanjun</span><time itemprop="dateCreated datePublished" datetime="2017-03-07T09:46:00.000Z" title="发表于 2017-03-07 17:46:00">2017-03-07</time><time itemprop="dateCreated datePublished" datetime="2017-03-07T09:46:00.000Z" title="更新于 2017-03-07 17:46:00">2017-03-07</time></header><ul>
+<li><strong>文&#x2F;一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
+<li>目录…<span id="more"></span></li>
 </ul>
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
 <li><a href="#Xcode">Xcode</a></li>
-<li><a href="#Simulators 模拟器下载">Simulators 模拟器下载</a></li>
-<li><a href="#Developer Disk Image下载">Developer Disk Image下载</a></li>
+<li>[Simulators 模拟器下载](#Simulators 模拟器下载)</li>
+<li>[Developer Disk Image下载](#Developer Disk Image下载)</li>
 <li><a href="#Documentation">Documentation</a></li>
 <li><a href="#webStorm">webStorm</a></li>
-<li><a href="#Java To iOS">Java To iOS</a></li>
-<li><a href="#Markdown编辑器">Markdown编辑器</a></li>
-<li><a href="#Xcode插件">Xcode插件</a></li>
-<li><a href="#测试">测试</a></li>
-<li><a href="#其他测试">其他测试</a></li>
-<li><a href="#Beta 测试版本发布">Beta 测试版本发布</a></li>
-<li><a href="#部署">部署</a></li>
-<li><a href="#App Store">App Store</a></li>
-<li><a href="#工具">工具</a></li>
-<li><a href="#版本控制工具Git">版本控制工具Git</a></li>
-<li><a href="#Photoshop插件">Photoshop插件</a></li>
-<li><a href="#矢量图设计工具">矢量图设计工具</a></li>
-<li><a href="#切图工具">切图工具</a></li>
-<li><a href="#图标处理工具">图标处理工具</a></li>
-<li><a href="#在线Icon库">在线Icon库</a></li>
-<li><a href="#取色工具">取色工具</a></li>
-<li><a href="#Gif图片录制工具">Gif图片录制工具</a></li>
-<li><a href="#Design Games">Design Games</a></li>
+<li>[Java To iOS](#Java To iOS)</li>
+<li><a href="#Markdown%E7%BC%96%E8%BE%91%E5%99%A8">Markdown编辑器</a></li>
+<li><a href="#Xcode%E6%8F%92%E4%BB%B6">Xcode插件</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95">测试</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96%E6%B5%8B%E8%AF%95">其他测试</a></li>
+<li>[Beta 测试版本发布](#Beta 测试版本发布)</li>
+<li><a href="#%E9%83%A8%E7%BD%B2">部署</a></li>
+<li>[App Store](#App Store)</li>
+<li><a href="#%E5%B7%A5%E5%85%B7">工具</a></li>
+<li><a href="#%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7Git">版本控制工具Git</a></li>
+<li><a href="#Photoshop%E6%8F%92%E4%BB%B6">Photoshop插件</a></li>
+<li><a href="#%E7%9F%A2%E9%87%8F%E5%9B%BE%E8%AE%BE%E8%AE%A1%E5%B7%A5%E5%85%B7">矢量图设计工具</a></li>
+<li><a href="#%E5%88%87%E5%9B%BE%E5%B7%A5%E5%85%B7">切图工具</a></li>
+<li><a href="#%E5%9B%BE%E6%A0%87%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7">图标处理工具</a></li>
+<li><a href="#%E5%9C%A8%E7%BA%BFIcon%E5%BA%93">在线Icon库</a></li>
+<li><a href="#%E5%8F%96%E8%89%B2%E5%B7%A5%E5%85%B7">取色工具</a></li>
+<li><a href="#Gif%E5%9B%BE%E7%89%87%E5%BD%95%E5%88%B6%E5%B7%A5%E5%85%B7">Gif图片录制工具</a></li>
+<li>[Design Games](#Design Games)</li>
 </ul>
-<h2 id="More-Downloads-for-Apple-Developers"><a href="#More-Downloads-for-Apple-Developers" class="headerlink" title="More Downloads for Apple Developers"></a><a name="More Downloads for Apple Developers">More Downloads for Apple Developers</a></h2><p><a href="https://developer.apple.com/download/more/" target="_blank" rel="external">更多下载</a></p>
-<h2 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a name="Xcode">Xcode</a></h2><table>
+<h2 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a><a name='Xcode'>Xcode</a></h2><p>| 版本 | 平台 | 下载地址 | 大小 |<br>|:—:|:—:|:—:|:—:|:—:|<br>| 8.2.1 | Mac | <a target="_blank" rel="noopener" href="http://adcdownload.apple.com/Developer_Tools/Xcode_8.2.1/Xcode_8.2.1.xip">官网地址</a> | 4.2G |<br>| 8.2 | Mac | <a target="_blank" rel="noopener" href="http://adcdownload.apple.com/Developer_Tools/Xcode_8.2/Xcode_8.2.xip">官网地址</a> | 4.2G |<br>| 8.1 | Mac | <a target="_blank" rel="noopener" href="http://adcdownload.apple.com/Developer_Tools/Xcode_8.1/Xcode_8.1.xip">官网地址</a> | 4.1G |<br>| 8 | Mac | <a target="_blank" rel="noopener" href="http://adcdownload.apple.com/Developer_Tools/Xcode_8/Xcode_8.xip">官网地址</a> | 4.1G |<br>| 7.3 | Mac | <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1nvsAw8h">百度网盘</a>  密码: npe5 | 5.2G |<br>| 7.2 | Mac | <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1eSNqLGm">百度网盘</a>  密码: g44b | 4.73G |<br>| 7.1 | Mac | <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1o7CARIa">百度网盘</a>  密码: 8jj8 | 4.62G |<br>| 7.1beta | Mac | <a target="_blank" rel="noopener" href="http://pan.baidu.com/s/1hsErRDy">百度网盘</a>  密码: e9qn | 3.85G |<br>| 6.4| Mac | <a target="_blank" rel="noopener" href="http://pan.baidu.com/s/1qYxM5w4">百度网盘</a>  密码: iiae | 2.8G |<br>| 6.3 | Mac | <a target="_blank" rel="noopener" href="http://pan.baidu.com/s/1nv0A2Qt">百度网盘</a>  密码: 6mhs | 2.77G |<br>| 6.2 | Mac | <a target="_blank" rel="noopener" href="http://pan.baidu.com/s/1nu9NG3v">百度网盘</a> 密码: xun6 | 2.78G |</p>
+<h2 id="Simulators-模拟器下载"><a href="#Simulators-模拟器下载" class="headerlink" title="Simulators 模拟器下载"></a><a name='Simulators 模拟器下载'>Simulators 模拟器下载</a></h2><table>
 <thead>
 <tr>
-<th style="text-align:center">版本</th>
-<th style="text-align:center">平台</th>
-<th style="text-align:center">下载地址</th>
-<th style="text-align:center">大小</th>
+<th align="center">名称</th>
+<th align="center">下载地址</th>
+<th align="center">大小(GB)</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">8.2.1</td>
-<td style="text-align:center">Mac</td>
-<td style="text-align:center"><a href="http://adcdownload.apple.com/Developer_Tools/Xcode_8.2.1/Xcode_8.2.1.xip" target="_blank" rel="external">官网地址</a></td>
-<td style="text-align:center">4.2G</td>
+<tbody><tr>
+<td align="center">iOS 8.4</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://devimages.apple.com/downloads/xcode/simulators/com.apple.pkg.iPhoneSimulatorSDK8_4-8.4.1.1435785476.dmg">苹果官网地址</a></td>
+<td align="center">1.37</td>
 </tr>
 <tr>
-<td style="text-align:center">8.2</td>
-<td style="text-align:center">Mac</td>
-<td style="text-align:center"><a href="http://adcdownload.apple.com/Developer_Tools/Xcode_8.2/Xcode_8.2.xip" target="_blank" rel="external">官网地址</a></td>
-<td style="text-align:center">4.2G</td>
+<td align="center">iOS 8.3</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://devimages.apple.com/downloads/xcode/simulators/com.apple.pkg.iPhoneSimulatorSDK8_3-8.3.1.1434581536.dmg">苹果官网地址</a></td>
+<td align="center">1.36</td>
 </tr>
-<tr>
-<td style="text-align:center">8.1</td>
-<td style="text-align:center">Mac</td>
-<td style="text-align:center"><a href="http://adcdownload.apple.com/Developer_Tools/Xcode_8.1/Xcode_8.1.xip" target="_blank" rel="external">官网地址</a></td>
-<td style="text-align:center">4.1G</td>
-</tr>
-<tr>
-<td style="text-align:center">8</td>
-<td style="text-align:center">Mac</td>
-<td style="text-align:center"><a href="http://adcdownload.apple.com/Developer_Tools/Xcode_8/Xcode_8.xip" target="_blank" rel="external">官网地址</a></td>
-<td style="text-align:center">4.1G</td>
-</tr>
-<tr>
-<td style="text-align:center">7.3</td>
-<td style="text-align:center">Mac</td>
-<td style="text-align:center"><a href="https://pan.baidu.com/s/1nvsAw8h" target="_blank" rel="external">百度网盘</a>  密码: npe5</td>
-<td style="text-align:center">5.2G</td>
-</tr>
-<tr>
-<td style="text-align:center">7.2</td>
-<td style="text-align:center">Mac</td>
-<td style="text-align:center"><a href="https://pan.baidu.com/s/1eSNqLGm" target="_blank" rel="external">百度网盘</a>  密码: g44b</td>
-<td style="text-align:center">4.73G</td>
-</tr>
-<tr>
-<td style="text-align:center">7.1</td>
-<td style="text-align:center">Mac</td>
-<td style="text-align:center"><a href="https://pan.baidu.com/s/1o7CARIa" target="_blank" rel="external">百度网盘</a>  密码: 8jj8</td>
-<td style="text-align:center">4.62G</td>
-</tr>
-<tr>
-<td style="text-align:center">7.1beta</td>
-<td style="text-align:center">Mac</td>
-<td style="text-align:center"><a href="http://pan.baidu.com/s/1hsErRDy" target="_blank" rel="external">百度网盘</a>  密码: e9qn</td>
-<td style="text-align:center">3.85G</td>
-</tr>
-<tr>
-<td style="text-align:center">6.4</td>
-<td style="text-align:center">Mac</td>
-<td style="text-align:center"><a href="http://pan.baidu.com/s/1qYxM5w4" target="_blank" rel="external">百度网盘</a>  密码: iiae</td>
-<td style="text-align:center">2.8G</td>
-</tr>
-<tr>
-<td style="text-align:center">6.3</td>
-<td style="text-align:center">Mac</td>
-<td style="text-align:center"><a href="http://pan.baidu.com/s/1nv0A2Qt" target="_blank" rel="external">百度网盘</a>  密码: 6mhs</td>
-<td style="text-align:center">2.77G</td>
-</tr>
-<tr>
-<td style="text-align:center">6.2</td>
-<td style="text-align:center">Mac</td>
-<td style="text-align:center"><a href="http://pan.baidu.com/s/1nu9NG3v" target="_blank" rel="external">百度网盘</a> 密码: xun6</td>
-<td style="text-align:center">2.78G</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Simulators-模拟器下载"><a href="#Simulators-模拟器下载" class="headerlink" title="Simulators 模拟器下载"></a><a name="Simulators 模拟器下载">Simulators 模拟器下载</a></h2><table>
+</tbody></table>
+<h2 id="Developer-Disk-Image下载"><a href="#Developer-Disk-Image下载" class="headerlink" title="Developer Disk Image下载"></a><a name='Developer Disk Image下载'>Developer Disk Image下载</a></h2><table>
 <thead>
 <tr>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">下载地址</th>
-<th style="text-align:center">大小(GB)</th>
+<th align="center">名称</th>
+<th align="center">下载地址</th>
+<th align="center">大小(MB)</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">iOS 8.4</td>
-<td style="text-align:center"><a href="http://devimages.apple.com/downloads/xcode/simulators/com.apple.pkg.iPhoneSimulatorSDK8_4-8.4.1.1435785476.dmg" target="_blank" rel="external">苹果官网地址</a></td>
-<td style="text-align:center">1.37</td>
+<tbody><tr>
+<td align="center">10.3 (14E5239d).zip</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/chenhuaizhe/src/blob/master/xcode/10.3%20(14E5239d).zip">下载地址</a></td>
+<td align="center">14.7</td>
 </tr>
 <tr>
-<td style="text-align:center">iOS 8.3</td>
-<td style="text-align:center"><a href="http://devimages.apple.com/downloads/xcode/simulators/com.apple.pkg.iPhoneSimulatorSDK8_3-8.3.1.1434581536.dmg" target="_blank" rel="external">苹果官网地址</a></td>
-<td style="text-align:center">1.36</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Developer-Disk-Image下载"><a href="#Developer-Disk-Image下载" class="headerlink" title="Developer Disk Image下载"></a><a name="Developer Disk Image下载">Developer Disk Image下载</a></h2><table>
-<thead>
-<tr>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">下载地址</th>
-<th style="text-align:center">大小(MB)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">10.3 (14E5239d).zip</td>
-<td style="text-align:center"><a href="https://github.com/chenhuaizhe/src/blob/master/xcode/10.3%20(14E5239d" target="_blank" rel="external">下载地址</a>.zip)</td>
-<td style="text-align:center">14.7</td>
+<td align="center">10.2 (14C89).zip</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/chenhuaizhe/src/blob/master/xcode/10.2%20(14C89).zip">下载地址</a></td>
+<td align="center">13.8</td>
 </tr>
 <tr>
-<td style="text-align:center">10.2 (14C89).zip</td>
-<td style="text-align:center"><a href="https://github.com/chenhuaizhe/src/blob/master/xcode/10.2%20(14C89" target="_blank" rel="external">下载地址</a>.zip)</td>
-<td style="text-align:center">13.8</td>
+<td align="center">10.0 (14A5339a).zip</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/chenhuaizhe/src/blob/master/xcode/10.0%20(14A5339a).zip">下载地址</a></td>
+<td align="center">13.8</td>
 </tr>
-<tr>
-<td style="text-align:center">10.0 (14A5339a).zip</td>
-<td style="text-align:center"><a href="https://github.com/chenhuaizhe/src/blob/master/xcode/10.0%20(14A5339a" target="_blank" rel="external">下载地址</a>.zip)</td>
-<td style="text-align:center">13.8</td>
-</tr>
-</tbody>
-</table>
+</tbody></table>
 <p>苹果官网的iOS Developer Library是开发者最喜欢用的知识仓库，但是在Xcode中下载速度实在是太慢！我想用迅雷离线下载怎么办，那就需要知道它的下载地址了。</p>
-<h2 id="Documentation"><a href="#Documentation" class="headerlink" title=" Documentation "></a><a name="Documentation"> Documentation </a></h2><table>
+<h2 id="Documentation"><a href="#Documentation" class="headerlink" title=" Documentation "></a><a name='Documentation'> Documentation </a></h2><table>
 <thead>
 <tr>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">下载地址</th>
-<th style="text-align:center">大小(MB)</th>
+<th align="center">名称</th>
+<th align="center">下载地址</th>
+<th align="center">大小(MB)</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">iOS 9.3</td>
-<td style="text-align:center"><a href="https://devimages.apple.com.edgekey.net/docsets/20160321/031-52212-A.dmg" target="_blank" rel="external">下载链接</a></td>
-<td style="text-align:center">872.2</td>
+<tbody><tr>
+<td align="center">iOS 9.3</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://devimages.apple.com.edgekey.net/docsets/20160321/031-52212-A.dmg">下载链接</a></td>
+<td align="center">872.2</td>
 </tr>
 <tr>
-<td style="text-align:center">Xcode 7.3</td>
-<td style="text-align:center"><a href="https://devimages.apple.com.edgekey.net/docsets/20160321/031-52213-A.dmg" target="_blank" rel="external">下载链接</a></td>
-<td style="text-align:center">264</td>
+<td align="center">Xcode 7.3</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://devimages.apple.com.edgekey.net/docsets/20160321/031-52213-A.dmg">下载链接</a></td>
+<td align="center">264</td>
 </tr>
 <tr>
-<td style="text-align:center">OS X 10.11.4</td>
-<td style="text-align:center"><a href="https://devimages.apple.com.edgekey.net/docsets/20160321/031-52211-A.dmg" target="_blank" rel="external">下载链接</a></td>
-<td style="text-align:center">932</td>
+<td align="center">OS X 10.11.4</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://devimages.apple.com.edgekey.net/docsets/20160321/031-52211-A.dmg">下载链接</a></td>
+<td align="center">932</td>
 </tr>
 <tr>
-<td style="text-align:center">watchOS 2.2</td>
-<td style="text-align:center"><a href="https://devimages.apple.com.edgekey.net/docsets/20160321/031-52210-A.dmg" target="_blank" rel="external">下载链接</a></td>
-<td style="text-align:center">364.5</td>
+<td align="center">watchOS 2.2</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://devimages.apple.com.edgekey.net/docsets/20160321/031-52210-A.dmg">下载链接</a></td>
+<td align="center">364.5</td>
 </tr>
 <tr>
-<td style="text-align:center">tvOS 9.2</td>
-<td style="text-align:center"><a href="https://devimages.apple.com.edgekey.net/docsets/20160321/031-52214-A.dmg" target="_blank" rel="external">下载链接</a></td>
-<td style="text-align:center">307.7</td>
+<td align="center">tvOS 9.2</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://devimages.apple.com.edgekey.net/docsets/20160321/031-52214-A.dmg">下载链接</a></td>
+<td align="center">307.7</td>
 </tr>
-</tbody>
-</table>
-<p>下载后挂载了看到 iOSDocset.pkg, 运行解压之后, 找到com.apple.adc.documentation.iOS.docset，复制到~/Library/Developer/Shared/Documentation/DocSets/ 中，以后更新Xcode不必重复下载此文档</p>
-<p><strong>iOS 开发类库总结，猛戳：</strong><a href="http://www.code4app.com/thread-7831-1-1.html" target="_blank" rel="external">网页链接</a></p>
-<h2 id="AppCode"><a href="#AppCode" class="headerlink" title="AppCode"></a><a name="AppCode">AppCode</a></h2><table>
+</tbody></table>
+<p>下载后挂载了看到 iOSDocset.pkg, 运行解压之后, 找到com.apple.adc.documentation.iOS.docset，复制到~&#x2F;Library&#x2F;Developer&#x2F;Shared&#x2F;Documentation&#x2F;DocSets&#x2F; 中，以后更新Xcode不必重复下载此文档</p>
+<p><strong>iOS 开发类库总结，猛戳：</strong><a target="_blank" rel="noopener" href="http://www.code4app.com/thread-7831-1-1.html">网页链接</a></p>
+<h2 id="AppCode"><a href="#AppCode" class="headerlink" title="AppCode"></a><a name='AppCode'>AppCode</a></h2><table>
 <thead>
 <tr>
-<th style="text-align:center">版本</th>
-<th style="text-align:center">平台</th>
-<th style="text-align:center">下载地址</th>
-<th style="text-align:center">大小</th>
+<th align="center">版本</th>
+<th align="center">平台</th>
+<th align="center">下载地址</th>
+<th align="center">大小</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">April 6,2016</td>
-<td style="text-align:center">Mac</td>
-<td style="text-align:center"><a href="https://www.jetbrains.com/objc/download/" target="_blank" rel="external">下载链接</a></td>
-<td style="text-align:center">243MB</td>
+<tbody><tr>
+<td align="center">April 6,2016</td>
+<td align="center">Mac</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.jetbrains.com/objc/download/">下载链接</a></td>
+<td align="center">243MB</td>
 </tr>
-</tbody>
-</table>
-<h2 id="webStorm"><a href="#webStorm" class="headerlink" title="webStorm"></a><a name="webStorm">webStorm</a></h2><table>
+</tbody></table>
+<h2 id="webStorm"><a href="#webStorm" class="headerlink" title="webStorm"></a><a name='webStorm'>webStorm</a></h2><table>
 <thead>
 <tr>
-<th style="text-align:center">版本</th>
-<th style="text-align:center">平台</th>
-<th style="text-align:center">下载地址</th>
-<th style="text-align:center">大小</th>
+<th align="center">版本</th>
+<th align="center">平台</th>
+<th align="center">下载地址</th>
+<th align="center">大小</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">2016.1.1</td>
-<td style="text-align:center">Mac</td>
-<td style="text-align:center"><a href="http://www.jetbrains.com/webstorm/download/download-thanks.html?platform=mac" target="_blank" rel="external">下载链接</a></td>
-<td style="text-align:center">–</td>
+<tbody><tr>
+<td align="center">2016.1.1</td>
+<td align="center">Mac</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://www.jetbrains.com/webstorm/download/download-thanks.html?platform=mac">下载链接</a></td>
+<td align="center">–</td>
 </tr>
-</tbody>
-</table>
-<h2 id="Java-To-iOS"><a href="#Java-To-iOS" class="headerlink" title="Java To iOS"></a><a name="Java To iOS">Java To iOS</a></h2><table>
+</tbody></table>
+<h2 id="Java-To-iOS"><a href="#Java-To-iOS" class="headerlink" title="Java To iOS"></a><a name='Java To iOS'>Java To iOS</a></h2><table>
 <thead>
 <tr>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">下载地址</th>
+<th align="center">名称</th>
+<th align="center">下载地址</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">j2Objc</td>
-<td style="text-align:center"><a href="https://github.com/google/j2objc" target="_blank" rel="external">下载链接</a></td>
+<tbody><tr>
+<td align="center">j2Objc</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/google/j2objc">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">RoboVM</td>
-<td style="text-align:center"><a href="http://www.robovm.org/" target="_blank" rel="external">下载链接</a></td>
+<td align="center">RoboVM</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://www.robovm.org/">下载链接</a></td>
 </tr>
-</tbody>
-</table>
-<h2 id="Markdown编辑器"><a href="#Markdown编辑器" class="headerlink" title="Markdown编辑器"></a><a name="Markdown编辑器">Markdown编辑器</a></h2><p>对于熟悉Markdown的人来说，Mou是一款不错的文本编辑器（Mac平台）。相比同类型产品，Mou 在功能性和易用性上都有众多特色，在其简单的界面之后，不仅拥有自定义样式、增量搜索、中文字体“漂移”优化，还支持终端命令行启动、内容发布、竖版文字布局，甚至还可以作为任务列表使用，其Markdown双栏布局的实时预览和同步滚动功能更是被众多应用借鉴和采用。</p>
+</tbody></table>
+<h2 id="Markdown编辑器"><a href="#Markdown编辑器" class="headerlink" title="Markdown编辑器"></a><a name='Markdown编辑器'>Markdown编辑器</a></h2><p>对于熟悉Markdown的人来说，Mou是一款不错的文本编辑器（Mac平台）。相比同类型产品，Mou 在功能性和易用性上都有众多特色，在其简单的界面之后，不仅拥有自定义样式、增量搜索、中文字体“漂移”优化，还支持终端命令行启动、内容发布、竖版文字布局，甚至还可以作为任务列表使用，其Markdown双栏布局的实时预览和同步滚动功能更是被众多应用借鉴和采用。</p>
 <p>可惜的是Mou已不再支持macOS Sierra(10.12.x)已上的系统，所以在这里推荐其他几款支持Markdown语法的软件。</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">编辑器</th>
-<th style="text-align:center">下载地址</th>
+<th align="center">编辑器</th>
+<th align="center">下载地址</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">Mou</td>
-<td style="text-align:center"><a href="http://25.io/mou/download/Mou.zip" target="_blank" rel="external">下载链接</a></td>
+<tbody><tr>
+<td align="center">Mou</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://25.io/mou/download/Mou.zip">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">MacDown</td>
-<td style="text-align:center"><a href="http://macdown.uranusjr.com" target="_blank" rel="external">官网地址</a></td>
+<td align="center">MacDown</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://macdown.uranusjr.com/">官网地址</a></td>
 </tr>
 <tr>
-<td style="text-align:center">Typora</td>
-<td style="text-align:center"><a href="https://typora.io" target="_blank" rel="external">官网地址</a></td>
+<td align="center">Typora</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://typora.io/">官网地址</a></td>
 </tr>
 <tr>
-<td style="text-align:center">MaHua</td>
-<td style="text-align:center"><a href="http://mahua.jser.me" target="_blank" rel="external">在线编辑器</a></td>
+<td align="center">MaHua</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://mahua.jser.me/">在线编辑器</a></td>
 </tr>
-</tbody>
-</table>
-<h2 id="Xcode插件"><a href="#Xcode插件" class="headerlink" title="Xcode插件"></a><a name="Xcode插件">Xcode插件</a></h2><ul>
-<li><a href="https://github.com/FuzzyAutocomplete/FuzzyAutocompletePlugin" target="_blank" rel="external">FuzzyAutocompletePlugin</a><br>– 提供了除前缀匹配之外的其他更加灵活的自动补全功能，支持 Xcode 5+。</li>
-<li><a href="https://github.com/stefanceriu/SCXcodeMiniMap" target="_blank" rel="external">SCXcodeMiniMap</a><br>– SCXcodeMiniMap 为 Xcode 添加了代码地图功能</li>
-<li><a href="https://github.com/larsxschneider/ShowInGitHub" target="_blank" rel="external">Show in Github</a><br>– 可以直接打开 Github 上当前正在编辑的行对应的 commit 页面。</li>
-<li><a href="https://github.com/neonichu/BBUFullIssueNavigator" target="_blank" rel="external">BBUFullIssueNavigator</a><br>– 这个插件让 Xcode 在 issue 导航栏显示所有的 issue 内容。</li>
-<li><a href="https://github.com/neonichu/BBUDebuggerTuckAway" target="_blank" rel="external">BBUDebuggerTuckAway</a><br>– 当你开始编辑的时候帮你隐藏调试器栏的 Xcode 插件。</li>
-<li><a href="https://github.com/stefanceriu/SCXcodeSwitchExpander" target="_blank" rel="external">SCXcodeSwitchExpander</a><br>– SCXcodeSwitchExpander 是一个可以帮你展开 switch 语句的插件，还会自动帮你插入 case 语句。</li>
-<li><a href="https://github.com/onevcat/VVDocumenter-Xcode" target="_blank" rel="external">VVDocumenter-Xcode</a><br>– 方便的编写标准注释的 Xcode 插件。</li>
-<li><a href="https://github.com/qfish/XAlign" target="_blank" rel="external">XAlign</a><br>– 一个 Xcode 代码自动对齐插件，它可以使用自定义的模式来对齐任何东西。</li>
-<li><a href="https://github.com/kattrali/cocoapods-xcode-plugin" target="_blank" rel="external">Cocoapods Xcode Plugin</a><br>– 依赖管理工具 CocoaPods 的 Xcode 插件。</li>
-<li><a href="https://github.com/ksuther/KSImageNamed-Xcode" target="_blank" rel="external">KSImageNamed-Xcode</a><br>– 提供了图片名称自动补全功能的插件。</li>
-<li><a href="https://github.com/omz/ColorSense-for-Xcode" target="_blank" rel="external">ColorSense-for-Xcode</a><br>– 可视化的颜色选择插件。</li>
-<li><a href="https://github.com/limejelly/Backlight-for-XCode" target="_blank" rel="external">Backlight-for-XCode</a><br>– 高亮当前编辑的行。</li>
-<li><a href="https://github.com/yeahdongcn/UIColor-Hex-Swift" target="_blank" rel="external">UIColor-Hex-Swift</a><br>– 通过十六进制字符串创建 autorelease 颜色的便利方法。★</li>
-<li><a href="https://github.com/kitschpatrol/KPRunEverywhereXcodePlugin" target="_blank" rel="external">KPRunEverywhereXcodePlugin</a><br>– 只需一次点击，就可以在多个 iOS 设备上构建，运行 App。</li>
-<li><a href="https://github.com/shjborage/Reveal-Plugin-for-Xcode" target="_blank" rel="external">RevealPlugin</a><br>– 将 Reveal App 和你的项目自动合为一体的 Xcode 插件。</li>
-<li><a href="https://realm.io/docs/objc/0.81.0/#xcode-plugin" target="_blank" rel="external">RealmPlugin</a></li>
+</tbody></table>
+<h2 id="Xcode插件"><a href="#Xcode插件" class="headerlink" title="Xcode插件"></a><a name='Xcode插件'>Xcode插件</a></h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/FuzzyAutocomplete/FuzzyAutocompletePlugin">FuzzyAutocompletePlugin</a><br>– 提供了除前缀匹配之外的其他更加灵活的自动补全功能，支持 Xcode 5+。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/stefanceriu/SCXcodeMiniMap">SCXcodeMiniMap</a><br> – SCXcodeMiniMap 为 Xcode 添加了代码地图功能</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/larsxschneider/ShowInGitHub">Show in Github</a><br> – 可以直接打开 Github 上当前正在编辑的行对应的 commit 页面。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/neonichu/BBUFullIssueNavigator">BBUFullIssueNavigator</a><br> – 这个插件让 Xcode 在 issue 导航栏显示所有的 issue 内容。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/neonichu/BBUDebuggerTuckAway">BBUDebuggerTuckAway</a><br> – 当你开始编辑的时候帮你隐藏调试器栏的 Xcode 插件。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/stefanceriu/SCXcodeSwitchExpander">SCXcodeSwitchExpander</a><br> – SCXcodeSwitchExpander 是一个可以帮你展开 switch 语句的插件，还会自动帮你插入 case 语句。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/onevcat/VVDocumenter-Xcode">VVDocumenter-Xcode</a><br> – 方便的编写标准注释的 Xcode 插件。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/qfish/XAlign">XAlign</a><br> – 一个 Xcode 代码自动对齐插件，它可以使用自定义的模式来对齐任何东西。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/kattrali/cocoapods-xcode-plugin">Cocoapods Xcode Plugin</a><br> – 依赖管理工具 CocoaPods 的 Xcode 插件。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ksuther/KSImageNamed-Xcode">KSImageNamed-Xcode</a><br> – 提供了图片名称自动补全功能的插件。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/omz/ColorSense-for-Xcode">ColorSense-for-Xcode</a><br> – 可视化的颜色选择插件。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/limejelly/Backlight-for-XCode">Backlight-for-XCode</a><br> – 高亮当前编辑的行。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/yeahdongcn/UIColor-Hex-Swift">UIColor-Hex-Swift</a><br> – 通过十六进制字符串创建 autorelease 颜色的便利方法。★</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/kitschpatrol/KPRunEverywhereXcodePlugin">KPRunEverywhereXcodePlugin</a><br> – 只需一次点击，就可以在多个 iOS 设备上构建，运行 App。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/shjborage/Reveal-Plugin-for-Xcode">RevealPlugin</a><br> – 将 Reveal App 和你的项目自动合为一体的 Xcode 插件。</li>
+<li><a target="_blank" rel="noopener" href="https://realm.io/docs/objc/0.81.0/#xcode-plugin">RealmPlugin</a></li>
 <li>生成 Realm 模型的 Xcode 插件。</li>
-<li><a href="https://github.com/zats/AdjustFontSize-Xcode-Plugin" target="_blank" rel="external">AdjustFontSize</a><br>– 使用 ⌘ + / ⌘ - 快捷键调整字体大小。</li>
-<li><a href="https://github.com/questbeat/Lin" target="_blank" rel="external">Lin</a><br>– 这个插件提供了 NSLocalizedString 的自动补全插件。</li>
-<li><a href="https://www.rephrase.io/" target="_blank" rel="external">Rephrase</a><br>– Xcode 用于本地化的插件.</li>
-<li><a href="https://github.com/pdcgomes/XCActionBar" target="_blank" rel="external">XCActionBar</a><br>– Xcode 的 Alfred。</li>
-<li><a href="https://github.com/wiruzx/QuickJump" target="_blank" rel="external">QuickJump</a><br>– Xcode 快速代码导航。</li>
-<li><a href="https://github.com/keefo/CATweaker" target="_blank" rel="external">CATweaker</a><br>– 一个用于创建漂亮的 CAMediaTimingFunction 曲线的插件.</li>
-<li><a href="https://github.com/onmyway133/XcodeWay" target="_blank" rel="external">XcodeWay</a><br>– 便捷地导航到多个地方。</li>
-<li><a href="https://github.com/johnno1962/GitDiff" target="_blank" rel="external">GitDiff</a><br>– 将与 git 仓库中不同的代码高亮。</li>
-<li><a href="https://github.com/yuhua-chen/MCLog" target="_blank" rel="external">MCLog</a><br>– 用于控制台内容筛选的插件。</li>
-<li><a href="https://github.com/trawor/XToDo" target="_blank" rel="external">XToDo</a><br>– 一个显示项目中 TODO，FIXME，??? 和 !!! 列表的对话框。</li>
-<li><a href="https://github.com/hanton/CopyIssue-Xcode-Plugin" target="_blank" rel="external">CopyIssue</a><br>– 使复制 Xcode issuse 描述更简单。</li>
-<li><a href="https://github.com/rickytan/RTImageAssets" target="_blank" rel="external">RTImageAssets</a><br>– 自动生成所需的全部 App 图标的插件。</li>
-<li><a href="https://github.com/benoitsan/BBUncrustifyPlugin-Xcode" target="_blank" rel="external">BBUncrustifyPlugin-Xcode</a><br>– 使用 ClangFormat 或 Uncrustify 格式化代码的插件。</li>
-<li><a href="https://github.com/marksands/Aviator" target="_blank" rel="external">Aviator</a><br>– 这个插件将 AppCode 的 ⇧⌘T (source/test 切换) 带到 Xcode 中.</li>
-<li><a href="https://github.com/merrickp/JumpMarks" target="_blank" rel="external">JumpMarks</a><br>– 使用有序的书签为你的代码做导航。</li>
-<li><a href="https://github.com/dzenbot/XCSnippetr" target="_blank" rel="external">XCSnippetr</a><br>– 直接上传代码片段到 Slack 和 Gist 的 Xcode 插件。</li>
-<li><a href="https://github.com/markohlebar/Peckham" target="_blank" rel="external">Peckham</a><br>– 使用 #import 引用项目中的任何文件，提供代码提示。</li>
-<li><a href="https://github.com/molon/MLAutoReplace" target="_blank" rel="external">MLAutoReplace</a><br>– 快速编码以及代码格式化插件，提升你的编码速度。</li>
-<li><a href="https://github.com/ViccAlexander/Chameleon" target="_blank" rel="external">Chameleon</a><br>– iOS （Obj-C &amp; Swift）的扁平化颜色框架。★</li>
-<li><a href="https://github.com/chiahsien/AutoHighlightSymbol" target="_blank" rel="external">AutoHighlightSymbol</a><br>– 高亮被选中的符号对应的所有实例。</li>
-<li><a href="https://github.com/lzwjava/Reveal-In-Github" target="_blank" rel="external">Reveal-In-GitHub</a><br>– 用一个快捷键就可以跳转到 GitHub 仓库的 History, Blame, PRs, Issues, Notifications。</li>
-<li><a href="https://github.com/insanoid/CleanHeaders-Xcode" target="_blank" rel="external">CleanHeaders-Xcode</a><br>– 类似 iSort 的头文件排序和重复消除插件，让你的头文件看起来更加有序。</li>
-<li><a href="https://github.com/k0nserv/luft" target="_blank" rel="external">Luft</a><br>– 帮助你实现轻量的 View Controller 的 Xcode 插件。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/zats/AdjustFontSize-Xcode-Plugin">AdjustFontSize</a><br> – 使用 ⌘ + &#x2F; ⌘ - 快捷键调整字体大小。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/questbeat/Lin">Lin</a><br> – 这个插件提供了 NSLocalizedString 的自动补全插件。</li>
+<li><a target="_blank" rel="noopener" href="https://www.rephrase.io/">Rephrase</a><br> – Xcode 用于本地化的插件.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/pdcgomes/XCActionBar">XCActionBar</a><br> – Xcode 的 Alfred。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/wiruzx/QuickJump">QuickJump</a><br> – Xcode 快速代码导航。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/keefo/CATweaker">CATweaker</a><br> – 一个用于创建漂亮的 CAMediaTimingFunction 曲线的插件.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/onmyway133/XcodeWay">XcodeWay</a><br> – 便捷地导航到多个地方。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/johnno1962/GitDiff">GitDiff</a><br> – 将与 git 仓库中不同的代码高亮。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/yuhua-chen/MCLog">MCLog</a><br> – 用于控制台内容筛选的插件。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/trawor/XToDo">XToDo</a><br> – 一个显示项目中 TODO，FIXME，??? 和 !!! 列表的对话框。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/hanton/CopyIssue-Xcode-Plugin">CopyIssue</a><br> – 使复制 Xcode issuse 描述更简单。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/rickytan/RTImageAssets">RTImageAssets</a><br> – 自动生成所需的全部 App 图标的插件。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/benoitsan/BBUncrustifyPlugin-Xcode">BBUncrustifyPlugin-Xcode</a><br> – 使用 ClangFormat 或 Uncrustify 格式化代码的插件。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/marksands/Aviator">Aviator</a><br> – 这个插件将 AppCode 的 ⇧⌘T (source&#x2F;test 切换) 带到 Xcode 中.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/merrickp/JumpMarks">JumpMarks</a><br> – 使用有序的书签为你的代码做导航。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/dzenbot/XCSnippetr">XCSnippetr</a><br> – 直接上传代码片段到 Slack 和 Gist 的 Xcode 插件。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/markohlebar/Peckham">Peckham</a><br> – 使用 #import 引用项目中的任何文件，提供代码提示。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/molon/MLAutoReplace">MLAutoReplace</a><br> – 快速编码以及代码格式化插件，提升你的编码速度。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ViccAlexander/Chameleon">Chameleon</a><br> – iOS （Obj-C &amp; Swift）的扁平化颜色框架。★</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/chiahsien/AutoHighlightSymbol">AutoHighlightSymbol</a><br> – 高亮被选中的符号对应的所有实例。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/lzwjava/Reveal-In-Github">Reveal-In-GitHub</a><br> – 用一个快捷键就可以跳转到 GitHub 仓库的 History, Blame, PRs, Issues, Notifications。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/insanoid/CleanHeaders-Xcode">CleanHeaders-Xcode</a><br> – 类似 iSort 的头文件排序和重复消除插件，让你的头文件看起来更加有序。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/k0nserv/luft">Luft</a><br> – 帮助你实现轻量的 View Controller 的 Xcode 插件。</li>
 </ul>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a><a name="测试">测试</a></h2><ul>
-<li><a href="https://github.com/mokemokechicken/CrashMonkey" target="_blank" rel="external">CrashMonkey</a><br>– iOS 平台的 Monkey 测试工具。</li>
-<li><a href="http://appium.io/" target="_blank" rel="external">appium</a><br>– Appium 是一个开源自动化测试框架。用于测试原生或者混合 app。</li>
-<li><a href="https://github.com/jollychang/robotframework-appiumlibrary" target="_blank" rel="external">robotframework-appiumlibrary</a><br>– AppiumLibrary 是一个用于 RobotFramwork 的 appium 测试框架。</li>
-<li><a href="https://cucumber.io/" target="_blank" rel="external">Cucumber</a><br>– iOS BDD 框架。</li>
-<li><a href="https://github.com/kif-framework/KIF" target="_blank" rel="external">Kif</a><br>– 一个 iOS 的函数式测试框架。</li>
-<li><a href="https://github.com/inkling/Subliminal" target="_blank" rel="external">Subliminal</a><br>– 一个保守的 iOS 集成测试框架。</li>
-<li><a href="https://developer.apple.com/library/ios/documentation/DeveloperTools/Reference/UIAutomationRef/" target="_blank" rel="external">UIAutomation</a><br>– 一个使用脚本在连接着的设备上测试你的用户界面元素的 JavaScript 库。</li>
-<li><a href="http://ios-driver.github.io/ios-driver/index.html" target="_blank" rel="external">ios-driver</a><br>– 使用 Selenium / WebDriver 测试任何 iOS 原生，混合或者移动 web 应用。</li>
-<li><a href="https://github.com/zucchini-src/zucchini" target="_blank" rel="external">Zucchini</a><br>– 可视化的 iOS 测试框架。</li>
-<li><a href="https://github.com/johnno1962/Remote" target="_blank" rel="external">Remote</a><br>– 在 Xcode 内部控制你的 iPhone 来做端到端的测试。</li>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a><a name='测试'>测试</a></h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/mokemokechicken/CrashMonkey">CrashMonkey</a><br> – iOS 平台的 Monkey 测试工具。</li>
+<li><a target="_blank" rel="noopener" href="http://appium.io/">appium</a><br> – Appium 是一个开源自动化测试框架。用于测试原生或者混合 app。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/jollychang/robotframework-appiumlibrary">robotframework-appiumlibrary</a><br> – AppiumLibrary 是一个用于 RobotFramwork 的 appium 测试框架。</li>
+<li><a target="_blank" rel="noopener" href="https://cucumber.io/">Cucumber</a><br> – iOS BDD 框架。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/kif-framework/KIF">Kif</a><br> – 一个 iOS 的函数式测试框架。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/inkling/Subliminal">Subliminal</a><br> – 一个保守的 iOS 集成测试框架。</li>
+<li><a target="_blank" rel="noopener" href="https://developer.apple.com/library/ios/documentation/DeveloperTools/Reference/UIAutomationRef/">UIAutomation</a><br> – 一个使用脚本在连接着的设备上测试你的用户界面元素的 JavaScript 库。</li>
+<li><a target="_blank" rel="noopener" href="http://ios-driver.github.io/ios-driver/index.html">ios-driver</a><br> – 使用 Selenium &#x2F; WebDriver 测试任何 iOS 原生，混合或者移动 web 应用。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/zucchini-src/zucchini">Zucchini</a><br> – 可视化的 iOS 测试框架。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/johnno1962/Remote">Remote</a><br> – 在 Xcode 内部控制你的 iPhone 来做端到端的测试。</li>
 </ul>
-<h2 id="其他测试"><a href="#其他测试" class="headerlink" title="其他测试"></a><a name="其他测试">其他测试</a></h2><ul>
-<li><a href="https://github.com/Palleas/NaughtyKeyboard" target="_blank" rel="external">NaughtyKeyboard</a><br>– 一个危险字符串的大列表，当用户输入这些字符串使有很大的可能会造成 bug，这是一个用于在你的 iOS 设备上测试你 app 的键盘。</li>
-<li><a href="https://github.com/square/PonyDebugger" target="_blank" rel="external">PonyDebugger</a><br>– 使用 Chrome 开发者工具对你的 iOS app 进行远程网络和数据调试。</li>
-<li><a href="https://github.com/facebook/ios-snapshot-test-case" target="_blank" rel="external">ios-snapshot-test-case</a><br>– 使用屏幕快照的 iOS 单元测试。</li>
+<h2 id="其他测试"><a href="#其他测试" class="headerlink" title="其他测试"></a><a name='其他测试'>其他测试</a></h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Palleas/NaughtyKeyboard">NaughtyKeyboard</a><br> – 一个危险字符串的大列表，当用户输入这些字符串使有很大的可能会造成 bug，这是一个用于在你的 iOS 设备上测试你 app 的键盘。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/square/PonyDebugger">PonyDebugger</a><br> – 使用 Chrome 开发者工具对你的 iOS app 进行远程网络和数据调试。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/facebook/ios-snapshot-test-case">ios-snapshot-test-case</a><br> – 使用屏幕快照的 iOS 单元测试。</li>
 </ul>
-<h2 id="Beta-测试版本发布"><a href="#Beta-测试版本发布" class="headerlink" title="Beta 测试版本发布"></a><a name="Beta 测试版本发布">Beta 测试版本发布</a></h2><ul>
-<li><a href="https://try.crashlytics.com/" target="_blank" rel="external">Crashlytics</a><br>– 一个崩溃报告和 beta 测试服务。</li>
-<li><a href="https://developer.apple.com/testflight/" target="_blank" rel="external">TestFlight Beta Testing</a><br>– iTunes Connect 支持的 beta 测试服务。</li>
-<li><a href="http://hockeyapp.net/" target="_blank" rel="external">HockeyApp</a><br>– 在 HockeyApp 你可以发布你 app 的 beta 测试版本，收集实时的崩溃报告，获取用户反馈，分析测试覆盖率。</li>
+<h2 id="Beta-测试版本发布"><a href="#Beta-测试版本发布" class="headerlink" title="Beta 测试版本发布"></a><a name='Beta 测试版本发布'>Beta 测试版本发布</a></h2><ul>
+<li><a target="_blank" rel="noopener" href="https://try.crashlytics.com/">Crashlytics</a><br> – 一个崩溃报告和 beta 测试服务。</li>
+<li><a target="_blank" rel="noopener" href="https://developer.apple.com/testflight/">TestFlight Beta Testing</a><br> – iTunes Connect 支持的 beta 测试服务。</li>
+<li><a target="_blank" rel="noopener" href="http://hockeyapp.net/">HockeyApp</a><br> – 在 HockeyApp 你可以发布你 app 的 beta 测试版本，收集实时的崩溃报告，获取用户反馈，分析测试覆盖率。</li>
 </ul>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a><a name="部署">部署</a></h2><ul>
-<li><a href="https://github.com/fastlane/fastlane" target="_blank" rel="external">fastlane</a><br>将所有 iOS 部署工具整合到一个工作流中。</li>
-<li><a href="https://github.com/fastlane/deliver" target="_blank" rel="external">deliver</a><br>部署截屏，app 元数据和 AppStore app 更新，这一切只需要一个命令就可以搞定。</li>
-<li><a href="https://github.com/fastlane/snapshot" target="_blank" rel="external">snapshot</a><br>自动地创建全部语言和全部设备的屏幕截图。</li>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a><a name='部署'>部署</a></h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/fastlane/fastlane">fastlane</a><br> 将所有 iOS 部署工具整合到一个工作流中。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/fastlane/deliver">deliver</a><br> 部署截屏，app 元数据和 AppStore app 更新，这一切只需要一个命令就可以搞定。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/fastlane/snapshot">snapshot</a><br> 自动地创建全部语言和全部设备的屏幕截图。</li>
 </ul>
-<h2 id="App-Store"><a href="#App-Store" class="headerlink" title="App Store"></a><a name="App Store">App Store</a></h2><ul>
-<li><a href="http://appreviewtimes.com/" target="_blank" rel="external">Average App Store Review Times</a><br>这个网站可以同时跟踪 AppStore 上 iOS 和 Mac 两个版本的浏览次数，使用了利用 iOS 和 Mac 开发者的众包数据。</li>
-<li><a href="https://developer.apple.com/app-store/review/rejections/" target="_blank" rel="external">Apple’s Common App Rejections Styleguide</a><br>一些导致 app 被苹果拒绝的重要常见问题。</li>
-<li><a href="https://www.mobileaction.co/" target="_blank" rel="external">Free App Store Optimization Tool</a><br>在关键字和竞争者的角度上，让你可视化地追踪你的 App Store 数据。</li>
+<h2 id="App-Store"><a href="#App-Store" class="headerlink" title="App Store"></a><a name='App Store'>App Store</a></h2><ul>
+<li><a target="_blank" rel="noopener" href="http://appreviewtimes.com/">Average App Store Review Times</a><br> 这个网站可以同时跟踪 AppStore 上 iOS 和 Mac 两个版本的浏览次数，使用了利用 iOS 和 Mac 开发者的众包数据。</li>
+<li><a target="_blank" rel="noopener" href="https://developer.apple.com/app-store/review/rejections/">Apple’s Common App Rejections Styleguide</a><br> 一些导致 app 被苹果拒绝的重要常见问题。</li>
+<li><a target="_blank" rel="noopener" href="https://www.mobileaction.co/">Free App Store Optimization Tool</a><br> 在关键字和竞争者的角度上，让你可视化地追踪你的 App Store 数据。</li>
 </ul>
-<h2 id="工具"><a href="#工具" class="headerlink" title=" 工具 "></a><a name="工具"> 工具 </a></h2><ul>
-<li><a href="https://github.com/kaandedeoglu/Shark" target="_blank" rel="external">Shark</a><br>– 用于将 .xcassets 文件夹转换成一个类型安全枚举的 Swift 脚本。★</li>
-<li><a href="https://github.com/mac-cain13/R.swift" target="_blank" rel="external">R.swift</a><br>– 在 Swift 项目中，强类型的自动补全资源名称的工具，包括图片，单元格和 segue 的工具。★</li>
-<li><a href="https://github.com/AliSoftware/SwiftGen" target="_blank" rel="external">SwiftGen</a><br>– 一个生成 Swift 代码工具的集合（生成资源的枚举，storyboard，本地化字符串和 UIColor）。★</li>
-<li><a href="https://github.com/marmelroy/Localize-Swift" target="_blank" rel="external">Localize-Swift</a><br>– Swift 2.0 实现在应用中切换语言的功能，帮助你的 APP 实现友好的本地化和国际化。★</li>
-<li><a href="https://github.com/jondot/blade" target="_blank" rel="external">Blade</a><br>– 为 iOS 和 OS X 应用生成 Xcode 图片目录，全局图片和其他相关的东西。</li>
-<li><a href="https://github.com/terwanerik/Retini" target="_blank" rel="external">Retini</a><br>– 一个超级简单的 Retina（2x，3x）图片转换器。</li>
-<li><a href="https://github.com/chockenberry/Provisioning" target="_blank" rel="external">Provisioning</a><br>– 一个查看器插件，用于预览 .mobileprovision 文件。</li>
-<li><a href="https://github.com/metasmile/strsync" target="_blank" rel="external">Strsync</a><br>– 自动翻译并且使 .strings 文件和默认语言同步。</li>
+<h2 id="工具"><a href="#工具" class="headerlink" title=" 工具 "></a><a name='工具'> 工具 </a></h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/kaandedeoglu/Shark">Shark</a><br> – 用于将 .xcassets 文件夹转换成一个类型安全枚举的 Swift 脚本。★</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/mac-cain13/R.swift">R.swift</a><br> – 在 Swift 项目中，强类型的自动补全资源名称的工具，包括图片，单元格和 segue 的工具。★</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/AliSoftware/SwiftGen">SwiftGen</a><br> – 一个生成 Swift 代码工具的集合（生成资源的枚举，storyboard，本地化字符串和 UIColor）。★</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/marmelroy/Localize-Swift">Localize-Swift</a><br> – Swift 2.0 实现在应用中切换语言的功能，帮助你的 APP 实现友好的本地化和国际化。★</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/jondot/blade">Blade</a><br> – 为 iOS 和 OS X 应用生成 Xcode 图片目录，全局图片和其他相关的东西。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/terwanerik/Retini">Retini</a><br> – 一个超级简单的 Retina（2x，3x）图片转换器。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/chockenberry/Provisioning">Provisioning</a><br> – 一个查看器插件，用于预览 .mobileprovision 文件。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/metasmile/strsync">Strsync</a><br> – 自动翻译并且使 .strings 文件和默认语言同步。</li>
 </ul>
-<h2 id="版本控制工具Git"><a href="#版本控制工具Git" class="headerlink" title=" 版本控制工具Git "></a><a name="版本控制工具Git"> 版本控制工具Git </a></h2><table>
+<h2 id="版本控制工具Git"><a href="#版本控制工具Git" class="headerlink" title=" 版本控制工具Git "></a><a name='版本控制工具Git'> 版本控制工具Git </a></h2><table>
 <thead>
 <tr>
-<th style="text-align:center">版本号</th>
-<th style="text-align:center">Windows</th>
-<th style="text-align:center">Mac OSX</th>
-<th style="text-align:center">Linux</th>
+<th align="center">版本号</th>
+<th align="center">Windows</th>
+<th align="center">Mac OSX</th>
+<th align="center">Linux</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">Git-2.0.1</td>
-<td style="text-align:center">–</td>
-<td style="text-align:center"><a href="http://pan.baidu.com/s/1mgkM9BE" target="_blank" rel="external">下载链接</a></td>
-<td style="text-align:center"><a href="https://github.com/inferjay/AndroidDevTools/wiki/Download-for-Linux-and-Unix" target="_blank" rel="external">下载链接</a></td>
+<tbody><tr>
+<td align="center">Git-2.0.1</td>
+<td align="center">–</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://pan.baidu.com/s/1mgkM9BE">下载链接</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/inferjay/AndroidDevTools/wiki/Download-for-Linux-and-Unix">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">Git-1.9.4</td>
-<td style="text-align:center"><a href="http://pan.baidu.com/s/1ntjy9N7" target="_blank" rel="external">下载链接</a></td>
-<td style="text-align:center">–</td>
-<td style="text-align:center"><a href="https://github.com/inferjay/AndroidDevTools/wiki/Download-for-Linux-and-Unix" target="_blank" rel="external">下载链接</a></td>
+<td align="center">Git-1.9.4</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://pan.baidu.com/s/1ntjy9N7">下载链接</a></td>
+<td align="center">–</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/inferjay/AndroidDevTools/wiki/Download-for-Linux-and-Unix">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">Git-1.8.5.2</td>
-<td style="text-align:center"><a href="http://pan.baidu.com/s/1ntJWxeD" target="_blank" rel="external">下载链接</a></td>
-<td style="text-align:center"><a href="http://pan.baidu.com/s/1bncr1pX" target="_blank" rel="external">下载链接</a></td>
-<td style="text-align:center"><a href="https://github.com/inferjay/AndroidDevTools/wiki/Download-for-Linux-and-Unix" target="_blank" rel="external">下载链接</a></td>
+<td align="center">Git-1.8.5.2</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://pan.baidu.com/s/1ntJWxeD">下载链接</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="http://pan.baidu.com/s/1bncr1pX">下载链接</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/inferjay/AndroidDevTools/wiki/Download-for-Linux-and-Unix">下载链接</a></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <blockquote>
 <p>Design Tools 设计工具</p>
 </blockquote>
-<h2 id="Photoshop插件"><a href="#Photoshop插件" class="headerlink" title=" Photoshop插件 "></a><a name="Photoshop插件"> Photoshop插件 </a></h2><table>
+<h2 id="Photoshop插件"><a href="#Photoshop插件" class="headerlink" title=" Photoshop插件 "></a><a name='Photoshop插件'> Photoshop插件 </a></h2><table>
 <thead>
 <tr>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">简介</th>
-<th style="text-align:center">下载地址</th>
+<th align="center">名称</th>
+<th align="center">简介</th>
+<th align="center">下载地址</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">Cut&amp;Slice</td>
-<td style="text-align:center">切图神器</td>
-<td style="text-align:center"><a href="http://www.cutandslice.me/" target="_blank" rel="external">下载链接</a></td>
+<tbody><tr>
+<td align="center">Cut&amp;Slice</td>
+<td align="center">切图神器</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://www.cutandslice.me/">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">DevRocket</td>
-<td style="text-align:center">切图神器</td>
-<td style="text-align:center"><a href="http://www.robovm.org/" target="_blank" rel="external">下载链接</a></td>
+<td align="center">DevRocket</td>
+<td align="center">切图神器</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://www.robovm.org/">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">Cutterman</td>
-<td style="text-align:center">最好用的切图工具</td>
-<td style="text-align:center"><a href="http://www.cutterman.cn/" target="_blank" rel="external">下载链接</a></td>
+<td align="center">Cutterman</td>
+<td align="center">最好用的切图工具</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://www.cutterman.cn/">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">Ink</td>
-<td style="text-align:center">–</td>
-<td style="text-align:center"><a href="http://ink.chrometaphore.com/" target="_blank" rel="external">下载链接</a></td>
+<td align="center">Ink</td>
+<td align="center">–</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://ink.chrometaphore.com/">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">Corner Editor</td>
-<td style="text-align:center">路径圆角编辑工具</td>
-<td style="text-align:center"><a href="http://photoshopscripts.wordpress.com/" target="_blank" rel="external">下载链接1</a><br><a href="http://sourceforge.net/projects/cornereditor/" target="_blank" rel="external">下载链接2</a></td>
+<td align="center">Corner Editor</td>
+<td align="center">路径圆角编辑工具</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://photoshopscripts.wordpress.com/">下载链接1</a><br><a target="_blank" rel="noopener" href="http://sourceforge.net/projects/cornereditor/">下载链接2</a></td>
 </tr>
 <tr>
-<td style="text-align:center">GuideGuide</td>
-<td style="text-align:center">辅助线工具</td>
-<td style="text-align:center"><a href="http://guideguide.me/" target="_blank" rel="external">下载链接</a></td>
+<td align="center">GuideGuide</td>
+<td align="center">辅助线工具</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://guideguide.me/">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">Assistor PS</td>
-<td style="text-align:center">–</td>
-<td style="text-align:center"><a href="http://assistor.net/en/assistor" target="_blank" rel="external">下载链接</a></td>
+<td align="center">Assistor PS</td>
+<td align="center">–</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://assistor.net/en/assistor">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">Skeuomorphism.it</td>
-<td style="text-align:center">–</td>
-<td style="text-align:center"><a href="http://skeuomorphism.it/" target="_blank" rel="external">下载链接</a></td>
+<td align="center">Skeuomorphism.it</td>
+<td align="center">–</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://skeuomorphism.it/">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">QuickGuide</td>
-<td style="text-align:center">–</td>
-<td style="text-align:center"><a href="http://guchitaka.com/project-view/quickguidepro/" target="_blank" rel="external">下载链接</a></td>
+<td align="center">QuickGuide</td>
+<td align="center">–</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://guchitaka.com/project-view/quickguidepro/">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">Long Shadow Generator</td>
-<td style="text-align:center">长投影效果生成插件</td>
-<td style="text-align:center"><a href="http://lab.rayps.com/lsg2/" target="_blank" rel="external">下载链接</a></td>
+<td align="center">Long Shadow Generator</td>
+<td align="center">长投影效果生成插件</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://lab.rayps.com/lsg2/">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">android_resizer_toolkit</td>
-<td style="text-align:center">–</td>
-<td style="text-align:center"><a href="https://github.com/marcosecchi/android_resizer_toolkit" target="_blank" rel="external">下载链接</a></td>
+<td align="center">android_resizer_toolkit</td>
+<td align="center">–</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/marcosecchi/android_resizer_toolkit">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">android-ps-tools</td>
-<td style="text-align:center">一些方便Android UI设计的PhototShop插件</td>
-<td style="text-align:center"><a href="http://lab.rayps.com/lc/" target="_blank" rel="external">下载链接</a></td>
+<td align="center">android-ps-tools</td>
+<td align="center">一些方便Android UI设计的PhototShop插件</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://lab.rayps.com/lc/">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">LayerCraft</td>
-<td style="text-align:center">用于从图层中导出UI资源的Photoshop插件</td>
-<td style="text-align:center"><a href="http://lab.rayps.com/lc/" target="_blank" rel="external">下载链接</a></td>
+<td align="center">LayerCraft</td>
+<td align="center">用于从图层中导出UI资源的Photoshop插件</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://lab.rayps.com/lc/">下载链接</a></td>
 </tr>
-</tbody>
-</table>
-<h2 id="矢量图设计工具"><a href="#矢量图设计工具" class="headerlink" title=" 矢量图设计工具 "></a><a name="矢量图设计工具"> 矢量图设计工具 </a></h2><table>
+</tbody></table>
+<h2 id="矢量图设计工具"><a href="#矢量图设计工具" class="headerlink" title=" 矢量图设计工具 "></a><a name='矢量图设计工具'> 矢量图设计工具 </a></h2><table>
 <thead>
 <tr>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">下载地址</th>
+<th align="center">名称</th>
+<th align="center">下载地址</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">Sketch 3</td>
-<td style="text-align:center"><a href="http://bohemiancoding.com/sketch/" target="_blank" rel="external">下载链接</a></td>
+<tbody><tr>
+<td align="center">Sketch 3</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://bohemiancoding.com/sketch/">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">Gravit</td>
-<td style="text-align:center"><a href="http://gravit.io/" target="_blank" rel="external">下载链接</a></td>
+<td align="center">Gravit</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://gravit.io/">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">Adobe Illustrator</td>
-<td style="text-align:center"><a href="https://www.adobe.com/cn/products/illustrator.html" target="_blank" rel="external">下载链接</a></td>
+<td align="center">Adobe Illustrator</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.adobe.com/cn/products/illustrator.html">下载链接</a></td>
 </tr>
-</tbody>
-</table>
-<h2 id="切图工具"><a href="#切图工具" class="headerlink" title=" 切图工具 "></a><a name="切图工具"> 切图工具 </a></h2><table>
+</tbody></table>
+<h2 id="切图工具"><a href="#切图工具" class="headerlink" title=" 切图工具 "></a><a name='切图工具'> 切图工具 </a></h2><table>
 <thead>
 <tr>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">下载地址</th>
+<th align="center">名称</th>
+<th align="center">下载地址</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">Slicy</td>
-<td style="text-align:center"><a href="http://macrabbit.com/slicy/" target="_blank" rel="external">下载链接</a></td>
+<tbody><tr>
+<td align="center">Slicy</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://macrabbit.com/slicy/">下载链接</a></td>
 </tr>
-</tbody>
-</table>
-<h2 id="图标处理工具"><a href="#图标处理工具" class="headerlink" title=" 图标处理工具 "></a><a name="图标处理工具"> 图标处理工具 </a></h2><table>
+</tbody></table>
+<h2 id="图标处理工具"><a href="#图标处理工具" class="headerlink" title=" 图标处理工具 "></a><a name='图标处理工具'> 图标处理工具 </a></h2><table>
 <thead>
 <tr>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">下载地址</th>
+<th align="center">名称</th>
+<th align="center">下载地址</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">Icon Slate</td>
-<td style="text-align:center"><a href="http://www.kodlian.com/apps" target="_blank" rel="external">下载链接</a></td>
+<tbody><tr>
+<td align="center">Icon Slate</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://www.kodlian.com/apps">下载链接</a></td>
 </tr>
-</tbody>
-</table>
-<h2 id="在线Icon库"><a href="#在线Icon库" class="headerlink" title=" 在线Icon库 "></a><a name="在线Icon库"> 在线Icon库 </a></h2><table>
+</tbody></table>
+<h2 id="在线Icon库"><a href="#在线Icon库" class="headerlink" title=" 在线Icon库 "></a><a name='在线Icon库'> 在线Icon库 </a></h2><table>
 <thead>
 <tr>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">下载地址</th>
+<th align="center">名称</th>
+<th align="center">下载地址</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">IconFont</td>
-<td style="text-align:center"><a href="http://iconfont.cn/" target="_blank" rel="external">下载链接</a></td>
+<tbody><tr>
+<td align="center">IconFont</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://iconfont.cn/">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">NounProject</td>
-<td style="text-align:center"><a href="http://thenounproject.com/" target="_blank" rel="external">下载链接</a></td>
+<td align="center">NounProject</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://thenounproject.com/">下载链接</a></td>
 </tr>
-</tbody>
-</table>
-<h2 id="取色工具"><a href="#取色工具" class="headerlink" title=" 取色工具 "></a><a name="取色工具"> 取色工具 </a></h2><table>
+</tbody></table>
+<h2 id="取色工具"><a href="#取色工具" class="headerlink" title=" 取色工具 "></a><a name='取色工具'> 取色工具 </a></h2><table>
 <thead>
 <tr>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">下载地址</th>
+<th align="center">名称</th>
+<th align="center">下载地址</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">ColorSnapper</td>
-<td style="text-align:center"><a href="http://colorsnapper.com/" target="_blank" rel="external">下载链接</a></td>
+<tbody><tr>
+<td align="center">ColorSnapper</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://colorsnapper.com/">下载链接</a></td>
 </tr>
-</tbody>
-</table>
-<h2 id="Gif图片录制工具"><a href="#Gif图片录制工具" class="headerlink" title=" Gif图片录制工具 "></a><a name="Gif图片录制工具"> Gif图片录制工具 </a></h2><table>
+</tbody></table>
+<h2 id="Gif图片录制工具"><a href="#Gif图片录制工具" class="headerlink" title=" Gif图片录制工具 "></a><a name='Gif图片录制工具'> Gif图片录制工具 </a></h2><table>
 <thead>
 <tr>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">下载地址</th>
+<th align="center">名称</th>
+<th align="center">下载地址</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">LICEcap</td>
-<td style="text-align:center"><a href="http://www.cockos.com/licecap/" target="_blank" rel="external">下载链接</a></td>
+<tbody><tr>
+<td align="center">LICEcap</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://www.cockos.com/licecap/">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">GifCam</td>
-<td style="text-align:center"><a href="http://blog.bahraniapps.com/gifcam/" target="_blank" rel="external">下载链接</a></td>
+<td align="center">GifCam</td>
+<td align="center"><a target="_blank" rel="noopener" href="http://blog.bahraniapps.com/gifcam/">下载链接</a></td>
 </tr>
 <tr>
-<td style="text-align:center">Android Tool</td>
-<td style="text-align:center"><a href="https://github.com/mortenjust/androidtool-mac/" target="_blank" rel="external">下载链接</a></td>
+<td align="center">Android Tool</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/mortenjust/androidtool-mac/">下载链接</a></td>
 </tr>
-</tbody>
-</table>
-<h2 id="Design-Games"><a href="#Design-Games" class="headerlink" title=" Design Games "></a><a name="Design Games"> Design Games </a></h2><p><a href="http://bezier.method.ac/" target="_blank" rel="external">The Bezier Game</a>：一个帮助你练习PS里钢笔工具的小游戏。</p>
-
-      
-    </div>
-    
-  </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html">最全iOS开发工具集合</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">一月筠</a></p>
-        <p><span>发布时间:</span>2017-03-07, 17:46:00</p>
-        <p><span>最后更新:</span>2020-07-06, 10:01:25</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html" title="最全iOS开发工具集合">http://guoyanjun.top/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://guoyanjun.top/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/blog/2017/03/15/building-gh-pages-branches-on-github.html">
-                    在github上建立gh-pages分支
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/blog/2017/03/06/mac-instals-nodejs-(detailed-steps)-and-sublimetext-runs-the-javascript-console.html">
-                    Mac 安装 nodejs （图文详细步骤）及SublimeText运行JavaScript控制台
-                </a>
-            </div>
-        
-    </nav>
-
-  
-</article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#目录"><span class="toc-number">1.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#More-Downloads-for-Apple-Developers"><span class="toc-number">2.</span> <span class="toc-text">More Downloads for Apple Developers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Xcode"><span class="toc-number">3.</span> <span class="toc-text">Xcode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simulators-模拟器下载"><span class="toc-number">4.</span> <span class="toc-text">Simulators 模拟器下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Developer-Disk-Image下载"><span class="toc-number">5.</span> <span class="toc-text">Developer Disk Image下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Documentation"><span class="toc-number">6.</span> <span class="toc-text"> Documentation </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AppCode"><span class="toc-number">7.</span> <span class="toc-text">AppCode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webStorm"><span class="toc-number">8.</span> <span class="toc-text">webStorm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-To-iOS"><span class="toc-number">9.</span> <span class="toc-text">Java To iOS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown编辑器"><span class="toc-number">10.</span> <span class="toc-text">Markdown编辑器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Xcode插件"><span class="toc-number">11.</span> <span class="toc-text">Xcode插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试"><span class="toc-number">12.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他测试"><span class="toc-number">13.</span> <span class="toc-text">其他测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Beta-测试版本发布"><span class="toc-number">14.</span> <span class="toc-text">Beta 测试版本发布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署"><span class="toc-number">15.</span> <span class="toc-text">部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#App-Store"><span class="toc-number">16.</span> <span class="toc-text">App Store</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工具"><span class="toc-number">17.</span> <span class="toc-text"> 工具 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#版本控制工具Git"><span class="toc-number">18.</span> <span class="toc-text"> 版本控制工具Git </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Photoshop插件"><span class="toc-number">19.</span> <span class="toc-text"> Photoshop插件 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#矢量图设计工具"><span class="toc-number">20.</span> <span class="toc-text"> 矢量图设计工具 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切图工具"><span class="toc-number">21.</span> <span class="toc-text"> 切图工具 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图标处理工具"><span class="toc-number">22.</span> <span class="toc-text"> 图标处理工具 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在线Icon库"><span class="toc-number">23.</span> <span class="toc-text"> 在线Icon库 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#取色工具"><span class="toc-number">24.</span> <span class="toc-text"> 取色工具 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gif图片录制工具"><span class="toc-number">25.</span> <span class="toc-text"> Gif图片录制工具 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Design-Games"><span class="toc-number">26.</span> <span class="toc-text"> Design Games </span></a></li></ol>
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-6 i,
-        .toc-level-6 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-<!-- 添加打赏功能 只在所有post文件下的文章中显示-->
-
-
-	<! -- 添加捐赠图标 -->
-<div class="post-donate" style="margin-top:0px;">
-    <div id="donate_board" class="donate_bar center">
-        <span class="donate_txt">
-            您的喜欢是作者创作最大的动力！❤️
-        </span>
-        <iframe src="https://gitcdn.link/cdn/TinyJay/donate-page/faa9d69210d334af644f254296e1a8b3e24da3be/simple/index.html" style="overflow-x:hidden;overflow-y:hidden; border:0px none #fff; height:215px; width:100%;"  frameborder="0" scrolling="no"></iframe>
-    </div>
-</div>
-<! -- 添加捐赠图标 -->
-
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
-        </div>
-        <script>
-            //window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"最全iOS开发工具集合　| 郭艳军的那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-            window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"最全iOS开发工具集合　| 郭艳军的那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//static.ddhigh.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
-
-    
-</div>
-
-
-
-
-
-
-
-    
-        <section id="comments" style="margin:10px;padding:10px;background:#fff;">
-          <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'true' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '#vcomment',
-            notify: notify,
-            verify: verify,
-            app_id: "R9cQjqaD9AXPKY7AQiU6U6yl",
-            app_key: "YHUU5n9sbvpRQCdiIU8aRsmH",
-            placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
-            avatar:"mm"
-        });
-    }
-</script>
-      </section>
-    
-
-  
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/blog/2017/03/15/building-gh-pages-branches-on-github.html" title="上一篇: 在github上建立gh-pages分支">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/blog/2017/03/06/mac-instals-nodejs-(detailed-steps)-and-sublimetext-runs-the-javascript-console.html" title="下一篇: Mac 安装 nodejs （图文详细步骤）及SublimeText运行JavaScript控制台">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html">iOS蓝牙开发（一）蓝牙相关基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html">Mac版 IntelliJ IDEA 创建Web项目并部署servlet</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/04/14/the-only-rhyme.html">独韵</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/04/04/remember-the-qingming-rain.html">忆清明雨上</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/15/building-gh-pages-branches-on-github.html">在github上建立gh-pages分支</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html">最全iOS开发工具集合</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/06/mac-instals-nodejs-(detailed-steps)-and-sublimetext-runs-the-javascript-console.html">Mac 安装 nodejs （图文详细步骤）及SublimeText运行JavaScript控制台</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/02/27/ios-modular-programing-framework-behive.html">iOS 模块化编程框架 BeeHive</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html">iOS-静默方式发送邮件(SKPSMTPMessage)</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/10/01/about-the-plug-in-used-by-this-site.html">关于本站使用到的插件</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/03/28/hexo-custom-page-for-home-page.html">Hexo自定义页面做首页</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/01/08/hexo-blog-ad-reward-function.html">Hexo博客添加打赏功能</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/01/05/hexo-baidu-actively-submit-links.html">Hexo百度主动提交链接</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/01/04/ios-open-source-project-and-tol-plug-in-on-github.html">GitHub上的iOS开源项目及工具插件</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/25/hexo-blog-environment-set-up-for-mac.html">Hexo博客环境搭建for Mac</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/24/the-hexo-comand-and-some-usage.html">Hexo命令和一些使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/05/ios-loading-single-shet-pictures-leading-to-crash-analysis.html">iOS加载单张图片导致崩溃的分析</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/01/c-language-sorting-algorithm-and-detailed.html">C语言实现排序算法及详解</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/07/03/tactic.html">诀</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/04/16/naging.html">碎碎念</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2013/05/25/s-ink.html">墨筱雨</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2012/12/14/met-again.html">又相见</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
-
-
-<!--添加百度自动推送代码-->
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = '//zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = '//push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script></div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                <i class="fa fa-copyright"></i> 
-<!--                2015-2020 一月筠-->
-                    2015-2020 <a href="http://guoyanjun.top" target="_blank">一月筠</a>
-            </div>
-            <!--<div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
-            </div>-->
-            <!-- 添加底部的Power by Hexo -->
-            <!--<div class="footer-right">
-                Powered by <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a> <i class="fa fa-heart animated infinite pulse"></i>
-            </div>-->
-            <!-- 添加底部的Power by Hexo -->
-            <div class="footer-right">
-    		  
-    		  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261663353'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261663353%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
-      		  
-      		  </div>
-        </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>| </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
-    </div>
-</footer>
-    </div>
-    
-    <script src="/blog/js/GithubRepoWidget.js"></script>
-
-<script data-main="/blog/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-            }
-            else {
-                var backgroundnum = 5;
-                var backgroundimg = "url(/blog//background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-            }
+</tbody></table>
+<h2 id="Design-Games"><a href="#Design-Games" class="headerlink" title=" Design Games "></a><a name='Design Games'> Design Games </a></h2><p><a target="_blank" rel="noopener" href="http://bezier.method.ac/">The Bezier Game</a>：一个帮助你练习PS里钢笔工具的小游戏。</p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/blog/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/13490798?s=320" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/13490798?s=320" title="头像" alt="头像"></a><div class="post-copyright__author_name">GuoYanjun</div><div class="post-copyright__author_desc">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://yojoy.top/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://yojoy.top/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html')">最全iOS开发工具集合</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/blog/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://yojoy.top/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=最全iOS开发工具集合&amp;url=https://yojoy.top/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html&amp;pic=https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e13c5a002.webp" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yojoy.top/blog" target="_blank">一月筠</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/blog/tags/iOS/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>iOS<span class="tagsPageCount">7</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e146a8bbd.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/2017/03/06/mac-instals-nodejs-(detailed-steps)-and-sublimetext-runs-the-javascript-console.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e13254eba.webp" onerror="onerror=null;src='/blog/blog/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Mac 安装 nodejs （图文详细步骤）及SublimeText运行JavaScript控制台</div></div></a></div><div class="next-post pull-right"><a href="/blog/2017/03/15/building-gh-pages-branches-on-github.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e13c1999c.webp" onerror="onerror=null;src='/blog/blog/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">在github上建立gh-pages分支</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/blog/2016/01/04/ios-open-source-project-and-tol-plug-in-on-github.html" title="GitHub上的iOS开源项目及工具插件"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e138164d8.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2016-01-04</div><div class="title">GitHub上的iOS开源项目及工具插件</div></div></a></div><div><a href="/blog/2015/12/01/c-language-sorting-algorithm-and-detailed.html" title="C语言实现排序算法及详解"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e13a6af3d.webp!cover" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2015-12-01</div><div class="title">C语言实现排序算法及详解</div></div></a></div><div><a href="/blog/2017/03/06/mac-instals-nodejs-(detailed-steps)-and-sublimetext-runs-the-javascript-console.html" title="Mac 安装 nodejs （图文详细步骤）及SublimeText运行JavaScript控制台"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e13254eba.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2017-03-06</div><div class="title">Mac 安装 nodejs （图文详细步骤）及SublimeText运行JavaScript控制台</div></div></a></div><div><a href="/blog/2017/02/27/ios-modular-programing-framework-behive.html" title="iOS 模块化编程框架 BeeHive"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/10/13/634764062a1eb.jpg!cover" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2017-02-27</div><div class="title">iOS 模块化编程框架 BeeHive</div></div></a></div><div><a href="/blog/2015/12/05/ios-loading-single-shet-pictures-leading-to-crash-analysis.html" title="iOS加载单张图片导致崩溃的分析"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/16/63242d515b67b.jpg!cover" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2015-12-05</div><div class="title">iOS加载单张图片导致崩溃的分析</div></div></a></div><div><a href="/blog/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html" title="iOS-静默方式发送邮件(SKPSMTPMessage)"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/15/63233d423333c.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2017-02-16</div><div class="title">iOS-静默方式发送邮件(SKPSMTPMessage)</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/13490798?s=320" onerror="this.onerror=null;this.src='/blog/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，还有<b style="color:#fff">金融知识</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">希望你可以在这里找到有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/blog/"><h1 class="author-info__name">GuoYanjun</h1><div class="author-info__desc">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/Yajon" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://music.163.com/#/user/home?id=284001567" target="_blank" title="网易云音乐"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(/blog/img/wechat_63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(/blog/img/wechat_645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Xcode"><span class="toc-number">2.</span> <span class="toc-text">Xcode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simulators-%E6%A8%A1%E6%8B%9F%E5%99%A8%E4%B8%8B%E8%BD%BD"><span class="toc-number">3.</span> <span class="toc-text">Simulators 模拟器下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Developer-Disk-Image%E4%B8%8B%E8%BD%BD"><span class="toc-number">4.</span> <span class="toc-text">Developer Disk Image下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Documentation"><span class="toc-number">5.</span> <span class="toc-text"> Documentation </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AppCode"><span class="toc-number">6.</span> <span class="toc-text">AppCode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webStorm"><span class="toc-number">7.</span> <span class="toc-text">webStorm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-To-iOS"><span class="toc-number">8.</span> <span class="toc-text">Java To iOS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">9.</span> <span class="toc-text">Markdown编辑器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Xcode%E6%8F%92%E4%BB%B6"><span class="toc-number">10.</span> <span class="toc-text">Xcode插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-number">11.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%B5%8B%E8%AF%95"><span class="toc-number">12.</span> <span class="toc-text">其他测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Beta-%E6%B5%8B%E8%AF%95%E7%89%88%E6%9C%AC%E5%8F%91%E5%B8%83"><span class="toc-number">13.</span> <span class="toc-text">Beta 测试版本发布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2"><span class="toc-number">14.</span> <span class="toc-text">部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#App-Store"><span class="toc-number">15.</span> <span class="toc-text">App Store</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7"><span class="toc-number">16.</span> <span class="toc-text"> 工具 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7Git"><span class="toc-number">17.</span> <span class="toc-text"> 版本控制工具Git </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Photoshop%E6%8F%92%E4%BB%B6"><span class="toc-number">18.</span> <span class="toc-text"> Photoshop插件 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A2%E9%87%8F%E5%9B%BE%E8%AE%BE%E8%AE%A1%E5%B7%A5%E5%85%B7"><span class="toc-number">19.</span> <span class="toc-text"> 矢量图设计工具 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E5%9B%BE%E5%B7%A5%E5%85%B7"><span class="toc-number">20.</span> <span class="toc-text"> 切图工具 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E6%A0%87%E5%A4%84%E7%90%86%E5%B7%A5%E5%85%B7"><span class="toc-number">21.</span> <span class="toc-text"> 图标处理工具 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BFIcon%E5%BA%93"><span class="toc-number">22.</span> <span class="toc-text"> 在线Icon库 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%96%E8%89%B2%E5%B7%A5%E5%85%B7"><span class="toc-number">23.</span> <span class="toc-text"> 取色工具 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gif%E5%9B%BE%E7%89%87%E5%BD%95%E5%88%B6%E5%B7%A5%E5%85%B7"><span class="toc-number">24.</span> <span class="toc-text"> Gif图片录制工具 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Design-Games"><span class="toc-number">25.</span> <span class="toc-text"> Design Games </span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/2020/10/05/about-this-site-theme-tag-tag-plugins.html" title="关于本站主题标签Tag Plugins"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e146a8bbd.webp" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="关于本站主题标签Tag Plugins"/></a><div class="content"><a class="title" href="/blog/2020/10/05/about-this-site-theme-tag-tag-plugins.html" title="关于本站主题标签Tag Plugins">关于本站主题标签Tag Plugins</a><time datetime="2020-10-05T04:00:00.000Z" title="发表于 2020-10-05 12:00:00">2020-10-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2020/03/15/github-one-click-deployment.html" title="GitHub一键部署"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/akilar-candyassets/image/20190921061245825.png" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="GitHub一键部署"/></a><div class="content"><a class="title" href="/blog/2020/03/15/github-one-click-deployment.html" title="GitHub一键部署">GitHub一键部署</a><time datetime="2020-03-15T04:00:00.000Z" title="发表于 2020-03-15 12:00:00">2020-03-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html" title="iOS蓝牙开发（一）蓝牙相关基础知识"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/interview-vue01/banner.jpg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="iOS蓝牙开发（一）蓝牙相关基础知识"/></a><div class="content"><a class="title" href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html" title="iOS蓝牙开发（一）蓝牙相关基础知识">iOS蓝牙开发（一）蓝牙相关基础知识</a><time datetime="2017-05-26T04:55:30.000Z" title="发表于 2017-05-26 12:55:30">2017-05-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html" title="Mac版 IntelliJ IDEA 创建Web项目并部署servlet"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/interview-client01/banner.jpg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="Mac版 IntelliJ IDEA 创建Web项目并部署servlet"/></a><div class="content"><a class="title" href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html" title="Mac版 IntelliJ IDEA 创建Web项目并部署servlet">Mac版 IntelliJ IDEA 创建Web项目并部署servlet</a><time datetime="2017-05-21T04:30:30.000Z" title="发表于 2017-05-21 12:30:30">2017-05-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2017/04/14/the-only-rhyme.html" title="独韵"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/Yojoon/ImgHosting/images-blog/2015-07-03/39195b0707436a7ecb92565bf3411ab1/1819713-34f594af86f190bc.jpeg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="独韵"/></a><div class="content"><a class="title" href="/blog/2017/04/14/the-only-rhyme.html" title="独韵">独韵</a><time datetime="2017-04-14T04:55:00.000Z" title="发表于 2017-04-14 12:55:00">2017-04-14</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:2773953617@qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2773953617&amp;site=qq&amp;menu=yes" title="QQ"><i class="anzhiyufont anzhiyu-icon-qq"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://weibo.com/u/3952122015" title="微博"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.jianshu.com/u/b13ee6afc1e0/" title="简书"><i class="anzhiyufont anzhiyu-icon-paper-plane"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2023/05/09/645a3ff0dc540.gif" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/Yajon" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="http://www.yojoy.top" title="主页"><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><a class="deal_link" href="/blog/atom.xml" title="RSS"><i class="anzhiyufont anzhiyu-icon-rss"></i></a><a class="deal_link" href="/blog/copyright.html" title="CC"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i></a></div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2015 - 2024 By <a class="footer-bar-link" href="/blog/" title="GuoYanjun" target="_blank">GuoYanjun</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = ["自强不息&#44; 厚德载物&#44; 上善若水&#44; 虚怀若谷.","๑۩ﺴ 透过指尖&#44; 目视锦瑟流年，&#44; 邂逅一场繁华的悸动 ﺴ۩๑"]
+        sub.unshift(data.hitokoto, from)
+        window.typed = new Typed('#footer-type-tips', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
         })
-    </script>
+      } else {
+        document.getElementById('footer-type-tips').innerHTML = data.hitokoto
+      }
+    })
+}
 
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://imgse.com/" title="imgur">imgur</a><a class="footer-bar-link cc" href="/blog/copyright" title="cc协议"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-by-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nc-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nd-line"></i></a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/" title="archive"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/blog/tags/" title="tag"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/blog/categories/" title="category"><div class="headline">分类</div><div class="length-num">2</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://yojoy.top/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://imgbb.com" title="imgbb图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="imgbb图床"/><span class="back-menu-item-text">imgbb图床</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://bu.dusays.com" title="bu图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="bu图床"/><span class="back-menu-item-text">bu图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 工具箱</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/custom/toolBox/toolBox.html"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 工具箱</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 探索</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/music/?id=2236521145&amp;server=netease"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/blog/tags/GitHub/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(147, 63, 181);"># GitHub<sup>1</sup></a><a href="/blog/tags/Server/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(135, 91, 184);"># Server<sup>2</sup></a><a href="/blog/tags/essay/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(72, 43, 34);"># essay<sup>1</sup></a><a href="/blog/tags/github/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(118, 25, 138);"># github<sup>1</sup></a><a href="/blog/tags/hexo/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(176, 4, 116);"># hexo<sup>7</sup></a><a href="/blog/tags/iOS/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(105, 20, 73);"># iOS<sup>7</sup></a><a href="/blog/tags/poetry/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(40, 98, 1);"># poetry<sup>5</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/blog/js/utils.js"></script><script src="/blog/js/main.js"></script><script src="/blog/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("12/28/2015 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎访问一月筠的主页!`,
+    `生活明朗, 未来可期`,
+    `
+        
+   ██████╗ ██╗   ██╗ ██████╗ ██╗   ██╗ █████╗ ███╗   ██╗     ██╗██╗   ██╗███╗   ██╗
+  ██╔════╝ ██║   ██║██╔═══██╗╚██╗ ██╔╝██╔══██╗████╗  ██║     ██║██║   ██║████╗  ██║
+  ██║  ███╗██║   ██║██║   ██║ ╚████╔╝ ███████║██╔██╗ ██║     ██║██║   ██║██╔██╗ ██║
+  ██║   ██║██║   ██║██║   ██║  ╚██╔╝  ██╔══██║██║╚██╗██║██   ██║██║   ██║██║╚██╗██║
+  ╚██████╔╝╚██████╔╝╚██████╔╝   ██║   ██║  ██║██║ ╚████║╚█████╔╝╚██████╔╝██║ ╚████║
+   ╚═════╝  ╚═════╝  ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚════╝  ╚═════╝ ╚═╝  ╚═══╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2015 By 一月筠 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
 
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
 
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好!", "color:white; background-color:#4f90d9", ""));
 
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 一月筠 %c 你正在访问 GuoYanjun 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
 
-    <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/blog/js/random.js"></script><script src="/blog/js/search/local-search.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
     }
-});
+  }
 
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
+  typeof typed === 'object' && typed.destroy()
 
-<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
 
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
 
-<div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
-</div>
-<script>
-    // Open in New Window
-    
-        var oOpenInNew = {
-             github: ".github-widget a", 
-            
-            
-            
-            
-            
-             archives: ".archive-article-title", 
-             miniArchives: "a.post-list-link", 
-            
-             friends: "#js-friends a", 
-             socail: ".social a" 
-        }
-        for (var x in oOpenInNew) {
-            $(oOpenInNew[x]).attr("target", "_blank");
-        }
-    
-</script>
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
 
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-  </div>
-</body>
-</html>
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/blog/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

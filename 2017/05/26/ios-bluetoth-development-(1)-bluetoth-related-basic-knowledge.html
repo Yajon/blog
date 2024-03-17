@@ -1,399 +1,247 @@
-<!DOCTYPE html>
-<html lang="zh-Hans">
-<head>
-
-    <!--[if lt IE 9]>
-        <style>body {display: none; background: none !important} </style>
-        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
-    <![endif]-->
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="format-detection" content="telephone=no" />
-<meta name="author" content="一月筠" />
-
-
-
-<meta name="description" content="文/一月筠 -- 转载请注明 --
-CoreBluetooth框架的核心其实是两个东西，peripheral和central, 可以理解成外设和中心。对应他们分别有一组相关的API和类…">
-<meta property="og:type" content="article">
-<meta property="og:title" content="iOS蓝牙开发（一）蓝牙相关基础知识">
-<meta property="og:url" content="http://guoyanjun.top/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html">
-<meta property="og:site_name" content="郭艳军的那些事儿">
-<meta property="og:description" content="文/一月筠 -- 转载请注明 --
-CoreBluetooth框架的核心其实是两个东西，peripheral和central, 可以理解成外设和中心。对应他们分别有一组相关的API和类…">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Yojoon/ImgHosting/images-blog/2017-05-26/b3c9e674fc4668e8824ab3885d5e54c8/1819713-e61619a0ccf8df53.jpeg">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Yojoon/ImgHosting/images-blog/2017-05-26/b3c9e674fc4668e8824ab3885d5e54c8/1819713-8d7a032f36ab3602.png">
-<meta property="og:updated_time" content="2020-07-07T08:37:42.128Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS蓝牙开发（一）蓝牙相关基础知识">
-<meta name="twitter:description" content="文/一月筠 -- 转载请注明 --
-CoreBluetooth框架的核心其实是两个东西，peripheral和central, 可以理解成外设和中心。对应他们分别有一组相关的API和类…">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Yojoon/ImgHosting/images-blog/2017-05-26/b3c9e674fc4668e8824ab3885d5e54c8/1819713-e61619a0ccf8df53.jpeg">
-
-<link rel="apple-touch-icon" href= "/blog//apple-touch-icon.png">
-
-
-    <link rel="alternate" href="/atom.xml" title="郭艳军的那些事儿" type="application/atom+xml">
-
-
-
-    <link rel="shortcut icon" href="/blog//favicon.png">
-
-
-
-    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
-
-
-
-    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
-
-
-
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
-
-
-<link rel="stylesheet" href="/blog/css/style.css">
-
-
-
-<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-
-
-<title>iOS蓝牙开发（一）蓝牙相关基础知识 | 郭艳军的那些事儿</title>
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-<script>
-    var yiliaConfig = {
-        fancybox: true,
-        animate: true,
-        isHome: false,
-        isPost: true,
-        isArchive: false,
-        isTag: false,
-        isCategory: false,
-        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
-        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: true
-    }
-</script>
-
-<!--添加百度自动推送代码-->
-<script>
-(function(){
-    //var bp = document.createElement('script');
-    //bp.src = '//push.zhanzhang.baidu.com/push.js';
-    //var s = document.getElementsByTagName("script")[0];
-    //s.parentNode.insertBefore(bp, s);
-    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
-})();
-</script>
-
-<!--添加百度统计代码-->
-<script>
-var _hmt = _hmt || [];
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>iOS蓝牙开发（一）蓝牙相关基础知识 | 一月筠</title><meta name="keywords" content="Server"><meta name="author" content="GuoYanjun"><meta name="copyright" content="GuoYanjun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="iOS蓝牙开发（一）蓝牙相关基础知识"><meta name="application-name" content="iOS蓝牙开发（一）蓝牙相关基础知识"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="iOS蓝牙开发（一）蓝牙相关基础知识"><meta property="og:url" content="https://yojoy.top/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html"><meta property="og:site_name" content="一月筠"><meta property="og:description" content="文&amp;#x2F;一月筠 -- 转载请注明 --  蓝牙常见名称和缩写 MFI &amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D; make for ipad ,iphone, itouch 专们为苹果设备制作的设备 BLE &amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;amp;#x"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/interview-vue01/banner.jpg"><meta property="article:author" content="GuoYanjun"><meta property="article:tag" content="一月筠,郭艳军,Yojoy,Yajon,GuoYanjun,产品,设计,开发,ChatGPT,Flutter开发,iOS开发,鸿蒙开发,HarmonyOS开发,小程序开发"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/interview-vue01/banner.jpg"><meta name="description" content="文&amp;#x2F;一月筠 -- 转载请注明 --  蓝牙常见名称和缩写 MFI &amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D; make for ipad ,iphone, itouch 专们为苹果设备制作的设备 BLE &amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;amp;#x"><link rel="shortcut icon" href="/blog/favicon.ico"><link rel="canonical" href="https://yojoy.top/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge"><link rel="preconnect" href="//cdn.cbd.int"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="O3qTII6QvZXszxEg"/><meta name="msvalidate.01" content="xxx"/><link rel="manifest" href="/blog/other/json/manifest.json"/><meta name="msapplication-TileColor" content="var(--anzhiyu-main)"/><link rel="mask-icon" href="/blog/blog/img/siteicon/apple-icon-180.png" color="#5bbad5"/><link rel="apple-touch-icon" sizes="180x180" href="/blog/img/siteicon/apple-icon-180.png"/><link rel="apple-touch-icon-precomposed" sizes="180x180" href="/blog/img/siteicon/apple-icon-180.png"/><link rel="icon" type="image/png" sizes="32x32" href="/blog/blog/img/siteicon/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/blog/blog/img/siteicon/16.png"/><link rel="bookmark" href="/blog/blog/img/siteicon/apple-icon-180.png"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1290-2796.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2796-1290.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1179-2556.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2556-1179.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"/><link rel="apple-touch-startup-image" href="/img/siteicon/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"/><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  //hm.src = "https://hm.baidu.com/hm.js?a0de0062ecc8e145d335478668581635";
-  hm.src = "https://hm.baidu.com/hm.js?71fefd6fdbcc6386d6d806016594606a";
+  hm.src = "https://hm.baidu.com/hm.js?3f3c772306077fa1190d5aeea5ceb780";
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
-</script>
+</script><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: undefined,
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: {"enable":true,"default":"晚上好👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  url: 'https://yojoy.top/blog',
+  root: '/blog/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: {"mode":"cdn","api":"https://img2color-go.vercel.app/api?img=","cover_change":true},
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: {"path":"/blog/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: GuoYanjun","link":"链接: ","source":"来源: 一月筠","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#2F7DCD","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '一月筠',
+  title: 'iOS蓝牙开发（一）蓝牙相关基础知识',
+  postAI: '',
+  pageFillDescription: '蓝牙常见名称和缩写, 蓝牙基础知识, 蓝牙中心模式流程, 蓝牙外设模式流程, 蓝牙设备状态, 蓝牙设备的五种工作状态, 蓝牙和版本的使用限制, 名词解释, 参考阅读文一月筠转载请注明蓝牙常见名称和缩写专们为苹果设备制作的设备蓝牙设备因为低耗电所以也叫做外设和中心发起连接的时被连接的设备为服务和特征每个设备会提供服务和特征类似于服务端的但是机构不同每个外设会有很多服务每个服务中包含很多字段这些字段的权限一般分为读写通知几种就是我们连接设备后具体需要操作的内容每个可以对应一个或多个用户描述的信息或属性开发使用框架开发使用框架蓝牙基础知识框架的核心其实是两个东西和可以理解成外设和中心对应他们分别有一组相关的和类这两组分别对应不同的业务场景左侧叫做中心模式就是以你的作为中心连接其他的外设的场景而右侧称为外设模式使用手机作为外设别其他中心设备操作的场景服务和特征特征的属性每个设备都会有一些服务每个服务里面都会有一些特征特征就是具体键值对提供数据的地方每个特征属性分为这么几种读写通知这么几种方式特征的定义枚举外设服务特征间的关系蓝牙中心模式流程建立中心角色扫描外设连接外设扫描外设中的服务和特征获取外设的获取外设的获取的值获取的和的值与外设做数据交互订阅的通知断开连接蓝牙外设模式流程启动一个管理对象本地设置服务特性描述权限等等发送广告设置处理订阅取消订阅读写的委托方法蓝牙设备状态待机状态设备没有传输和发送数据并且没有连接到任何设广播状态周期性广播状态扫描状态主动寻找正在广播的设备发起链接状态主动向扫描设备发起连接主设备作为主设备连接到其他设备从设备作为从设备连接到其他设备蓝牙设备的五种工作状态准备广播监听扫描发起连接已连接蓝牙和版本的使用限制蓝牙越狱设备蓝牙以上认证设备无限制名词解释配置文件是一个通用规范用于在链路上发送和接收被称为属性的数据块目前所有的应用都基于蓝牙规定了许多低功耗设备的配置文件配置文件是设备如何在特定的应用程序中工作的规格说明注意一个设备可以实现多个配置文件例如一个设备可能包括心率监测仪和电量检测一个包括一个单一变量和个用来描述变量的可以被认为是一个类型类似于类用来描述变量的属性例如一个可以规定一个可读的描述或者一个变量可接受的范围或者一个变量特定的测量单位是的集合例如你可能有一个叫心率监测仪的它包括了很多如心率测量等你可以在找到一个目前支持的基于的配置文件和服务列表参考阅读简介本文转载自',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2017-05-26 12:55:30',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-
-    <script>
-        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
-    </script>
-
-
-
-    <script> yiliaConfig.rootUrl = /blog/; </script>
-
-
-
-
-
-</head>
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="/blog/" class="profilepic">
-            <img src="/blog//img/avatar.png" class="animated zoomIn">
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/blog/">一月筠</a></h1>
-        </hgroup>
-
-        
-        <p class="header-subtitle">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</p>
-        
-
-        
-            <form id="search-form">
-            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
-            <i class="fa fa-times" onclick="resetSearch()"></i>
-            </form>
-            <div id="local-search-result"></div>
-            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
-        
-
-
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="/blog/index/">主页</a></li>
-                        
-                            <li><a href="/blog/essay/">随笔</a></li>
-                        
-                            <li><a href="/blog/archives/">所有文章</a></li>
-                        
-                            <li><a href="/blog/tags/">标签云</a></li>
-                        
-                            <li><a href="/blog/about/">关于</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
-                            
-                                <a class="fa 新浪微博" href="http://weibo.com/1778140743" title="新浪微博"></a>
-                            
-                                <a class="fa GitHub" href="https://github.com/TinyJay" title="GitHub"></a>
-                            
-                                <a class="fa 简书" href="http://www.jianshu.com/u/b13ee6afc1e0" title="简书"></a>
-                            
-                                <a class="fa RSS" href="/blog/atom.xml" title="RSS"></a>
-                            
-                                <a class="fa 网易云音乐" href="http://music.163.com/#/user/home?id=284001567" title="网易云音乐"></a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Server/">Server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/essay/">essay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/poetry/">poetry</a></li></ul>
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://github.com">GitHub</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://www.cocoachina.com">cocoachina</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://www.code4app.com">code4app</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://www.fontawesome.com.cn">fontawesome</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://www.jsdelivr.com/">jsdelivr</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://sm.ms">SM.MS</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://www.awesomes.cn/rank">awesomes rank</a>
-                    
-                    </div>
-                </section>
-                
-
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">你要记得那些大雨中为你撑伞的人，帮你挡住外来之物的人，黑暗中默默抱紧你的人，逗你笑的人，陪你彻夜聊天的人，坐车来看望你的人，陪你哭过的人，在医院陪你的人，总是以你为重的人，带着你四处游荡的人，说想念你的人...</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>                
-</div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">一月筠</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/blog/" class="profilepic">
-                <img src="/blog//img/avatar.png" class="animated zoomIn">
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/blog/" title="回到主页">一月筠</a></h1>
-            </hgroup>
-            
-            <p class="header-subtitle">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</p>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/blog/index/">主页</a></li>
-                
-                    <li><a href="/blog/essay/">随笔</a></li>
-                
-                    <li><a href="/blog/archives/">所有文章</a></li>
-                
-                    <li><a href="/blog/tags/">标签云</a></li>
-                
-                    <li><a href="/blog/about/">关于</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" target="_blank" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
-                            
-                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1778140743" title="新浪微博"></a>
-                            
-                                <a class="fa GitHub" target="_blank" href="https://github.com/TinyJay" title="GitHub"></a>
-                            
-                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/u/b13ee6afc1e0" title="简书"></a>
-                            
-                                <a class="fa RSS" target="_blank" href="/blog/atom.xml" title="RSS"></a>
-                            
-                                <a class="fa 网易云音乐" target="_blank" href="http://music.163.com/#/user/home?id=284001567" title="网易云音乐"></a>
-                            
-                        </ul>
-            </nav>
-        </header>                
-    </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
-</nav>
-      <div class="body-wrap"><article id="post-ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html" class="article-date">
-      <time datetime="2017-05-26T04:55:30.000Z" itemprop="datePublished">2017-05-26</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      iOS蓝牙开发（一）蓝牙相关基础知识
-    </h1>
-  
-
-      </header>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
       
-      <div class="article-info article-info-post">
-        
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/blog/categories/术业专攻/">术业专攻</a>
-    </div>
-
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/iOS/">iOS</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
+        get: key => {
+          const itemStr = localStorage.getItem(key)
       
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <ul>
-<li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
-<li>CoreBluetooth框架的核心其实是两个东西，peripheral和central, 可以理解成外设和中心。对应他们分别有一组相关的API和类…<a id="more"></a>
-</li>
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/blog/atom.xml" title="一月筠" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://avatars.githubusercontent.com/u/13490798?s=320"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://yojoy.top/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://imgbb.com" title="imgbb图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="imgbb图床"/><span class="back-menu-item-text">imgbb图床</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://bu.dusays.com" title="bu图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="bu图床"/><span class="back-menu-item-text">bu图床</span></a></div></div></div></div><a id="site-name" href="/blog/" accesskey="h"><div class="title">一月筠</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 工具箱</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/custom/toolBox/toolBox.html"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 工具箱</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 探索</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/music/?id=2236521145&amp;server=netease"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png" target="_blank"><img class="post-qr-code-img" alt="微信" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/blog/tags/GitHub/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># GitHub<sup>1</sup></a><a href="/blog/tags/Server/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># Server<sup>2</sup></a><a href="/blog/tags/essay/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># essay<sup>1</sup></a><a href="/blog/tags/github/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># github<sup>1</sup></a><a href="/blog/tags/hexo/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># hexo<sup>7</sup></a><a href="/blog/tags/iOS/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># iOS<sup>7</sup></a><a href="/blog/tags/poetry/" style="font-size: 1.05rem;border-radius: 1.05rem;padding: 0 0.525rem;margin-bottom: 5px;"># poetry<sup>5</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span><a class="card-more-btn" href="/blog/archives/" title="查看更多">
+    <i class="anzhiyufont anzhiyu-icon-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2020/03/"><span class="card-archive-list-date">三月 2020</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2017/05/"><span class="card-archive-list-date">五月 2017</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2017/04/"><span class="card-archive-list-date">四月 2017</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2017/03/"><span class="card-archive-list-date">三月 2017</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2017/02/"><span class="card-archive-list-date">二月 2017</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2016/10/"><span class="card-archive-list-date">十月 2016</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/blog/archives/2016/03/"><span class="card-archive-list-date">三月 2016</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/%E6%94%BB%E5%9F%8E%E7%8B%AE/" itemprop="url">攻城狮</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/blog/tags/Server/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Server</span></a></span></div></div><h1 class="post-title" itemprop="name headline">iOS蓝牙开发（一）蓝牙相关基础知识</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2017-05-26T04:55:30.000Z" title="发表于 2017-05-26 12:55:30">2017-05-26</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2017-05-26T04:55:30.000Z" title="更新于 2017-05-26 12:55:30">2017-05-26</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">1.1k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="iOS蓝牙开发（一）蓝牙相关基础知识"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为北京"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>北京</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/interview-vue01/banner.jpg"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://yojoy.top/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html"><header><a class="post-meta-categories" href="/blog/categories/%E6%94%BB%E5%9F%8E%E7%8B%AE/" itemprop="url">攻城狮</a><a href="/blog/tags/Server/" tabindex="-1" itemprop="url">Server</a><h1 id="CrawlerTitle" itemprop="name headline">iOS蓝牙开发（一）蓝牙相关基础知识</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">GuoYanjun</span><time itemprop="dateCreated datePublished" datetime="2017-05-26T04:55:30.000Z" title="发表于 2017-05-26 12:55:30">2017-05-26</time><time itemprop="dateCreated datePublished" datetime="2017-05-26T04:55:30.000Z" title="更新于 2017-05-26 12:55:30">2017-05-26</time></header><ul>
+<li><strong>文&#x2F;一月筠</strong> <code>-- 转载请注明 --</code><span id="more"></span></li>
 </ul>
 <h2 id="蓝牙常见名称和缩写"><a href="#蓝牙常见名称和缩写" class="headerlink" title="蓝牙常见名称和缩写"></a>蓝牙常见名称和缩写</h2><ul>
-<li>MFI ======= make for ipad ,iphone, itouch 专们为苹果设备制作的设备</li>
-<li>BLE ==== buletouch low energy，蓝牙4.0设备因为低耗电，所以也叫做BLE</li>
-<li>peripheral,central == 外设和中心,发起连接的时central，被连接的设备为perilheral</li>
-<li>service and characteristic === 服务和特征 每个设备会提供服务和特征，类似于服务端的api，但是机构不同。每个外设会有很多服务，每个服务中包含很多字段，这些字段的权限一般分为 读read，写write，通知notiy几种，就是我们连接设备后具体需要操作的内容。</li>
+<li>MFI &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; make for ipad ,iphone, itouch 专们为苹果设备制作的设备</li>
+<li>BLE &#x3D;&#x3D;&#x3D;&#x3D; buletouch low energy，蓝牙4.0设备因为低耗电，所以也叫做BLE</li>
+<li>peripheral,central &#x3D;&#x3D; 外设和中心,发起连接的时central，被连接的设备为perilheral</li>
+<li>service and characteristic &#x3D;&#x3D;&#x3D; 服务和特征 每个设备会提供服务和特征，类似于服务端的api，但是机构不同。每个外设会有很多服务，每个服务中包含很多字段，这些字段的权限一般分为 读read，写write，通知notiy几种，就是我们连接设备后具体需要操作的内容。</li>
 <li>Description 每个characteristic可以对应一个或多个Description用户描述characteristic的信息或属性</li>
-<li>MFI === 开发使用ExternalAccessory 框架</li>
-<li>4.0 BLE === 开发使用CoreBluetooth 框架</li>
+<li>MFI &#x3D;&#x3D;&#x3D; 开发使用ExternalAccessory 框架</li>
+<li>4.0 BLE &#x3D;&#x3D;&#x3D; 开发使用CoreBluetooth 框架</li>
 </ul>
 <h2 id="蓝牙基础知识"><a href="#蓝牙基础知识" class="headerlink" title="蓝牙基础知识"></a>蓝牙基础知识</h2><blockquote>
 <p>CoreBluetooth框架的核心其实是两个东西，peripheral和central, 可以理解成外设和中心。对应他们分别有一组相关的API和类</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/Yojoon/ImgHosting/images-blog/2017-05-26/b3c9e674fc4668e8824ab3885d5e54c8/1819713-e61619a0ccf8df53.jpeg" alt="示例图1"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/Yojoon/ImgHosting/images-blog/2017-05-26/b3c9e674fc4668e8824ab3885d5e54c8/1819713-e61619a0ccf8df53.jpeg" alt="截图1"></p>
 <ul>
-<li>这两组api分别对应不同的业务场景，左侧叫做中心模式，就是以你的app作为中心，连接其他的外设的场景，而右侧称为外设模式，使用手机作为外设别其他中心设备操作的场景。</li>
-<li>服务和特征，特征的属性(service and characteristic):<br>每个设备都会有一些服务，每个服务里面都会有一些特征，特征就是具体键值对，提供数据的地方。每个特征属性分为这么几种：读，写，通知这么几种方式。</li>
+<li><p>这两组api分别对应不同的业务场景，左侧叫做中心模式，就是以你的app作为中心，连接其他的外设的场景，而右侧称为外设模式，使用手机作为外设别其他中心设备操作的场景。</p>
+</li>
+<li><p>服务和特征，特征的属性(service and characteristic):<br>每个设备都会有一些服务，每个服务里面都会有一些特征，特征就是具体键值对，提供数据的地方。每个特征属性分为这么几种：读，写，通知这么几种方式。</p>
+</li>
 </ul>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//objcetive c特征的定义枚举</span></div><div class="line">  <span class="keyword">typedef</span> <span class="built_in">NS_OPTIONS</span>(<span class="built_in">NSUInteger</span>, CBCharacteristicProperties) &#123;</div><div class="line">      CBCharacteristicPropertyBroadcast = <span class="number">0x01</span>,</div><div class="line">      CBCharacteristicPropertyRead = <span class="number">0x02</span>,</div><div class="line">      CBCharacteristicPropertyWriteWithoutResponse = <span class="number">0x04</span>,</div><div class="line">      CBCharacteristicPropertyWrite = <span class="number">0x08</span>,</div><div class="line">      CBCharacteristicPropertyNotify = <span class="number">0x10</span>,</div><div class="line">      CBCharacteristicPropertyIndicate = <span class="number">0x20</span>,</div><div class="line">      CBCharacteristicPropertyAuthenticatedSignedWrites = <span class="number">0x40</span>,</div><div class="line">      CBCharacteristicPropertyExtendedProperties = <span class="number">0x80</span>,</div><div class="line">      CBCharacteristicPropertyNotifyEncryptionRequired <span class="built_in">NS_ENUM_AVAILABLE</span>(NA, <span class="number">6</span>_0) = <span class="number">0x100</span>,</div><div class="line">      CBCharacteristicPropertyIndicateEncryptionRequired <span class="built_in">NS_ENUM_AVAILABLE</span>(NA, <span class="number">6</span>_0)	= <span class="number">0x200</span></div><div class="line">  &#125;;</div></pre></td></tr></table></figure>
-<p>外设、服务、特征间的关系<br><img src="https://cdn.jsdelivr.net/gh/Yojoon/ImgHosting/images-blog/2017-05-26/b3c9e674fc4668e8824ab3885d5e54c8/1819713-8d7a032f36ab3602.png" alt="示例图2"></p>
-<h2 id="蓝牙中心模式流程"><a href="#蓝牙中心模式流程" class="headerlink" title="蓝牙中心模式流程"></a>蓝牙中心模式流程</h2><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span> 建立中心角色</div><div class="line"><span class="number">2.</span> 扫描外设（discover）</div><div class="line"><span class="number">3.</span> 连接外设(connect)</div><div class="line"><span class="number">4.</span> 扫描外设中的服务和特征(discover)</div><div class="line">    - <span class="number">4.1</span> 获取外设的services</div><div class="line">    - <span class="number">4.2</span> 获取外设的Characteristics,获取Characteristics的值，获取Characteristics的Descriptor和Descriptor的值</div><div class="line"><span class="number">5.</span> 与外设做数据交互(explore and interact)</div><div class="line"><span class="number">6.</span> 订阅Characteristic的通知</div><div class="line"><span class="number">7.</span> 断开连接(disconnect)</div></pre></td></tr></table></figure>
-<h2 id="蓝牙外设模式流程"><a href="#蓝牙外设模式流程" class="headerlink" title="蓝牙外设模式流程"></a>蓝牙外设模式流程</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">1. </span>启动一个Peripheral管理对象</div><div class="line"><span class="bullet">2. </span>本地Peripheral设置服务,特性,描述，权限等等</div><div class="line"><span class="bullet">3. </span>Peripheral发送广告</div><div class="line"><span class="bullet">4. </span>设置处理订阅、取消订阅、读characteristic、写characteristic的委托方法</div></pre></td></tr></table></figure>
-<h2 id="蓝牙设备状态"><a href="#蓝牙设备状态" class="headerlink" title="蓝牙设备状态"></a>蓝牙设备状态</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">1. </span>待机状态（standby）：设备没有传输和发送数据，并且没有连接到任何设</div><div class="line"><span class="bullet">2. </span>广播状态（Advertiser）：周期性广播状态</div><div class="line"><span class="bullet">3. </span>扫描状态（Scanner）：主动寻找正在广播的设备</div><div class="line"><span class="bullet">4. </span>发起链接状态（Initiator）：主动向扫描设备发起连接。</div><div class="line"><span class="bullet">5. </span>主设备（Master）：作为主设备连接到其他设备。</div><div class="line"><span class="bullet">6. </span>从设备（Slave）：作为从设备连接到其他设备。</div></pre></td></tr></table></figure>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//objcetive c特征的定义枚举</span><br><span class="line">  typedef <span class="type">NS_OPTIONS</span>(<span class="type">NSUInteger</span>, <span class="type">CBCharacteristicProperties</span>) &#123;</span><br><span class="line">      <span class="type">CBCharacteristicPropertyBroadcast</span>												= 0x01,</span><br><span class="line">      <span class="type">CBCharacteristicPropertyRead</span>													= 0x02,</span><br><span class="line">      <span class="type">CBCharacteristicPropertyWriteWithoutResponse</span>									= 0x04,</span><br><span class="line">      <span class="type">CBCharacteristicPropertyWrite</span>													= 0x08,</span><br><span class="line">      <span class="type">CBCharacteristicPropertyNotify</span>													= 0x10,</span><br><span class="line">      <span class="type">CBCharacteristicPropertyIndicate</span>												= 0x20,</span><br><span class="line">      <span class="type">CBCharacteristicPropertyAuthenticatedSignedWrites</span>								= 0x40,</span><br><span class="line">      <span class="type">CBCharacteristicPropertyExtendedProperties</span>										= 0x80,</span><br><span class="line">      <span class="type">CBCharacteristicPropertyNotifyEncryptionRequired</span> <span class="type">NS_ENUM_AVAILABLE</span>(<span class="type">NA</span>, 6_0)		= 0x100,</span><br><span class="line">      <span class="type">CBCharacteristicPropertyIndicateEncryptionRequired</span> <span class="type">NS_ENUM_AVAILABLE</span>(<span class="type">NA</span>, 6_0)	= 0x200</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+<p>外设、服务、特征间的关系<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/Yojoon/ImgHosting/images-blog/2017-05-26/b3c9e674fc4668e8824ab3885d5e54c8/1819713-8d7a032f36ab3602.png"></p>
+<h2 id="蓝牙中心模式流程"><a href="#蓝牙中心模式流程" class="headerlink" title="蓝牙中心模式流程"></a>蓝牙中心模式流程</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 建立中心角色</span><br><span class="line"><span class="bullet">2.</span> 扫描外设（discover）</span><br><span class="line"><span class="bullet">3.</span> 连接外设(connect)</span><br><span class="line"><span class="bullet">4.</span> 扫描外设中的服务和特征(discover)</span><br><span class="line"><span class="bullet">    -</span> 4.1 获取外设的services</span><br><span class="line"><span class="bullet">    -</span> 4.2 获取外设的Characteristics,获取Characteristics的值，获取Characteristics的Descriptor和Descriptor的值</span><br><span class="line"><span class="bullet">5.</span> 与外设做数据交互(explore and interact)</span><br><span class="line"><span class="bullet">6.</span> 订阅Characteristic的通知</span><br><span class="line"><span class="bullet">7.</span> 断开连接(disconnect)</span><br></pre></td></tr></table></figure>
+
+<h2 id="蓝牙外设模式流程"><a href="#蓝牙外设模式流程" class="headerlink" title="蓝牙外设模式流程"></a>蓝牙外设模式流程</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 启动一个Peripheral管理对象</span><br><span class="line"><span class="bullet">2.</span> 本地Peripheral设置服务,特性,描述，权限等等</span><br><span class="line"><span class="bullet">3.</span> Peripheral发送广告</span><br><span class="line"><span class="bullet">4.</span> 设置处理订阅、取消订阅、读characteristic、写characteristic的委托方法</span><br></pre></td></tr></table></figure>
+
+<h2 id="蓝牙设备状态"><a href="#蓝牙设备状态" class="headerlink" title="蓝牙设备状态"></a>蓝牙设备状态</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 待机状态（standby）：设备没有传输和发送数据，并且没有连接到任何设</span><br><span class="line"><span class="bullet">2.</span> 广播状态（Advertiser）：周期性广播状态</span><br><span class="line"><span class="bullet">3.</span> 扫描状态（Scanner）：主动寻找正在广播的设备</span><br><span class="line"><span class="bullet">4.</span> 发起链接状态（Initiator）：主动向扫描设备发起连接。</span><br><span class="line"><span class="bullet">5.</span> 主设备（Master）：作为主设备连接到其他设备。</span><br><span class="line"><span class="bullet">6.</span> 从设备（Slave）：作为从设备连接到其他设备。</span><br></pre></td></tr></table></figure>
+
 <h2 id="蓝牙设备的五种工作状态"><a href="#蓝牙设备的五种工作状态" class="headerlink" title="蓝牙设备的五种工作状态"></a>蓝牙设备的五种工作状态</h2><ul>
 <li>准备（standby）</li>
 <li>广播（advertising）</li>
@@ -402,307 +250,189 @@ var _hmt = _hmt || [];
 <li>已连接（Connected）</li>
 </ul>
 <h2 id="蓝牙和版本的使用限制"><a href="#蓝牙和版本的使用限制" class="headerlink" title="蓝牙和版本的使用限制"></a>蓝牙和版本的使用限制</h2><ul>
-<li>蓝牙2.0 === 越狱设备</li>
-<li>蓝牙4.0 === IOS6 以上</li>
-<li>MFI认证设备（Make For ipod/ipad/iphone） === 无限制</li>
+<li>蓝牙2.0 &#x3D;&#x3D;&#x3D; 越狱设备</li>
+<li>蓝牙4.0 &#x3D;&#x3D;&#x3D; IOS6 以上</li>
+<li>MFI认证设备（Make For ipod&#x2F;ipad&#x2F;iphone） &#x3D;&#x3D;&#x3D; 无限制</li>
 </ul>
 <h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><ul>
 <li>GAAT : Generic Attribute Profile , GATT配置文件是一个通用规范，用于在BLE链路上发送和接收被称为“属性”的数据块。目前所有的BLE应用都基于GATT。 蓝牙SIG规定了许多低功耗设备的配置文件。配置文件是设备如何在特定的应用程序中工作的规格说明。注意一个设备可以实现多个配置文件。例如，一个设备可能包括心率监测仪和电量检测。</li>
 <li>Characteristic 一个characteristic包括一个单一变量和0-n个用来描述characteristic变量的descriptor，characteristic可以被认为是一个类型，类 似于类。</li>
 <li>Descriptor Descriptor用来描述characteristic变量的属性。例如，一个descriptor可以规定一个可读的描述，或者一个characteristic变量可接受的范围，或者一个characteristic变量特定的测量单位。 Service service是characteristic的集合。例如，你可能有一个叫“Heart Rate Monitor(心率监测仪)”的service，它包括了很多characteristics，如“heart rate measurement(心率测量)”等。你可以在bluetooth.org 找到一个目前支持的基于GATT的配置文件和服务列表。</li>
 </ul>
-<h2 id="参考阅读"><a href="#参考阅读" class="headerlink" title="参考阅读"></a>参考阅读</h2><p><a href="http://www.race604.com/gatt-profile-intro/" target="_blank" rel="external">GATT Profile简介</a></p>
-<p>本文转载自:<a href="http://liuyanwei.jumppo.com/" target="_blank" rel="external">http://liuyanwei.jumppo.com/</a></p>
-
-      
-    </div>
-    
-  </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html">iOS蓝牙开发（一）蓝牙相关基础知识</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">一月筠</a></p>
-        <p><span>发布时间:</span>2017-05-26, 12:55:30</p>
-        <p><span>最后更新:</span>2020-07-07, 16:37:42</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html" title="iOS蓝牙开发（一）蓝牙相关基础知识">http://guoyanjun.top/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://guoyanjun.top/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-    <nav id="article-nav">
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html">
-                    Mac版 IntelliJ IDEA 创建Web项目并部署servlet
-                </a>
-            </div>
-        
-    </nav>
-
-  
-</article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#蓝牙常见名称和缩写"><span class="toc-number">1.</span> <span class="toc-text">蓝牙常见名称和缩写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#蓝牙基础知识"><span class="toc-number">2.</span> <span class="toc-text">蓝牙基础知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#蓝牙中心模式流程"><span class="toc-number">3.</span> <span class="toc-text">蓝牙中心模式流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#蓝牙外设模式流程"><span class="toc-number">4.</span> <span class="toc-text">蓝牙外设模式流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#蓝牙设备状态"><span class="toc-number">5.</span> <span class="toc-text">蓝牙设备状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#蓝牙设备的五种工作状态"><span class="toc-number">6.</span> <span class="toc-text">蓝牙设备的五种工作状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#蓝牙和版本的使用限制"><span class="toc-number">7.</span> <span class="toc-text">蓝牙和版本的使用限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#名词解释"><span class="toc-number">8.</span> <span class="toc-text">名词解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考阅读"><span class="toc-number">9.</span> <span class="toc-text">参考阅读</span></a></li></ol>
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-6 i,
-        .toc-level-6 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-<!-- 添加打赏功能 只在所有post文件下的文章中显示-->
-
-
-	<! -- 添加捐赠图标 -->
-<div class="post-donate" style="margin-top:0px;">
-    <div id="donate_board" class="donate_bar center">
-        <span class="donate_txt">
-            您的喜欢是作者创作最大的动力！❤️
-        </span>
-        <iframe src="https://gitcdn.link/cdn/TinyJay/donate-page/faa9d69210d334af644f254296e1a8b3e24da3be/simple/index.html" style="overflow-x:hidden;overflow-y:hidden; border:0px none #fff; height:215px; width:100%;"  frameborder="0" scrolling="no"></iframe>
-    </div>
-</div>
-<! -- 添加捐赠图标 -->
-
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
-        </div>
-        <script>
-            //window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"iOS蓝牙开发（一）蓝牙相关基础知识　| 郭艳军的那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-            window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"iOS蓝牙开发（一）蓝牙相关基础知识　| 郭艳军的那些事儿　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//static.ddhigh.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
-
-    
-</div>
-
-
-
-
-
-
-
-    
-        <section id="comments" style="margin:10px;padding:10px;background:#fff;">
-          <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'true' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '#vcomment',
-            notify: notify,
-            verify: verify,
-            app_id: "R9cQjqaD9AXPKY7AQiU6U6yl",
-            app_key: "YHUU5n9sbvpRQCdiIU8aRsmH",
-            placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
-            avatar:"mm"
-        });
-    }
-</script>
-      </section>
-    
-
-  
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html" title="下一篇: Mac版 IntelliJ IDEA 创建Web项目并部署servlet">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html">iOS蓝牙开发（一）蓝牙相关基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html">Mac版 IntelliJ IDEA 创建Web项目并部署servlet</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/04/14/the-only-rhyme.html">独韵</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/04/04/remember-the-qingming-rain.html">忆清明雨上</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/15/building-gh-pages-branches-on-github.html">在github上建立gh-pages分支</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html">最全iOS开发工具集合</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/03/06/mac-instals-nodejs-(detailed-steps)-and-sublimetext-runs-the-javascript-console.html">Mac 安装 nodejs （图文详细步骤）及SublimeText运行JavaScript控制台</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/02/27/ios-modular-programing-framework-behive.html">iOS 模块化编程框架 BeeHive</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html">iOS-静默方式发送邮件(SKPSMTPMessage)</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/10/01/about-the-plug-in-used-by-this-site.html">关于本站使用到的插件</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/03/28/hexo-custom-page-for-home-page.html">Hexo自定义页面做首页</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/01/08/hexo-blog-ad-reward-function.html">Hexo博客添加打赏功能</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/01/05/hexo-baidu-actively-submit-links.html">Hexo百度主动提交链接</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2016/01/04/ios-open-source-project-and-tol-plug-in-on-github.html">GitHub上的iOS开源项目及工具插件</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/25/hexo-blog-environment-set-up-for-mac.html">Hexo博客环境搭建for Mac</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/24/the-hexo-comand-and-some-usage.html">Hexo命令和一些使用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/05/ios-loading-single-shet-pictures-leading-to-crash-analysis.html">iOS加载单张图片导致崩溃的分析</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/12/01/c-language-sorting-algorithm-and-detailed.html">C语言实现排序算法及详解</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/07/03/tactic.html">诀</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2015/04/16/naging.html">碎碎念</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2013/05/25/s-ink.html">墨筱雨</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2012/12/14/met-again.html">又相见</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
-
-
-<!--添加百度自动推送代码-->
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = '//zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = '//push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script></div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                <i class="fa fa-copyright"></i> 
-<!--                2015-2020 一月筠-->
-                    2015-2020 <a href="http://guoyanjun.top" target="_blank">一月筠</a>
-            </div>
-            <!--<div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
-            </div>-->
-            <!-- 添加底部的Power by Hexo -->
-            <!--<div class="footer-right">
-                Powered by <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a> <i class="fa fa-heart animated infinite pulse"></i>
-            </div>-->
-            <!-- 添加底部的Power by Hexo -->
-            <div class="footer-right">
-    		  
-    		  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261663353'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1261663353%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
-      		  
-      		  </div>
-        </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>| </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
-    </div>
-</footer>
-    </div>
-    
-    <script src="/blog/js/GithubRepoWidget.js"></script>
-
-<script data-main="/blog/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-            }
-            else {
-                var backgroundnum = 5;
-                var backgroundimg = "url(/blog//background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-            }
+<h2 id="参考阅读"><a href="#参考阅读" class="headerlink" title="参考阅读"></a>参考阅读</h2><p><a target="_blank" rel="noopener" href="http://www.race604.com/gatt-profile-intro/">GATT Profile简介</a></p>
+<p>本文转载自:<a target="_blank" rel="noopener" href="http://liuyanwei.jumppo.com/">http://liuyanwei.jumppo.com/</a></p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/blog/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/13490798?s=320" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/13490798?s=320" title="头像" alt="头像"></a><div class="post-copyright__author_name">GuoYanjun</div><div class="post-copyright__author_desc">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://yojoy.top/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://yojoy.top/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html')">iOS蓝牙开发（一）蓝牙相关基础知识</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/WeChanQR.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://mirror.ghproxy.com/https://raw.githubusercontent.com/Yajon/donate-page/master/sample1/images/AliPayQR.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/blog/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://yojoy.top/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=iOS蓝牙开发（一）蓝牙相关基础知识&amp;url=https://yojoy.top/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html&amp;pic=https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/interview-vue01/banner.jpg" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yojoy.top/blog" target="_blank">一月筠</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/blog/tags/Server/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>Server<span class="tagsPageCount">2</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e146a8bbd.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/interview-client01/banner.jpg" onerror="onerror=null;src='/blog/blog/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Mac版 IntelliJ IDEA 创建Web项目并部署servlet</div></div></a></div><div class="next-post pull-right"><a href="/blog/2020/03/15/github-one-click-deployment.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/akilar-candyassets/image/20190921061245825.png" onerror="onerror=null;src='/blog/blog/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">GitHub一键部署</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html" title="Mac版 IntelliJ IDEA 创建Web项目并部署servlet"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/interview-client01/banner.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2017-05-21</div><div class="title">Mac版 IntelliJ IDEA 创建Web项目并部署servlet</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://avatars.githubusercontent.com/u/13490798?s=320" onerror="this.onerror=null;this.src='/blog/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，还有<b style="color:#fff">金融知识</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">希望你可以在这里找到有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/blog/"><h1 class="author-info__name">GuoYanjun</h1><div class="author-info__desc">๑۩ﺴ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动 ﺴ۩๑</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/Yajon" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://music.163.com/#/user/home?id=284001567" target="_blank" title="网易云音乐"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(/blog/img/wechat_63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(/blog/img/wechat_645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/2020/10/05/about-this-site-theme-tag-tag-plugins.html" title="关于本站主题标签Tag Plugins"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2022/09/05/6315e146a8bbd.webp" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="关于本站主题标签Tag Plugins"/></a><div class="content"><a class="title" href="/blog/2020/10/05/about-this-site-theme-tag-tag-plugins.html" title="关于本站主题标签Tag Plugins">关于本站主题标签Tag Plugins</a><time datetime="2020-10-05T04:00:00.000Z" title="发表于 2020-10-05 12:00:00">2020-10-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2020/03/15/github-one-click-deployment.html" title="GitHub一键部署"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/akilar-candyassets/image/20190921061245825.png" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="GitHub一键部署"/></a><div class="content"><a class="title" href="/blog/2020/03/15/github-one-click-deployment.html" title="GitHub一键部署">GitHub一键部署</a><time datetime="2020-03-15T04:00:00.000Z" title="发表于 2020-03-15 12:00:00">2020-03-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html" title="iOS蓝牙开发（一）蓝牙相关基础知识"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/interview-vue01/banner.jpg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="iOS蓝牙开发（一）蓝牙相关基础知识"/></a><div class="content"><a class="title" href="/blog/2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html" title="iOS蓝牙开发（一）蓝牙相关基础知识">iOS蓝牙开发（一）蓝牙相关基础知识</a><time datetime="2017-05-26T04:55:30.000Z" title="发表于 2017-05-26 12:55:30">2017-05-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html" title="Mac版 IntelliJ IDEA 创建Web项目并部署servlet"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/interview-client01/banner.jpg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="Mac版 IntelliJ IDEA 创建Web项目并部署servlet"/></a><div class="content"><a class="title" href="/blog/2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html" title="Mac版 IntelliJ IDEA 创建Web项目并部署servlet">Mac版 IntelliJ IDEA 创建Web项目并部署servlet</a><time datetime="2017-05-21T04:30:30.000Z" title="发表于 2017-05-21 12:30:30">2017-05-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2017/04/14/the-only-rhyme.html" title="独韵"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/Yojoon/ImgHosting/images-blog/2015-07-03/39195b0707436a7ecb92565bf3411ab1/1819713-34f594af86f190bc.jpeg" onerror="this.onerror=null;this.src='/blog/blog/img/404.jpg'" alt="独韵"/></a><div class="content"><a class="title" href="/blog/2017/04/14/the-only-rhyme.html" title="独韵">独韵</a><time datetime="2017-04-14T04:55:00.000Z" title="发表于 2017-04-14 12:55:00">2017-04-14</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" href="mailto:2773953617@qq.com" title="email"><i class="anzhiyufont anzhiyu-icon-envelope"></i></a><a class="deal_link" target="_blank" rel="noopener" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2773953617&amp;site=qq&amp;menu=yes" title="QQ"><i class="anzhiyufont anzhiyu-icon-qq"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://weibo.com/u/3952122015" title="微博"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.jianshu.com/u/b13ee6afc1e0/" title="简书"><i class="anzhiyufont anzhiyu-icon-paper-plane"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="https://img02.anheyu.com/adminuploads/1/2023/05/09/645a3ff0dc540.gif" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/Yajon" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="deal_link" target="_blank" rel="noopener" href="http://www.yojoy.top" title="主页"><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><a class="deal_link" href="/blog/atom.xml" title="RSS"><i class="anzhiyufont anzhiyu-icon-rss"></i></a><a class="deal_link" href="/blog/copyright.html" title="CC"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i></a></div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2015 - 2024 By <a class="footer-bar-link" href="/blog/" title="GuoYanjun" target="_blank">GuoYanjun</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = ["自强不息&#44; 厚德载物&#44; 上善若水&#44; 虚怀若谷.","๑۩ﺴ 透过指尖&#44; 目视锦瑟流年，&#44; 邂逅一场繁华的悸动 ﺴ۩๑"]
+        sub.unshift(data.hitokoto, from)
+        window.typed = new Typed('#footer-type-tips', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
         })
-    </script>
+      } else {
+        document.getElementById('footer-type-tips').innerHTML = data.hitokoto
+      }
+    })
+}
 
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://imgse.com/" title="imgur">imgur</a><a class="footer-bar-link cc" href="/blog/copyright" title="cc协议"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-by-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nc-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nd-line"></i></a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/blog/archives/" title="archive"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/blog/tags/" title="tag"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/blog/categories/" title="category"><div class="headline">分类</div><div class="length-num">2</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://yojoy.top/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://imgbb.com" title="imgbb图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="imgbb图床"/><span class="back-menu-item-text">imgbb图床</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://bu.dusays.com" title="bu图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/blog/img/404.jpg&quot;" data-lazy-src="/blog/img/siteicon/apple-icon-180.png" alt="bu图床"/><span class="back-menu-item-text">bu图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 工具箱</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/custom/toolBox/toolBox.html"><i class="anzhiyufont anzhiyu-icon-artstation faa-tada" style="font-size: 0.9em;"></i><span> 工具箱</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 探索</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/music/?id=2236521145&amp;server=netease"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/blog/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/blog/essay/"><i class="anzhiyufont anzhiyu-icon-lightbulb faa-tada" style="font-size: 0.9em;"></i><span> 闲言碎语</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/blog/tags/GitHub/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(147, 63, 181);"># GitHub<sup>1</sup></a><a href="/blog/tags/Server/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(135, 91, 184);"># Server<sup>2</sup></a><a href="/blog/tags/essay/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(72, 43, 34);"># essay<sup>1</sup></a><a href="/blog/tags/github/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(118, 25, 138);"># github<sup>1</sup></a><a href="/blog/tags/hexo/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(176, 4, 116);"># hexo<sup>7</sup></a><a href="/blog/tags/iOS/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(105, 20, 73);"># iOS<sup>7</sup></a><a href="/blog/tags/poetry/" style="font-size: 0.88rem;border-radius: 0.88rem;padding: 0 0.44rem;margin-bottom: 5px; color: rgb(40, 98, 1);"># poetry<sup>5</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/blog/js/utils.js"></script><script src="/blog/js/main.js"></script><script src="/blog/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("12/28/2015 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎访问一月筠的主页!`,
+    `生活明朗, 未来可期`,
+    `
+        
+   ██████╗ ██╗   ██╗ ██████╗ ██╗   ██╗ █████╗ ███╗   ██╗     ██╗██╗   ██╗███╗   ██╗
+  ██╔════╝ ██║   ██║██╔═══██╗╚██╗ ██╔╝██╔══██╗████╗  ██║     ██║██║   ██║████╗  ██║
+  ██║  ███╗██║   ██║██║   ██║ ╚████╔╝ ███████║██╔██╗ ██║     ██║██║   ██║██╔██╗ ██║
+  ██║   ██║██║   ██║██║   ██║  ╚██╔╝  ██╔══██║██║╚██╗██║██   ██║██║   ██║██║╚██╗██║
+  ╚██████╔╝╚██████╔╝╚██████╔╝   ██║   ██║  ██║██║ ╚████║╚█████╔╝╚██████╔╝██║ ╚████║
+   ╚═════╝  ╚═════╝  ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚════╝  ╚═════╝ ╚═╝  ╚═══╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2015 By 一月筠 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
 
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
 
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好!", "color:white; background-color:#4f90d9", ""));
 
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 一月筠 %c 你正在访问 GuoYanjun 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
 
-    <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/blog/js/random.js"></script><script src="/blog/js/search/local-search.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
     }
-});
+  }
 
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
+  typeof typed === 'object' && typed.destroy()
 
-<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
 
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
 
-<div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
-</div>
-<script>
-    // Open in New Window
-    
-        var oOpenInNew = {
-             github: ".github-widget a", 
-            
-            
-            
-            
-            
-             archives: ".archive-article-title", 
-             miniArchives: "a.post-list-link", 
-            
-             friends: "#js-friends a", 
-             socail: ".social a" 
-        }
-        for (var x in oOpenInNew) {
-            $(oOpenInNew[x]).attr("target", "_blank");
-        }
-    
-</script>
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
 
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-  </div>
-</body>
-</html>
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/blog/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
